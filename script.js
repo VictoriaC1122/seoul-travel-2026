@@ -20,7 +20,9 @@ const t = {
     languageSwitcher: "語言",
     currencySwitcher: "幣別",
     heroTitle: "首爾旅行 2026",
-    heroSubtitle: "2026 年 5 月 · 首爾",
+    heroSubtitle: "2026 年 5 月 · 首爾旅行手冊",
+    keyInfoTitle: "今日 / 重點資訊",
+    jumpLinksTitle: "快速切換",
     navOverview: "總覽",
     navHotel: "住宿",
     navHanbok: "韓服",
@@ -61,8 +63,8 @@ const t = {
     budgetSummaryTitle: "預算摘要",
     budgetBreakdownTitle: "費用明細",
     budgetItemHeading: "項目",
-    budgetSelectedHeading: "目前幣別",
-    budgetKrwHeading: "韓元",
+    budgetSelectedHeading: "韓元",
+    budgetKrwHeading: "台幣",
     budgetNoteHeading: "備註",
     totalTripCostLabel: "總花費預估",
     perPersonCostLabel: "每人預估",
@@ -105,7 +107,9 @@ const t = {
     languageSwitcher: "Language",
     currencySwitcher: "Currency",
     heroTitle: "Seoul Travel 2026",
-    heroSubtitle: "May 2026 · Seoul",
+    heroSubtitle: "May 2026 · Seoul Travel Handbook",
+    keyInfoTitle: "Today / Key Info",
+    jumpLinksTitle: "Jump Links",
     navOverview: "Overview",
     navHotel: "Hotel",
     navHanbok: "Hanbok",
@@ -146,8 +150,8 @@ const t = {
     budgetSummaryTitle: "Budget summary",
     budgetBreakdownTitle: "Simple breakdown",
     budgetItemHeading: "Item",
-    budgetSelectedHeading: "Selected",
-    budgetKrwHeading: "KRW",
+    budgetSelectedHeading: "KRW",
+    budgetKrwHeading: "TWD",
     budgetNoteHeading: "Note",
     totalTripCostLabel: "Estimated total",
     perPersonCostLabel: "Estimated per person",
@@ -190,7 +194,9 @@ const t = {
     languageSwitcher: "언어",
     currencySwitcher: "통화",
     heroTitle: "서울 여행 2026",
-    heroSubtitle: "2026년 5월 · 서울",
+    heroSubtitle: "2026년 5월 · 서울 여행 핸드북",
+    keyInfoTitle: "오늘 / 핵심 정보",
+    jumpLinksTitle: "바로가기",
     navOverview: "개요",
     navHotel: "호텔",
     navHanbok: "한복",
@@ -231,8 +237,8 @@ const t = {
     budgetSummaryTitle: "예산 요약",
     budgetBreakdownTitle: "비용 상세",
     budgetItemHeading: "항목",
-    budgetSelectedHeading: "선택 통화",
-    budgetKrwHeading: "KRW",
+    budgetSelectedHeading: "KRW",
+    budgetKrwHeading: "TWD",
     budgetNoteHeading: "메모",
     totalTripCostLabel: "총 예상 비용",
     perPersonCostLabel: "1인 예상 비용",
@@ -276,10 +282,27 @@ const t = {
 const data = {
   heroSummary: [
     { label: { "zh-Hant": "住宿", en: "Hotel", ko: "호텔" }, value: { "zh-Hant": "洛卡斯提奇創作者小鎮西橋店", en: "Local Stitch Creator Town Seogyo", ko: "로컬스티치 크리에이터 타운 서교" } },
-    { label: { "zh-Hant": "韓服時間", en: "Hanbok time", ko: "한복 예약 시간" }, value: { "zh-Hant": "5 月 19 日 14:00", en: "May 19, 14:00", ko: "5월 19일 14:00" } },
-    { label: { "zh-Hant": "總費用", en: "Total cost", ko: "총비용" }, value: { "zh-Hant": "940,000 韓元", en: "940,000 KRW", ko: "940,000원" } },
+    { label: { "zh-Hant": "韓服時間", en: "Hanbok", ko: "한복 예약" }, value: { "zh-Hant": "5 月 19 日 14:00", en: "May 19, 14:00", ko: "5월 19일 14:00" } },
+    { label: { "zh-Hant": "總費用", en: "Total", ko: "총액" }, value: { "zh-Hant": "940,000 韓元", en: "940,000 KRW", ko: "940,000원" } },
     { label: { "zh-Hant": "訂金", en: "Deposit", ko: "예약금" }, value: { "zh-Hant": "300 人民幣", en: "300 CNY", ko: "300위안" } },
-    { label: { "zh-Hant": "剩餘款項", en: "Remaining", ko: "남은 금액" }, value: { "zh-Hant": "約 880,000 韓元", en: "about 880,000 KRW", ko: "약 880,000원" } },
+    { label: { "zh-Hant": "提醒", en: "Reminder", ko: "리마인더" }, value: { "zh-Hant": "刷卡可能加收 10%", en: "Card may add 10%", ko: "카드 결제 시 10% 추가 가능" } },
+  ],
+  keyInfo: [
+    {
+      label: { "zh-Hant": "今天最重要", en: "Top priority", ko: "가장 중요한 일정" },
+      value: { "zh-Hant": "5/19 14:00 韓服拍攝", en: "May 19, 14:00 hanbok shoot", ko: "5/19 14:00 한복 촬영" },
+      note: { "zh-Hant": "建議 13:00 前出門", en: "Leave by about 13:00", ko: "13:00 전 출발 권장" },
+    },
+    {
+      label: { "zh-Hant": "現場金額", en: "To pay on site", ko: "현장 결제 금액" },
+      value: { "zh-Hant": "約 880,000 韓元", en: "about 880,000 KRW", ko: "약 880,000원" },
+      note: { "zh-Hant": "建議備韓元現金", en: "Prepare KRW cash if possible", ko: "가능하면 KRW 현금 준비" },
+    },
+    {
+      label: { "zh-Hant": "風險提醒", en: "Watch out", ko: "주의 사항" },
+      value: { "zh-Hant": "遲到 20 分鐘會罰款", en: "20-minute delay triggers a penalty", ko: "20분 지각 시 벌금" },
+      note: { "zh-Hant": "北村容易迷路", en: "Bukchon is easy to get lost in", ko: "북촌은 길 찾기 어려움" },
+    },
   ],
   overviewStats: [
     { label: { "zh-Hant": "旅行長度", en: "Trip length", ko: "여행 기간" }, value: { "zh-Hant": "6 天 5 夜", en: "6 days / 5 nights", ko: "6일 5박" } },
@@ -446,6 +469,30 @@ function renderHero() {
     .join("");
 }
 
+function renderKeyInfo() {
+  const keyInfoBar = document.getElementById("keyInfoBar");
+  if (!keyInfoBar) return;
+  keyInfoBar.innerHTML = `
+    <div class="key-info-head">
+      <div class="section-kicker">${t[state.lang].keyInfoTitle}</div>
+      <div class="key-info-jump-label">${t[state.lang].jumpLinksTitle}</div>
+    </div>
+    <div class="key-info-grid">
+      ${data.keyInfo
+        .map(
+          (item) => `
+            <article class="key-info-card">
+              <div class="summary-label">${getText(item.label)}</div>
+              <div class="summary-value">${getText(item.value)}</div>
+              <div class="budget-original">${getText(item.note)}</div>
+            </article>
+          `
+        )
+        .join("")}
+    </div>
+  `;
+}
+
 function renderOverview() {
   const overviewStats = document.getElementById("overviewStats");
   const importantAlerts = document.getElementById("importantAlerts");
@@ -519,11 +566,13 @@ function renderHanbok() {
   hanbokPlanCard.innerHTML = `
     <h3>${t[state.lang].reservedPlanTitle}</h3>
     <div class="price-stack">
+      <div class="price-row"><div class="price-label">${getText({ "zh-Hant": "預約時間", en: "Appointment", ko: "예약 시간" })}</div><div class="price-value">${getText({ "zh-Hant": "5 月 19 日 14:00", en: "May 19, 14:00", ko: "5월 19일 14:00" })}</div></div>
       <div class="price-row"><div class="price-label">${t[state.lang].packageText}</div><div class="price-value">640,000 KRW</div></div>
       <div class="price-row"><div class="price-label">${t[state.lang].addonText}</div><div class="price-value">300,000 KRW</div></div>
       <div class="price-row"><div class="price-label">${t[state.lang].totalText}</div><div class="price-value">940,000 KRW</div></div>
       <div class="price-row"><div class="price-label">${t[state.lang].depositText}</div><div class="price-value">300 CNY</div></div>
     </div>
+    <div class="payment-note"><strong>${getText({ "zh-Hant": "內容包含", en: "Includes", ko: "포함 내용" })}</strong><div class="bullet-desc">${getText({ "zh-Hant": "200 張原片 + 12 張精修", en: "200 original photos + 12 retouched photos", ko: "원본 200장 + 보정 12장" })}</div></div>
     <div class="include-chip-row">${data.hanbok.includes.map((item) => `<span class="include-chip">${getText(item)}</span>`).join("")}</div>
     <div class="warning-chip-row"><span class="warning-chip">${t[state.lang].surchargeText}</span><span class="warning-chip">${t[state.lang].cashText}</span></div>
   `;
@@ -580,23 +629,23 @@ function renderBudget() {
       (item) => `
         <article class="bullet-card budget-highlight-item">
           <div class="bullet-title">${item.label}</div>
-          <div class="budget-main">${formatCurrency(item.value)}</div>
-          <div class="budget-original">${formatCurrency(item.value, "KRW")} · ${item.note}</div>
+          <div class="budget-main">${formatCurrency(item.value, "KRW")}</div>
+          <div class="budget-original">${formatCurrency(item.value, "TWD")} · ${item.note}</div>
         </article>
       `
     )
     .join("");
 
   budgetSummary.innerHTML = data.budgetSummary
-    .map((item) => `<article class="budget-summary-card"><div class="budget-summary-label">${getText(item.label)}</div><div class="budget-summary-value">${formatCurrency(item.krw)}</div><div class="budget-original">${formatCurrency(item.krw, "KRW")}</div></article>`)
+    .map((item) => `<article class="budget-summary-card"><div class="budget-summary-label">${getText(item.label)}</div><div class="budget-summary-value">${formatCurrency(item.krw, "KRW")}</div><div class="budget-original">${formatCurrency(item.krw, "TWD")}</div></article>`)
     .join("");
   budgetCards.innerHTML = data.budgetRows
     .map(
       (item) => `
         <article class="budget-card">
           <div class="budget-summary-label">${getText(item.item)}</div>
-          <div class="budget-main">${formatCurrency(item.krw)}</div>
-          <div class="budget-original">${item.original} · ${getText(item.note)}</div>
+          <div class="budget-main">${formatCurrency(item.krw, "KRW")}</div>
+          <div class="budget-original">${formatCurrency(item.krw, "TWD")} · ${getText(item.note)}</div>
         </article>
       `
     )
@@ -606,8 +655,8 @@ function renderBudget() {
       (item) => `
         <tr>
           <td>${getText(item.item)}</td>
-          <td>${formatCurrency(item.krw)}</td>
           <td>${formatCurrency(item.krw, "KRW")}</td>
+          <td>${formatCurrency(item.krw, "TWD")}</td>
           <td>${getText(item.note)}</td>
         </tr>
       `
@@ -677,6 +726,7 @@ function renderLinks() {
 function renderAll() {
   renderI18n();
   renderHero();
+  renderKeyInfo();
   renderOverview();
   renderHotel();
   renderHanbok();

@@ -238,9 +238,83 @@ a {
 
 .desktop-nav-link.active,
 .desktop-nav-link:hover,
+.jump-link.active,
 .mobile-nav-link.active {
   background: rgba(147, 172, 203, 0.14);
   color: var(--ink-strong);
+}
+
+.key-strip {
+  padding: 0 12px 8px;
+}
+
+.key-strip-shell {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+}
+
+.sticky-summary {
+  position: sticky;
+  top: 10px;
+  z-index: 150;
+  padding: 14px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.94);
+  box-shadow: 0 14px 36px rgba(58, 76, 98, 0.08);
+}
+
+.key-info-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.key-info-jump-label {
+  color: var(--ink-faint);
+  font-size: 0.8rem;
+}
+
+.key-info-grid {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.key-info-card {
+  padding: 12px 13px;
+  border-radius: 16px;
+  background: rgba(247, 249, 251, 0.96);
+  border: 1px solid rgba(118, 136, 158, 0.12);
+}
+
+.jump-links {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 2px 2px 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.jump-links::-webkit-scrollbar {
+  display: none;
+}
+
+.jump-link {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  font-weight: 600;
 }
 
 .container {
@@ -846,7 +920,8 @@ a {
 
 @media (max-width: 759px) {
   .hero-shell,
-  .container {
+  .container,
+  .key-strip-shell {
     width: min(100%, calc(100% - 20px));
   }
 
@@ -907,6 +982,15 @@ a {
   .accordion-topline {
     align-items: center;
   }
+
+  .sticky-summary {
+    top: 8px;
+    padding: 12px;
+  }
+
+  .key-info-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (min-width: 760px) {
@@ -927,6 +1011,10 @@ a {
   }
 
   .hero-summary-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .key-info-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -972,6 +1060,10 @@ a {
     margin-bottom: 72px;
   }
 
+  .key-strip-shell {
+    width: min(1240px, calc(100% - 48px));
+  }
+
   .hero-card {
     padding: 30px 32px;
   }
@@ -993,6 +1085,7 @@ a {
     margin-bottom: 28px;
     padding: 12px;
     gap: 8px;
+    position: static;
   }
 
   .desktop-nav-link {
