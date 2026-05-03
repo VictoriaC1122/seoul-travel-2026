@@ -331,7 +331,7 @@ const content = {
     },
   ],
   stay: {
-    title: { "zh-Hant": "Local Stitch Seogyo Town", en: "Local Stitch Seogyo Town", ko: "Local Stitch Seogyo Town" },
+    title: { "zh-Hant": "洛卡斯提奇西橋飯店（Local Stitch Seogyo Town）", en: "Local Stitch Seogyo Town", ko: "로컬스티치 서교타운" },
     subtitle: {
       "zh-Hant": "高級雙床房，5/15-5/20，兩人入住",
       en: "Deluxe Twin Room, May 15-20, for two guests",
@@ -342,6 +342,7 @@ const content = {
       { label: { "zh-Hant": "總價", en: "Total", ko: "총액" }, amountTwd: 19247 },
       { label: { "zh-Hant": "平均每晚", en: "Per night", ko: "1박 평균" }, amountTwd: 19247 / 5 },
       { label: { "zh-Hant": "每人分攤", en: "Per person", ko: "1인 기준" }, amountTwd: 19247 / 2 },
+      { label: { "zh-Hant": "每人每晚", en: "Per person / night", ko: "1인 1박 기준" }, amountTwd: 19247 / 5 / 2 },
       {
         label: { "zh-Hant": "優點", en: "Why this stay works", ko: "장점" },
         text: {
