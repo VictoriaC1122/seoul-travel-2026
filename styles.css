@@ -28,7 +28,7 @@ body {
   min-height: 100vh;
   color: var(--ink-deep);
   font-family: "Noto Serif TC", "Noto Sans KR", serif;
-  line-height: 1.8;
+  line-height: 1.65;
   background:
     radial-gradient(circle at top left, rgba(181, 200, 223, 0.75), transparent 34%),
     radial-gradient(circle at top right, rgba(244, 231, 228, 0.8), transparent 28%),
@@ -131,7 +131,7 @@ a {
 }
 
 .hero-content {
-  padding: 34px 12px 24px 8px;
+  padding: 28px 12px 24px 8px;
 }
 
 .hero-kicker,
@@ -144,20 +144,20 @@ a {
 }
 
 .hero h1 {
-  margin-top: 16px;
+  margin-top: 14px;
   color: #fff;
   font-family: "Cormorant Garamond", "Noto Serif TC", serif;
-  font-size: clamp(3.4rem, 8vw, 6.1rem);
-  line-height: 0.94;
-  letter-spacing: 0.03em;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  line-height: 0.98;
+  letter-spacing: 0.02em;
   text-shadow: 0 20px 40px rgba(43, 57, 74, 0.25);
 }
 
 .hero-subtitle {
-  margin-top: 18px;
-  max-width: 36rem;
+  margin-top: 14px;
+  max-width: 34rem;
   color: rgba(255, 255, 255, 0.94);
-  font-size: 1.12rem;
+  font-size: 1rem;
 }
 
 .hero-meta {
@@ -183,6 +183,35 @@ a {
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 18px;
+}
+
+.hero-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.hero-summary-card {
+  padding: 14px 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+}
+
+.hero-summary-label {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+
+.hero-summary-value {
+  margin-top: 6px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
 }
 
 .hero-gallery {
@@ -281,18 +310,19 @@ a {
 }
 
 .section-card h2 {
-  font-size: clamp(2.2rem, 4.8vw, 3.4rem);
-  margin-bottom: 16px;
-}
-
-.section-card h3 {
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
   margin-bottom: 14px;
 }
 
+.section-card h3 {
+  font-size: clamp(1.45rem, 2.6vw, 2rem);
+  margin-bottom: 12px;
+}
+
 .lead {
-  font-size: 1rem;
+  font-size: 0.97rem;
   color: var(--ink-soft);
+  line-height: 1.75;
 }
 
 .overview-grid,
@@ -329,8 +359,9 @@ a {
 .budget-summary-value {
   margin-top: 8px;
   color: var(--ink-deep);
-  font-size: 1.22rem;
+  font-size: 1.1rem;
   font-weight: 700;
+  line-height: 1.4;
 }
 
 .cinematic-layout,
@@ -434,12 +465,14 @@ a {
 .bullet-title {
   color: var(--ink-deep);
   font-weight: 700;
+  line-height: 1.45;
 }
 
 .bullet-desc {
   margin-top: 4px;
   color: var(--ink-soft);
-  font-size: 0.94rem;
+  font-size: 0.92rem;
+  line-height: 1.7;
 }
 
 .stay-showcase {
@@ -473,7 +506,8 @@ a {
 }
 
 .stay-card-title {
-  font-size: 2.1rem;
+  font-size: 1.7rem;
+  line-height: 1.1;
 }
 
 .stay-card-subtitle {
@@ -519,6 +553,7 @@ a {
 .info-value {
   text-align: right;
   font-weight: 700;
+  line-height: 1.45;
 }
 
 .resource-link {
@@ -553,6 +588,12 @@ a {
   color: var(--ink-deep);
   font-size: 0.8rem;
   font-weight: 700;
+}
+
+.flight-card h3,
+.content-panel h3,
+.timeline-card h3 {
+  line-height: 1.15;
 }
 
 .mini-grid,
@@ -612,6 +653,8 @@ a {
 
 .timeline-date {
   color: var(--ink-soft);
+  font-size: 0.9rem;
+  margin-bottom: 4px;
 }
 
 .tag-list {
@@ -701,6 +744,7 @@ a {
 .doc-card-copy {
   margin-top: 4px;
   color: var(--ink-soft);
+  line-height: 1.7;
 }
 
 @keyframes fadeIn {
@@ -780,6 +824,10 @@ a {
     grid-template-rows: repeat(3, minmax(120px, 1fr));
   }
 
+  .hero-summary {
+    grid-template-columns: 1fr;
+  }
+
   .hero-photo.large {
     grid-column: 1 / span 2;
     grid-row: span 1;
@@ -814,6 +862,14 @@ a {
   .section-card {
     padding: 24px 16px;
     border-radius: 24px;
+  }
+
+  .section-card h2 {
+    font-size: 1.8rem;
+  }
+
+  .section-card h3 {
+    font-size: 1.35rem;
   }
 
   .overview-grid,

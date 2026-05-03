@@ -12,8 +12,8 @@ const rates = {
 const text = {
   "zh-Hant": {
     heroKicker: "Seoul travel handbook",
-    heroTitle: "韓劇感首爾小旅行",
-    heroSubtitle: "以韓服的霧藍、奶白與柔粉做成一冊很精緻的六天手冊。",
+    heroTitle: "首爾 5 天 6 夜",
+    heroSubtitle: "把住宿、韓服拍攝、交通和花費整理在同一頁，出發前看這裡就夠。",
     heroDates: "2026 / 05 / 15 - 2026 / 05 / 20",
     heroNames: "Victoria & Aiden",
     heroTags: ["弘大入住", "景福宮", "北村韓屋村", "聖水洞", "韓服拍攝"],
@@ -26,40 +26,40 @@ const text = {
     navBudget: "預算",
     navDocs: "文件",
     overviewLabel: "Journey Overview",
-    overviewTitle: "清雅、柔霧、像韓劇片頭一樣展開的首爾旅程",
+    overviewTitle: "先把重要的排清楚，其他留給當天心情",
     overviewLead:
-      "這次網站以你上傳的韓服照片取樣，主色落在霧藍、象牙白、淡玫瑰與木質灰，讓整體閱讀感像一本收藏版旅行手冊。",
+      "主色是從你上傳的韓服照抓出來的霧藍、奶白和一點淡粉，視覺會乾淨，但重點還是資訊要好找。",
     toneLabel: "Visual Tone",
-    toneTitle: "不是攻略堆疊，而是把情緒、動線與重要提醒整理漂亮",
+    toneTitle: "這版先把真的會一直回來查的資訊放前面",
     toneLead:
-      "網站會把最重要的住宿、航班、韓服拍攝與交通都集中整理，手機上也能一眼找到時間、地點與預算。",
+      "像是 5/19 幾點出門、韓服還要付多少、住哪裡、回程幾點，打開就能直接看到，不用一直往下翻。",
     hotelPhotoCaption: "入住氛圍參考",
     subwayPhotoCaption: "首爾地鐵路網",
     highlightsLabel: "Key Highlights",
-    highlightsTitle: "這次已經定下來的核心行程",
+    highlightsTitle: "這趟已經確定的主線",
     notesLabel: "Travel Notes",
-    notesTitle: "現在最值得先記住的提醒",
+    notesTitle: "出發前先記住這幾件事",
     stayLabel: "Stay Plan",
     stayTitle: "住宿安排",
-    stayLead: "5/15 到 5/20 住在弘大生活圈，交通、吃飯與回飯店整理戰利品都會很順。",
+    stayLead: "住弘大是對的，回飯店方便，吃飯方便，最後幾天買東西也不用扛太遠。",
     flightLabel: "Flight & Support",
     flightTitle: "航班與旅遊支援",
-    flightLead: "把去回程、保險與卡片提醒整理在一起，出發前比較不會漏。",
+    flightLead: "航班時間、保險和報到提醒都放這裡，出發前最後看一次就好。",
     hanbokLabel: "Hanbok Shoot",
     hanbokTitle: "5/19 韓服拍攝章節",
-    hanbokLead: "這一頁把拍攝方案、店家規則、出發時間與當天交通一次收好。",
+    hanbokLead: "這頁是重點。費用、規則、怎麼去、幾點出門都在這裡。",
     itineraryLabel: "Day by Day",
     itineraryTitle: "每日行程",
-    itineraryLead: "先把確定要去的地方排進去，其餘保留空白，讓這趟旅行還有呼吸感。",
+    itineraryLead: "先把一定會去的排進去，剩下的留白，當天想去哪再補。",
     mapLabel: "Route & Metro",
     mapTitle: "韓服拍攝路線與首爾地鐵圖",
-    mapLead: "從 Local Stitch 出發到北村安國站周邊的動線已經整理好，也保留 Uber 備案。",
+    mapLead: "韓服拍攝當天怎麼從飯店到安國，這裡直接看。怕迷路就叫車。",
     budgetLabel: "Budget Overview",
     budgetTitle: "旅費整理",
-    budgetLead: "可切換台幣、韓元、人民幣；以下為規劃用換算，不代表即時匯率。",
+    budgetLead: "可以切換台幣、韓元、人民幣。這裡先看大概，不是即時匯率。",
     docsLabel: "Travel Docs",
     docsTitle: "文件與截圖整理",
-    docsLead: "航班、保險、攝影工作室與電子文件入口都集中在這一區。",
+    docsLead: "截圖和電子文件都放同一區，臨時要找不會亂。",
     budgetTableItem: "項目",
     budgetTableDetail: "說明",
     budgetTableAmount: "金額",
@@ -187,6 +187,20 @@ const text = {
 };
 
 const content = {
+  heroSummary: [
+    {
+      label: { "zh-Hant": "住宿", en: "Stay", ko: "숙소" },
+      value: { "zh-Hant": "Local Stitch\n弘大 5 晚", en: "Local Stitch\n5 nights", ko: "Local Stitch\n홍대 5박" },
+    },
+    {
+      label: { "zh-Hant": "重點行程", en: "Main event", ko: "핵심 일정" },
+      value: { "zh-Hant": "5/19 14:00\n韓服拍攝", en: "May 19, 14:00\nHanbok shoot", ko: "5/19 14:00\n한복 촬영" },
+    },
+    {
+      label: { "zh-Hant": "今天先記", en: "Remember", ko: "메모" },
+      value: { "zh-Hant": "12:45 出門最穩", en: "12:45 is safest", ko: "12:45 출발 권장" },
+    },
+  ],
   overviewStats: [
     { label: { "zh-Hant": "旅行長度", en: "Trip length", ko: "여행 기간" }, value: { "zh-Hant": "6 天 5 夜", en: "6 days / 5 nights", ko: "6일 5박" } },
     { label: { "zh-Hant": "住宿區域", en: "Stay area", ko: "숙소 지역" }, value: { "zh-Hant": "弘大 Local Stitch", en: "Hongdae Local Stitch", ko: "홍대 Local Stitch" } },
@@ -195,25 +209,25 @@ const content = {
   ],
   tonePoints: [
     {
-      title: { "zh-Hant": "配色來自韓服", en: "Palette from hanbok", ko: "한복에서 가져온 컬러" },
+      title: { "zh-Hant": "網站顏色直接拿韓服照來配", en: "Palette from hanbok", ko: "한복에서 가져온 컬러" },
       desc: {
-        "zh-Hant": "以霧藍、奶白、柔粉和木灰作為主色，讓畫面乾淨又有韓劇感。",
+        "zh-Hant": "霧藍、奶白、淡粉和一點木質灰，不會太甜，也比較耐看。",
         en: "Mist blue, ivory, soft blush, and weathered wood create a clean, cinematic tone.",
         ko: "안개빛 블루, 아이보리, 연한 핑크, 우드 그레이로 부드럽고 드라마틱한 무드를 만들었습니다.",
       },
     },
     {
-      title: { "zh-Hant": "手機版優先", en: "Mobile-first reading", ko: "모바일 우선" },
+      title: { "zh-Hant": "手機上也要快", en: "Mobile-first reading", ko: "모바일 우선" },
       desc: {
-        "zh-Hant": "底部導覽與固定切換器讓你出門在外也能快速查時間與地址。",
+        "zh-Hant": "你人在外面最常查的是時間、地址和金額，所以先把這些放好。",
         en: "Bottom navigation and pinned switches keep timing and addresses easy to find on the go.",
         ko: "하단 내비게이션과 고정 전환 버튼으로 이동 중에도 시간을 빠르게 확인할 수 있습니다.",
       },
     },
     {
-      title: { "zh-Hant": "資訊有節奏", en: "Calm information flow", ko: "정돈된 정보 흐름" },
+      title: { "zh-Hant": "不要一頁塞滿", en: "Calm information flow", ko: "정돈된 정보 흐름" },
       desc: {
-        "zh-Hant": "不是一次塞滿，而是把住宿、拍攝、地圖和預算拆成漂亮章節。",
+        "zh-Hant": "住宿、韓服、行程、地圖分開看，比全部堆在一起舒服很多。",
         en: "Instead of crowding everything together, the guide breaks hotel, shoot, map, and budget into elegant chapters.",
         ko: "모든 정보를 한 번에 밀어 넣지 않고, 숙소와 촬영, 지도, 예산을 챕터별로 정리했습니다.",
       },
@@ -221,25 +235,25 @@ const content = {
   ],
   overviewHighlights: [
     {
-      title: { "zh-Hant": "弘大住宿 base 很穩", en: "Hongdae stay is a strong base", ko: "홍대 숙소 베이스가 안정적" },
+      title: { "zh-Hant": "住弘大最省事", en: "Hongdae stay is a strong base", ko: "홍대 숙소 베이스가 안정적" },
       desc: {
-        "zh-Hant": "生活機能好，去安國、景福宮與聖水都方便。",
+        "zh-Hant": "吃飯方便，晚上回去也方便，跑景福宮、北村、聖水都不算麻煩。",
         en: "It is practical for food, rest, and moving to Anguk, Gyeongbokgung, and Seongsu.",
         ko: "식사와 휴식, 안국역, 경복궁, 성수 이동이 모두 편합니다.",
       },
     },
     {
-      title: { "zh-Hant": "韓服方案很完整", en: "The hanbok package is premium", ko: "한복 패키지가 완성도 높음" },
+      title: { "zh-Hant": "韓服方案已經是完整版", en: "The hanbok package is premium", ko: "한복 패키지가 완성도 높음" },
       desc: {
-        "zh-Hant": "含明星攝影師、明星化妝師、高定韓服、精修 12 張、原片 200 張與 MV。",
+        "zh-Hant": "攝影、妝造、韓服、12 張精修、200 張原片和 MV 都含了。",
         en: "Includes photographer, makeup artist, premium hanbok, 12 retouched photos, 200 originals, and MV.",
         ko: "촬영감독, 메이크업, 프리미엄 한복, 보정 12장, 원본 200장, MV가 포함됩니다.",
       },
     },
     {
-      title: { "zh-Hant": "景點節奏很適合拍照", en: "The route is photo-friendly", ko: "사진 찍기 좋은 동선" },
+      title: { "zh-Hant": "景點方向也很順", en: "The route is photo-friendly", ko: "사진 찍기 좋은 동선" },
       desc: {
-        "zh-Hant": "景福宮、北村和聖水放在同一趟旅程裡，畫面和氣氛都很統一。",
+        "zh-Hant": "景福宮、北村和聖水放在同一趟裡，前後氣氛不會斷掉。",
         en: "Gyeongbokgung, Bukchon, and Seongsu create a cohesive mix of palace, alley, and design-district moods.",
         ko: "경복궁, 북촌, 성수의 분위기가 한 여행 안에서 자연스럽게 이어집니다.",
       },
@@ -247,25 +261,25 @@ const content = {
   ],
   overviewNotes: [
     {
-      title: { "zh-Hant": "5/19 最晚 13:00 出門", en: "Leave by 13:00 on May 19", ko: "5월 19일 13:00 전 출발" },
+      title: { "zh-Hant": "5/19 不要拖到 13:00 後", en: "Leave by 13:00 on May 19", ko: "5월 19일 13:00 전 출발" },
       desc: {
-        "zh-Hant": "你自己給的安全版建議是 12:45，這個最穩。",
+        "zh-Hant": "最穩還是 12:45 出門，這個我建議直接照做。",
         en: "Your safer version is 12:45, which is still the best recommendation.",
         ko: "가장 안전한 출발 시간은 12:45입니다.",
       },
     },
     {
-      title: { "zh-Hant": "遲到 20 分鐘會被罰", en: "A 20-minute delay triggers a penalty", ko: "20분 지각 시 벌금" },
+      title: { "zh-Hant": "這間店遲到真的會罰", en: "A 20-minute delay triggers a penalty", ko: "20분 지각 시 벌금" },
       desc: {
-        "zh-Hant": "店家條款是罰 ₩50,000，而且拍攝時間也會被壓縮。",
+        "zh-Hant": "超過 20 分鐘是 ₩50,000，而且還會吃掉拍攝時間。",
         en: "The stated rule is a ₩50,000 penalty and reduced shooting time.",
         ko: "규정상 20분 지각 시 ₩50,000 벌금과 촬영 시간 단축이 있습니다.",
       },
     },
     {
-      title: { "zh-Hant": "華航與保險已先收好", en: "Flight and insurance refs are already saved", ko: "항공과 보험 자료 정리 완료" },
+      title: { "zh-Hant": "文件先放一起", en: "Flight and insurance refs are already saved", ko: "항공과 보험 자료 정리 완료" },
       desc: {
-        "zh-Hant": "網站裡已放進航班截圖、保險截圖與 PDF 入口。",
+        "zh-Hant": "航班、保險和 PDF 都在同一區，臨時要翻比較快。",
         en: "The site includes flight screenshots, insurance screenshots, and the PDF entry point.",
         ko: "항공 스크린샷, 보험 스크린샷, PDF 링크를 함께 넣었습니다.",
       },
@@ -286,7 +300,7 @@ const content = {
       {
         label: { "zh-Hant": "優點", en: "Why this stay works", ko: "장점" },
         text: {
-          "zh-Hant": "弘大生活圈、回飯店方便、拍照與購物後回收戰利品很順。",
+          "zh-Hant": "住弘大就是回飯店方便，拍完照或買完東西都不用再拉很遠。",
           en: "Great Hongdae base with easy returns after food, shopping, and long photo days.",
           ko: "홍대 생활권이라 식사, 쇼핑, 촬영 후 돌아오기 편합니다.",
         },
@@ -335,7 +349,7 @@ const content = {
       {
         label: { "zh-Hant": "卡片備忘", en: "Card note", ko: "카드 메모" },
         value: {
-          "zh-Hant": "你提到有華航黑卡，網站先保留高優先提醒，出發前再核對權益。",
+          "zh-Hant": "你有華航黑卡，出發前記得再看一次有沒有額外權益可用。",
           en: "You mentioned a China Airlines black card, so the site keeps a high-priority reminder to confirm benefits before departure.",
           ko: "중화항공 블랙카드가 있다고 남겨 두고, 출발 전 혜택 확인 메모를 넣어 두었습니다.",
         },
@@ -402,7 +416,7 @@ const content = {
       {
         title: { "zh-Hant": "遲到規則", en: "Late policy", ko: "지각 규정" },
         desc: {
-          "zh-Hant": "遲到 20 分鐘會罰 ₩50,000，拍攝時間也會被縮短。",
+          "zh-Hant": "超過 20 分鐘就是 ₩50,000，拍攝時間也會跟著變短。",
           en: "A 20-minute delay incurs a ₩50,000 penalty and cuts into shooting time.",
           ko: "20분 지각 시 ₩50,000 벌금과 촬영 시간 단축이 있습니다.",
         },
@@ -410,7 +424,7 @@ const content = {
       {
         title: { "zh-Hant": "北村容易迷路", en: "Bukchon is easy to get lost in", ko: "북촌은 길이 헷갈리기 쉬움" },
         desc: {
-          "zh-Hant": "當天不要把時間壓太滿，尤其要預留找路時間。",
+          "zh-Hant": "北村那區真的很容易繞一下就迷路，當天不要把時間抓太緊。",
           en: "Do not compress the schedule too tightly; leave time for navigation.",
           ko: "일정 여유를 두고 길 찾는 시간을 반드시 확보하세요.",
         },
@@ -418,7 +432,7 @@ const content = {
       {
         title: { "zh-Hant": "PDF 與工作室連結都已放上", en: "PDF and studio links are attached", ko: "PDF와 스튜디오 링크 포함" },
         desc: {
-          "zh-Hant": "小紅書工作室頁與相關連結可直接從網站打開。",
+          "zh-Hant": "工作室頁、MV 範例和 PDF 都能直接從這裡打開。",
           en: "The Xiaohongshu studio reference and related links open directly from the site.",
           ko: "샤오홍슈 스튜디오 링크를 사이트에서 바로 열 수 있습니다.",
         },
@@ -440,7 +454,7 @@ const content = {
       date: "2026-05-15",
       title: { "zh-Hant": "抵達首爾，入住弘大", en: "Arrive in Seoul and settle into Hongdae", ko: "서울 도착 후 홍대 체크인" },
       desc: {
-        "zh-Hant": "下午抵達仁川後移動到 Local Stitch，晚上先熟悉飯店與弘大生活圈。",
+        "zh-Hant": "下午到仁川後先去飯店 check-in，晚上就在弘大附近吃飯和散步。",
         en: "After landing at Incheon, head to Local Stitch and use the evening to ease into Hongdae.",
         ko: "인천 도착 후 Local Stitch로 이동하고 저녁에는 홍대 분위기를 가볍게 즐깁니다.",
       },
@@ -454,7 +468,7 @@ const content = {
       date: "2026-05-16",
       title: { "zh-Hant": "景福宮日", en: "Gyeongbokgung day", ko: "경복궁 데이" },
       desc: {
-        "zh-Hant": "先把宮殿主景拍進旅程裡，白色韓服參考圖的氛圍很適合這天。",
+        "zh-Hant": "這天就走經典路線，把景福宮拍好拍滿，白色韓服那組參考照也很適合這裡。",
         en: "This is the palace chapter of the trip and pairs beautifully with the white hanbok visual references.",
         ko: "궁궐의 클래식한 분위기를 담는 날로, 흰 한복 무드와 잘 어울립니다.",
       },
@@ -468,7 +482,7 @@ const content = {
       date: "2026-05-17",
       title: { "zh-Hant": "北村韓屋村", en: "Bukchon Hanok Village", ko: "북촌한옥마을" },
       desc: {
-        "zh-Hant": "這天可以走巷弄、拍木門與坡道感，節奏比宮殿更安靜一點。",
+        "zh-Hant": "這天就慢慢走巷子，拍木門、屋瓦和坡道，節奏會比景福宮那天安靜很多。",
         en: "Use this day for alleyways, wooden gates, and the quieter slope-and-roof mood of Bukchon.",
         ko: "골목, 나무문, 지붕선이 예쁜 북촌의 잔잔한 분위기를 담는 날입니다.",
       },
@@ -482,7 +496,7 @@ const content = {
       date: "2026-05-18",
       title: { "zh-Hant": "聖水洞", en: "Seongsu", ko: "성수" },
       desc: {
-        "zh-Hant": "把設計感、選物店與咖啡店放在同一天，和前幾天的古典場景做對比。",
+        "zh-Hant": "把選物店、品牌店和咖啡店放這天，跟前幾天的古典場景剛好做對比。",
         en: "This is the design-district chapter: concept stores, cafes, and a more modern Seoul contrast.",
         ko: "감각적인 편집숍과 카페를 즐기며 앞선 전통 무드와 대비되는 서울을 담는 날입니다.",
       },
@@ -510,7 +524,7 @@ const content = {
       date: "2026-05-20",
       title: { "zh-Hant": "保留空白，晚上回台", en: "Open final day, then fly home", ko: "여유 있는 마지막 날 후 귀국" },
       desc: {
-        "zh-Hant": "白天先留空給臨時想去的點，晚上從仁川回台北。",
+        "zh-Hant": "白天先留空，看前幾天有沒有哪裡還想補，晚上再去仁川搭機回台北。",
         en: "Keep the last daytime slot open for a spontaneous plan, then head to Incheon for the evening flight.",
         ko: "낮 일정은 비워 두고 즉흥적으로 움직인 뒤 저녁 비행기로 귀국합니다.",
       },
@@ -702,6 +716,16 @@ function renderHero() {
   });
 
   document.getElementById("heroTags").innerHTML = text[state.lang].heroTags.map((tag) => `<span>${tag}</span>`).join("");
+  document.getElementById("heroSummary").innerHTML = content.heroSummary
+    .map(
+      (item) => `
+        <article class="hero-summary-card">
+          <div class="hero-summary-label">${getText(item.label)}</div>
+          <div class="hero-summary-value">${getText(item.value).replace("\n", "<br />")}</div>
+        </article>
+      `
+    )
+    .join("");
 }
 
 function renderStay() {
