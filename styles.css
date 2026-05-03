@@ -460,7 +460,6 @@ a {
 
 .stay-visual-stack img,
 .map-visual img,
-.doc-gallery img,
 .hanbok-gallery img,
 .rules-panel img {
   height: 100%;
@@ -697,28 +696,6 @@ a {
   font-weight: 700;
 }
 
-.doc-gallery {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 22px;
-}
-
-.doc-gallery img {
-  aspect-ratio: 0.7;
-}
-
-.doc-card-title {
-  color: var(--ink-deep);
-  font-weight: 700;
-}
-
-.doc-card-copy {
-  margin-top: 4px;
-  color: var(--ink-soft);
-  line-height: 1.7;
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -744,8 +721,7 @@ a {
   .overview-grid,
   .mini-grid,
   .itinerary-highlights,
-  .budget-summary-strip,
-  .doc-gallery {
+  .budget-summary-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -921,15 +897,6 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .doc-gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-  }
-
-  .doc-gallery img {
-    border-radius: 18px;
-  }
-
   .overview-stat,
   .mini-card,
   .budget-summary-card,
@@ -937,7 +904,6 @@ a {
   .bullet-item,
   .timeline-card,
   .route-step,
-  .doc-card,
   .content-panel,
   .flight-card,
   .stay-card,
@@ -952,13 +918,11 @@ a {
   }
 
   .bullet-title,
-  .route-step-title,
-  .doc-card-title {
+  .route-step-title {
     font-size: 0.96rem;
   }
 
   .bullet-desc,
-  .doc-card-copy,
   .route-step-desc {
     font-size: 0.88rem;
     line-height: 1.62;
@@ -1135,9 +1099,5 @@ a {
 
   .section-card h3 {
     font-size: 1.12rem;
-  }
-
-  .doc-gallery {
-    grid-template-columns: 1fr;
   }
 }

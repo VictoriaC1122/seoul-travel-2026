@@ -24,7 +24,6 @@ const text = {
     navItinerary: "行程",
     navMap: "地圖",
     navBudget: "預算",
-    navDocs: "文件",
     overviewLabel: "Journey Overview",
     overviewTitle: "先把重要的排清楚，其他留給當天心情",
     overviewLead:
@@ -57,13 +56,9 @@ const text = {
     budgetLabel: "Budget Overview",
     budgetTitle: "旅費整理",
     budgetLead: "可以切換台幣、韓元、人民幣。這裡先看大概，不是即時匯率。",
-    docsLabel: "Travel Docs",
-    docsTitle: "文件與截圖整理",
-    docsLead: "截圖和電子文件都放同一區，臨時要找不會亂。",
     budgetTableItem: "項目",
     budgetTableDetail: "說明",
     budgetTableAmount: "金額",
-    pdfLink: "打開電子文件 PDF",
     budgetItemLabel: "項目",
     budgetDetailLabel: "說明",
     budgetAmountLabel: "金額",
@@ -82,7 +77,6 @@ const text = {
     navItinerary: "Itinerary",
     navMap: "Map",
     navBudget: "Budget",
-    navDocs: "Docs",
     overviewLabel: "Journey Overview",
     overviewTitle: "A Seoul trip that opens like the first scene of a gentle K-drama",
     overviewLead:
@@ -115,13 +109,9 @@ const text = {
     budgetLabel: "Budget Overview",
     budgetTitle: "Trip budget",
     budgetLead: "Switch between TWD, KRW, and CNY. Conversions here are for planning, not live FX.",
-    docsLabel: "Travel Docs",
-    docsTitle: "Documents and screenshots",
-    docsLead: "Flights, insurance, studio references, and the electronic PDF entry point are all collected here.",
     budgetTableItem: "Item",
     budgetTableDetail: "Detail",
     budgetTableAmount: "Amount",
-    pdfLink: "Open electronic PDF",
     budgetItemLabel: "Item",
     budgetDetailLabel: "Detail",
     budgetAmountLabel: "Amount",
@@ -140,7 +130,6 @@ const text = {
     navItinerary: "일정",
     navMap: "지도",
     navBudget: "예산",
-    navDocs: "문서",
     overviewLabel: "Journey Overview",
     overviewTitle: "부드러운 한국 드라마 첫 장면처럼 시작되는 서울 여행",
     overviewLead:
@@ -173,13 +162,9 @@ const text = {
     budgetLabel: "Budget Overview",
     budgetTitle: "여행 예산",
     budgetLead: "TWD, KRW, CNY 전환 가능. 아래 환산은 계획용입니다.",
-    docsLabel: "Travel Docs",
-    docsTitle: "문서와 스크린샷 정리",
-    docsLead: "항공, 보험, 촬영 스튜디오, 전자 문서 PDF를 이 구역에 모았습니다.",
     budgetTableItem: "항목",
     budgetTableDetail: "설명",
     budgetTableAmount: "금액",
-    pdfLink: "전자 PDF 열기",
     budgetItemLabel: "항목",
     budgetDetailLabel: "설명",
     budgetAmountLabel: "금액",
@@ -611,32 +596,6 @@ const content = {
       amountKrw: 880000,
     },
   ],
-  docs: [
-    {
-      title: { "zh-Hant": "航班截圖", en: "Flight screenshots", ko: "항공 스크린샷" },
-      copy: {
-        "zh-Hant": "去回程時間、艙等與預訂餐點提醒都已放進來。",
-        en: "Outbound and return timing, class, and meal reminder are captured here.",
-        ko: "출도착 시간, 좌석 등급, 기내식 메모를 함께 정리했습니다.",
-      },
-    },
-    {
-      title: { "zh-Hant": "保險通知", en: "Insurance notice", ko: "보험 확인" },
-      copy: {
-        "zh-Hant": "安達旅綜保單通知截圖已保存。",
-        en: "The Chubb travel insurance confirmation screenshot is saved.",
-        ko: "처브 여행 보험 확인 스크린샷을 보관했습니다.",
-      },
-    },
-    {
-      title: { "zh-Hant": "攝影工作室", en: "Studio reference", ko: "촬영 스튜디오" },
-      copy: {
-        "zh-Hant": "紫鸣旅拍的小紅書頁也放進網站，查作品比較方便。",
-        en: "The studio profile screenshot is included for quick style reference.",
-        ko: "작업실 페이지도 같이 넣어 두어 분위기 확인이 쉽습니다.",
-      },
-    },
-  ],
 };
 
 function getText(entry) {
@@ -915,19 +874,6 @@ function renderBudget() {
     .join("");
 }
 
-function renderDocs() {
-  document.getElementById("docCards").innerHTML = content.docs
-    .map(
-      (item) => `
-        <article class="doc-card">
-          <div class="doc-card-title">${getText(item.title)}</div>
-          <div class="doc-card-copy">${getText(item.copy)}</div>
-        </article>
-      `
-    )
-    .join("");
-}
-
 function bindControls() {
   document.querySelectorAll("[data-lang]").forEach((button) => {
     button.addEventListener("click", () => {
@@ -978,7 +924,6 @@ function renderAll() {
   renderItinerary();
   renderMap();
   renderBudget();
-  renderDocs();
 }
 
 bindControls();
