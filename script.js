@@ -800,6 +800,24 @@ function formatCurrency(item) {
   return `${meta.symbol}${Math.round(amount).toLocaleString()}`;
 }
 
+function makeStatCard(item, value) {
+  return `
+    <article class="overview-stat">
+      <div class="overview-stat-label">${getText(item.label)}</div>
+      <div class="overview-stat-value">${value}</div>
+    </article>
+  `;
+}
+
+function makeMiniCard(item) {
+  return `
+    <article class="mini-card">
+      <div class="mini-card-label">${getText(item.label)}</div>
+      <div class="mini-card-value">${getText(item.value)}</div>
+    </article>
+  `;
+}
+
 function makeBullet(item) {
   return `
     <article class="bullet-item">
@@ -809,18 +827,25 @@ function makeBullet(item) {
   `;
 }
 
+function makeLinkButton(link, fallbackLabel = "Link") {
+  const label = link.label ? getText(link.label) : fallbackLabel;
+  return `<a class="resource-link" href="${link.href || link.link}" target="_blank" rel="noreferrer">${label}</a>`;
+}
+
+function renderBulletList(elementId, items) {
+  document.getElementById(elementId).innerHTML = items.map(makeBullet).join("");
+}
+
+function renderMiniCards(elementId, items) {
+  document.getElementById(elementId).innerHTML = items.map(makeMiniCard).join("");
+}
+
+function renderLinkList(elementId, items, fallbackLabel) {
+  document.getElementById(elementId).innerHTML = items.map((item) => makeLinkButton(item, fallbackLabel)).join("");
+}
+
 function renderOverview() {
-  const stats = document.getElementById("overviewStats");
-  stats.innerHTML = content.overviewStats
-    .map(
-      (item) => `
-        <article class="overview-stat">
-          <div class="overview-stat-label">${getText(item.label)}</div>
-          <div class="overview-stat-value">${getText(item.value)}</div>
-        </article>
-      `
-    )
-    .join("");
+  document.getElementById("overviewStats").innerHTML = content.overviewStats.map((item) => makeStatCard(item, getText(item.value))).join("");
 
   document.getElementById("tonePoints").innerHTML = content.tonePoints
     .map(
@@ -833,8 +858,8 @@ function renderOverview() {
     )
     .join("");
 
-  document.getElementById("overviewHighlights").innerHTML = content.overviewHighlights.map(makeBullet).join("");
-  document.getElementById("overviewNotes").innerHTML = content.overviewNotes.map(makeBullet).join("");
+  renderBulletList("overviewHighlights", content.overviewHighlights);
+  renderBulletList("overviewNotes", content.overviewNotes);
 }
 
 function renderHero() {
@@ -908,30 +933,11 @@ function renderFlightCard(data, elementId) {
 function renderFlights() {
   renderFlightCard(content.flights.depart, "departFlight");
   renderFlightCard(content.flights.back, "returnFlight");
-
-  document.getElementById("flightSupport").innerHTML = content.flights.support
-    .map(
-      (item) => `
-        <article class="mini-card">
-          <div class="mini-card-label">${getText(item.label)}</div>
-          <div class="mini-card-value">${getText(item.value)}</div>
-        </article>
-      `
-    )
-    .join("");
+  renderMiniCards("flightSupport", content.flights.support);
 }
 
 function renderHanbok() {
-  document.getElementById("hanbokHighlights").innerHTML = content.hanbok.highlights
-    .map(
-      (item) => `
-        <article class="mini-card">
-          <div class="mini-card-label">${getText(item.label)}</div>
-          <div class="mini-card-value">${getText(item.value)}</div>
-        </article>
-      `
-    )
-    .join("");
+  renderMiniCards("hanbokHighlights", content.hanbok.highlights);
 
   document.getElementById("hanbokPlan").innerHTML = `
     <h3>${getText(content.hanbok.plan.title)}</h3>
@@ -955,28 +961,12 @@ function renderHanbok() {
     <div class="tag-list">${content.hanbok.budget.included.map((item) => `<span>${getText(item)}</span>`).join("")}</div>
   `;
 
-  document.getElementById("hanbokRules").innerHTML = content.hanbok.rules.map(makeBullet).join("");
-
-  document.getElementById("hanbokLinks").innerHTML = content.hanbok.links
-    .map(
-      (link) => `
-        <a class="resource-link" href="${link.href}" target="_blank" rel="noreferrer">${getText(link.label)}</a>
-      `
-    )
-    .join("");
+  renderBulletList("hanbokRules", content.hanbok.rules);
+  renderLinkList("hanbokLinks", content.hanbok.links);
 }
 
 function renderItinerary() {
-  document.getElementById("itineraryHighlights").innerHTML = content.itineraryHighlights
-    .map(
-      (item) => `
-        <article class="mini-card">
-          <div class="mini-card-label">${getText(item.label)}</div>
-          <div class="mini-card-value">${getText(item.value)}</div>
-        </article>
-      `
-    )
-    .join("");
+  renderMiniCards("itineraryHighlights", content.itineraryHighlights);
 
   document.getElementById("timeline").innerHTML = content.itinerary
     .map(
@@ -1005,7 +995,7 @@ function renderRecommendations() {
           <div class="bullet-title">${getText(item.title)}</div>
           <div class="bullet-desc">${getText(item.desc)}</div>
           <div class="resource-actions">
-            <a class="resource-link" href="${item.link}" target="_blank" rel="noreferrer">Link</a>
+            ${makeLinkButton(item)}
           </div>
         </article>
       `
@@ -1019,7 +1009,7 @@ function renderRecommendations() {
           <div class="bullet-title">${getText(item.title)}</div>
           <div class="bullet-desc">${getText(item.desc)}</div>
           <div class="resource-actions">
-            <a class="resource-link" href="${item.link}" target="_blank" rel="noreferrer">Link</a>
+            ${makeLinkButton(item)}
           </div>
         </article>
       `
@@ -1028,9 +1018,7 @@ function renderRecommendations() {
 }
 
 function renderWowpass() {
-  document.getElementById("wowpassInfo").innerHTML = content.wowpassInfo
-    .map(makeBullet)
-    .join("");
+  renderBulletList("wowpassInfo", content.wowpassInfo);
 
   document.getElementById("wowpassRates").innerHTML = content.wowpassRates
     .map(
@@ -1038,7 +1026,7 @@ function renderWowpass() {
         <article class="bullet-item">
           <div class="bullet-title">${getText(item.title)}</div>
           <div class="bullet-desc">${getText(item.desc)}</div>
-          ${item.link ? `<div class="resource-actions"><a class="resource-link" href="${item.link}" target="_blank" rel="noreferrer">Official rate</a></div>` : ""}
+          ${item.link ? `<div class="resource-actions">${makeLinkButton(item, "Official rate")}</div>` : ""}
         </article>
       `
     )
@@ -1057,13 +1045,7 @@ function renderMap() {
     )
     .join("");
 
-  document.getElementById("mapLinks").innerHTML = content.mapLinks
-    .map(
-      (link) => `
-        <a class="resource-link" href="${link.href}" target="_blank" rel="noreferrer">${getText(link.label)}</a>
-      `
-    )
-    .join("");
+  renderLinkList("mapLinks", content.mapLinks);
 }
 
 function renderBudget() {
@@ -1093,10 +1075,26 @@ function renderBudget() {
 }
 
 function bindControls() {
+  document.querySelectorAll("[data-lang]").forEach((node) => {
+    node.setAttribute("aria-pressed", String(node.dataset.lang === state.lang));
+  });
+
+  document.querySelectorAll("[data-currency]").forEach((node) => {
+    node.setAttribute("aria-pressed", String(node.dataset.currency === state.currency));
+  });
+
+  document.querySelectorAll(".nav-item").forEach((node) => {
+    node.setAttribute("aria-pressed", String(node.classList.contains("active")));
+  });
+
   document.querySelectorAll("[data-lang]").forEach((button) => {
     button.addEventListener("click", () => {
       state.lang = button.dataset.lang;
-      document.querySelectorAll("[data-lang]").forEach((node) => node.classList.toggle("active", node.dataset.lang === state.lang));
+      document.querySelectorAll("[data-lang]").forEach((node) => {
+        const isActive = node.dataset.lang === state.lang;
+        node.classList.toggle("active", isActive);
+        node.setAttribute("aria-pressed", String(isActive));
+      });
       renderAll();
     });
   });
@@ -1104,7 +1102,11 @@ function bindControls() {
   document.querySelectorAll("[data-currency]").forEach((button) => {
     button.addEventListener("click", () => {
       state.currency = button.dataset.currency;
-      document.querySelectorAll("[data-currency]").forEach((node) => node.classList.toggle("active", node.dataset.currency === state.currency));
+      document.querySelectorAll("[data-currency]").forEach((node) => {
+        const isActive = node.dataset.currency === state.currency;
+        node.classList.toggle("active", isActive);
+        node.setAttribute("aria-pressed", String(isActive));
+      });
       renderAll();
     });
   });
@@ -1112,7 +1114,11 @@ function bindControls() {
   document.querySelectorAll(".nav-item").forEach((button) => {
     button.addEventListener("click", () => {
       const target = button.dataset.target;
-      document.querySelectorAll(".nav-item").forEach((node) => node.classList.toggle("active", node === button));
+      document.querySelectorAll(".nav-item").forEach((node) => {
+        const isActive = node === button;
+        node.classList.toggle("active", isActive);
+        node.setAttribute("aria-pressed", String(isActive));
+      });
       document.querySelectorAll(".page-section").forEach((section) => section.classList.toggle("active", section.id === target));
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
