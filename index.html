@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>Seoul Travel Handbook 2026</title>
+    <meta
+      name="description"
+      content="Victoria and Aiden's Seoul travel handbook with hotel, flights, hanbok shoot, itinerary, maps, and budget in three languages."
+    />
+    <meta name="theme-color" content="#9aaec8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+TC:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-progress" id="pageProgress"></div>
+
+    <div class="floating-controls">
+      <div class="control-group" role="tablist" aria-label="Language switcher">
+        <button class="chip-btn active" type="button" data-lang="zh-Hant">中文</button>
+        <button class="chip-btn" type="button" data-lang="en">EN</button>
+        <button class="chip-btn" type="button" data-lang="ko">KO</button>
+      </div>
+      <div class="control-group" role="tablist" aria-label="Currency switcher">
+        <button class="chip-btn active" type="button" data-currency="TWD">TWD</button>
+        <button class="chip-btn" type="button" data-currency="KRW">KRW</button>
+        <button class="chip-btn" type="button" data-currency="CNY">CNY</button>
+      </div>
+    </div>
+
+    <header class="hero">
+      <div class="hero-backdrop"></div>
+      <div class="hero-content">
+        <p class="hero-kicker" data-i18n="heroKicker"></p>
+        <h1 data-i18n="heroTitle"></h1>
+        <p class="hero-subtitle" data-i18n="heroSubtitle"></p>
+        <div class="hero-meta">
+          <span data-i18n="heroDates"></span>
+          <span data-i18n="heroNames"></span>
+        </div>
+        <div class="hero-tags" id="heroTags"></div>
+      </div>
+      <div class="hero-gallery">
+        <figure class="hero-photo large">
+          <img src="./assets/images/S__180125889_0.jpg" alt="Blue hanbok sample" loading="eager" />
+        </figure>
+        <figure class="hero-photo">
+          <img src="./assets/images/S__180125890_0.jpg" alt="White hanbok sample 1" loading="eager" />
+        </figure>
+        <figure class="hero-photo">
+          <img src="./assets/images/S__180125891_0.jpg" alt="White hanbok sample 2" loading="eager" />
+        </figure>
+        <figure class="hero-photo">
+          <img src="./assets/images/S__180125892_0.jpg" alt="White hanbok sample 3" loading="eager" />
+        </figure>
+      </div>
+    </header>
+
+    <nav class="main-nav">
+      <button class="nav-item active" type="button" data-target="overview" data-i18n="navOverview"></button>
+      <button class="nav-item" type="button" data-target="stay" data-i18n="navStay"></button>
+      <button class="nav-item" type="button" data-target="flights" data-i18n="navFlights"></button>
+      <button class="nav-item" type="button" data-target="hanbok" data-i18n="navHanbok"></button>
+      <button class="nav-item" type="button" data-target="itinerary" data-i18n="navItinerary"></button>
+      <button class="nav-item" type="button" data-target="map" data-i18n="navMap"></button>
+      <button class="nav-item" type="button" data-target="budget" data-i18n="navBudget"></button>
+      <button class="nav-item" type="button" data-target="docs" data-i18n="navDocs"></button>
+    </nav>
+
+    <main class="container">
+      <section class="page-section active" id="overview">
+        <section class="section-card intro-card">
+          <div class="section-label" data-i18n="overviewLabel"></div>
+          <h2 data-i18n="overviewTitle"></h2>
+          <p class="lead" data-i18n="overviewLead"></p>
+          <div class="overview-grid" id="overviewStats"></div>
+        </section>
+
+        <section class="section-card cinematic-card">
+          <div class="section-label" data-i18n="toneLabel"></div>
+          <div class="cinematic-layout">
+            <article class="cinematic-copy">
+              <h3 data-i18n="toneTitle"></h3>
+              <p class="lead" data-i18n="toneLead"></p>
+              <div class="cover-points" id="tonePoints"></div>
+            </article>
+            <article class="feature-photo hotel-photo">
+              <div class="photo-caption">
+                <span data-i18n="hotelPhotoCaption"></span>
+                <a href="https://www.corner.inc/place/433807" target="_blank" rel="noreferrer">Corner</a>
+              </div>
+            </article>
+            <article class="feature-photo subway-photo">
+              <div class="photo-caption">
+                <span data-i18n="subwayPhotoCaption"></span>
+                <a href="https://commons.wikimedia.org/wiki/File:Seoul_Metropolitan_Subway_network_map.png" target="_blank" rel="noreferrer">Wikimedia Commons</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-card split-card">
+          <div>
+            <div class="section-label" data-i18n="highlightsLabel"></div>
+            <h3 data-i18n="highlightsTitle"></h3>
+            <div class="bullet-list" id="overviewHighlights"></div>
+          </div>
+          <div>
+            <div class="section-label" data-i18n="notesLabel"></div>
+            <h3 data-i18n="notesTitle"></h3>
+            <div class="bullet-list" id="overviewNotes"></div>
+          </div>
+        </section>
+      </section>
+
+      <section class="page-section" id="stay">
+        <section class="section-card">
+          <div class="section-label" data-i18n="stayLabel"></div>
+          <h2 data-i18n="stayTitle"></h2>
+          <p class="lead" data-i18n="stayLead"></p>
+          <div class="stay-showcase">
+            <article class="stay-visual-stack">
+              <img src="./assets/images/local-stitch-exterior.jpeg" alt="Local Stitch Seogyo exterior" loading="lazy" />
+              <img src="./assets/images/local-stitch-room.jpeg" alt="Local Stitch Seogyo room" loading="lazy" />
+            </article>
+            <article class="stay-card" id="stayCard"></article>
+          </div>
+        </section>
+      </section>
+
+      <section class="page-section" id="flights">
+        <section class="section-card">
+          <div class="section-label" data-i18n="flightLabel"></div>
+          <h2 data-i18n="flightTitle"></h2>
+          <p class="lead" data-i18n="flightLead"></p>
+          <div class="flight-grid">
+            <article class="flight-card" id="departFlight"></article>
+            <article class="flight-card" id="returnFlight"></article>
+          </div>
+          <div class="mini-grid" id="flightSupport"></div>
+        </section>
+      </section>
+
+      <section class="page-section" id="hanbok">
+        <section class="section-card">
+          <div class="section-label" data-i18n="hanbokLabel"></div>
+          <h2 data-i18n="hanbokTitle"></h2>
+          <p class="lead" data-i18n="hanbokLead"></p>
+          <div class="itinerary-highlights" id="hanbokHighlights"></div>
+          <div class="hanbok-layout">
+            <div class="hanbok-gallery">
+              <img src="./assets/images/S__180125889_0.jpg" alt="Hanbok sample blue dress" loading="lazy" />
+              <img src="./assets/images/S__180125890_0.jpg" alt="Hanbok sample palace look" loading="lazy" />
+              <img src="./assets/images/S__180125891_0.jpg" alt="Hanbok sample palace stairs" loading="lazy" />
+              <img src="./assets/images/S__180125892_0.jpg" alt="Hanbok sample corridor portrait" loading="lazy" />
+            </div>
+            <div class="hanbok-side">
+              <article class="content-panel" id="hanbokPlan"></article>
+              <article class="content-panel" id="hanbokBudget"></article>
+            </div>
+          </div>
+          <div class="content-panel rules-panel">
+            <div class="rules-copy" id="hanbokRules"></div>
+            <img src="./assets/images/S__180125900.jpg" alt="Hanbok shooting instructions" loading="lazy" />
+          </div>
+          <div class="resource-actions" id="hanbokLinks"></div>
+        </section>
+      </section>
+
+      <section class="page-section" id="itinerary">
+        <section class="section-card">
+          <div class="section-label" data-i18n="itineraryLabel"></div>
+          <h2 data-i18n="itineraryTitle"></h2>
+          <p class="lead" data-i18n="itineraryLead"></p>
+          <div class="itinerary-highlights" id="itineraryHighlights"></div>
+          <div class="timeline" id="timeline"></div>
+        </section>
+      </section>
+
+      <section class="page-section" id="map">
+        <section class="section-card">
+          <div class="section-label" data-i18n="mapLabel"></div>
+          <h2 data-i18n="mapTitle"></h2>
+          <p class="lead" data-i18n="mapLead"></p>
+          <div class="map-layout">
+            <article class="content-panel route-panel">
+              <div id="routeSteps"></div>
+              <div class="resource-actions" id="mapLinks"></div>
+            </article>
+            <article class="map-visual">
+              <img src="./assets/images/seoul-subway-map.png" alt="Seoul subway map" loading="lazy" />
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section class="page-section" id="budget">
+        <section class="section-card">
+          <div class="section-label" data-i18n="budgetLabel"></div>
+          <h2 data-i18n="budgetTitle"></h2>
+          <p class="lead" data-i18n="budgetLead"></p>
+          <div class="budget-summary-strip" id="budgetSummary"></div>
+          <div class="budget-table-wrap">
+            <table class="budget-table">
+              <thead>
+                <tr>
+                  <th data-i18n="budgetTableItem"></th>
+                  <th data-i18n="budgetTableDetail"></th>
+                  <th data-i18n="budgetTableAmount"></th>
+                </tr>
+              </thead>
+              <tbody id="budgetBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <section class="page-section" id="docs">
+        <section class="section-card">
+          <div class="section-label" data-i18n="docsLabel"></div>
+          <h2 data-i18n="docsTitle"></h2>
+          <p class="lead" data-i18n="docsLead"></p>
+          <div class="doc-gallery">
+            <img src="./assets/images/S__180125923.png" alt="China Airlines boarding screenshot" loading="lazy" />
+            <img src="./assets/images/S__180125927.jpg" alt="Flight summary screenshot" loading="lazy" />
+            <img src="./assets/images/S__180125928.jpg" alt="Insurance email screenshot" loading="lazy" />
+            <img src="./assets/images/S__180125929.jpg" alt="Photography studio profile screenshot" loading="lazy" />
+          </div>
+          <div class="mini-grid" id="docCards"></div>
+          <div class="resource-actions">
+            <a class="resource-link" href="./assets/docs/Your%20electronic%20document(s).pdf" target="_blank" rel="noreferrer" data-i18n="pdfLink"></a>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

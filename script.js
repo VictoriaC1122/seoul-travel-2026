@@ -1,0 +1,962 @@
+const state = {
+  lang: "zh-Hant",
+  currency: "TWD",
+};
+
+const rates = {
+  TWD: { symbol: "NT$", rate: 1, decimals: 0 },
+  KRW: { symbol: "₩", rate: 41.8, decimals: 0 },
+  CNY: { symbol: "¥", rate: 0.223, decimals: 0 },
+};
+
+const text = {
+  "zh-Hant": {
+    heroKicker: "Seoul travel handbook",
+    heroTitle: "韓劇感首爾小旅行",
+    heroSubtitle: "以韓服的霧藍、奶白與柔粉做成一冊很精緻的六天手冊。",
+    heroDates: "2026 / 05 / 15 - 2026 / 05 / 20",
+    heroNames: "Victoria & Aiden",
+    heroTags: ["弘大入住", "景福宮", "北村韓屋村", "聖水洞", "韓服拍攝"],
+    navOverview: "總覽",
+    navStay: "住宿",
+    navFlights: "航班",
+    navHanbok: "韓服",
+    navItinerary: "行程",
+    navMap: "地圖",
+    navBudget: "預算",
+    navDocs: "文件",
+    overviewLabel: "Journey Overview",
+    overviewTitle: "清雅、柔霧、像韓劇片頭一樣展開的首爾旅程",
+    overviewLead:
+      "這次網站以你上傳的韓服照片取樣，主色落在霧藍、象牙白、淡玫瑰與木質灰，讓整體閱讀感像一本收藏版旅行手冊。",
+    toneLabel: "Visual Tone",
+    toneTitle: "不是攻略堆疊，而是把情緒、動線與重要提醒整理漂亮",
+    toneLead:
+      "網站會把最重要的住宿、航班、韓服拍攝與交通都集中整理，手機上也能一眼找到時間、地點與預算。",
+    hotelPhotoCaption: "入住氛圍參考",
+    subwayPhotoCaption: "首爾地鐵路網",
+    highlightsLabel: "Key Highlights",
+    highlightsTitle: "這次已經定下來的核心行程",
+    notesLabel: "Travel Notes",
+    notesTitle: "現在最值得先記住的提醒",
+    stayLabel: "Stay Plan",
+    stayTitle: "住宿安排",
+    stayLead: "5/15 到 5/20 住在弘大生活圈，交通、吃飯與回飯店整理戰利品都會很順。",
+    flightLabel: "Flight & Support",
+    flightTitle: "航班與旅遊支援",
+    flightLead: "把去回程、保險與卡片提醒整理在一起，出發前比較不會漏。",
+    hanbokLabel: "Hanbok Shoot",
+    hanbokTitle: "5/19 韓服拍攝章節",
+    hanbokLead: "這一頁把拍攝方案、店家規則、出發時間與當天交通一次收好。",
+    itineraryLabel: "Day by Day",
+    itineraryTitle: "每日行程",
+    itineraryLead: "先把確定要去的地方排進去，其餘保留空白，讓這趟旅行還有呼吸感。",
+    mapLabel: "Route & Metro",
+    mapTitle: "韓服拍攝路線與首爾地鐵圖",
+    mapLead: "從 Local Stitch 出發到北村安國站周邊的動線已經整理好，也保留 Uber 備案。",
+    budgetLabel: "Budget Overview",
+    budgetTitle: "旅費整理",
+    budgetLead: "可切換台幣、韓元、人民幣；以下為規劃用換算，不代表即時匯率。",
+    docsLabel: "Travel Docs",
+    docsTitle: "文件與截圖整理",
+    docsLead: "航班、保險、攝影工作室與電子文件入口都集中在這一區。",
+    budgetTableItem: "項目",
+    budgetTableDetail: "說明",
+    budgetTableAmount: "金額",
+    pdfLink: "打開電子文件 PDF",
+    budgetItemLabel: "項目",
+    budgetDetailLabel: "說明",
+    budgetAmountLabel: "金額",
+  },
+  en: {
+    heroKicker: "Seoul travel handbook",
+    heroTitle: "A K-drama Seoul Escape",
+    heroSubtitle: "Built from hanbok blues, ivory whites, and soft blush tones into one polished six-day guide.",
+    heroDates: "2026 / 05 / 15 - 2026 / 05 / 20",
+    heroNames: "Victoria & Aiden",
+    heroTags: ["Hongdae stay", "Gyeongbokgung", "Bukchon Hanok Village", "Seongsu", "Hanbok shoot"],
+    navOverview: "Overview",
+    navStay: "Stay",
+    navFlights: "Flights",
+    navHanbok: "Hanbok",
+    navItinerary: "Itinerary",
+    navMap: "Map",
+    navBudget: "Budget",
+    navDocs: "Docs",
+    overviewLabel: "Journey Overview",
+    overviewTitle: "A Seoul trip that opens like the first scene of a gentle K-drama",
+    overviewLead:
+      "The visual system is sampled from your hanbok references: mist blue, ivory white, pale rose, and weathered wood for a refined editorial feel.",
+    toneLabel: "Visual Tone",
+    toneTitle: "More than a checklist: this is mood, movement, and reminders arranged beautifully",
+    toneLead:
+      "The site keeps your hotel, flights, hanbok appointment, transport plan, and budget in one calm place that still feels special on mobile.",
+    hotelPhotoCaption: "Hotel vibe reference",
+    subwayPhotoCaption: "Seoul subway network",
+    highlightsLabel: "Key Highlights",
+    highlightsTitle: "Core plans already locked in",
+    notesLabel: "Travel Notes",
+    notesTitle: "The reminders worth remembering now",
+    stayLabel: "Stay Plan",
+    stayTitle: "Hotel Stay",
+    stayLead: "You will stay in Hongdae from May 15 to May 20, which makes food runs, subway transfers, and late returns much easier.",
+    flightLabel: "Flight & Support",
+    flightTitle: "Flights and travel support",
+    flightLead: "Outbound, return, insurance, and card-related reminders are grouped together for quick pre-trip checks.",
+    hanbokLabel: "Hanbok Shoot",
+    hanbokTitle: "May 19 Hanbok shoot chapter",
+    hanbokLead: "This section holds the package details, shop rules, departure timing, and transport backup plan.",
+    itineraryLabel: "Day by Day",
+    itineraryTitle: "Daily itinerary",
+    itineraryLead: "The confirmed places are placed first, while the remaining space stays intentionally open.",
+    mapLabel: "Route & Metro",
+    mapTitle: "Shoot route and Seoul subway map",
+    mapLead: "The route from Local Stitch to the Bukchon / Anguk area is organized here, with Uber as a clean fallback.",
+    budgetLabel: "Budget Overview",
+    budgetTitle: "Trip budget",
+    budgetLead: "Switch between TWD, KRW, and CNY. Conversions here are for planning, not live FX.",
+    docsLabel: "Travel Docs",
+    docsTitle: "Documents and screenshots",
+    docsLead: "Flights, insurance, studio references, and the electronic PDF entry point are all collected here.",
+    budgetTableItem: "Item",
+    budgetTableDetail: "Detail",
+    budgetTableAmount: "Amount",
+    pdfLink: "Open electronic PDF",
+    budgetItemLabel: "Item",
+    budgetDetailLabel: "Detail",
+    budgetAmountLabel: "Amount",
+  },
+  ko: {
+    heroKicker: "Seoul travel handbook",
+    heroTitle: "K-drama Mood Seoul Trip",
+    heroSubtitle: "한복 사진의 안개빛 블루, 아이보리, 연한 로즈 컬러로 만든 세련된 6일 가이드입니다.",
+    heroDates: "2026 / 05 / 15 - 2026 / 05 / 20",
+    heroNames: "Victoria & Aiden",
+    heroTags: ["홍대 숙소", "경복궁", "북촌한옥마을", "성수", "한복 촬영"],
+    navOverview: "개요",
+    navStay: "숙소",
+    navFlights: "항공",
+    navHanbok: "한복",
+    navItinerary: "일정",
+    navMap: "지도",
+    navBudget: "예산",
+    navDocs: "문서",
+    overviewLabel: "Journey Overview",
+    overviewTitle: "부드러운 한국 드라마 첫 장면처럼 시작되는 서울 여행",
+    overviewLead:
+      "비주얼 컬러는 업로드한 한복 사진에서 가져왔습니다. 안개빛 블루, 아이보리, 옅은 장미빛, 우드 그레이 톤으로 정리했습니다.",
+    toneLabel: "Visual Tone",
+    toneTitle: "정보만 모은 사이트가 아니라 분위기와 동선을 예쁘게 정리한 여행 북",
+    toneLead:
+      "호텔, 항공, 한복 예약, 이동 루트, 예산을 한곳에 모아 두어서 모바일에서도 빠르게 확인할 수 있습니다.",
+    hotelPhotoCaption: "숙소 분위기 참고",
+    subwayPhotoCaption: "서울 지하철 노선도",
+    highlightsLabel: "Key Highlights",
+    highlightsTitle: "이미 확정된 핵심 플랜",
+    notesLabel: "Travel Notes",
+    notesTitle: "지금 가장 먼저 기억하면 좋은 메모",
+    stayLabel: "Stay Plan",
+    stayTitle: "숙소 정보",
+    stayLead: "5월 15일부터 20일까지 홍대 생활권에 머물러서 이동과 식사, 쇼핑 후 복귀가 편합니다.",
+    flightLabel: "Flight & Support",
+    flightTitle: "항공과 여행 지원 정보",
+    flightLead: "출도착, 보험, 카드 관련 메모를 한곳에 모아 출발 전 확인하기 쉽게 만들었습니다.",
+    hanbokLabel: "Hanbok Shoot",
+    hanbokTitle: "5월 19일 한복 촬영 페이지",
+    hanbokLead: "패키지, 규정, 출발 시간, 교통 플랜 B까지 이 섹션에 정리했습니다.",
+    itineraryLabel: "Day by Day",
+    itineraryTitle: "일정표",
+    itineraryLead: "확정된 장소를 먼저 넣고, 나머지는 여유 있게 비워 두었습니다.",
+    mapLabel: "Route & Metro",
+    mapTitle: "촬영 이동 경로와 서울 지하철 지도",
+    mapLead: "Local Stitch에서 북촌 / 안국역 근처까지 가는 방법과 Uber 대안을 함께 정리했습니다.",
+    budgetLabel: "Budget Overview",
+    budgetTitle: "여행 예산",
+    budgetLead: "TWD, KRW, CNY 전환 가능. 아래 환산은 계획용입니다.",
+    docsLabel: "Travel Docs",
+    docsTitle: "문서와 스크린샷 정리",
+    docsLead: "항공, 보험, 촬영 스튜디오, 전자 문서 PDF를 이 구역에 모았습니다.",
+    budgetTableItem: "항목",
+    budgetTableDetail: "설명",
+    budgetTableAmount: "금액",
+    pdfLink: "전자 PDF 열기",
+    budgetItemLabel: "항목",
+    budgetDetailLabel: "설명",
+    budgetAmountLabel: "금액",
+  },
+};
+
+const content = {
+  overviewStats: [
+    { label: { "zh-Hant": "旅行長度", en: "Trip length", ko: "여행 기간" }, value: { "zh-Hant": "6 天 5 夜", en: "6 days / 5 nights", ko: "6일 5박" } },
+    { label: { "zh-Hant": "住宿區域", en: "Stay area", ko: "숙소 지역" }, value: { "zh-Hant": "弘大 Local Stitch", en: "Hongdae Local Stitch", ko: "홍대 Local Stitch" } },
+    { label: { "zh-Hant": "重點拍攝", en: "Featured shoot", ko: "핵심 촬영" }, value: { "zh-Hant": "5/19 14:00 韓服 MV", en: "May 19, 14:00 hanbok MV", ko: "5월 19일 14:00 한복 MV" } },
+    { label: { "zh-Hant": "目前已定景點", en: "Confirmed places", ko: "확정 장소" }, value: { "zh-Hant": "景福宮・北村・聖水", en: "Gyeongbokgung, Bukchon, Seongsu", ko: "경복궁・북촌・성수" } },
+  ],
+  tonePoints: [
+    {
+      title: { "zh-Hant": "配色來自韓服", en: "Palette from hanbok", ko: "한복에서 가져온 컬러" },
+      desc: {
+        "zh-Hant": "以霧藍、奶白、柔粉和木灰作為主色，讓畫面乾淨又有韓劇感。",
+        en: "Mist blue, ivory, soft blush, and weathered wood create a clean, cinematic tone.",
+        ko: "안개빛 블루, 아이보리, 연한 핑크, 우드 그레이로 부드럽고 드라마틱한 무드를 만들었습니다.",
+      },
+    },
+    {
+      title: { "zh-Hant": "手機版優先", en: "Mobile-first reading", ko: "모바일 우선" },
+      desc: {
+        "zh-Hant": "底部導覽與固定切換器讓你出門在外也能快速查時間與地址。",
+        en: "Bottom navigation and pinned switches keep timing and addresses easy to find on the go.",
+        ko: "하단 내비게이션과 고정 전환 버튼으로 이동 중에도 시간을 빠르게 확인할 수 있습니다.",
+      },
+    },
+    {
+      title: { "zh-Hant": "資訊有節奏", en: "Calm information flow", ko: "정돈된 정보 흐름" },
+      desc: {
+        "zh-Hant": "不是一次塞滿，而是把住宿、拍攝、地圖和預算拆成漂亮章節。",
+        en: "Instead of crowding everything together, the guide breaks hotel, shoot, map, and budget into elegant chapters.",
+        ko: "모든 정보를 한 번에 밀어 넣지 않고, 숙소와 촬영, 지도, 예산을 챕터별로 정리했습니다.",
+      },
+    },
+  ],
+  overviewHighlights: [
+    {
+      title: { "zh-Hant": "弘大住宿 base 很穩", en: "Hongdae stay is a strong base", ko: "홍대 숙소 베이스가 안정적" },
+      desc: {
+        "zh-Hant": "生活機能好，去安國、景福宮與聖水都方便。",
+        en: "It is practical for food, rest, and moving to Anguk, Gyeongbokgung, and Seongsu.",
+        ko: "식사와 휴식, 안국역, 경복궁, 성수 이동이 모두 편합니다.",
+      },
+    },
+    {
+      title: { "zh-Hant": "韓服方案很完整", en: "The hanbok package is premium", ko: "한복 패키지가 완성도 높음" },
+      desc: {
+        "zh-Hant": "含明星攝影師、明星化妝師、高定韓服、精修 12 張、原片 200 張與 MV。",
+        en: "Includes photographer, makeup artist, premium hanbok, 12 retouched photos, 200 originals, and MV.",
+        ko: "촬영감독, 메이크업, 프리미엄 한복, 보정 12장, 원본 200장, MV가 포함됩니다.",
+      },
+    },
+    {
+      title: { "zh-Hant": "景點節奏很適合拍照", en: "The route is photo-friendly", ko: "사진 찍기 좋은 동선" },
+      desc: {
+        "zh-Hant": "景福宮、北村和聖水放在同一趟旅程裡，畫面和氣氛都很統一。",
+        en: "Gyeongbokgung, Bukchon, and Seongsu create a cohesive mix of palace, alley, and design-district moods.",
+        ko: "경복궁, 북촌, 성수의 분위기가 한 여행 안에서 자연스럽게 이어집니다.",
+      },
+    },
+  ],
+  overviewNotes: [
+    {
+      title: { "zh-Hant": "5/19 最晚 13:00 出門", en: "Leave by 13:00 on May 19", ko: "5월 19일 13:00 전 출발" },
+      desc: {
+        "zh-Hant": "你自己給的安全版建議是 12:45，這個最穩。",
+        en: "Your safer version is 12:45, which is still the best recommendation.",
+        ko: "가장 안전한 출발 시간은 12:45입니다.",
+      },
+    },
+    {
+      title: { "zh-Hant": "遲到 20 分鐘會被罰", en: "A 20-minute delay triggers a penalty", ko: "20분 지각 시 벌금" },
+      desc: {
+        "zh-Hant": "店家條款是罰 ₩50,000，而且拍攝時間也會被壓縮。",
+        en: "The stated rule is a ₩50,000 penalty and reduced shooting time.",
+        ko: "규정상 20분 지각 시 ₩50,000 벌금과 촬영 시간 단축이 있습니다.",
+      },
+    },
+    {
+      title: { "zh-Hant": "華航與保險已先收好", en: "Flight and insurance refs are already saved", ko: "항공과 보험 자료 정리 완료" },
+      desc: {
+        "zh-Hant": "網站裡已放進航班截圖、保險截圖與 PDF 入口。",
+        en: "The site includes flight screenshots, insurance screenshots, and the PDF entry point.",
+        ko: "항공 스크린샷, 보험 스크린샷, PDF 링크를 함께 넣었습니다.",
+      },
+    },
+  ],
+  stay: {
+    title: { "zh-Hant": "Local Stitch Seogyo Town", en: "Local Stitch Seogyo Town", ko: "Local Stitch Seogyo Town" },
+    subtitle: {
+      "zh-Hant": "高級雙床房，5/15-5/20，兩人入住",
+      en: "Deluxe Twin Room, May 15-20, for two guests",
+      ko: "디럭스 트윈룸, 5월 15일-20일, 2인 숙박",
+    },
+    chips: ["Hongdae", "5 nights", "2 guests", "Deluxe Twin"],
+    rows: [
+      { label: { "zh-Hant": "總價", en: "Total", ko: "총액" }, amountTwd: 19247 },
+      { label: { "zh-Hant": "平均每晚", en: "Per night", ko: "1박 평균" }, amountTwd: 19247 / 5 },
+      { label: { "zh-Hant": "每人分攤", en: "Per person", ko: "1인 기준" }, amountTwd: 19247 / 2 },
+      {
+        label: { "zh-Hant": "優點", en: "Why this stay works", ko: "장점" },
+        text: {
+          "zh-Hant": "弘大生活圈、回飯店方便、拍照與購物後回收戰利品很順。",
+          en: "Great Hongdae base with easy returns after food, shopping, and long photo days.",
+          ko: "홍대 생활권이라 식사, 쇼핑, 촬영 후 돌아오기 편합니다.",
+        },
+      },
+    ],
+    link: "https://www.agoda.com/zh-tw/localstitch-seogyo-town/hotel/seoul-kr.html?checkIn=2026-05-15&los=5&adults=2&rooms=1&travellerType=1&ds=qgMT%2Bi%2FlTw7Mxwmp",
+  },
+  flights: {
+    depart: {
+      tag: { "zh-Hant": "去程", en: "Outbound", ko: "출국" },
+      title: { "zh-Hant": "台北 → 首爾", en: "Taipei → Seoul", ko: "타이베이 → 서울" },
+      rows: [
+        { label: { "zh-Hant": "日期", en: "Date", ko: "날짜" }, value: "2026-05-15" },
+        { label: { "zh-Hant": "班機", en: "Flight", ko: "편명" }, value: "CI 0162" },
+        { label: { "zh-Hant": "時間", en: "Time", ko: "시간" }, value: "15:30 TPE → 19:05 ICN" },
+        { label: { "zh-Hant": "艙等", en: "Class", ko: "좌석 등급" }, value: { "zh-Hant": "經濟艙基本", en: "Economy Basic", ko: "이코노미 베이직" } },
+      ],
+    },
+    back: {
+      tag: { "zh-Hant": "回程", en: "Return", ko: "귀국" },
+      title: { "zh-Hant": "首爾 → 台北", en: "Seoul → Taipei", ko: "서울 → 타이베이" },
+      rows: [
+        { label: { "zh-Hant": "日期", en: "Date", ko: "날짜" }, value: "2026-05-20" },
+        { label: { "zh-Hant": "時間", en: "Time", ko: "시간" }, value: "20:05 ICN → 21:50 TPE" },
+        { label: { "zh-Hant": "艙等", en: "Class", ko: "좌석 등급" }, value: { "zh-Hant": "經濟艙基本", en: "Economy Basic", ko: "이코노미 베이직" } },
+        { label: { "zh-Hant": "票價", en: "Fare", ko: "운임" }, amountTwd: 12718 },
+      ],
+    },
+    support: [
+      {
+        label: { "zh-Hant": "餐點提醒", en: "Meal reminder", ko: "기내식 메모" },
+        value: {
+          "zh-Hant": "5/14 前預訂餐點與自動報到。",
+          en: "Pre-order meals and start auto check-in by May 14.",
+          ko: "5월 14일 전 기내식과 자동 체크인을 확인하세요.",
+        },
+      },
+      {
+        label: { "zh-Hant": "保險", en: "Insurance", ko: "보험" },
+        value: {
+          "zh-Hant": "已收到安達旅綜投保確認通知。",
+          en: "Chubb travel insurance confirmation is already received.",
+          ko: "처브 여행 보험 확인 메일을 이미 받았습니다.",
+        },
+      },
+      {
+        label: { "zh-Hant": "卡片備忘", en: "Card note", ko: "카드 메모" },
+        value: {
+          "zh-Hant": "你提到有華航黑卡，網站先保留高優先提醒，出發前再核對權益。",
+          en: "You mentioned a China Airlines black card, so the site keeps a high-priority reminder to confirm benefits before departure.",
+          ko: "중화항공 블랙카드가 있다고 남겨 두고, 출발 전 혜택 확인 메모를 넣어 두었습니다.",
+        },
+      },
+    ],
+  },
+  hanbok: {
+    highlights: [
+      { label: { "zh-Hant": "拍攝時間", en: "Shoot time", ko: "촬영 시간" }, value: { "zh-Hant": "5/19（二）14:00", en: "Tue, May 19 at 14:00", ko: "5월 19일 화요일 14:00" } },
+      { label: { "zh-Hant": "地點", en: "Location", ko: "장소" }, value: "옥한복 / Ok Hanbok" },
+      { label: { "zh-Hant": "出發點", en: "Starting point", ko: "출발지" }, value: { "zh-Hant": "Local Stitch 弘大", en: "Local Stitch Hongdae", ko: "Local Stitch 홍대" } },
+    ],
+    plan: {
+      title: { "zh-Hant": "當天交通方案", en: "Transport plan", ko: "당일 이동 플랜" },
+      items: [
+        {
+          title: { "zh-Hant": "地鐵最穩", en: "Most stable: subway", ko: "가장 안정적: 지하철" },
+          desc: {
+            "zh-Hant": "弘大入口站 → 2號線到乙支路3街 → 轉 3 號線到安國站 → 2 號出口步行 5-8 分鐘。",
+            en: "Hongik Univ. Station → Line 2 to Euljiro 3-ga → transfer to Line 3 to Anguk → Exit 2 and walk 5-8 minutes.",
+            ko: "홍대입구역 → 2호선 을지로3가 → 3호선 안국역 환승 → 2번 출구에서 도보 5-8분.",
+          },
+        },
+        {
+          title: { "zh-Hant": "時間抓 35-45 分鐘", en: "Allow 35-45 minutes", ko: "35-45분 여유" },
+          desc: {
+            "zh-Hant": "最晚 13:00 出門，保險版 12:45 出門。",
+            en: "Leave by 13:00 at the latest, or 12:45 for the safer version.",
+            ko: "늦어도 13:00, 안전하게는 12:45 출발.",
+          },
+        },
+        {
+          title: { "zh-Hant": "怕迷路就叫車", en: "Use Uber if you want ease", ko: "길이 걱정되면 Uber" },
+          desc: {
+            "zh-Hant": "車程約 20-25 分鐘，約 ₩8,000-12,000。",
+            en: "About 20-25 minutes by car, roughly ₩8,000-12,000.",
+            ko: "차로 약 20-25분, 요금은 대략 ₩8,000-12,000.",
+          },
+        },
+      ],
+    },
+    budget: {
+      title: { "zh-Hant": "韓服方案費用", en: "Hanbok package cost", ko: "한복 패키지 비용" },
+      items: [
+        { title: { "zh-Hant": "闺蜜套餐", en: "Bestie package", ko: "친구 패키지" }, amountTwd: 15311.0, amountKrw: 640000 },
+        { title: { "zh-Hant": "MV 加購", en: "MV add-on", ko: "MV 추가" }, amountTwd: 7177.0, amountKrw: 300000 },
+        { title: { "zh-Hant": "總價", en: "Total", ko: "총액" }, amountTwd: 22488.0, amountKrw: 940000 },
+        { title: { "zh-Hant": "已付訂金", en: "Deposit paid", ko: "예약금" }, amountCny: 300 },
+        {
+          title: { "zh-Hant": "現場約需支付", en: "Approx. to pay on site", ko: "현장 결제 예상" },
+          amountKrw: 880000,
+        },
+      ],
+      included: [
+        { "zh-Hant": "明星攝影師", en: "Celebrity photographer", ko: "스타 포토그래퍼" },
+        { "zh-Hant": "明星化妝師", en: "Celebrity makeup artist", ko: "스타 메이크업 아티스트" },
+        { "zh-Hant": "高定韓服", en: "Premium hanbok styling", ko: "프리미엄 한복" },
+        { "zh-Hant": "精修 12 張", en: "12 retouched photos", ko: "보정 12장" },
+        { "zh-Hant": "原片 200 張", en: "200 original files", ko: "원본 200장" },
+        { "zh-Hant": "MV 成片", en: "Edited MV video", ko: "편집 완료 MV" },
+      ],
+    },
+    rules: [
+      {
+        title: { "zh-Hant": "遲到規則", en: "Late policy", ko: "지각 규정" },
+        desc: {
+          "zh-Hant": "遲到 20 分鐘會罰 ₩50,000，拍攝時間也會被縮短。",
+          en: "A 20-minute delay incurs a ₩50,000 penalty and cuts into shooting time.",
+          ko: "20분 지각 시 ₩50,000 벌금과 촬영 시간 단축이 있습니다.",
+        },
+      },
+      {
+        title: { "zh-Hant": "北村容易迷路", en: "Bukchon is easy to get lost in", ko: "북촌은 길이 헷갈리기 쉬움" },
+        desc: {
+          "zh-Hant": "當天不要把時間壓太滿，尤其要預留找路時間。",
+          en: "Do not compress the schedule too tightly; leave time for navigation.",
+          ko: "일정 여유를 두고 길 찾는 시간을 반드시 확보하세요.",
+        },
+      },
+      {
+        title: { "zh-Hant": "PDF 與工作室連結都已放上", en: "PDF and studio links are attached", ko: "PDF와 스튜디오 링크 포함" },
+        desc: {
+          "zh-Hant": "小紅書工作室頁與相關連結可直接從網站打開。",
+          en: "The Xiaohongshu studio reference and related links open directly from the site.",
+          ko: "샤오홍슈 스튜디오 링크를 사이트에서 바로 열 수 있습니다.",
+        },
+      },
+    ],
+    links: [
+      { label: { "zh-Hant": "小紅書 MV 範例", en: "MV sample", ko: "MV 샘플" }, href: "http://xhslink.com/o/15TW7yFNm7q" },
+      { label: { "zh-Hant": "工作室頁面", en: "Studio profile", ko: "스튜디오 페이지" }, href: "http://xhslink.com/o/1yRuTcW00pc" },
+      { label: { "zh-Hant": "店家 App", en: "App link", ko: "앱 링크" }, href: "https://itunes.apple.com/cn/app/id741292507?l=en&mt=8" },
+    ],
+  },
+  itineraryHighlights: [
+    { label: { "zh-Hant": "必去", en: "Must-go", ko: "필수" }, value: { "zh-Hant": "景福宮・北村・聖水", en: "Gyeongbokgung, Bukchon, Seongsu", ko: "경복궁・북촌・성수" } },
+    { label: { "zh-Hant": "住宿", en: "Stay", ko: "숙소" }, value: { "zh-Hant": "弘大 5 晚", en: "5 nights in Hongdae", ko: "홍대 5박" } },
+    { label: { "zh-Hant": "主線", en: "Main storyline", ko: "메인 무드" }, value: { "zh-Hant": "清雅韓劇風", en: "Elegant K-drama mood", ko: "청아한 드라마 무드" } },
+  ],
+  itinerary: [
+    {
+      date: "2026-05-15",
+      title: { "zh-Hant": "抵達首爾，入住弘大", en: "Arrive in Seoul and settle into Hongdae", ko: "서울 도착 후 홍대 체크인" },
+      desc: {
+        "zh-Hant": "下午抵達仁川後移動到 Local Stitch，晚上先熟悉飯店與弘大生活圈。",
+        en: "After landing at Incheon, head to Local Stitch and use the evening to ease into Hongdae.",
+        ko: "인천 도착 후 Local Stitch로 이동하고 저녁에는 홍대 분위기를 가볍게 즐깁니다.",
+      },
+      tags: {
+        "zh-Hant": ["CI 0162", "飯店 Check-in", "弘大散步"],
+        en: ["CI 0162", "Hotel check-in", "Hongdae walk"],
+        ko: ["CI 0162", "체크인", "홍대 산책"],
+      },
+    },
+    {
+      date: "2026-05-16",
+      title: { "zh-Hant": "景福宮日", en: "Gyeongbokgung day", ko: "경복궁 데이" },
+      desc: {
+        "zh-Hant": "先把宮殿主景拍進旅程裡，白色韓服參考圖的氛圍很適合這天。",
+        en: "This is the palace chapter of the trip and pairs beautifully with the white hanbok visual references.",
+        ko: "궁궐의 클래식한 분위기를 담는 날로, 흰 한복 무드와 잘 어울립니다.",
+      },
+      tags: {
+        "zh-Hant": ["景福宮", "拍照主場", "可延伸三清洞"],
+        en: ["Gyeongbokgung", "Main photo day", "Optional Samcheong-dong"],
+        ko: ["경복궁", "메인 촬영", "삼청동 연계 가능"],
+      },
+    },
+    {
+      date: "2026-05-17",
+      title: { "zh-Hant": "北村韓屋村", en: "Bukchon Hanok Village", ko: "북촌한옥마을" },
+      desc: {
+        "zh-Hant": "這天可以走巷弄、拍木門與坡道感，節奏比宮殿更安靜一點。",
+        en: "Use this day for alleyways, wooden gates, and the quieter slope-and-roof mood of Bukchon.",
+        ko: "골목, 나무문, 지붕선이 예쁜 북촌의 잔잔한 분위기를 담는 날입니다.",
+      },
+      tags: {
+        "zh-Hant": ["北村", "韓屋巷弄", "咖啡留白"],
+        en: ["Bukchon", "Hanok alleys", "Cafe buffer"],
+        ko: ["북촌", "한옥 골목", "카페 여유"],
+      },
+    },
+    {
+      date: "2026-05-18",
+      title: { "zh-Hant": "聖水洞", en: "Seongsu", ko: "성수" },
+      desc: {
+        "zh-Hant": "把設計感、選物店與咖啡店放在同一天，和前幾天的古典場景做對比。",
+        en: "This is the design-district chapter: concept stores, cafes, and a more modern Seoul contrast.",
+        ko: "감각적인 편집숍과 카페를 즐기며 앞선 전통 무드와 대비되는 서울을 담는 날입니다.",
+      },
+      tags: {
+        "zh-Hant": ["聖水", "品牌逛街", "現代感"],
+        en: ["Seongsu", "Shopping", "Modern mood"],
+        ko: ["성수", "브랜드 쇼핑", "현대적 무드"],
+      },
+    },
+    {
+      date: "2026-05-19",
+      title: { "zh-Hant": "韓服拍攝日", en: "Hanbok shoot day", ko: "한복 촬영일" },
+      desc: {
+        "zh-Hant": "14:00 在 옥한복 拍攝，建議 12:45 從飯店出發。",
+        en: "Hanbok shoot at 14:00 at Ok Hanbok. Recommended departure from the hotel: 12:45.",
+        ko: "14:00 옥한복 촬영. 숙소에서는 12:45 출발 권장.",
+      },
+      tags: {
+        "zh-Hant": ["14:00", "安國站", "不要遲到"],
+        en: ["14:00", "Anguk Station", "Do not run late"],
+        ko: ["14:00", "안국역", "지각 금지"],
+      },
+    },
+    {
+      date: "2026-05-20",
+      title: { "zh-Hant": "保留空白，晚上回台", en: "Open final day, then fly home", ko: "여유 있는 마지막 날 후 귀국" },
+      desc: {
+        "zh-Hant": "白天先留空給臨時想去的點，晚上從仁川回台北。",
+        en: "Keep the last daytime slot open for a spontaneous plan, then head to Incheon for the evening flight.",
+        ko: "낮 일정은 비워 두고 즉흥적으로 움직인 뒤 저녁 비행기로 귀국합니다.",
+      },
+      tags: {
+        "zh-Hant": ["留白日", "伴手禮", "20:05 回程"],
+        en: ["Open slot", "Souvenirs", "20:05 return"],
+        ko: ["여유 일정", "기념품", "20:05 귀국"],
+      },
+    },
+  ],
+  routeSteps: [
+    {
+      title: { "zh-Hant": "從飯店步行到弘大入口站", en: "Walk from the hotel to Hongik Univ. Station", ko: "숙소에서 홍대입구역까지 도보" },
+      desc: { "zh-Hant": "約 10 分鐘。", en: "About 10 minutes.", ko: "약 10분." },
+    },
+    {
+      title: { "zh-Hant": "2 號線轉 3 號線", en: "Take Line 2, then transfer to Line 3", ko: "2호선 후 3호선 환승" },
+      desc: {
+        "zh-Hant": "Hongik University Station → Euljiro 3-ga → Anguk Station。",
+        en: "Hongik University Station → Euljiro 3-ga → Anguk Station.",
+        ko: "홍대입구역 → 을지로3가 → 안국역.",
+      },
+    },
+    {
+      title: { "zh-Hant": "安國站 2 號出口", en: "Use Anguk Station Exit 2", ko: "안국역 2번 출구" },
+      desc: {
+        "zh-Hant": "出站後步行約 5-8 分鐘到韓服店。",
+        en: "Walk another 5-8 minutes to the hanbok shop.",
+        ko: "출구에서 한복집까지 도보 5-8분.",
+      },
+    },
+    {
+      title: { "zh-Hant": "Uber 備案", en: "Uber backup plan", ko: "Uber 플랜 B" },
+      desc: {
+        "zh-Hant": "約 20-25 分鐘，約 ₩8,000-12,000，怕迷路就直接叫車。",
+        en: "Around 20-25 minutes and roughly ₩8,000-12,000 if you prefer the easier option.",
+        ko: "약 20-25분, ₩8,000-12,000 정도. 편하게 가고 싶으면 호출하세요.",
+      },
+    },
+  ],
+  mapLinks: [
+    {
+      label: { "zh-Hant": "Local Stitch Agoda", en: "Local Stitch Agoda", ko: "Local Stitch Agoda" },
+      href: "https://www.agoda.com/zh-tw/localstitch-seogyo-town/hotel/seoul-kr.html?checkIn=2026-05-15&los=5&adults=2&rooms=1&travellerType=1&ds=qgMT%2Bi%2FlTw7Mxwmp",
+    },
+    {
+      label: { "zh-Hant": "옥한복 地圖", en: "Ok Hanbok map", ko: "옥한복 지도" },
+      href: "https://www.google.com/maps/search/%EC%98%A5%ED%95%9C%EB%B3%B5/",
+    },
+    {
+      label: { "zh-Hant": "首爾地鐵官方說明", en: "Seoul subway guide", ko: "서울 지하철 가이드" },
+      href: "https://english.visitseoul.net/subway",
+    },
+  ],
+  budgetSummary: [
+    { label: { "zh-Hant": "飯店", en: "Hotel", ko: "숙소" }, amountTwd: 19247 },
+    { label: { "zh-Hant": "機票", en: "Flights", ko: "항공" }, amountTwd: 12718 },
+    { label: { "zh-Hant": "韓服方案", en: "Hanbok package", ko: "한복 패키지" }, amountKrw: 940000 },
+  ],
+  budgetRows: [
+    {
+      item: { "zh-Hant": "飯店", en: "Hotel", ko: "숙소" },
+      detail: { "zh-Hant": "Local Stitch 5 晚，兩人", en: "Local Stitch for 5 nights, 2 guests", ko: "Local Stitch 5박, 2인" },
+      amountTwd: 19247,
+    },
+    {
+      item: { "zh-Hant": "機票", en: "Flights", ko: "항공" },
+      detail: { "zh-Hant": "目前截圖票價", en: "Current screenshot fare", ko: "현재 스크린샷 기준" },
+      amountTwd: 12718,
+    },
+    {
+      item: { "zh-Hant": "韓服套餐", en: "Hanbok package", ko: "한복 패키지" },
+      detail: { "zh-Hant": "闺蜜套餐 + MV", en: "Bestie package + MV", ko: "친구 패키지 + MV" },
+      amountKrw: 940000,
+    },
+    {
+      item: { "zh-Hant": "韓服訂金", en: "Hanbok deposit", ko: "한복 예약금" },
+      detail: { "zh-Hant": "已付 300 人民幣", en: "300 CNY already paid", ko: "300위안 선결제" },
+      amountCny: 300,
+    },
+    {
+      item: { "zh-Hant": "現場需付", en: "To pay on site", ko: "현장 결제" },
+      detail: { "zh-Hant": "約剩 ₩880,000", en: "Approx. remaining ₩880,000", ko: "약 ₩880,000 남음" },
+      amountKrw: 880000,
+    },
+  ],
+  docs: [
+    {
+      title: { "zh-Hant": "航班截圖", en: "Flight screenshots", ko: "항공 스크린샷" },
+      copy: {
+        "zh-Hant": "去回程時間、艙等與預訂餐點提醒都已放進來。",
+        en: "Outbound and return timing, class, and meal reminder are captured here.",
+        ko: "출도착 시간, 좌석 등급, 기내식 메모를 함께 정리했습니다.",
+      },
+    },
+    {
+      title: { "zh-Hant": "保險通知", en: "Insurance notice", ko: "보험 확인" },
+      copy: {
+        "zh-Hant": "安達旅綜保單通知截圖已保存。",
+        en: "The Chubb travel insurance confirmation screenshot is saved.",
+        ko: "처브 여행 보험 확인 스크린샷을 보관했습니다.",
+      },
+    },
+    {
+      title: { "zh-Hant": "攝影工作室", en: "Studio reference", ko: "촬영 스튜디오" },
+      copy: {
+        "zh-Hant": "紫鸣旅拍的小紅書頁也放進網站，查作品比較方便。",
+        en: "The studio profile screenshot is included for quick style reference.",
+        ko: "작업실 페이지도 같이 넣어 두어 분위기 확인이 쉽습니다.",
+      },
+    },
+  ],
+};
+
+function getText(entry) {
+  if (typeof entry === "string") return entry;
+  return entry?.[state.lang] ?? "";
+}
+
+function amountFromItem(item) {
+  if (state.currency === "TWD") {
+    if (typeof item.amountTwd === "number") return item.amountTwd;
+    if (typeof item.amountKrw === "number") return item.amountKrw / rates.KRW.rate;
+    if (typeof item.amountCny === "number") return item.amountCny / rates.CNY.rate;
+  }
+
+  if (state.currency === "KRW") {
+    if (typeof item.amountKrw === "number") return item.amountKrw;
+    if (typeof item.amountTwd === "number") return item.amountTwd * rates.KRW.rate;
+    if (typeof item.amountCny === "number") return (item.amountCny / rates.CNY.rate) * rates.KRW.rate;
+  }
+
+  if (state.currency === "CNY") {
+    if (typeof item.amountCny === "number") return item.amountCny;
+    if (typeof item.amountTwd === "number") return item.amountTwd * rates.CNY.rate;
+    if (typeof item.amountKrw === "number") return (item.amountKrw / rates.KRW.rate) * rates.CNY.rate;
+  }
+
+  return 0;
+}
+
+function formatCurrency(item) {
+  const amount = amountFromItem(item);
+  const meta = rates[state.currency];
+  return `${meta.symbol}${Math.round(amount).toLocaleString()}`;
+}
+
+function makeBullet(item) {
+  return `
+    <article class="bullet-item">
+      <div class="bullet-title">${getText(item.title)}</div>
+      <div class="bullet-desc">${getText(item.desc)}</div>
+    </article>
+  `;
+}
+
+function renderOverview() {
+  const stats = document.getElementById("overviewStats");
+  stats.innerHTML = content.overviewStats
+    .map(
+      (item) => `
+        <article class="overview-stat">
+          <div class="overview-stat-label">${getText(item.label)}</div>
+          <div class="overview-stat-value">${getText(item.value)}</div>
+        </article>
+      `
+    )
+    .join("");
+
+  document.getElementById("tonePoints").innerHTML = content.tonePoints
+    .map(
+      (item) => `
+        <div class="cover-point">
+          <div class="bullet-title">${getText(item.title)}</div>
+          <div class="bullet-desc">${getText(item.desc)}</div>
+        </div>
+      `
+    )
+    .join("");
+
+  document.getElementById("overviewHighlights").innerHTML = content.overviewHighlights.map(makeBullet).join("");
+  document.getElementById("overviewNotes").innerHTML = content.overviewNotes.map(makeBullet).join("");
+}
+
+function renderHero() {
+  document.querySelectorAll("[data-i18n]").forEach((node) => {
+    const key = node.dataset.i18n;
+    if (text[state.lang][key]) node.textContent = text[state.lang][key];
+  });
+
+  document.getElementById("heroTags").innerHTML = text[state.lang].heroTags.map((tag) => `<span>${tag}</span>`).join("");
+}
+
+function renderStay() {
+  document.getElementById("stayCard").innerHTML = `
+    <div class="stay-card-top">
+      <div>
+        <h3 class="stay-card-title">${getText(content.stay.title)}</h3>
+        <p class="stay-card-subtitle">${getText(content.stay.subtitle)}</p>
+      </div>
+      <span class="pill">${formatCurrency({ amountTwd: 19247 })}</span>
+    </div>
+    <div class="tag-list">${content.stay.chips.map((chip) => `<span>${chip}</span>`).join("")}</div>
+    <div class="stay-detail-list">
+      ${content.stay.rows
+        .map((row) => {
+          const value = row.text ? getText(row.text) : formatCurrency(row);
+          return `
+            <div class="stay-detail-row">
+              <span class="stay-detail-label">${getText(row.label)}</span>
+              <span class="stay-detail-value">${value}</span>
+            </div>
+          `;
+        })
+        .join("")}
+    </div>
+    <div class="resource-actions">
+      <a class="resource-link" href="${content.stay.link}" target="_blank" rel="noreferrer">Agoda</a>
+    </div>
+  `;
+}
+
+function renderFlightCard(data, elementId) {
+  document.getElementById(elementId).innerHTML = `
+    <span class="flight-card-tag">${getText(data.tag)}</span>
+    <h3>${getText(data.title)}</h3>
+    <div class="stay-detail-list">
+      ${data.rows
+        .map((row) => {
+          const value = typeof row.value === "object" ? getText(row.value) : row.value || formatCurrency(row);
+          return `
+            <div class="info-line">
+              <span class="info-label">${getText(row.label)}</span>
+              <span class="info-value">${value}</span>
+            </div>
+          `;
+        })
+        .join("")}
+    </div>
+  `;
+}
+
+function renderFlights() {
+  renderFlightCard(content.flights.depart, "departFlight");
+  renderFlightCard(content.flights.back, "returnFlight");
+
+  document.getElementById("flightSupport").innerHTML = content.flights.support
+    .map(
+      (item) => `
+        <article class="mini-card">
+          <div class="mini-card-label">${getText(item.label)}</div>
+          <div class="mini-card-value">${getText(item.value)}</div>
+        </article>
+      `
+    )
+    .join("");
+}
+
+function renderHanbok() {
+  document.getElementById("hanbokHighlights").innerHTML = content.hanbok.highlights
+    .map(
+      (item) => `
+        <article class="mini-card">
+          <div class="mini-card-label">${getText(item.label)}</div>
+          <div class="mini-card-value">${getText(item.value)}</div>
+        </article>
+      `
+    )
+    .join("");
+
+  document.getElementById("hanbokPlan").innerHTML = `
+    <h3>${getText(content.hanbok.plan.title)}</h3>
+    <div class="bullet-list">${content.hanbok.plan.items.map(makeBullet).join("")}</div>
+  `;
+
+  document.getElementById("hanbokBudget").innerHTML = `
+    <h3>${getText(content.hanbok.budget.title)}</h3>
+    <div class="bullet-list">
+      ${content.hanbok.budget.items
+        .map(
+          (item) => `
+            <article class="bullet-item">
+              <div class="bullet-title">${getText(item.title)}</div>
+              <div class="bullet-desc">${formatCurrency(item)}</div>
+            </article>
+          `
+        )
+        .join("")}
+    </div>
+    <div class="tag-list">${content.hanbok.budget.included.map((item) => `<span>${getText(item)}</span>`).join("")}</div>
+  `;
+
+  document.getElementById("hanbokRules").innerHTML = content.hanbok.rules.map(makeBullet).join("");
+
+  document.getElementById("hanbokLinks").innerHTML = content.hanbok.links
+    .map(
+      (link) => `
+        <a class="resource-link" href="${link.href}" target="_blank" rel="noreferrer">${getText(link.label)}</a>
+      `
+    )
+    .join("");
+}
+
+function renderItinerary() {
+  document.getElementById("itineraryHighlights").innerHTML = content.itineraryHighlights
+    .map(
+      (item) => `
+        <article class="mini-card">
+          <div class="mini-card-label">${getText(item.label)}</div>
+          <div class="mini-card-value">${getText(item.value)}</div>
+        </article>
+      `
+    )
+    .join("");
+
+  document.getElementById("timeline").innerHTML = content.itinerary
+    .map(
+      (day) => `
+        <article class="timeline-card">
+          <div class="timeline-card-header">
+            <div>
+              <div class="timeline-date">${day.date}</div>
+              <h3>${getText(day.title)}</h3>
+            </div>
+          </div>
+          <p class="bullet-desc">${getText(day.desc)}</p>
+          <div class="tag-list">${day.tags[state.lang].map((tag) => `<span>${tag}</span>`).join("")}</div>
+        </article>
+      `
+    )
+    .join("");
+}
+
+function renderMap() {
+  document.getElementById("routeSteps").innerHTML = content.routeSteps
+    .map(
+      (step) => `
+        <article class="route-step">
+          <div class="route-step-title">${getText(step.title)}</div>
+          <div class="route-step-desc">${getText(step.desc)}</div>
+        </article>
+      `
+    )
+    .join("");
+
+  document.getElementById("mapLinks").innerHTML = content.mapLinks
+    .map(
+      (link) => `
+        <a class="resource-link" href="${link.href}" target="_blank" rel="noreferrer">${getText(link.label)}</a>
+      `
+    )
+    .join("");
+}
+
+function renderBudget() {
+  document.getElementById("budgetSummary").innerHTML = content.budgetSummary
+    .map(
+      (item) => `
+        <article class="budget-summary-card">
+          <div class="budget-summary-label">${getText(item.label)}</div>
+          <div class="budget-summary-value">${formatCurrency(item)}</div>
+        </article>
+      `
+    )
+    .join("");
+
+  const labels = text[state.lang];
+  document.getElementById("budgetBody").innerHTML = content.budgetRows
+    .map(
+      (row) => `
+        <tr>
+          <td data-label="${labels.budgetItemLabel}">${getText(row.item)}</td>
+          <td data-label="${labels.budgetDetailLabel}">${getText(row.detail)}</td>
+          <td class="budget-amount" data-label="${labels.budgetAmountLabel}">${formatCurrency(row)}</td>
+        </tr>
+      `
+    )
+    .join("");
+}
+
+function renderDocs() {
+  document.getElementById("docCards").innerHTML = content.docs
+    .map(
+      (item) => `
+        <article class="doc-card">
+          <div class="doc-card-title">${getText(item.title)}</div>
+          <div class="doc-card-copy">${getText(item.copy)}</div>
+        </article>
+      `
+    )
+    .join("");
+}
+
+function bindControls() {
+  document.querySelectorAll("[data-lang]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.lang = button.dataset.lang;
+      document.querySelectorAll("[data-lang]").forEach((node) => node.classList.toggle("active", node.dataset.lang === state.lang));
+      renderAll();
+    });
+  });
+
+  document.querySelectorAll("[data-currency]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.currency = button.dataset.currency;
+      document.querySelectorAll("[data-currency]").forEach((node) => node.classList.toggle("active", node.dataset.currency === state.currency));
+      renderAll();
+    });
+  });
+
+  document.querySelectorAll(".nav-item").forEach((button) => {
+    button.addEventListener("click", () => {
+      const target = button.dataset.target;
+      document.querySelectorAll(".nav-item").forEach((node) => node.classList.toggle("active", node === button));
+      document.querySelectorAll(".page-section").forEach((section) => section.classList.toggle("active", section.id === target));
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+}
+
+function bindProgress() {
+  const progress = document.getElementById("pageProgress");
+  const update = () => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const ratio = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+    progress.style.width = `${Math.min(Math.max(ratio, 0), 100)}%`;
+  };
+
+  update();
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+}
+
+function renderAll() {
+  document.documentElement.lang = state.lang;
+  renderHero();
+  renderOverview();
+  renderStay();
+  renderFlights();
+  renderHanbok();
+  renderItinerary();
+  renderMap();
+  renderBudget();
+  renderDocs();
+}
+
+bindControls();
+bindProgress();
+renderAll();
