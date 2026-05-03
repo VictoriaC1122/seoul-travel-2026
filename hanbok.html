@@ -3,25 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <title>Seoul Travel Handbook 2026 | Overview</title>
-    <meta
-      name="description"
-      content="Seoul Travel 2026 overview for Victoria Cheng: hotel, hanbok booking, route, budget, itinerary, checklist, and key trip details."
-    />
+    <title>Seoul Travel Handbook 2026 | Hanbok</title>
     <meta name="theme-color" content="#9aaec8" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Seoul Travel Handbook 2026 | Overview" />
-    <meta
-      property="og:description"
-      content="A premium multi-page Seoul travel dashboard with overview, hotel, hanbok, route, budget, itinerary, checklist, and links."
-    />
-    <meta property="og:image" content="https://victoriac1122.github.io/seoul-travel-2026/assets/images/S__180125890_0.jpg" />
     <link rel="icon" type="image/jpeg" href="./assets/images/S__180125889_0.jpg" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body data-page="overview">
+  <body data-page="hanbok">
     <div class="page-progress" id="pageProgress" aria-hidden="true"></div>
-
     <header class="hero" id="top">
       <div class="hero-shell">
         <div class="top-controls">
@@ -42,7 +30,6 @@
             </div>
           </div>
         </div>
-
         <div class="hero-card">
           <div class="hero-copy">
             <h1 data-i18n="heroTitle">首爾旅行 2026</h1>
@@ -52,7 +39,6 @@
         </div>
       </div>
     </header>
-
     <nav class="desktop-nav" aria-label="Primary navigation">
       <a class="desktop-nav-link" href="./index.html" data-page-link="overview" data-i18n="navOverview">Overview</a>
       <a class="desktop-nav-link" href="./hotel.html" data-page-link="hotel" data-i18n="navHotel">Hotel</a>
@@ -63,33 +49,56 @@
       <a class="desktop-nav-link" href="./checklist.html" data-page-link="checklist" data-i18n="navChecklist">Checklist</a>
       <a class="desktop-nav-link" href="./links.html" data-page-link="links" data-i18n="navLinks">Links</a>
     </nav>
-
     <main class="container">
-      <section class="section-block" id="overview">
+      <section class="section-block" id="hanbok">
         <div class="section-head">
-          <p class="section-kicker" data-i18n="overviewKicker">總覽</p>
-          <h2 data-i18n="overviewTitle">總覽</h2>
+          <p class="section-kicker" data-i18n="hanbokKicker">韓服</p>
+          <h2 data-i18n="hanbokTitle">韓服</h2>
         </div>
-
         <div class="stack-grid">
+          <article class="simple-card featured-card" id="hanbokPlanCard"></article>
           <article class="simple-card">
-            <h3 data-i18n="overviewSnapshotTitle">旅行重點</h3>
-            <div class="mini-stat-grid" id="overviewStats"></div>
+            <h3 data-i18n="hanbokRulesTitle">拍攝提醒</h3>
+            <div class="bullet-stack" id="hanbokRules"></div>
           </article>
-
           <article class="simple-card">
-            <h3 data-i18n="overviewAlertsTitle">重要提醒</h3>
-            <div class="bullet-stack" id="importantAlerts"></div>
-          </article>
-
-          <article class="simple-card">
-            <h3 data-i18n="overviewFlightTitle">航班與支援</h3>
-            <div class="flight-grid" id="flightCards"></div>
+            <h3 data-i18n="hanbokReferenceTitle">參考照片</h3>
+            <div class="gallery-grid">
+              <figure class="gallery-item">
+                <button class="gallery-trigger" type="button" data-image="./assets/images/S__180125889_0.jpg" data-caption-key="hanbokCaptionOne">
+                  <img src="./assets/images/S__180125889_0.jpg" alt="Blue hanbok reference photo under a traditional Korean gate" loading="lazy" />
+                </button>
+                <figcaption data-i18n="hanbokCaptionOne">霧藍韓服參考</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <button class="gallery-trigger" type="button" data-image="./assets/images/S__180125890_0.jpg" data-caption-key="hanbokCaptionTwo">
+                  <img src="./assets/images/S__180125890_0.jpg" alt="White hanbok reference photo at Gyeongbokgung Palace" loading="lazy" />
+                </button>
+                <figcaption data-i18n="hanbokCaptionTwo">景福宮白色韓服參考</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <button class="gallery-trigger" type="button" data-image="./assets/images/S__180125891_0.jpg" data-caption-key="hanbokCaptionThree">
+                  <img src="./assets/images/S__180125891_0.jpg" alt="White hanbok reference photo on palace stairs" loading="lazy" />
+                </button>
+                <figcaption data-i18n="hanbokCaptionThree">宮殿石階參考</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <button class="gallery-trigger" type="button" data-image="./assets/images/S__180125892_0.jpg" data-caption-key="hanbokCaptionFour">
+                  <img src="./assets/images/S__180125892_0.jpg" alt="White hanbok portrait reference inside a palace corridor" loading="lazy" />
+                </button>
+                <figcaption data-i18n="hanbokCaptionFour">走廊肖像參考</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <button class="gallery-trigger" type="button" data-image="./assets/images/S__180125900.jpg" data-caption-key="instructionsCaption">
+                  <img src="./assets/images/S__180125900.jpg" alt="Store instructions for the hanbok shooting package" loading="lazy" />
+                </button>
+                <figcaption data-i18n="instructionsCaption">店家拍攝規則</figcaption>
+              </figure>
+            </div>
           </article>
         </div>
       </section>
     </main>
-
     <nav class="mobile-nav" aria-label="Mobile navigation">
       <a class="mobile-nav-link" href="./index.html" data-page-link="overview"><span data-i18n="navOverview">Overview</span></a>
       <a class="mobile-nav-link" href="./hotel.html" data-page-link="hotel"><span data-i18n="navHotel">Hotel</span></a>
@@ -100,13 +109,11 @@
       <a class="mobile-nav-link" href="./checklist.html" data-page-link="checklist"><span data-i18n="navChecklist">Checklist</span></a>
       <a class="mobile-nav-link" href="./links.html" data-page-link="links"><span data-i18n="navLinks">Links</span></a>
     </nav>
-
     <dialog class="image-modal" id="imageModal" aria-label="Expanded gallery image">
       <button class="modal-close" id="modalClose" type="button" aria-label="Close expanded image">Close</button>
       <img id="modalImage" src="" alt="" />
       <p id="modalCaption"></p>
     </dialog>
-
     <script src="./script.js"></script>
   </body>
 </html>

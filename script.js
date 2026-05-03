@@ -439,19 +439,25 @@ function renderI18n() {
 }
 
 function renderHero() {
-  document.getElementById("heroSummary").innerHTML = data.heroSummary
+  const root = document.getElementById("heroSummary");
+  if (!root) return;
+  root.innerHTML = data.heroSummary
     .map((item) => `<article class="summary-card"><div class="summary-label">${getText(item.label)}</div><div class="summary-value">${getText(item.value)}</div></article>`)
     .join("");
 }
 
 function renderOverview() {
-  document.getElementById("overviewStats").innerHTML = data.overviewStats
+  const overviewStats = document.getElementById("overviewStats");
+  const importantAlerts = document.getElementById("importantAlerts");
+  const flightCards = document.getElementById("flightCards");
+  if (!overviewStats || !importantAlerts || !flightCards) return;
+  overviewStats.innerHTML = data.overviewStats
     .map((item) => `<article class="mini-stat-card"><div class="mini-stat-label">${getText(item.label)}</div><div class="mini-stat-value">${getText(item.value)}</div></article>`)
     .join("");
-  document.getElementById("importantAlerts").innerHTML = data.importantAlerts
+  importantAlerts.innerHTML = data.importantAlerts
     .map((item) => `<article class="bullet-card"><div class="bullet-title">${getText(item.title)}</div><div class="bullet-desc">${getText(item.desc)}</div></article>`)
     .join("");
-  document.getElementById("flightCards").innerHTML = data.flights
+  flightCards.innerHTML = data.flights
     .map(
       (flight) => `
         <article class="flight-card">
@@ -466,7 +472,9 @@ function renderOverview() {
 }
 
 function renderItinerary() {
-  document.getElementById("itineraryList").innerHTML = data.itinerary
+  const itineraryList = document.getElementById("itineraryList");
+  if (!itineraryList) return;
+  itineraryList.innerHTML = data.itinerary
     .map(
       (item) => `
         <details class="itinerary-card" ${item.open ? "open" : ""}>
@@ -490,7 +498,9 @@ function renderItinerary() {
 
 function renderHotel() {
   const hotel = data.hotel;
-  document.getElementById("hotelCard").innerHTML = `
+  const hotelCard = document.getElementById("hotelCard");
+  if (!hotelCard) return;
+  hotelCard.innerHTML = `
     <h3>${getText(hotel.title)}</h3>
     <p class="card-intro">${getText(hotel.subtitle)}</p>
     <div class="hotel-pill-row">${hotel.chips.map((chip) => `<span class="pill">${getText(chip)}</span>`).join("")}</div>
@@ -503,7 +513,10 @@ function renderHotel() {
 }
 
 function renderHanbok() {
-  document.getElementById("hanbokPlanCard").innerHTML = `
+  const hanbokPlanCard = document.getElementById("hanbokPlanCard");
+  const hanbokRules = document.getElementById("hanbokRules");
+  if (!hanbokPlanCard || !hanbokRules) return;
+  hanbokPlanCard.innerHTML = `
     <h3>${t[state.lang].reservedPlanTitle}</h3>
     <div class="price-stack">
       <div class="price-row"><div class="price-label">${t[state.lang].packageText}</div><div class="price-value">640,000 KRW</div></div>
@@ -514,19 +527,23 @@ function renderHanbok() {
     <div class="include-chip-row">${data.hanbok.includes.map((item) => `<span class="include-chip">${getText(item)}</span>`).join("")}</div>
     <div class="warning-chip-row"><span class="warning-chip">${t[state.lang].surchargeText}</span><span class="warning-chip">${t[state.lang].cashText}</span></div>
   `;
-  document.getElementById("hanbokRules").innerHTML = data.hanbok.rules
+  hanbokRules.innerHTML = data.hanbok.rules
     .map((item) => `<article class="bullet-card"><div class="bullet-title">${getText(item.title)}</div><div class="bullet-desc">${getText(item.desc)}</div></article>`)
     .join("");
 }
 
 function renderRoute() {
-  document.getElementById("routeSteps").innerHTML = data.routeSteps
+  const routeSteps = document.getElementById("routeSteps");
+  const routeTimeline = document.getElementById("routeTimeline");
+  const routeCards = document.getElementById("routeCards");
+  if (!routeSteps || !routeTimeline || !routeCards) return;
+  routeSteps.innerHTML = data.routeSteps
     .map((item) => `<article class="step-card"><div class="step-label">${getText(item.label)}</div><div class="bullet-title">${getText(item.title)}</div><div class="bullet-desc">${getText(item.desc)}</div></article>`)
     .join("");
-  document.getElementById("routeTimeline").innerHTML = data.routeTimeline
+  routeTimeline.innerHTML = data.routeTimeline
     .map((item) => `<article class="timeline-card"><div class="timeline-time">${item.time}</div><div><div class="bullet-title">${getText(item.title)}</div><div class="timeline-desc">${getText(item.desc)}</div></div></article>`)
     .join("");
-  document.getElementById("routeCards").innerHTML = data.routeCards
+  routeCards.innerHTML = data.routeCards
     .map(
       (item) => `
         <article class="route-card">
@@ -543,12 +560,17 @@ function renderRoute() {
 }
 
 function renderBudget() {
+  const budgetHighlights = document.getElementById("budgetHighlights");
+  const budgetSummary = document.getElementById("budgetSummary");
+  const budgetCards = document.getElementById("budgetCards");
+  const budgetTableBody = document.getElementById("budgetTableBody");
+  if (!budgetHighlights || !budgetSummary || !budgetCards || !budgetTableBody) return;
   const totalTripKrw = 940000 + 19247 * rates.TWD.krwPerUnit + 120000 + 360000 + 250000;
   const perPersonKrw = totalTripKrw / 2;
   const paidSoFarKrw = 300 * rates.CNY.krwPerUnit;
   const remainingTripKrw = totalTripKrw - paidSoFarKrw;
 
-  document.getElementById("budgetHighlights").innerHTML = [
+  budgetHighlights.innerHTML = [
     { label: t[state.lang].totalTripCostLabel, value: totalTripKrw, note: t[state.lang].totalTripCostNote },
     { label: t[state.lang].perPersonCostLabel, value: perPersonKrw, note: t[state.lang].perPersonCostNote },
     { label: t[state.lang].paidSoFarLabel, value: paidSoFarKrw, note: t[state.lang].paidSoFarNote },
@@ -565,10 +587,10 @@ function renderBudget() {
     )
     .join("");
 
-  document.getElementById("budgetSummary").innerHTML = data.budgetSummary
+  budgetSummary.innerHTML = data.budgetSummary
     .map((item) => `<article class="budget-summary-card"><div class="budget-summary-label">${getText(item.label)}</div><div class="budget-summary-value">${formatCurrency(item.krw)}</div><div class="budget-original">${formatCurrency(item.krw, "KRW")}</div></article>`)
     .join("");
-  document.getElementById("budgetCards").innerHTML = data.budgetRows
+  budgetCards.innerHTML = data.budgetRows
     .map(
       (item) => `
         <article class="budget-card">
@@ -579,7 +601,7 @@ function renderBudget() {
       `
     )
     .join("");
-  document.getElementById("budgetTableBody").innerHTML = data.budgetRows
+  budgetTableBody.innerHTML = data.budgetRows
     .map(
       (item) => `
         <tr>
@@ -595,7 +617,9 @@ function renderBudget() {
 
 function renderChecklist() {
   const saved = checklistState();
-  document.getElementById("checklistGroups").innerHTML = data.checklistGroups
+  const checklistGroups = document.getElementById("checklistGroups");
+  if (!checklistGroups) return;
+  checklistGroups.innerHTML = data.checklistGroups
     .map((group) => {
       const completed = group.items.filter((item) => saved[item.id]).length;
       return `
@@ -634,7 +658,9 @@ function renderChecklist() {
 }
 
 function renderLinks() {
-  document.getElementById("linksGrid").innerHTML = data.usefulLinks
+  const linksGrid = document.getElementById("linksGrid");
+  if (!linksGrid) return;
+  linksGrid.innerHTML = data.usefulLinks
     .map(
       (group) => `
         <article class="link-block">
@@ -711,22 +737,13 @@ function bindChecklist() {
   });
 }
 
-function bindNavSpy() {
-  const desktopLinks = [...document.querySelectorAll("[data-nav]")];
-  const mobileLinks = [...document.querySelectorAll("[data-mobile-nav]")];
-  const sections = [...document.querySelectorAll(".section-block")];
-  const activate = () => {
-    const marker = window.scrollY + 140;
-    let current = sections[0]?.id || "";
-    sections.forEach((section) => {
-      if (section.offsetTop <= marker) current = section.id;
-    });
-    desktopLinks.forEach((link) => link.classList.toggle("active", link.dataset.nav === current));
-    mobileLinks.forEach((link) => link.classList.toggle("active", link.dataset.mobileNav === current));
-  };
-  activate();
-  window.addEventListener("scroll", activate, { passive: true });
-  window.addEventListener("resize", activate);
+function syncPageNavigation() {
+  const currentPage = document.body.dataset.page || "overview";
+  document.querySelectorAll("[data-page-link]").forEach((link) => {
+    const active = link.dataset.pageLink === currentPage;
+    link.classList.toggle("active", active);
+    link.setAttribute("aria-current", active ? "page" : "false");
+  });
 }
 
 function bindImageModal() {
@@ -766,6 +783,6 @@ function bindProgress() {
 renderAll();
 bindControls();
 bindChecklist();
-bindNavSpy();
+syncPageNavigation();
 bindImageModal();
 bindProgress();
