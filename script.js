@@ -625,11 +625,22 @@ function renderBudget() {
   const budgetSummary = document.getElementById("budgetSummary");
   const budgetCards = document.getElementById("budgetCards");
   const budgetTableBody = document.getElementById("budgetTableBody");
+  const budgetSelectedHeading = document.getElementById("budgetSelectedHeading");
+  const budgetOriginalHeading = document.getElementById("budgetOriginalHeading");
   if (!budgetHighlights || !budgetSummary || !budgetCards || !budgetTableBody) return;
   const totalTripKrw = 940000 + 19247 * rates.TWD.krwPerUnit + 120000 + 360000 + 250000;
   const perPersonKrw = totalTripKrw / 2;
   const paidSoFarKrw = 300 * rates.CNY.krwPerUnit;
   const remainingTripKrw = totalTripKrw - paidSoFarKrw;
+  const selectedCurrency = state.currency;
+  const selectedHeadingMap = {
+    TWD: "TWD",
+    KRW: "KRW",
+    CNY: "CNY",
+  };
+
+  if (budgetSelectedHeading) budgetSelectedHeading.textContent = selectedHeadingMap[selectedCurrency];
+  if (budgetOriginalHeading) budgetOriginalHeading.textContent = "KRW";
 
   budgetHighlights.innerHTML = [
     { label: t[state.lang].totalTripCostLabel, value: totalTripKrw, note: t[state.lang].totalTripCostNote },
@@ -641,23 +652,23 @@ function renderBudget() {
       (item) => `
         <article class="bullet-card budget-highlight-item">
           <div class="bullet-title">${item.label}</div>
-          <div class="budget-main">${formatCurrency(item.value, "KRW")}</div>
-          <div class="budget-original">${formatCurrency(item.value, "TWD")} · ${item.note}</div>
+          <div class="budget-main">${formatCurrency(item.value, selectedCurrency)}</div>
+          <div class="budget-original">${formatCurrency(item.value, "KRW")} · ${item.note}</div>
         </article>
       `
     )
     .join("");
 
   budgetSummary.innerHTML = data.budgetSummary
-    .map((item) => `<article class="budget-summary-card"><div class="budget-summary-label">${getText(item.label)}</div><div class="budget-summary-value">${formatCurrency(item.krw, "KRW")}</div><div class="budget-original">${formatCurrency(item.krw, "TWD")}</div></article>`)
+    .map((item) => `<article class="budget-summary-card"><div class="budget-summary-label">${getText(item.label)}</div><div class="budget-summary-value">${formatCurrency(item.krw, selectedCurrency)}</div><div class="budget-original">${formatCurrency(item.krw, "KRW")}</div></article>`)
     .join("");
   budgetCards.innerHTML = data.budgetRows
     .map(
       (item) => `
         <article class="budget-card">
           <div class="budget-summary-label">${getText(item.item)}</div>
-          <div class="budget-main">${formatCurrency(item.krw, "KRW")}</div>
-          <div class="budget-original">${formatCurrency(item.krw, "TWD")} · ${getText(item.note)}</div>
+          <div class="budget-main">${formatCurrency(item.krw, selectedCurrency)}</div>
+          <div class="budget-original">${formatCurrency(item.krw, "KRW")} · ${getText(item.note)}</div>
         </article>
       `
     )
@@ -667,8 +678,8 @@ function renderBudget() {
       (item) => `
         <tr>
           <td data-label="${t[state.lang].budgetItemHeading}">${getText(item.item)}</td>
-          <td data-label="${t[state.lang].budgetSelectedHeading}">${formatCurrency(item.krw, "KRW")}</td>
-          <td data-label="${t[state.lang].budgetKrwHeading}">${formatCurrency(item.krw, "TWD")}</td>
+          <td data-label="${selectedHeadingMap[selectedCurrency]}">${formatCurrency(item.krw, selectedCurrency)}</td>
+          <td data-label="KRW">${formatCurrency(item.krw, "KRW")}</td>
           <td data-label="${t[state.lang].budgetNoteHeading}">${getText(item.note)}</td>
         </tr>
       `
