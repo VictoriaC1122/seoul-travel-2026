@@ -602,6 +602,22 @@ a {
   margin-top: 24px;
 }
 
+.member-panel {
+  margin-top: 22px;
+  padding: 24px 26px;
+}
+
+.member-panel-header {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.member-panel-header p {
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
 .flight-card-tag {
   display: inline-flex;
   margin-bottom: 14px;

@@ -46,6 +46,10 @@ const text = {
     flightLabel: "Flight & Support",
     flightTitle: "航班與旅遊支援",
     flightLead: "航班時間、保險和報到提醒都放這裡，出發前最後看一次就好。",
+    blackCardLabel: "China Airlines Paragon",
+    blackCardTitle: "華航黑卡這趟可用的權益",
+    blackCardLead: "先把和這趟首爾航班最有關的福利列出來，實際仍以華航當下票規與會員頁顯示為準。",
+    officialLinkLabel: "官方說明",
     hanbokLabel: "Hanbok Shoot",
     hanbokTitle: "5/19 韓服拍攝章節",
     hanbokLead: "這頁是重點。費用、規則、怎麼去、幾點出門都在這裡。",
@@ -115,6 +119,10 @@ const text = {
     flightLabel: "Flight & Support",
     flightTitle: "Flights and travel support",
     flightLead: "Outbound, return, insurance, and card-related reminders are grouped together for quick pre-trip checks.",
+    blackCardLabel: "China Airlines Paragon",
+    blackCardTitle: "Useful Paragon benefits for this trip",
+    blackCardLead: "These are the black-card benefits most relevant to your Seoul flight. Final handling still depends on the live fare rules and China Airlines membership terms.",
+    officialLinkLabel: "Official details",
     hanbokLabel: "Hanbok Shoot",
     hanbokTitle: "May 19 Hanbok shoot chapter",
     hanbokLead: "This section holds the package details, shop rules, departure timing, and transport backup plan.",
@@ -184,6 +192,10 @@ const text = {
     flightLabel: "Flight & Support",
     flightTitle: "항공과 여행 지원 정보",
     flightLead: "출도착, 보험, 카드 관련 메모를 한곳에 모아 출발 전 확인하기 쉽게 만들었습니다.",
+    blackCardLabel: "China Airlines Paragon",
+    blackCardTitle: "이번 여행에 유용한 화항 블랙카드 혜택",
+    blackCardLead: "이번 서울 항공편에서 실제로 참고할 만한 혜택만 먼저 정리했습니다. 최종 적용은 항공권 규정과 화항 회원 페이지 기준으로 확인하는 편이 안전합니다.",
+    officialLinkLabel: "공식 안내",
     hanbokLabel: "Hanbok Shoot",
     hanbokTitle: "5월 19일 한복 촬영 페이지",
     hanbokLead: "패키지, 규정, 출발 시간, 교통 플랜 B까지 이 섹션에 정리했습니다.",
@@ -388,6 +400,52 @@ const content = {
         },
       },
     ],
+    blackCard: {
+      items: [
+        {
+          title: { "zh-Hant": "額外托運 20 公斤", en: "Extra 20 kg baggage", ko: "추가 수하물 20kg" },
+          desc: {
+            "zh-Hant": "華航官網會員權益頁列出 Paragon 會員可享額外 20 公斤免費託運，限華航 / 華信自營國際航班適用。",
+            en: "China Airlines lists an extra 20 kg checked-baggage allowance for Paragon members on eligible China Airlines / Mandarin Airlines operated international flights.",
+            ko: "화항 공식 회원 혜택 기준으로 Paragon 회원은 대상 화항/화신 자사 운항 국제선에서 추가 20kg 무료 위탁수하물을 받을 수 있습니다.",
+          },
+        },
+        {
+          title: { "zh-Hant": "免費選位", en: "Complimentary seat selection", ko: "무료 좌석 지정" },
+          desc: {
+            "zh-Hant": "Paragon 權益頁列出可免費選標準座位與部分付費座位區，對你這趟經濟艙會很實用。",
+            en: "The Paragon benefit page lists complimentary standard seat selection and access to some paid seat categories, which is especially useful for this economy booking.",
+            ko: "Paragon 혜택 페이지에는 일반 좌석과 일부 유료 좌석 무료 지정 내용이 있어, 이번 이코노미 예약에서 체감도가 높은 편입니다.",
+          },
+        },
+        {
+          title: { "zh-Hant": "機場貴賓室與優先服務", en: "Lounge access and priority handling", ko: "라운지 및 우선 서비스" },
+          desc: {
+            "zh-Hant": "官網列有貴賓室使用、優先報到、優先候補與優先登機等權益。實際可用據點與同行人規則，出發前最好再看當次機場資訊。",
+            en: "The official page lists lounge access, priority check-in, priority standby, and priority boarding. It is still worth checking the airport-specific access rules before departure.",
+            ko: "공식 페이지에는 라운지 이용, 우선 체크인, 우선 대기, 우선 탑승이 포함되어 있습니다. 다만 공항별 이용 조건은 출발 전 다시 확인하는 편이 좋습니다.",
+          },
+        },
+        {
+          title: { "zh-Hant": "優先行李與額外哩程", en: "Priority baggage and mileage bonus", ko: "우선 수하물 및 추가 마일리지" },
+          desc: {
+            "zh-Hant": "Paragon 權益也包含優先行李處理與華航 / 華信自營定期航班的額外 25% 哩程累積。",
+            en: "Paragon members also get priority baggage handling and a 25% mileage bonus on eligible China Airlines / Mandarin Airlines scheduled flights.",
+            ko: "Paragon 회원은 대상 화항/화신 정기편에서 우선 수하물 처리와 추가 25% 마일 적립 혜택도 받을 수 있습니다.",
+          },
+        },
+      ],
+      links: [
+        {
+          label: { "zh-Hant": "華航會員權益總覽", en: "Membership overview", ko: "회원 혜택 개요" },
+          href: "https://www.china-airlines.com/us/en/member/planning/introduction/membership-benefits",
+        },
+        {
+          label: { "zh-Hant": "Paragon 黑卡權益", en: "Paragon benefits", ko: "Paragon 혜택" },
+          href: "https://www.china-airlines.com/us/en/member/planning/introduction/membership-benefits/paragon.html",
+        },
+      ],
+    },
   },
   hanbok: {
     highlights: [
@@ -934,6 +992,17 @@ function renderFlights() {
   renderFlightCard(content.flights.depart, "departFlight");
   renderFlightCard(content.flights.back, "returnFlight");
   renderMiniCards("flightSupport", content.flights.support);
+
+  const labels = text[state.lang];
+  document.getElementById("blackCardPanel").innerHTML = `
+    <div class="member-panel-header">
+      <div class="section-label">${labels.blackCardLabel}</div>
+      <h3>${labels.blackCardTitle}</h3>
+      <p>${labels.blackCardLead}</p>
+    </div>
+    <div class="bullet-list">${content.flights.blackCard.items.map(makeBullet).join("")}</div>
+    <div class="resource-actions">${content.flights.blackCard.links.map((link) => makeLinkButton(link, labels.officialLinkLabel)).join("")}</div>
+  `;
 }
 
 function renderHanbok() {
