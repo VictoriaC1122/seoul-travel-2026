@@ -3,250 +3,292 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <title>Seoul Travel Handbook 2026</title>
+    <title>Seoul Travel Handbook 2026 | Victoria Cheng</title>
     <meta
       name="description"
-      content="Victoria and Aiden's Seoul travel handbook with hotel, flights, hanbok shoot, itinerary, maps, and budget in three languages."
+      content="Seoul Travel Handbook 2026 for Victoria Cheng: hotel, hanbok shooting, routes, budget, checklist, and multilingual travel dashboard."
     />
     <meta name="theme-color" content="#9aaec8" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Seoul Travel Handbook 2026 | Victoria Cheng" />
+    <meta
+      property="og:description"
+      content="A polished Seoul travel dashboard for May 2026 with hotel, hanbok booking, routes, budget, and trip checklist."
+    />
+    <meta property="og:image" content="./assets/images/S__180125890_0.jpg" />
+    <link rel="icon" type="image/jpeg" href="./assets/images/S__180125889_0.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+TC:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+TC:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="page-progress" id="pageProgress"></div>
+    <div class="page-progress" id="pageProgress" aria-hidden="true"></div>
 
-    <div class="floating-controls">
-      <div class="control-group" role="tablist" aria-label="Language switcher">
-        <button class="chip-btn active" type="button" data-lang="zh-Hant">中文</button>
-        <button class="chip-btn" type="button" data-lang="en">EN</button>
-        <button class="chip-btn" type="button" data-lang="ko">KO</button>
-      </div>
-      <div class="control-group" role="tablist" aria-label="Currency switcher">
-        <button class="chip-btn active" type="button" data-currency="TWD">TWD</button>
-        <button class="chip-btn" type="button" data-currency="KRW">KRW</button>
-        <button class="chip-btn" type="button" data-currency="CNY">CNY</button>
-      </div>
-    </div>
-
-    <header class="hero">
-      <div class="hero-backdrop"></div>
-      <div class="hero-content">
-        <p class="hero-kicker" data-i18n="heroKicker"></p>
-        <h1 data-i18n="heroTitle"></h1>
-        <p class="hero-subtitle" data-i18n="heroSubtitle"></p>
-        <div class="hero-meta">
-          <span data-i18n="heroDates"></span>
-          <span data-i18n="heroNames"></span>
+    <header class="hero" id="top">
+      <div class="hero-backdrop" aria-hidden="true"></div>
+      <div class="hero-shell">
+        <div class="floating-controls">
+          <div class="switcher-card">
+            <div class="switcher-label" data-i18n="languageSwitcher">Language</div>
+            <div class="control-group" role="tablist" aria-label="Language switcher">
+              <button class="chip-btn active" type="button" data-lang="zh-Hant" aria-label="Switch language to Traditional Chinese">中文</button>
+              <button class="chip-btn" type="button" data-lang="en" aria-label="Switch language to English">EN</button>
+              <button class="chip-btn" type="button" data-lang="ko" aria-label="Switch language to Korean">KO</button>
+            </div>
+          </div>
+          <div class="switcher-card">
+            <div class="switcher-label" data-i18n="currencySwitcher">Currency</div>
+            <div class="control-group" role="tablist" aria-label="Currency switcher">
+              <button class="chip-btn active" type="button" data-currency="TWD" aria-label="Switch currency to Taiwan Dollar">TWD</button>
+              <button class="chip-btn" type="button" data-currency="KRW" aria-label="Switch currency to Korean Won">KRW</button>
+              <button class="chip-btn" type="button" data-currency="CNY" aria-label="Switch currency to Chinese Yuan">CNY</button>
+            </div>
+          </div>
         </div>
-        <div class="hero-tags" id="heroTags"></div>
-        <div class="hero-summary" id="heroSummary"></div>
+
+        <div class="hero-content">
+          <p class="hero-kicker" data-i18n="heroKicker">Victoria Cheng · Aiden</p>
+          <h1 data-i18n="heroTitle">Seoul Travel Handbook 2026</h1>
+          <p class="hero-subtitle" data-i18n="heroSubtitle">
+            May 2026 · Seoul · Hanbok Shooting · Hotel · Routes · Budget
+          </p>
+          <div class="hero-status-row">
+            <span class="hero-badge" data-i18n="heroBadgeOne">Apple-like trip dashboard</span>
+            <span class="hero-badge" data-i18n="heroBadgeTwo">3 languages · 3 currencies</span>
+          </div>
+          <div class="summary-grid" id="heroSummary" aria-label="Trip summary cards"></div>
+        </div>
       </div>
     </header>
 
-    <nav class="main-nav">
-      <button class="nav-item active" type="button" data-target="overview" data-i18n="navOverview"></button>
-      <button class="nav-item" type="button" data-target="stay" data-i18n="navStay"></button>
-      <button class="nav-item" type="button" data-target="flights" data-i18n="navFlights"></button>
-      <button class="nav-item" type="button" data-target="hanbok" data-i18n="navHanbok"></button>
-      <button class="nav-item" type="button" data-target="itinerary" data-i18n="navItinerary"></button>
-      <button class="nav-item" type="button" data-target="recommend" data-i18n="navRecommend"></button>
-      <button class="nav-item" type="button" data-target="wowpass" data-i18n="navWowpass"></button>
-      <button class="nav-item" type="button" data-target="map" data-i18n="navMap"></button>
-      <button class="nav-item" type="button" data-target="budget" data-i18n="navBudget"></button>
+    <nav class="main-nav" aria-label="Section navigation">
+      <a class="nav-link active" href="#overview" data-nav="overview" data-i18n="navOverview">Overview</a>
+      <a class="nav-link" href="#hotel" data-nav="hotel" data-i18n="navHotel">Hotel</a>
+      <a class="nav-link" href="#hanbok" data-nav="hanbok" data-i18n="navHanbok">Hanbok Shooting</a>
+      <a class="nav-link" href="#transportation" data-nav="transportation" data-i18n="navTransportation">Transportation</a>
+      <a class="nav-link" href="#budget" data-nav="budget" data-i18n="navBudget">Budget</a>
+      <a class="nav-link" href="#checklist" data-nav="checklist" data-i18n="navChecklist">Checklist</a>
+      <a class="nav-link" href="#links" data-nav="links" data-i18n="navLinks">Useful Links</a>
     </nav>
 
     <main class="container">
-      <section class="page-section active" id="overview">
-        <section class="section-card intro-card">
-          <div class="section-label" data-i18n="overviewLabel"></div>
-          <h2 data-i18n="overviewTitle"></h2>
-          <p class="lead" data-i18n="overviewLead"></p>
-          <div class="overview-grid" id="overviewStats"></div>
-        </section>
+      <section class="page-section" id="overview">
+        <div class="section-header">
+          <p class="section-label" data-i18n="overviewEyebrow">Overview</p>
+          <h2 data-i18n="overviewHeading">Overview</h2>
+          <p class="lead" data-i18n="overviewLead">
+            The critical trip details are surfaced first, so departure time, hotel, route, payment, and member perks are all easy to scan.
+          </p>
+        </div>
 
-        <section class="section-card split-card">
-          <div>
-            <div class="section-label" data-i18n="highlightsLabel"></div>
-            <h3 data-i18n="highlightsTitle"></h3>
-            <div class="bullet-list" id="overviewHighlights"></div>
-          </div>
-          <div>
-            <div class="section-label" data-i18n="notesLabel"></div>
-            <h3 data-i18n="notesTitle"></h3>
+        <div class="dashboard-grid">
+          <article class="glass-card">
+            <h3 data-i18n="snapshotHeading">Trip Snapshot</h3>
+            <div class="stat-grid" id="overviewStats"></div>
+          </article>
+
+          <article class="glass-card">
+            <h3 data-i18n="flightSnapshotHeading">Flight Snapshot</h3>
+            <div class="flight-pair" id="flightOverview"></div>
+          </article>
+        </div>
+
+        <div class="dashboard-grid secondary-grid">
+          <article class="glass-card">
+            <h3 data-i18n="notesHeading">Important Notes</h3>
             <div class="bullet-list" id="overviewNotes"></div>
-          </div>
-        </section>
+          </article>
 
-        <section class="section-card cinematic-card">
-          <div class="section-label" data-i18n="toneLabel"></div>
-          <div class="cinematic-layout">
-            <article class="cinematic-copy">
-              <h3 data-i18n="toneTitle"></h3>
-              <p class="lead" data-i18n="toneLead"></p>
-              <div class="cover-points" id="tonePoints"></div>
-            </article>
-            <article class="feature-photo hotel-photo">
-              <div class="photo-caption">
-                <span data-i18n="hotelPhotoCaption"></span>
-                <a href="https://www.corner.inc/place/433807" target="_blank" rel="noreferrer">Corner</a>
-              </div>
-            </article>
-            <article class="feature-photo subway-photo">
-              <div class="photo-caption">
-                <span data-i18n="subwayPhotoCaption"></span>
-                <a href="https://www.seoulmetro.co.kr/download/map_english.jpg" target="_blank" rel="noreferrer">Seoul Metro</a>
-              </div>
-            </article>
-          </div>
-        </section>
+          <article class="glass-card">
+            <h3 data-i18n="blackCardHeading">China Airlines Paragon</h3>
+            <p class="card-intro" data-i18n="blackCardLead">
+              The benefits below are the most useful ones for this Seoul trip. Final handling still depends on the live fare rules.
+            </p>
+            <div class="bullet-list" id="blackCardBenefits"></div>
+          </article>
+        </div>
       </section>
 
-      <section class="page-section" id="stay">
-        <section class="section-card">
-          <div class="section-label" data-i18n="stayLabel"></div>
-          <h2 data-i18n="stayTitle"></h2>
-          <p class="lead" data-i18n="stayLead"></p>
-          <div class="stay-showcase">
-            <article class="stay-visual-stack">
-              <img src="./assets/images/local-stitch-exterior.jpeg" alt="Local Stitch Seogyo exterior" loading="lazy" />
-              <img src="./assets/images/local-stitch-room.jpeg" alt="Local Stitch Seogyo room" loading="lazy" />
-            </article>
-            <article class="stay-card" id="stayCard"></article>
-          </div>
-        </section>
-      </section>
+      <section class="page-section" id="hotel">
+        <div class="section-header">
+          <p class="section-label" data-i18n="hotelEyebrow">Hotel</p>
+          <h2 data-i18n="hotelHeading">Hotel</h2>
+          <p class="lead" data-i18n="hotelLead">
+            Hongdae is a practical base for this trip, especially if you want easy food access, simple airport returns, and a smoother route to Anguk.
+          </p>
+        </div>
 
-      <section class="page-section" id="flights">
-        <section class="section-card">
-          <div class="section-label" data-i18n="flightLabel"></div>
-          <h2 data-i18n="flightTitle"></h2>
-          <p class="lead" data-i18n="flightLead"></p>
-          <div class="flight-grid">
-            <article class="flight-card" id="departFlight"></article>
-            <article class="flight-card" id="returnFlight"></article>
-          </div>
-          <div class="mini-grid" id="flightSupport"></div>
-          <article class="content-panel member-panel" id="blackCardPanel"></article>
-        </section>
+        <div class="dashboard-grid">
+          <article class="glass-card" id="hotelCard"></article>
+          <article class="glass-card">
+            <h3 data-i18n="hotelGalleryHeading">Hotel Photos</h3>
+            <div class="gallery-grid" id="hotelGallery">
+              <figure class="gallery-item">
+                <img src="./assets/images/local-stitch-exterior.jpeg" alt="Exterior view of Local Stitch Creator Town Seogyo in Hongdae" loading="lazy" />
+                <figcaption data-i18n="hotelExteriorCaption">Hotel exterior</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="./assets/images/local-stitch-room.jpeg" alt="Guest room interior at Local Stitch Creator Town Seogyo" loading="lazy" />
+                <figcaption data-i18n="hotelRoomCaption">Deluxe twin room</figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section class="page-section" id="hanbok">
-        <section class="section-card">
-          <div class="section-label" data-i18n="hanbokLabel"></div>
-          <h2 data-i18n="hanbokTitle"></h2>
-          <p class="lead" data-i18n="hanbokLead"></p>
-          <div class="itinerary-highlights" id="hanbokHighlights"></div>
-          <div class="hanbok-layout">
-            <div class="hanbok-gallery">
-              <img src="./assets/images/S__180125889_0.jpg" alt="Hanbok sample blue dress" loading="lazy" />
-              <img src="./assets/images/S__180125890_0.jpg" alt="Hanbok sample palace look" loading="lazy" />
-              <img src="./assets/images/S__180125891_0.jpg" alt="Hanbok sample palace stairs" loading="lazy" />
-              <img src="./assets/images/S__180125892_0.jpg" alt="Hanbok sample corridor portrait" loading="lazy" />
+        <div class="section-header">
+          <p class="section-label" data-i18n="hanbokEyebrow">Hanbok Shooting</p>
+          <h2 data-i18n="hanbokHeading">Hanbok Shooting</h2>
+          <p class="lead" data-i18n="hanbokLead">
+            This is the key reservation of the trip, so package details, deposit, what is included, and practical reminders are all grouped together here.
+          </p>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="glass-card highlight-card" id="hanbokPlanCard"></article>
+          <article class="glass-card">
+            <h3 data-i18n="hanbokRulesHeading">Shooting Notes</h3>
+            <div class="bullet-list" id="hanbokRules"></div>
+          </article>
+        </div>
+
+        <div class="dashboard-grid secondary-grid">
+          <article class="glass-card">
+            <h3 data-i18n="hanbokReferenceHeading">Hanbok Reference Photos</h3>
+            <div class="gallery-grid" id="hanbokGallery">
+              <figure class="gallery-item">
+                <img src="./assets/images/S__180125889_0.jpg" alt="Blue hanbok reference dress under traditional Korean gate" loading="lazy" />
+                <figcaption data-i18n="hanbokCaptionOne">Blue hanbok reference</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="./assets/images/S__180125890_0.jpg" alt="White hanbok reference photo at Gyeongbokgung" loading="lazy" />
+                <figcaption data-i18n="hanbokCaptionTwo">Palace look reference</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="./assets/images/S__180125891_0.jpg" alt="White hanbok reference photo on palace stairs" loading="lazy" />
+                <figcaption data-i18n="hanbokCaptionThree">Stairs and palace backdrop</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="./assets/images/S__180125892_0.jpg" alt="White hanbok reference portrait in palace corridor" loading="lazy" />
+                <figcaption data-i18n="hanbokCaptionFour">Corridor portrait reference</figcaption>
+              </figure>
             </div>
-            <div class="hanbok-side">
-              <article class="content-panel" id="hanbokPlan"></article>
-              <article class="content-panel" id="hanbokBudget"></article>
+          </article>
+
+          <article class="glass-card">
+            <h3 data-i18n="instructionsHeading">Shooting Instructions</h3>
+            <div class="gallery-grid single-column">
+              <figure class="gallery-item">
+                <img src="./assets/images/S__180125900.jpg" alt="Shooting instructions for the hanbok photo session" loading="lazy" />
+                <figcaption data-i18n="instructionsCaption">Store shooting instructions</figcaption>
+              </figure>
             </div>
-          </div>
-          <div class="content-panel rules-panel">
-            <div class="rules-copy" id="hanbokRules"></div>
-            <img src="./assets/images/S__180125900.jpg" alt="Hanbok shooting instructions" loading="lazy" />
-          </div>
-          <div class="resource-actions" id="hanbokLinks"></div>
-        </section>
+          </article>
+        </div>
       </section>
 
-      <section class="page-section" id="itinerary">
-        <section class="section-card">
-          <div class="section-label" data-i18n="itineraryLabel"></div>
-          <h2 data-i18n="itineraryTitle"></h2>
-          <p class="lead" data-i18n="itineraryLead"></p>
-          <div class="itinerary-highlights" id="itineraryHighlights"></div>
-          <div class="timeline" id="timeline"></div>
-        </section>
-      </section>
+      <section class="page-section" id="transportation">
+        <div class="section-header">
+          <p class="section-label" data-i18n="transportEyebrow">Transportation</p>
+          <h2 data-i18n="transportHeading">Transportation</h2>
+          <p class="lead" data-i18n="transportLead">
+            The route is organized around the May 19 hanbok appointment, with departure timing, subway steps, and taxi backup in one place.
+          </p>
+        </div>
 
-      <section class="page-section" id="recommend">
-        <section class="section-card">
-          <div class="section-label" data-i18n="recommendLabel"></div>
-          <h2 data-i18n="recommendTitle"></h2>
-          <p class="lead" data-i18n="recommendLead"></p>
-          <div class="split-card recommend-layout">
-            <div>
-              <div class="section-label" data-i18n="recommendPlacesLabel"></div>
-              <h3 data-i18n="recommendPlacesTitle"></h3>
-              <div class="bullet-list" id="recommendPlaces"></div>
-            </div>
-            <div>
-              <div class="section-label" data-i18n="recommendSpaLabel"></div>
-              <h3 data-i18n="recommendSpaTitle"></h3>
-              <div class="bullet-list" id="recommendSpa"></div>
-            </div>
-          </div>
-        </section>
-      </section>
+        <div class="glass-card">
+          <div class="timeline-strip" id="routeTimeline"></div>
+          <div class="route-grid" id="routeCards"></div>
+        </div>
 
-      <section class="page-section" id="wowpass">
-        <section class="section-card">
-          <div class="section-label" data-i18n="wowpassLabel"></div>
-          <h2 data-i18n="wowpassTitle"></h2>
-          <p class="lead" data-i18n="wowpassLead"></p>
-          <div class="split-card recommend-layout">
-            <div>
-              <div class="section-label" data-i18n="wowpassInfoLabel"></div>
-              <h3 data-i18n="wowpassInfoTitle"></h3>
-              <div class="bullet-list" id="wowpassInfo"></div>
+        <div class="dashboard-grid secondary-grid">
+          <article class="glass-card">
+            <h3 data-i18n="subwayMapHeading">Subway Map</h3>
+            <div class="gallery-grid single-column">
+              <figure class="gallery-item">
+                <img src="./assets/images/seoul-metro-route-map-official.jpg" alt="Official Seoul subway map in English" loading="lazy" />
+                <figcaption data-i18n="subwayCaption">Official Seoul Metro map</figcaption>
+              </figure>
             </div>
-            <div>
-              <div class="section-label" data-i18n="wowpassRateLabel"></div>
-              <h3 data-i18n="wowpassRateTitle"></h3>
-              <div class="bullet-list" id="wowpassRates"></div>
-            </div>
-          </div>
-        </section>
-      </section>
+          </article>
 
-      <section class="page-section" id="map">
-        <section class="section-card">
-          <div class="section-label" data-i18n="mapLabel"></div>
-          <h2 data-i18n="mapTitle"></h2>
-          <p class="lead" data-i18n="mapLead"></p>
-          <div class="map-layout">
-            <article class="content-panel route-panel">
-              <div id="routeSteps"></div>
-              <div class="resource-actions" id="mapLinks"></div>
-            </article>
-            <article class="map-visual">
-              <img src="./assets/images/seoul-metro-route-map-official.jpg" alt="Seoul subway map" loading="lazy" />
-            </article>
-          </div>
-        </section>
+          <article class="glass-card">
+            <h3 data-i18n="airportTransferHeading">Airport and Arrival</h3>
+            <div class="bullet-list" id="airportTransfer"></div>
+          </article>
+        </div>
       </section>
 
       <section class="page-section" id="budget">
-        <section class="section-card">
-          <div class="section-label" data-i18n="budgetLabel"></div>
-          <h2 data-i18n="budgetTitle"></h2>
-          <p class="lead" data-i18n="budgetLead"></p>
-          <div class="budget-summary-strip" id="budgetSummary"></div>
+        <div class="section-header">
+          <p class="section-label" data-i18n="budgetEyebrow">Budget</p>
+          <h2 data-i18n="budgetHeading">Budget</h2>
+          <p class="lead" data-i18n="budgetLead">
+            The selected currency becomes the main reading view, while original KRW stays visible for actual on-site payments.
+          </p>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="glass-card">
+            <h3 data-i18n="budgetSummaryHeading">Budget Summary</h3>
+            <div class="stat-grid" id="budgetSummary"></div>
+          </article>
+
+          <article class="glass-card">
+            <h3 data-i18n="budgetFocusHeading">Current Currency Focus</h3>
+            <div class="bullet-list" id="budgetFocus"></div>
+          </article>
+        </div>
+
+        <article class="glass-card">
+          <div class="table-header">
+            <h3 data-i18n="budgetTableHeading">Budget Calculator</h3>
+            <p data-i18n="budgetTableLead">Selected currency is highlighted, but KRW always stays visible for Korean payments.</p>
+          </div>
           <div class="budget-table-wrap">
             <table class="budget-table">
               <thead>
                 <tr>
-                  <th data-i18n="budgetTableItem"></th>
-                  <th data-i18n="budgetTableDetail"></th>
-                  <th data-i18n="budgetTableAmount"></th>
+                  <th data-i18n="budgetTableItem">Item</th>
+                  <th>KRW</th>
+                  <th>TWD</th>
+                  <th>CNY</th>
+                  <th data-i18n="budgetTableNote">Note</th>
                 </tr>
               </thead>
               <tbody id="budgetBody"></tbody>
             </table>
           </div>
-        </section>
+        </article>
+      </section>
+
+      <section class="page-section" id="checklist">
+        <div class="section-header">
+          <p class="section-label" data-i18n="checklistEyebrow">Checklist</p>
+          <h2 data-i18n="checklistHeading">Checklist</h2>
+          <p class="lead" data-i18n="checklistLead">
+            This is the pre-departure and shoot-day checklist, designed for quick tapping on mobile and quick scanning on desktop.
+          </p>
+        </div>
+
+        <div class="checklist-grid" id="checklistGrid"></div>
+      </section>
+
+      <section class="page-section" id="links">
+        <div class="section-header">
+          <p class="section-label" data-i18n="linksEyebrow">Useful Links</p>
+          <h2 data-i18n="linksHeading">Useful Links</h2>
+          <p class="lead" data-i18n="linksLead">
+            Keep booking pages, live exchange rates, maps, and membership references here so they are easy to reopen while traveling.
+          </p>
+        </div>
+
+        <div class="dashboard-grid secondary-grid" id="linksGrid"></div>
       </section>
     </main>
 
