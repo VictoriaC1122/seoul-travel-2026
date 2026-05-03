@@ -565,11 +565,31 @@ const content = {
     },
   ],
   budgetSummary: [
+    { label: { "zh-Hant": "兩人總計", en: "Total for two", ko: "2인 총액" }, amountTwd: 54453 },
+    { label: { "zh-Hant": "每人約", en: "Per person", ko: "1인 약" }, amountTwd: 27227 },
     { label: { "zh-Hant": "飯店", en: "Hotel", ko: "숙소" }, amountTwd: 19247 },
     { label: { "zh-Hant": "機票", en: "Flights", ko: "항공" }, amountTwd: 12718 },
     { label: { "zh-Hant": "韓服方案", en: "Hanbok package", ko: "한복 패키지" }, amountKrw: 940000 },
   ],
   budgetRows: [
+    {
+      item: { "zh-Hant": "兩人總計", en: "Total for two", ko: "2인 총액" },
+      detail: {
+        "zh-Hant": "飯店 + 機票 + 韓服方案",
+        en: "Hotel + flights + hanbok package",
+        ko: "숙소 + 항공 + 한복 패키지",
+      },
+      amountTwd: 54453,
+    },
+    {
+      item: { "zh-Hant": "每人約", en: "Per person", ko: "1인 약" },
+      detail: {
+        "zh-Hant": "以上三項平分兩人",
+        en: "Split between two people",
+        ko: "위 세 항목을 2인 기준으로 나눈 금액",
+      },
+      amountTwd: 27227,
+    },
     {
       item: { "zh-Hant": "飯店", en: "Hotel", ko: "숙소" },
       detail: { "zh-Hant": "Local Stitch 5 晚，兩人", en: "Local Stitch for 5 nights, 2 guests", ko: "Local Stitch 5박, 2인" },
