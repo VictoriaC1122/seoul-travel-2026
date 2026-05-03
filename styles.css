@@ -1198,6 +1198,27 @@ a {
     --section-offset: 118px;
   }
 
+  .hero-copy {
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-tags {
+    justify-content: center;
+  }
+
+  .hero-dashboard {
+    justify-items: center;
+  }
+
+  .summary-card {
+    width: 100%;
+  }
+
   .desktop-nav {
     display: flex;
   }
