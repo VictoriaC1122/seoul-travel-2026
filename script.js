@@ -23,6 +23,7 @@ const text = {
     navHanbok: "韓服",
     navItinerary: "行程",
     navRecommend: "推薦",
+    navWowpass: "WOWPASS",
     navMap: "地圖",
     navBudget: "預算",
     overviewLabel: "Journey Overview",
@@ -58,6 +59,13 @@ const text = {
     recommendPlacesTitle: "首爾推薦",
     recommendSpaLabel: "Jjimjilbang",
     recommendSpaTitle: "汗蒸幕推薦",
+    wowpassLabel: "Travel Money",
+    wowpassTitle: "WOWPASS",
+    wowpassLead: "如果你們不想一直換現金，WOWPASS 很適合拿來當旅遊卡。這裡先放用途和規劃匯率，實際匯率還是以官方頁面或機台當下顯示為準。",
+    wowpassInfoLabel: "About WOWPASS",
+    wowpassInfoTitle: "怎麼用",
+    wowpassRateLabel: "Exchange",
+    wowpassRateTitle: "匯率參考",
     mapLabel: "Route & Metro",
     mapTitle: "韓服拍攝路線與首爾地鐵圖",
     mapLead: "韓服拍攝當天怎麼從飯店到安國，這裡直接看。怕迷路就叫車。",
@@ -84,6 +92,7 @@ const text = {
     navHanbok: "Hanbok",
     navItinerary: "Itinerary",
     navRecommend: "Picks",
+    navWowpass: "WOWPASS",
     navMap: "Map",
     navBudget: "Budget",
     overviewLabel: "Journey Overview",
@@ -119,6 +128,13 @@ const text = {
     recommendPlacesTitle: "Where to go",
     recommendSpaLabel: "Jjimjilbang",
     recommendSpaTitle: "Spa picks",
+    wowpassLabel: "Travel Money",
+    wowpassTitle: "WOWPASS",
+    wowpassLead: "WOWPASS is useful if you do not want to juggle too much cash. The rates below are planning references, while the live rate should be checked on the official page or kiosk.",
+    wowpassInfoLabel: "About WOWPASS",
+    wowpassInfoTitle: "How it works",
+    wowpassRateLabel: "Exchange",
+    wowpassRateTitle: "Rate reference",
     mapLabel: "Route & Metro",
     mapTitle: "Shoot route and Seoul subway map",
     mapLead: "The route from Local Stitch to the Bukchon / Anguk area is organized here, with Uber as a clean fallback.",
@@ -145,6 +161,7 @@ const text = {
     navHanbok: "한복",
     navItinerary: "일정",
     navRecommend: "추천",
+    navWowpass: "WOWPASS",
     navMap: "지도",
     navBudget: "예산",
     overviewLabel: "Journey Overview",
@@ -180,6 +197,13 @@ const text = {
     recommendPlacesTitle: "서울 추천",
     recommendSpaLabel: "Jjimjilbang",
     recommendSpaTitle: "찜질방 추천",
+    wowpassLabel: "Travel Money",
+    wowpassTitle: "WOWPASS",
+    wowpassLead: "현금을 많이 들고 다니고 싶지 않다면 WOWPASS가 편합니다. 아래 환율은 계획용이고, 실제 환율은 공식 페이지나 기기 화면을 확인하는 편이 안전합니다.",
+    wowpassInfoLabel: "About WOWPASS",
+    wowpassInfoTitle: "사용법",
+    wowpassRateLabel: "Exchange",
+    wowpassRateTitle: "환율 참고",
     mapLabel: "Route & Metro",
     mapTitle: "촬영 이동 경로와 서울 지하철 지도",
     mapLead: "Local Stitch에서 북촌 / 안국역 근처까지 가는 방법과 Uber 대안을 함께 정리했습니다.",
@@ -636,6 +660,59 @@ const content = {
       link: "https://visit.seoul.kr/en/articles/seoul-jjimjilbang-spa-guide-2025",
     },
   ],
+  wowpassInfo: [
+    {
+      title: { "zh-Hant": "像一張旅遊用預付卡", en: "A prepaid travel card", ko: "여행용 선불카드" },
+      desc: {
+        "zh-Hant": "可以先儲值，再拿來小額消費。很多人會把它當成在韓國旅遊時的主力支付卡之一。",
+        en: "You top it up first and then use it for everyday spending in Korea.",
+        ko: "먼저 충전한 뒤 소액 결제용으로 쓰기 편한 여행용 카드입니다.",
+      },
+    },
+    {
+      title: { "zh-Hant": "交通功能要另外確認", en: "Transit function should be checked separately", ko: "교통 기능은 별도 확인" },
+      desc: {
+        "zh-Hant": "WOWPASS 本身常會和交通功能一起被提到，但你出發前還是建議直接在官方頁或 App 再確認最新版本的使用方式。",
+        en: "WOWPASS is often discussed alongside transit use, but it is still best to verify the current setup in the official app before departure.",
+        ko: "교통 기능과 함께 많이 언급되지만, 출발 전 공식 앱에서 최신 사용 방식을 다시 확인하는 편이 좋습니다.",
+      },
+    },
+    {
+      title: { "zh-Hant": "最實用的用法", en: "Most practical use", ko: "가장 실용적인 사용법" },
+      desc: {
+        "zh-Hant": "先少量換入，吃飯、便利商店、咖啡和臨時小額支出用這張，現金就不用帶太多。",
+        en: "Load a moderate amount first and use it for cafes, convenience stores, and smaller purchases.",
+        ko: "처음엔 적당히만 충전해서 카페, 편의점, 식사 같은 소액 결제에 쓰는 방식이 가장 편합니다.",
+      },
+    },
+  ],
+  wowpassRates: [
+    {
+      title: { "zh-Hant": "網站規劃匯率", en: "Planning rate used on this site", ko: "이 사이트의 계획용 환율" },
+      desc: {
+        "zh-Hant": "目前網站換算先用 1 TWD ≈ 41.8 KRW，方便你快速抓預算。",
+        en: "This site currently uses 1 TWD ≈ 41.8 KRW for planning.",
+        ko: "이 사이트에서는 계획용으로 1 TWD ≈ 41.8 KRW를 사용하고 있습니다.",
+      },
+    },
+    {
+      title: { "zh-Hant": "人民幣參考", en: "CNY reference", ko: "위안화 참고" },
+      desc: {
+        "zh-Hant": "目前網站換算約用 1 CNY ≈ 187 KRW，主要是讓你估算訂金和現場補款。",
+        en: "This site roughly uses 1 CNY ≈ 187 KRW for planning your deposit and remaining payment.",
+        ko: "이 사이트에서는 대략 1 CNY ≈ 187 KRW로 계산하고 있습니다.",
+      },
+    },
+    {
+      title: { "zh-Hant": "即時匯率看官方", en: "Check live rates on the official page", ko: "실시간 환율은 공식 페이지 확인" },
+      desc: {
+        "zh-Hant": "WOWPASS / WOW EXCHANGE 的即時匯率會浮動，現場操作前請直接看官方頁面或機台畫面。",
+        en: "WOWPASS / WOW EXCHANGE live rates move over time, so check the official page or kiosk right before exchanging.",
+        ko: "WOWPASS / WOW EXCHANGE 실시간 환율은 계속 변하므로, 환전 직전에 공식 페이지나 기기 화면을 확인하세요.",
+      },
+      link: "https://www.wowexchange.net/exchange/rate?lang=en_US",
+    },
+  ],
   budgetSummary: [
     { label: { "zh-Hant": "兩人總計", en: "Total for two", ko: "2인 총액" }, amountTwd: 54453 },
     { label: { "zh-Hant": "每人約", en: "Per person", ko: "1인 약" }, amountTwd: 27227 },
@@ -950,6 +1027,24 @@ function renderRecommendations() {
     .join("");
 }
 
+function renderWowpass() {
+  document.getElementById("wowpassInfo").innerHTML = content.wowpassInfo
+    .map(makeBullet)
+    .join("");
+
+  document.getElementById("wowpassRates").innerHTML = content.wowpassRates
+    .map(
+      (item) => `
+        <article class="bullet-item">
+          <div class="bullet-title">${getText(item.title)}</div>
+          <div class="bullet-desc">${getText(item.desc)}</div>
+          ${item.link ? `<div class="resource-actions"><a class="resource-link" href="${item.link}" target="_blank" rel="noreferrer">Official rate</a></div>` : ""}
+        </article>
+      `
+    )
+    .join("");
+}
+
 function renderMap() {
   document.getElementById("routeSteps").innerHTML = content.routeSteps
     .map(
@@ -1046,6 +1141,7 @@ function renderAll() {
   renderHanbok();
   renderItinerary();
   renderRecommendations();
+  renderWowpass();
   renderMap();
   renderBudget();
 }
