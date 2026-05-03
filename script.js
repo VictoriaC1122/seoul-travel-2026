@@ -23,8 +23,11 @@ const t = {
   "zh-Hant": {
     languageSwitcher: "語言",
     currencySwitcher: "幣別",
+    heroKicker: "Seoul travel handbook",
     heroTitle: "首爾旅行 2026",
     heroSubtitle: "2026 年 5 月 · 首爾旅行手冊",
+    heroDates: "2026 / 05 / 15 - 2026 / 05 / 20",
+    heroDestinations: "弘大 · 北村韓屋村 · 景福宮 · 安國 · 首爾",
     keyInfoTitle: "今日 / 重點資訊",
     jumpLinksTitle: "快速切換",
     navOverview: "總覽",
@@ -110,8 +113,11 @@ const t = {
   en: {
     languageSwitcher: "Language",
     currencySwitcher: "Currency",
+    heroKicker: "Seoul travel handbook",
     heroTitle: "Seoul Travel 2026",
     heroSubtitle: "May 2026 · Seoul Travel Handbook",
+    heroDates: "2026 / 05 / 15 - 2026 / 05 / 20",
+    heroDestinations: "Hongdae · Bukchon Hanok Village · Gyeongbokgung · Anguk · Seoul",
     keyInfoTitle: "Today / Key Info",
     jumpLinksTitle: "Jump Links",
     navOverview: "Overview",
@@ -197,8 +203,11 @@ const t = {
   ko: {
     languageSwitcher: "언어",
     currencySwitcher: "통화",
+    heroKicker: "Seoul travel handbook",
     heroTitle: "서울 여행 2026",
     heroSubtitle: "2026년 5월 · 서울 여행 핸드북",
+    heroDates: "2026 / 05 / 15 - 2026 / 05 / 20",
+    heroDestinations: "홍대 · 북촌한옥마을 · 경복궁 · 안국 · 서울",
     keyInfoTitle: "오늘 / 핵심 정보",
     jumpLinksTitle: "바로가기",
     navOverview: "개요",
@@ -483,25 +492,17 @@ function renderHero() {
 function renderKeyInfo() {
   const keyInfoBar = document.getElementById("keyInfoBar");
   if (!keyInfoBar) return;
-  keyInfoBar.innerHTML = `
-    <div class="key-info-head">
-      <div class="section-kicker">${t[state.lang].keyInfoTitle}</div>
-      <div class="key-info-jump-label">${t[state.lang].jumpLinksTitle}</div>
-    </div>
-    <div class="key-info-grid">
-      ${data.keyInfo
-        .map(
-          (item) => `
-            <article class="key-info-card">
-              <div class="summary-label">${getText(item.label)}</div>
-              <div class="summary-value">${getText(item.value)}</div>
-              <div class="budget-original">${getText(item.note)}</div>
-            </article>
-          `
-        )
-        .join("")}
-    </div>
-  `;
+  keyInfoBar.innerHTML = data.keyInfo
+    .map(
+      (item) => `
+        <article class="key-info-card">
+          <div class="summary-label">${getText(item.label)}</div>
+          <div class="summary-value">${getText(item.value)}</div>
+          <div class="budget-original">${getText(item.note)}</div>
+        </article>
+      `
+    )
+    .join("");
 }
 
 function renderOverview() {
@@ -665,10 +666,10 @@ function renderBudget() {
     .map(
       (item) => `
         <tr>
-          <td>${getText(item.item)}</td>
-          <td>${formatCurrency(item.krw, "KRW")}</td>
-          <td>${formatCurrency(item.krw, "TWD")}</td>
-          <td>${getText(item.note)}</td>
+          <td data-label="${t[state.lang].budgetItemHeading}">${getText(item.item)}</td>
+          <td data-label="${t[state.lang].budgetSelectedHeading}">${formatCurrency(item.krw, "KRW")}</td>
+          <td data-label="${t[state.lang].budgetKrwHeading}">${formatCurrency(item.krw, "TWD")}</td>
+          <td data-label="${t[state.lang].budgetNoteHeading}">${getText(item.note)}</td>
         </tr>
       `
     )
@@ -809,6 +810,7 @@ function syncPageNavigation() {
   document.querySelectorAll("[data-page-panel]").forEach((panel) => {
     const active = panel.dataset.pagePanel === state.page;
     panel.hidden = !active;
+    panel.classList.toggle("active", active);
   });
 }
 
