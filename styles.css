@@ -131,7 +131,7 @@ a {
 
 .hero-kicker,
 .section-label {
-  color: #edf3fb;
+  color: rgba(44, 60, 78, 0.82);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-size: 12px;
@@ -140,18 +140,18 @@ a {
 
 .hero h1 {
   margin-top: 14px;
-  color: #fff;
+  color: #314255;
   font-family: "Cormorant Garamond", "Noto Serif TC", serif;
   font-size: clamp(2.8rem, 7vw, 5rem);
   line-height: 0.98;
   letter-spacing: 0.02em;
-  text-shadow: 0 20px 40px rgba(43, 57, 74, 0.25);
+  text-shadow: 0 14px 30px rgba(255, 255, 255, 0.18);
 }
 
 .hero-subtitle {
   margin-top: 14px;
   max-width: 34rem;
-  color: rgba(255, 255, 255, 0.94);
+  color: rgba(55, 74, 97, 0.92);
   font-size: 1rem;
 }
 
@@ -168,9 +168,10 @@ a {
   align-items: center;
   padding: 10px 14px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.14);
-  color: #fff;
+  background: rgba(255, 255, 255, 0.52);
+  color: #39506a;
   backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.26);
 }
 
 .hero-tags {
@@ -190,20 +191,20 @@ a {
 .hero-summary-card {
   padding: 14px 16px;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(12px);
 }
 
 .hero-summary-label {
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(66, 83, 103, 0.78);
   font-size: 0.72rem;
   letter-spacing: 0.08em;
 }
 
 .hero-summary-value {
   margin-top: 6px;
-  color: #fff;
+  color: #314255;
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.35;
@@ -421,12 +422,12 @@ a {
   padding: 16px;
   border-radius: 18px;
   background: rgba(53, 67, 81, 0.42);
-  color: #fff;
+  color: rgba(255, 250, 245, 0.98);
   backdrop-filter: blur(10px);
 }
 
 .photo-caption a {
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.92);
   text-decoration: none;
 }
 
