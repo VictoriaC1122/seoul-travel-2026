@@ -2,11 +2,15 @@ const STORAGE_KEYS = {
   lang: "seoul-handbook-lang",
   currency: "seoul-handbook-currency",
   checklist: "seoul-handbook-checklist-v3",
+  page: "seoul-handbook-page",
 };
+
+const PAGE_IDS = ["overview", "hotel", "hanbok", "route", "budget", "itinerary", "checklist", "links"];
 
 const state = {
   lang: localStorage.getItem(STORAGE_KEYS.lang) || "zh-Hant",
   currency: localStorage.getItem(STORAGE_KEYS.currency) || "TWD",
+  page: PAGE_IDS.includes(localStorage.getItem(STORAGE_KEYS.page)) ? localStorage.getItem(STORAGE_KEYS.page) : "overview",
 };
 
 const rates = {
@@ -26,11 +30,11 @@ const t = {
     navOverview: "總覽",
     navHotel: "住宿",
     navHanbok: "韓服",
-    navRoute: "路線",
+    navRoute: "交通",
     navBudget: "預算",
     navItinerary: "行程",
     navChecklist: "清單",
-    navLinks: "連結",
+    navLinks: "實用連結",
     overviewKicker: "總覽",
     overviewTitle: "總覽",
     overviewSnapshotTitle: "旅行重點",
@@ -51,8 +55,8 @@ const t = {
     hanbokCaptionThree: "宮殿石階參考",
     hanbokCaptionFour: "走廊肖像參考",
     instructionsCaption: "店家拍攝規則",
-    routeKicker: "路線",
-    routeTitle: "路線",
+    routeKicker: "交通",
+    routeTitle: "交通",
     routeStepsTitle: "路線步驟",
     routeTimelineTitle: "建議時間",
     routeOptionsTitle: "交通方式",
@@ -113,11 +117,11 @@ const t = {
     navOverview: "Overview",
     navHotel: "Hotel",
     navHanbok: "Hanbok",
-    navRoute: "Route",
+    navRoute: "Transportation",
     navBudget: "Budget",
     navItinerary: "Itinerary",
     navChecklist: "Checklist",
-    navLinks: "Links",
+    navLinks: "Useful Links",
     overviewKicker: "Overview",
     overviewTitle: "Overview",
     overviewSnapshotTitle: "Trip snapshot",
@@ -138,8 +142,8 @@ const t = {
     hanbokCaptionThree: "Palace stairs reference",
     hanbokCaptionFour: "Corridor portrait reference",
     instructionsCaption: "Store shooting instructions",
-    routeKicker: "Route",
-    routeTitle: "Route",
+    routeKicker: "Transportation",
+    routeTitle: "Transportation",
     routeStepsTitle: "Route steps",
     routeTimelineTitle: "Suggested timing",
     routeOptionsTitle: "Route cards",
@@ -200,11 +204,11 @@ const t = {
     navOverview: "개요",
     navHotel: "호텔",
     navHanbok: "한복",
-    navRoute: "루트",
+    navRoute: "교통",
     navBudget: "예산",
     navItinerary: "일정",
     navChecklist: "체크",
-    navLinks: "링크",
+    navLinks: "유용한 링크",
     overviewKicker: "개요",
     overviewTitle: "개요",
     overviewSnapshotTitle: "여행 핵심 정보",
@@ -225,8 +229,8 @@ const t = {
     hanbokCaptionThree: "궁전 계단 레퍼런스",
     hanbokCaptionFour: "복도 초상 레퍼런스",
     instructionsCaption: "매장 촬영 안내",
-    routeKicker: "이동",
-    routeTitle: "이동",
+    routeKicker: "교통",
+    routeTitle: "교통",
     routeStepsTitle: "이동 순서",
     routeTimelineTitle: "추천 시간표",
     routeOptionsTitle: "이동 옵션",
@@ -453,12 +457,19 @@ function formatCurrency(krw, currency = state.currency) {
   return `${meta.symbol}${Math.round(krw / meta.krwPerUnit).toLocaleString()}`;
 }
 
+function updateDocumentTitle() {
+  const pageTitleKey = `nav${state.page.charAt(0).toUpperCase()}${state.page.slice(1)}`;
+  const pageTitle = t[state.lang][pageTitleKey] || "Overview";
+  document.title = `Seoul Travel Handbook 2026 | ${pageTitle}`;
+}
+
 function renderI18n() {
   document.documentElement.lang = state.lang;
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     const key = node.dataset.i18n;
     if (t[state.lang][key]) node.textContent = t[state.lang][key];
   });
+  updateDocumentTitle();
 }
 
 function renderHero() {
@@ -788,11 +799,36 @@ function bindChecklist() {
 }
 
 function syncPageNavigation() {
-  const currentPage = document.body.dataset.page || "overview";
+  document.body.dataset.page = state.page;
   document.querySelectorAll("[data-page-link]").forEach((link) => {
-    const active = link.dataset.pageLink === currentPage;
+    const active = link.dataset.pageLink === state.page;
     link.classList.toggle("active", active);
     link.setAttribute("aria-current", active ? "page" : "false");
+    link.setAttribute("aria-selected", String(active));
+  });
+  document.querySelectorAll("[data-page-panel]").forEach((panel) => {
+    const active = panel.dataset.pagePanel === state.page;
+    panel.hidden = !active;
+  });
+}
+
+function setPage(page, { scroll = true } = {}) {
+  if (!PAGE_IDS.includes(page)) return;
+  state.page = page;
+  localStorage.setItem(STORAGE_KEYS.page, page);
+  updateDocumentTitle();
+  syncPageNavigation();
+  if (scroll) {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function bindPageNavigation() {
+  document.querySelectorAll("[data-page-link]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      setPage(link.dataset.pageLink);
+    });
   });
 }
 
@@ -833,6 +869,7 @@ function bindProgress() {
 renderAll();
 bindControls();
 bindChecklist();
+bindPageNavigation();
 syncPageNavigation();
 bindImageModal();
 bindProgress();

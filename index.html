@@ -3,23 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <title>Seoul Travel Handbook 2026 | Overview</title>
+    <title>Seoul Travel Handbook 2026 | Victoria Cheng</title>
     <meta
       name="description"
-      content="Seoul Travel 2026 overview for Victoria Cheng: hotel, hanbok booking, route, budget, itinerary, checklist, and key trip details."
+      content="Seoul Travel Handbook 2026 for Victoria Cheng: overview, hotel, hanbok booking, transportation, budget, itinerary, checklist, and useful links."
     />
     <meta name="theme-color" content="#9aaec8" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Seoul Travel Handbook 2026 | Overview" />
+    <meta property="og:title" content="Seoul Travel Handbook 2026 | Victoria Cheng" />
     <meta
       property="og:description"
-      content="A premium multi-page Seoul travel dashboard with overview, hotel, hanbok, route, budget, itinerary, checklist, and links."
+      content="A clean paginated Seoul travel handbook with key trip info, hotel, hanbok booking, route, budget, itinerary, checklist, and useful links."
     />
     <meta property="og:image" content="https://victoriac1122.github.io/seoul-travel-2026/assets/images/S__180125890_0.jpg" />
     <link rel="icon" type="image/jpeg" href="./assets/images/S__180125889_0.jpg" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body data-page="overview">
+  <body>
     <div class="page-progress" id="pageProgress" aria-hidden="true"></div>
 
     <header class="hero" id="top">
@@ -46,75 +46,250 @@
         <div class="hero-card">
           <div class="hero-copy">
             <h1 data-i18n="heroTitle">首爾旅行 2026</h1>
-            <p class="hero-subtitle" data-i18n="heroSubtitle">2026 年 5 月 · 首爾</p>
+            <p class="hero-subtitle" data-i18n="heroSubtitle">2026 年 5 月 · 首爾旅行手冊</p>
           </div>
           <div class="hero-summary-grid" id="heroSummary" aria-label="Key trip cards"></div>
         </div>
       </div>
     </header>
 
-    <nav class="desktop-nav" aria-label="Primary navigation">
-      <a class="desktop-nav-link" href="./index.html" data-page-link="overview" data-i18n="navOverview">Overview</a>
-      <a class="desktop-nav-link" href="./hotel.html" data-page-link="hotel" data-i18n="navHotel">Hotel</a>
-      <a class="desktop-nav-link" href="./hanbok.html" data-page-link="hanbok" data-i18n="navHanbok">Hanbok</a>
-      <a class="desktop-nav-link" href="./route.html" data-page-link="route" data-i18n="navRoute">Route</a>
-      <a class="desktop-nav-link" href="./budget.html" data-page-link="budget" data-i18n="navBudget">Budget</a>
-      <a class="desktop-nav-link" href="./itinerary.html" data-page-link="itinerary" data-i18n="navItinerary">Itinerary</a>
-      <a class="desktop-nav-link" href="./checklist.html" data-page-link="checklist" data-i18n="navChecklist">Checklist</a>
-      <a class="desktop-nav-link" href="./links.html" data-page-link="links" data-i18n="navLinks">Links</a>
+    <nav class="desktop-nav" aria-label="Primary page tabs">
+      <button class="desktop-nav-link active" type="button" data-page-link="overview" aria-controls="page-overview" data-i18n="navOverview">Overview</button>
+      <button class="desktop-nav-link" type="button" data-page-link="hotel" aria-controls="page-hotel" data-i18n="navHotel">Hotel</button>
+      <button class="desktop-nav-link" type="button" data-page-link="hanbok" aria-controls="page-hanbok" data-i18n="navHanbok">Hanbok</button>
+      <button class="desktop-nav-link" type="button" data-page-link="route" aria-controls="page-route" data-i18n="navRoute">Route</button>
+      <button class="desktop-nav-link" type="button" data-page-link="budget" aria-controls="page-budget" data-i18n="navBudget">Budget</button>
+      <button class="desktop-nav-link" type="button" data-page-link="itinerary" aria-controls="page-itinerary" data-i18n="navItinerary">Itinerary</button>
+      <button class="desktop-nav-link" type="button" data-page-link="checklist" aria-controls="page-checklist" data-i18n="navChecklist">Checklist</button>
+      <button class="desktop-nav-link" type="button" data-page-link="links" aria-controls="page-links" data-i18n="navLinks">Links</button>
     </nav>
 
     <section class="key-strip">
       <div class="key-strip-shell">
         <div class="sticky-summary" id="keyInfoBar"></div>
-        <div class="jump-links" aria-label="Section jump links">
-          <a class="jump-link" href="./index.html" data-page-link="overview" data-i18n="navOverview">Overview</a>
-          <a class="jump-link" href="./hotel.html" data-page-link="hotel" data-i18n="navHotel">Hotel</a>
-          <a class="jump-link" href="./hanbok.html" data-page-link="hanbok" data-i18n="navHanbok">Hanbok</a>
-          <a class="jump-link" href="./route.html" data-page-link="route" data-i18n="navRoute">Route</a>
-          <a class="jump-link" href="./budget.html" data-page-link="budget" data-i18n="navBudget">Budget</a>
-          <a class="jump-link" href="./itinerary.html" data-page-link="itinerary" data-i18n="navItinerary">Itinerary</a>
-          <a class="jump-link" href="./checklist.html" data-page-link="checklist" data-i18n="navChecklist">Checklist</a>
-          <a class="jump-link" href="./links.html" data-page-link="links" data-i18n="navLinks">Links</a>
+        <div class="jump-links" aria-label="Page jump links">
+          <button class="jump-link active" type="button" data-page-link="overview" aria-controls="page-overview" data-i18n="navOverview">Overview</button>
+          <button class="jump-link" type="button" data-page-link="hotel" aria-controls="page-hotel" data-i18n="navHotel">Hotel</button>
+          <button class="jump-link" type="button" data-page-link="hanbok" aria-controls="page-hanbok" data-i18n="navHanbok">Hanbok</button>
+          <button class="jump-link" type="button" data-page-link="route" aria-controls="page-route" data-i18n="navRoute">Route</button>
+          <button class="jump-link" type="button" data-page-link="budget" aria-controls="page-budget" data-i18n="navBudget">Budget</button>
+          <button class="jump-link" type="button" data-page-link="itinerary" aria-controls="page-itinerary" data-i18n="navItinerary">Itinerary</button>
+          <button class="jump-link" type="button" data-page-link="checklist" aria-controls="page-checklist" data-i18n="navChecklist">Checklist</button>
+          <button class="jump-link" type="button" data-page-link="links" aria-controls="page-links" data-i18n="navLinks">Links</button>
         </div>
       </div>
     </section>
 
     <main class="container">
-      <section class="section-block" id="overview">
+      <section class="page-panel section-block" id="page-overview" data-page-panel="overview" aria-labelledby="page-overview-title">
         <div class="section-head">
           <p class="section-kicker" data-i18n="overviewKicker">總覽</p>
-          <h2 data-i18n="overviewTitle">總覽</h2>
+          <h2 id="page-overview-title" data-i18n="overviewTitle">總覽</h2>
         </div>
-
         <div class="stack-grid">
           <article class="simple-card">
             <h3 data-i18n="overviewSnapshotTitle">旅行重點</h3>
             <div class="mini-stat-grid" id="overviewStats"></div>
           </article>
-
           <article class="simple-card">
             <h3 data-i18n="overviewAlertsTitle">重要提醒</h3>
             <div class="bullet-stack" id="importantAlerts"></div>
           </article>
-
           <article class="simple-card">
             <h3 data-i18n="overviewFlightTitle">航班與支援</h3>
             <div class="flight-grid" id="flightCards"></div>
           </article>
         </div>
       </section>
+
+      <section class="page-panel section-block" id="page-hotel" data-page-panel="hotel" aria-labelledby="page-hotel-title" hidden>
+        <div class="section-head">
+          <p class="section-kicker" data-i18n="hotelKicker">住宿</p>
+          <h2 id="page-hotel-title" data-i18n="hotelTitle">住宿</h2>
+        </div>
+        <div class="stack-grid">
+          <article class="simple-card" id="hotelCard"></article>
+          <article class="simple-card">
+            <h3 data-i18n="hotelGalleryTitle">住宿照片</h3>
+            <div class="gallery-grid">
+              <figure class="gallery-item">
+                <button class="gallery-trigger" type="button" data-image="./assets/images/local-stitch-exterior.jpeg" data-caption-key="hotelExteriorCaption">
+                  <img src="./assets/images/local-stitch-exterior.jpeg" alt="Exterior view of Local Stitch Creator Town Seogyo in the Hongdae area" loading="lazy" />
+                </button>
+                <figcaption data-i18n="hotelExteriorCaption">飯店外觀</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <button class="gallery-trigger" type="button" data-image="./assets/images/local-stitch-room.jpeg" data-caption-key="hotelRoomCaption">
+                  <img src="./assets/images/local-stitch-room.jpeg" alt="Deluxe twin room interior at Local Stitch Creator Town Seogyo" loading="lazy" />
+                </button>
+                <figcaption data-i18n="hotelRoomCaption">高級雙床房</figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="page-panel section-block" id="page-hanbok" data-page-panel="hanbok" aria-labelledby="page-hanbok-title" hidden>
+        <div class="section-head">
+          <p class="section-kicker" data-i18n="hanbokKicker">韓服</p>
+          <h2 id="page-hanbok-title" data-i18n="hanbokTitle">韓服</h2>
+        </div>
+        <div class="stack-grid">
+          <article class="simple-card featured-card" id="hanbokPlanCard"></article>
+          <article class="simple-card">
+            <h3 data-i18n="hanbokRulesTitle">拍攝提醒</h3>
+            <div class="bullet-stack" id="hanbokRules"></div>
+          </article>
+          <article class="simple-card">
+            <h3 data-i18n="hanbokReferenceTitle">參考照片</h3>
+            <div class="gallery-grid">
+              <figure class="gallery-item">
+                <button class="gallery-trigger" type="button" data-image="./assets/images/S__180125889_0.jpg" data-caption-key="hanbokCaptionOne">
+                  <img src="./assets/images/S__180125889_0.jpg" alt="Blue hanbok reference photo under a traditional Korean gate" loading="lazy" />
+                </button>
+                <figcaption data-i18n="hanbokCaptionOne">霧藍韓服參考</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <button class="gallery-trigger" type="button" data-image="./assets/images/S__180125890_0.jpg" data-caption-key="hanbokCaptionTwo">
+                  <img src="./assets/images/S__180125890_0.jpg" alt="White hanbok reference photo at Gyeongbokgung Palace" loading="lazy" />
+                </button>
+                <figcaption data-i18n="hanbokCaptionTwo">景福宮白色韓服參考</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <button class="gallery-trigger" type="button" data-image="./assets/images/S__180125891_0.jpg" data-caption-key="hanbokCaptionThree">
+                  <img src="./assets/images/S__180125891_0.jpg" alt="White hanbok reference photo on palace stairs" loading="lazy" />
+                </button>
+                <figcaption data-i18n="hanbokCaptionThree">宮殿石階參考</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <button class="gallery-trigger" type="button" data-image="./assets/images/S__180125892_0.jpg" data-caption-key="hanbokCaptionFour">
+                  <img src="./assets/images/S__180125892_0.jpg" alt="White hanbok portrait reference inside a palace corridor" loading="lazy" />
+                </button>
+                <figcaption data-i18n="hanbokCaptionFour">走廊肖像參考</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <button class="gallery-trigger" type="button" data-image="./assets/images/S__180125900.jpg" data-caption-key="instructionsCaption">
+                  <img src="./assets/images/S__180125900.jpg" alt="Store instructions for the hanbok shooting package" loading="lazy" />
+                </button>
+                <figcaption data-i18n="instructionsCaption">店家拍攝規則</figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="page-panel section-block" id="page-route" data-page-panel="route" aria-labelledby="page-route-title" hidden>
+        <div class="section-head">
+          <p class="section-kicker" data-i18n="routeKicker">路線</p>
+          <h2 id="page-route-title" data-i18n="routeTitle">路線</h2>
+        </div>
+        <div class="stack-grid">
+          <article class="simple-card">
+            <h3 data-i18n="routeStepsTitle">路線步驟</h3>
+            <div class="step-list" id="routeSteps"></div>
+          </article>
+          <article class="simple-card">
+            <h3 data-i18n="routeTimelineTitle">建議時間</h3>
+            <div class="timeline-list" id="routeTimeline"></div>
+          </article>
+          <article class="simple-card">
+            <h3 data-i18n="routeOptionsTitle">交通方式</h3>
+            <div class="route-card-list" id="routeCards"></div>
+          </article>
+          <article class="simple-card">
+            <h3 data-i18n="subwayMapTitle">地鐵圖</h3>
+            <div class="gallery-grid">
+              <figure class="gallery-item">
+                <button class="gallery-trigger" type="button" data-image="./assets/images/seoul-metro-route-map-official.jpg" data-caption-key="subwayCaption">
+                  <img src="./assets/images/seoul-metro-route-map-official.jpg" alt="Official Seoul Metro route map in English" loading="lazy" />
+                </button>
+                <figcaption data-i18n="subwayCaption">首爾地鐵官方路線圖</figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="page-panel section-block" id="page-budget" data-page-panel="budget" aria-labelledby="page-budget-title" hidden>
+        <div class="section-head">
+          <p class="section-kicker" data-i18n="budgetKicker">預算</p>
+          <h2 id="page-budget-title" data-i18n="budgetTitle">預算</h2>
+        </div>
+        <div class="stack-grid">
+          <article class="simple-card">
+            <h3 data-i18n="budgetSummaryTitle">預算摘要</h3>
+            <div class="bullet-stack compact-stack" id="budgetHighlights"></div>
+            <div class="budget-summary-grid" id="budgetSummary"></div>
+            <div class="budget-table-wrap">
+              <table class="budget-table" aria-label="Budget breakdown table">
+                <thead>
+                  <tr>
+                    <th data-i18n="budgetItemHeading">Item</th>
+                    <th data-i18n="budgetSelectedHeading">Selected</th>
+                    <th data-i18n="budgetKrwHeading">KRW</th>
+                    <th data-i18n="budgetNoteHeading">Note</th>
+                  </tr>
+                </thead>
+                <tbody id="budgetTableBody"></tbody>
+              </table>
+            </div>
+          </article>
+          <article class="simple-card">
+            <h3 data-i18n="budgetBreakdownTitle">費用明細</h3>
+            <div class="budget-card-list" id="budgetCards"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="page-panel section-block" id="page-itinerary" data-page-panel="itinerary" aria-labelledby="page-itinerary-title" hidden>
+        <div class="section-head">
+          <p class="section-kicker" data-i18n="itineraryKicker">行程</p>
+          <h2 id="page-itinerary-title" data-i18n="itineraryTitle">行程</h2>
+        </div>
+        <div class="stack-grid">
+          <article class="simple-card">
+            <h3 data-i18n="overviewItineraryTitle">每日行程</h3>
+            <div class="accordion-list" id="itineraryList"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="page-panel section-block" id="page-checklist" data-page-panel="checklist" aria-labelledby="page-checklist-title" hidden>
+        <div class="section-head">
+          <p class="section-kicker" data-i18n="checklistKicker">清單</p>
+          <h2 id="page-checklist-title" data-i18n="checklistTitle">清單</h2>
+        </div>
+        <div class="stack-grid">
+          <article class="simple-card">
+            <h3 data-i18n="checklistTitle">清單</h3>
+            <div class="checklist-groups" id="checklistGroups"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="page-panel section-block" id="page-links" data-page-panel="links" aria-labelledby="page-links-title" hidden>
+        <div class="section-head">
+          <p class="section-kicker" data-i18n="linksKicker">連結</p>
+          <h2 id="page-links-title" data-i18n="linksTitle">實用連結</h2>
+        </div>
+        <div class="stack-grid">
+          <article class="simple-card">
+            <h3 data-i18n="linksTitle">實用連結</h3>
+            <div class="link-card-list" id="linksGrid"></div>
+          </article>
+        </div>
+      </section>
     </main>
 
-    <nav class="mobile-nav" aria-label="Mobile navigation">
-      <a class="mobile-nav-link" href="./index.html" data-page-link="overview"><span data-i18n="navOverview">Overview</span></a>
-      <a class="mobile-nav-link" href="./hotel.html" data-page-link="hotel"><span data-i18n="navHotel">Hotel</span></a>
-      <a class="mobile-nav-link" href="./hanbok.html" data-page-link="hanbok"><span data-i18n="navHanbok">Hanbok</span></a>
-      <a class="mobile-nav-link" href="./route.html" data-page-link="route"><span data-i18n="navRoute">Route</span></a>
-      <a class="mobile-nav-link" href="./budget.html" data-page-link="budget"><span data-i18n="navBudget">Budget</span></a>
-      <a class="mobile-nav-link" href="./itinerary.html" data-page-link="itinerary"><span data-i18n="navItinerary">Itinerary</span></a>
-      <a class="mobile-nav-link" href="./checklist.html" data-page-link="checklist"><span data-i18n="navChecklist">Checklist</span></a>
-      <a class="mobile-nav-link" href="./links.html" data-page-link="links"><span data-i18n="navLinks">Links</span></a>
+    <nav class="mobile-nav" aria-label="Mobile page tabs">
+      <button class="mobile-nav-link active" type="button" data-page-link="overview" aria-controls="page-overview"><span data-i18n="navOverview">Overview</span></button>
+      <button class="mobile-nav-link" type="button" data-page-link="hotel" aria-controls="page-hotel"><span data-i18n="navHotel">Hotel</span></button>
+      <button class="mobile-nav-link" type="button" data-page-link="hanbok" aria-controls="page-hanbok"><span data-i18n="navHanbok">Hanbok</span></button>
+      <button class="mobile-nav-link" type="button" data-page-link="route" aria-controls="page-route"><span data-i18n="navRoute">Route</span></button>
+      <button class="mobile-nav-link" type="button" data-page-link="budget" aria-controls="page-budget"><span data-i18n="navBudget">Budget</span></button>
+      <button class="mobile-nav-link" type="button" data-page-link="itinerary" aria-controls="page-itinerary"><span data-i18n="navItinerary">Itinerary</span></button>
+      <button class="mobile-nav-link" type="button" data-page-link="checklist" aria-controls="page-checklist"><span data-i18n="navChecklist">Checklist</span></button>
+      <button class="mobile-nav-link" type="button" data-page-link="links" aria-controls="page-links"><span data-i18n="navLinks">Links</span></button>
     </nav>
 
     <dialog class="image-modal" id="imageModal" aria-label="Expanded gallery image">
