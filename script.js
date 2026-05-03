@@ -5,7 +5,7 @@ const STORAGE_KEYS = {
   page: "seoul-handbook-page",
 };
 
-const PAGE_IDS = ["overview", "hotel", "hanbok", "route", "budget", "itinerary", "checklist", "links"];
+const PAGE_IDS = ["overview", "flights", "hotel", "hanbok", "route", "budget", "itinerary", "checklist", "links"];
 
 const state = {
   lang: localStorage.getItem(STORAGE_KEYS.lang) || "zh-Hant",
@@ -31,6 +31,7 @@ const t = {
     keyInfoTitle: "今日 / 重點資訊",
     jumpLinksTitle: "快速切換",
     navOverview: "總覽",
+    navFlights: "航班",
     navHotel: "住宿",
     navHanbok: "韓服",
     navRoute: "交通",
@@ -44,6 +45,13 @@ const t = {
     overviewAlertsTitle: "重要提醒",
     overviewFlightTitle: "航班與支援",
     overviewItineraryTitle: "每日行程",
+    flightsKicker: "航班",
+    flightsTitle: "航班",
+    flightsLead: "把航班、票價與會員權益放在同一頁，出發前和回程前都好核對。",
+    flightsSummaryTitle: "航班資訊",
+    flightsFareTitle: "票價與艙等",
+    flightsLinkTitle: "官方連結",
+    airlineBenefitsTitle: "華航黑卡重點",
     hotelKicker: "住宿",
     hotelTitle: "住宿",
     hotelGalleryTitle: "住宿照片",
@@ -121,6 +129,7 @@ const t = {
     keyInfoTitle: "Today / Key Info",
     jumpLinksTitle: "Jump Links",
     navOverview: "Overview",
+    navFlights: "Flights",
     navHotel: "Hotel",
     navHanbok: "Hanbok",
     navRoute: "Transportation",
@@ -134,6 +143,13 @@ const t = {
     overviewAlertsTitle: "Important alerts",
     overviewFlightTitle: "Flights and support",
     overviewItineraryTitle: "Daily itinerary",
+    flightsKicker: "Flights",
+    flightsTitle: "Flights",
+    flightsLead: "Keep the flights, fare details, and China Airlines member perks on one page for quick checking.",
+    flightsSummaryTitle: "Flight details",
+    flightsFareTitle: "Fare and cabin notes",
+    flightsLinkTitle: "Official links",
+    airlineBenefitsTitle: "China Airlines Paragon highlights",
     hotelKicker: "Hotel",
     hotelTitle: "Hotel",
     hotelGalleryTitle: "Hotel photos",
@@ -211,6 +227,7 @@ const t = {
     keyInfoTitle: "오늘 / 핵심 정보",
     jumpLinksTitle: "바로가기",
     navOverview: "개요",
+    navFlights: "항공편",
     navHotel: "호텔",
     navHanbok: "한복",
     navRoute: "교통",
@@ -224,6 +241,13 @@ const t = {
     overviewAlertsTitle: "중요 안내",
     overviewFlightTitle: "항공편 및 지원",
     overviewItineraryTitle: "일별 일정",
+    flightsKicker: "항공편",
+    flightsTitle: "항공편",
+    flightsLead: "항공편, 운임, 회원 혜택을 한 페이지에 모아 출발 전과 귀국 전에 빠르게 확인할 수 있게 정리했습니다.",
+    flightsSummaryTitle: "항공편 정보",
+    flightsFareTitle: "운임 및 좌석 메모",
+    flightsLinkTitle: "공식 링크",
+    airlineBenefitsTitle: "중화항공 블랙카드 핵심",
     hotelKicker: "호텔",
     hotelTitle: "호텔",
     hotelGalleryTitle: "호텔 사진",
@@ -331,6 +355,21 @@ const data = {
   flights: [
     { label: { "zh-Hant": "去程", en: "Outbound", ko: "출국" }, route: "TPE → ICN", date: "2026-05-15", time: "15:30 - 19:05", cabin: { "zh-Hant": "經濟艙基本", en: "Economy Basic", ko: "이코노미 베이직" } },
     { label: { "zh-Hant": "回程", en: "Return", ko: "귀국" }, route: "ICN → TPE", date: "2026-05-20", time: "20:05 - 21:50", cabin: { "zh-Hant": "經濟艙基本", en: "Economy Basic", ko: "이코노미 베이직" } },
+  ],
+  flightFareNotes: [
+    { title: { "zh-Hant": "票價", en: "Fare", ko: "운임" }, desc: { "zh-Hant": "兩人機票總計已知為 NT$12,718。", en: "Known airfare total is NT$12,718 for this booking.", ko: "현재 확인된 항공권 금액은 NT$12,718입니다." } },
+    { title: { "zh-Hant": "出發航班", en: "Outbound flight", ko: "출국편" }, desc: { "zh-Hant": "2026/05/15 CI 0162，15:30 台北桃園出發，19:05 抵達首爾仁川。", en: "May 15, 2026 on CI 0162, departing Taipei Taoyuan at 15:30 and arriving Seoul Incheon at 19:05.", ko: "2026년 5월 15일 CI 0162편으로 15:30 타이베이 출발, 19:05 인천 도착입니다." } },
+    { title: { "zh-Hant": "回程航班", en: "Return flight", ko: "귀국편" }, desc: { "zh-Hant": "2026/05/20 20:05 首爾仁川出發，21:50 抵達台北桃園。", en: "Return leaves Seoul Incheon at 20:05 on May 20, 2026 and lands in Taipei Taoyuan at 21:50.", ko: "귀국편은 2026년 5월 20일 20:05 인천 출발, 21:50 타이베이 도착입니다." } },
+  ],
+  airlineBenefits: [
+    { title: { "zh-Hant": "額外托運", en: "Extra baggage", ko: "추가 수하물" }, desc: { "zh-Hant": "華航黑卡常見可再加 20kg 托運額度，實際仍以票規與現場為準。", en: "Paragon members commonly get an extra 20kg baggage allowance, subject to fare rules and airport handling.", ko: "블랙카드 회원은 일반적으로 추가 20kg 위탁수하물 혜택이 있으나 실제 적용은 운임 규정과 현장 기준을 따릅니다." } },
+    { title: { "zh-Hant": "優先服務", en: "Priority services", ko: "우선 서비스" }, desc: { "zh-Hant": "可留意優先報到、優先登機、優先行李與貴賓室等權益。", en: "Look for priority check-in, boarding, baggage, and lounge access benefits.", ko: "우선 체크인, 우선 탑승, 우선 수하물, 라운지 이용 혜택을 확인하세요." } },
+    { title: { "zh-Hant": "選位與哩程", en: "Seat selection and miles", ko: "좌석 선택 및 마일리지" }, desc: { "zh-Hant": "免費選位與額外哩程累積通常是這趟最實用的黑卡價值。", en: "Free seat selection and bonus mileage are usually the most practical perks for this trip.", ko: "무료 좌석 선택과 추가 마일 적립이 이번 여행에서 가장 실용적인 혜택입니다." } },
+    { title: { "zh-Hant": "使用提醒", en: "Use note", ko: "이용 메모" }, desc: { "zh-Hant": "仍建議出發前在華航會員頁或訂位紀錄裡再確認這張票的實際適用權益。", en: "Still reconfirm the actual benefits for this ticket in your China Airlines account before departure.", ko: "출발 전 중화항공 회원 페이지나 예약 기록에서 이번 항공권에 적용되는 혜택을 다시 확인하는 것이 좋습니다." } },
+  ],
+  flightLinks: [
+    { label: { "zh-Hant": "華航會員權益", en: "China Airlines membership benefits", ko: "중화항공 회원 혜택" }, href: "https://www.china-airlines.com/us/en/member/planning/introduction/membership-benefits" },
+    { label: { "zh-Hant": "華航 Paragon 黑卡權益", en: "China Airlines Paragon benefits", ko: "중화항공 Paragon 혜택" }, href: "https://www.china-airlines.com/us/en/member/planning/introduction/membership-benefits/paragon.html" },
   ],
   hotel: {
     title: { "zh-Hant": "Local Stitch Creator Town Seogyo（洛卡斯提奇創作者小鎮西橋店）", en: "Local Stitch Creator Town Seogyo", ko: "Local Stitch Creator Town Seogyo" },
@@ -527,6 +566,39 @@ function renderOverview() {
         </article>
       `
     )
+    .join("");
+}
+
+function renderFlights() {
+  const flightPageCards = document.getElementById("flightPageCards");
+  const airlineBenefits = document.getElementById("airlineBenefits");
+  const flightFareNotes = document.getElementById("flightFareNotes");
+  const flightLinks = document.getElementById("flightLinks");
+  if (!flightPageCards || !airlineBenefits || !flightFareNotes || !flightLinks) return;
+
+  flightPageCards.innerHTML = data.flights
+    .map(
+      (flight) => `
+        <article class="flight-card">
+          <div class="bullet-title">${getText(flight.label)} · ${flight.route}</div>
+          <div class="info-line"><span class="info-label">${t[state.lang].dateText}</span><span class="info-value">${flight.date}</span></div>
+          <div class="info-line"><span class="info-label">${t[state.lang].timeText}</span><span class="info-value">${flight.time}</span></div>
+          <div class="info-line"><span class="info-label">${t[state.lang].classText}</span><span class="info-value">${getText(flight.cabin)}</span></div>
+        </article>
+      `
+    )
+    .join("");
+
+  airlineBenefits.innerHTML = data.airlineBenefits
+    .map((item) => `<article class="bullet-card"><div class="bullet-title">${getText(item.title)}</div><div class="bullet-desc">${getText(item.desc)}</div></article>`)
+    .join("");
+
+  flightFareNotes.innerHTML = data.flightFareNotes
+    .map((item) => `<article class="bullet-card"><div class="bullet-title">${getText(item.title)}</div><div class="bullet-desc">${getText(item.desc)}</div></article>`)
+    .join("");
+
+  flightLinks.innerHTML = data.flightLinks
+    .map((link) => `<div class="link-row"><span class="link-row-label">${getText(link.label)}</span><a class="link-button" href="${link.href}" target="_blank" rel="noreferrer">${t[state.lang].openLink}</a></div>`)
     .join("");
 }
 
@@ -751,6 +823,7 @@ function renderAll() {
   renderHero();
   renderKeyInfo();
   renderOverview();
+  renderFlights();
   renderHotel();
   renderHanbok();
   renderRoute();

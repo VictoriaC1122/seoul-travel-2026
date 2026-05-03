@@ -61,6 +61,7 @@
 
     <nav class="main-nav" aria-label="Primary page tabs">
       <button class="nav-item active" type="button" data-page-link="overview" data-i18n="navOverview">總覽</button>
+      <button class="nav-item" type="button" data-page-link="flights" data-i18n="navFlights">航班</button>
       <button class="nav-item" type="button" data-page-link="hotel" data-i18n="navHotel">住宿</button>
       <button class="nav-item" type="button" data-page-link="hanbok" data-i18n="navHanbok">韓服</button>
       <button class="nav-item" type="button" data-page-link="route" data-i18n="navRoute">交通</button>
@@ -91,6 +92,34 @@
             <article class="content-panel span-2">
               <h4 data-i18n="overviewFlightTitle">航班與支援</h4>
               <div class="flight-grid" id="flightCards"></div>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section class="page-section" id="page-flights" data-page-panel="flights">
+        <section class="section-card">
+          <div class="section-label" data-i18n="flightsKicker">航班</div>
+          <h2 data-i18n="flightsTitle">航班</h2>
+          <p class="lead" data-i18n="flightsLead">把航班、票價與會員權益放在同一頁，出發前和回程前都好核對。</p>
+          <div class="content-grid two-col">
+            <article class="content-panel">
+              <h4 data-i18n="flightsSummaryTitle">航班資訊</h4>
+              <div class="flight-grid" id="flightPageCards"></div>
+            </article>
+            <article class="content-panel">
+              <h4 data-i18n="airlineBenefitsTitle">華航黑卡重點</h4>
+              <div class="bullet-stack" id="airlineBenefits"></div>
+            </article>
+          </div>
+          <div class="content-grid two-col">
+            <article class="content-panel">
+              <h4 data-i18n="flightsFareTitle">票價與艙等</h4>
+              <div class="bullet-stack" id="flightFareNotes"></div>
+            </article>
+            <article class="content-panel">
+              <h4 data-i18n="flightsLinkTitle">官方連結</h4>
+              <div class="link-list" id="flightLinks"></div>
             </article>
           </div>
         </section>
