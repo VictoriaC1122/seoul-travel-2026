@@ -354,6 +354,10 @@ a {
   margin-top: 16px;
 }
 
+.compact-stack {
+  gap: 10px;
+}
+
 .bullet-card {
   padding-bottom: 14px;
   border-bottom: 1px solid rgba(118, 136, 158, 0.14);
@@ -595,6 +599,10 @@ a {
 
 .budget-summary-grid {
   margin-top: 16px;
+}
+
+.budget-highlight-item .budget-main {
+  margin-top: 8px;
 }
 
 .checklist-group-top {

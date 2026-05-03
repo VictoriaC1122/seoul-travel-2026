@@ -58,6 +58,14 @@ const t = {
     budgetTitle: "Budget",
     budgetSummaryTitle: "Budget summary",
     budgetBreakdownTitle: "Simple breakdown",
+    totalTripCostLabel: "總花費預估",
+    perPersonCostLabel: "每人預估",
+    paidSoFarLabel: "目前已付",
+    remainingTripBudgetLabel: "後續還需準備",
+    totalTripCostNote: "含韓服、飯店、交通、餐食、購物",
+    perPersonCostNote: "以兩人平均分攤估算",
+    paidSoFarNote: "目前已知訂金",
+    remainingTripBudgetNote: "扣除訂金後的其餘預算",
     checklistKicker: "Checklist",
     checklistTitle: "Checklist",
     linksTitle: "Useful links",
@@ -126,6 +134,14 @@ const t = {
     budgetTitle: "Budget",
     budgetSummaryTitle: "Budget summary",
     budgetBreakdownTitle: "Simple breakdown",
+    totalTripCostLabel: "Estimated total",
+    perPersonCostLabel: "Estimated per person",
+    paidSoFarLabel: "Paid so far",
+    remainingTripBudgetLabel: "Still to prepare",
+    totalTripCostNote: "Includes hanbok, hotel, transport, food, and shopping",
+    perPersonCostNote: "Split evenly for two people",
+    paidSoFarNote: "Known deposit already paid",
+    remainingTripBudgetNote: "Remaining trip budget after deposit",
     checklistKicker: "Checklist",
     checklistTitle: "Checklist",
     linksTitle: "Useful links",
@@ -194,6 +210,14 @@ const t = {
     budgetTitle: "Budget",
     budgetSummaryTitle: "Budget summary",
     budgetBreakdownTitle: "Simple breakdown",
+    totalTripCostLabel: "총 예상 비용",
+    perPersonCostLabel: "1인 예상 비용",
+    paidSoFarLabel: "현재까지 결제",
+    remainingTripBudgetLabel: "추가로 준비할 금액",
+    totalTripCostNote: "한복, 호텔, 교통, 식비, 쇼핑 포함",
+    perPersonCostNote: "2인 균등 분담 기준",
+    paidSoFarNote: "현재 확인된 예약금",
+    remainingTripBudgetNote: "예약금을 제외한 나머지 예산",
     checklistKicker: "Checklist",
     checklistTitle: "Checklist",
     linksTitle: "Useful links",
@@ -480,6 +504,28 @@ function renderRoute() {
 }
 
 function renderBudget() {
+  const totalTripKrw = 940000 + 19247 * rates.TWD.krwPerUnit + 120000 + 360000 + 250000;
+  const perPersonKrw = totalTripKrw / 2;
+  const paidSoFarKrw = 300 * rates.CNY.krwPerUnit;
+  const remainingTripKrw = totalTripKrw - paidSoFarKrw;
+
+  document.getElementById("budgetHighlights").innerHTML = [
+    { label: t[state.lang].totalTripCostLabel, value: totalTripKrw, note: t[state.lang].totalTripCostNote },
+    { label: t[state.lang].perPersonCostLabel, value: perPersonKrw, note: t[state.lang].perPersonCostNote },
+    { label: t[state.lang].paidSoFarLabel, value: paidSoFarKrw, note: t[state.lang].paidSoFarNote },
+    { label: t[state.lang].remainingTripBudgetLabel, value: remainingTripKrw, note: t[state.lang].remainingTripBudgetNote },
+  ]
+    .map(
+      (item) => `
+        <article class="bullet-card budget-highlight-item">
+          <div class="bullet-title">${item.label}</div>
+          <div class="budget-main">${formatCurrency(item.value)}</div>
+          <div class="budget-original">${formatCurrency(item.value, "KRW")} · ${item.note}</div>
+        </article>
+      `
+    )
+    .join("");
+
   document.getElementById("budgetSummary").innerHTML = data.budgetSummary
     .map((item) => `<article class="budget-summary-card"><div class="budget-summary-label">${getText(item.label)}</div><div class="budget-summary-value">${formatCurrency(item.krw)}</div><div class="budget-original">${formatCurrency(item.krw, "KRW")}</div></article>`)
     .join("");
