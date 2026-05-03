@@ -2,6 +2,7 @@
   --ink-strong: #243547;
   --ink-deep: #3b4e62;
   --ink-soft: #6f7f91;
+  --ink-faint: #8e9bab;
   --line: rgba(118, 136, 158, 0.18);
   --line-strong: rgba(118, 136, 158, 0.26);
   --bg: #f4f7fa;
@@ -69,7 +70,7 @@ a {
 }
 
 .hero {
-  padding: 14px 12px 24px;
+  padding: 10px 12px 18px;
 }
 
 .hero-shell {
@@ -97,7 +98,7 @@ a {
 }
 
 .top-controls {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .switcher-card,
@@ -118,7 +119,7 @@ a {
 }
 
 .switcher-card {
-  padding: 12px;
+  padding: 10px;
 }
 
 .switcher-label,
@@ -131,7 +132,7 @@ a {
 }
 
 .switcher-label {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .pill-group {
@@ -145,20 +146,23 @@ a {
   min-width: 0;
   padding: 10px 12px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.82);
   color: var(--ink-soft);
   cursor: pointer;
-  transition: background 0.18s ease, color 0.18s ease;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
 }
 
 .pill-btn.active,
 .pill-btn:hover {
   background: #93accb;
   color: #fff;
+  box-shadow: 0 8px 18px rgba(115, 145, 180, 0.24);
 }
 
 .hero-card {
-  padding: 20px 16px;
+  padding: 18px 16px;
   border-radius: var(--radius-xl);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 250, 252, 0.9));
 }
@@ -167,40 +171,43 @@ a {
   margin: 0;
   color: var(--ink-strong);
   font-family: "Cormorant Garamond", "Noto Serif TC", serif;
-  font-size: clamp(2rem, 7vw, 3rem);
-  line-height: 1;
+  font-size: clamp(2.1rem, 8vw, 3rem);
+  line-height: 0.96;
+  letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
-  margin: 8px 0 0;
+  margin: 10px 0 0;
   color: var(--ink-soft);
-  font-size: 0.98rem;
+  font-size: 0.94rem;
+  line-height: 1.55;
 }
 
 .hero-summary-grid {
   display: grid;
-  gap: 12px;
-  margin-top: 18px;
+  gap: 10px;
+  margin-top: 16px;
 }
 
 .summary-card {
-  padding: 16px;
+  padding: 14px 15px;
   border-radius: var(--radius-md);
-  background: var(--surface-soft);
+  background: rgba(255, 255, 255, 0.78);
   border: 1px solid var(--line);
 }
 
 .summary-label {
-  color: var(--ink-soft);
-  font-size: 0.82rem;
+  color: var(--ink-faint);
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
 }
 
 .summary-value {
   margin-top: 6px;
   color: var(--ink-strong);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.34;
 }
 
 .desktop-nav {
@@ -238,16 +245,16 @@ a {
 
 .container {
   width: min(1120px, calc(100% - 20px));
-  margin: 0 auto calc(110px + env(safe-area-inset-bottom));
+  margin: 0 auto calc(118px + env(safe-area-inset-bottom));
 }
 
 .section-block {
-  margin-bottom: 26px;
+  margin-bottom: 22px;
   scroll-margin-top: calc(var(--section-offset) + 16px);
 }
 
 .section-head {
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .section-kicker {
@@ -259,24 +266,27 @@ a {
   color: var(--ink-strong);
   font-family: "Cormorant Garamond", "Noto Serif TC", serif;
   font-size: clamp(1.8rem, 5vw, 2.5rem);
-  line-height: 1;
+  line-height: 0.98;
+  letter-spacing: -0.015em;
 }
 
 .simple-card {
-  padding: 18px 16px;
+  padding: 16px 15px;
 }
 
 .simple-card h3 {
   margin: 0;
   color: var(--ink-strong);
   font-family: "Cormorant Garamond", "Noto Serif TC", serif;
-  font-size: clamp(1.35rem, 4vw, 1.85rem);
-  line-height: 1.1;
+  font-size: clamp(1.32rem, 4vw, 1.8rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
 }
 
 .featured-card {
   border: 1px solid rgba(147, 172, 203, 0.28);
   box-shadow: var(--shadow-strong);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(242, 247, 252, 0.92));
 }
 
 .mini-stat-grid,
@@ -314,7 +324,7 @@ a {
 .link-block,
 .timeline-card,
 .step-card {
-  padding: 16px;
+  padding: 15px;
 }
 
 .mini-stat-label,
@@ -347,11 +357,12 @@ a {
 .check-desc,
 .link-note {
   color: var(--ink-soft);
-  font-size: 0.93rem;
+  font-size: 0.92rem;
+  line-height: 1.58;
 }
 
 .bullet-stack {
-  margin-top: 16px;
+  margin-top: 14px;
 }
 
 .compact-stack {
@@ -373,6 +384,7 @@ a {
 .link-row-label {
   color: var(--ink-strong);
   font-weight: 700;
+  line-height: 1.42;
 }
 
 .bullet-desc,
@@ -384,7 +396,7 @@ a {
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  padding-bottom: 10px;
+  padding-bottom: 12px;
   border-bottom: 1px solid rgba(118, 136, 158, 0.14);
 }
 
@@ -395,12 +407,14 @@ a {
 
 .info-label {
   color: var(--ink-soft);
+  flex: 0 0 auto;
 }
 
 .info-value {
   color: var(--ink-strong);
   font-weight: 700;
   text-align: right;
+  line-height: 1.45;
 }
 
 .hotel-pill-row,
@@ -420,9 +434,9 @@ a {
   display: inline-flex;
   align-items: center;
   min-height: 34px;
-  padding: 6px 12px;
+  padding: 6px 11px;
   border-radius: 999px;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
 }
 
 .pill,
@@ -440,7 +454,7 @@ a {
 .price-stack {
   display: grid;
   gap: 12px;
-  margin-top: 16px;
+  margin-top: 14px;
 }
 
 .price-row {
@@ -476,14 +490,14 @@ a {
 }
 
 .gallery-item img {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 0.94 / 1;
   object-fit: cover;
 }
 
 .gallery-item figcaption {
-  padding: 12px 14px;
+  padding: 11px 13px 13px;
   color: var(--ink-soft);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 }
 
 .step-list,
@@ -498,7 +512,7 @@ a {
 
 .timeline-card {
   display: grid;
-  grid-template-columns: 70px 1fr;
+  grid-template-columns: 64px 1fr;
   gap: 12px;
 }
 
@@ -528,7 +542,7 @@ a {
 .accordion-summary {
   display: grid;
   gap: 8px;
-  padding: 16px;
+  padding: 15px;
   list-style: none;
   cursor: pointer;
 }
@@ -564,12 +578,12 @@ a {
   margin: 0;
   color: var(--ink-strong);
   font-family: "Cormorant Garamond", "Noto Serif TC", serif;
-  font-size: 1.45rem;
+  font-size: 1.36rem;
   line-height: 1.08;
 }
 
 .accordion-body {
-  padding: 0 16px 16px;
+  padding: 0 15px 15px;
 }
 
 .itinerary-meta-grid {
@@ -578,7 +592,7 @@ a {
 }
 
 .itinerary-meta-card {
-  padding: 14px;
+  padding: 13px;
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.76);
   border: 1px solid rgba(118, 136, 158, 0.14);
@@ -627,7 +641,7 @@ a {
 .checklist-list {
   display: grid;
   gap: 10px;
-  margin-top: 14px;
+  margin-top: 12px;
 }
 
 .checklist-card {
@@ -649,7 +663,7 @@ a {
   display: grid;
   grid-template-columns: 26px 1fr;
   gap: 12px;
-  padding: 14px;
+  padding: 14px 12px;
 }
 
 .check-mark {
@@ -676,7 +690,7 @@ a {
 .link-list {
   display: grid;
   gap: 10px;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .link-row {
@@ -703,24 +717,37 @@ a {
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.78);
   border: 1px solid var(--line);
+  color: var(--ink-strong);
+  font-weight: 600;
 }
 
 .mobile-nav {
   position: fixed;
-  left: 10px;
-  right: 10px;
-  bottom: calc(10px + env(safe-area-inset-bottom));
+  left: 12px;
+  right: 12px;
+  bottom: calc(12px + env(safe-area-inset-bottom));
   z-index: 160;
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 6px;
-  padding: 8px;
-  border-radius: var(--radius-lg);
+  gap: 4px;
+  padding: 7px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  box-shadow: 0 18px 42px rgba(56, 74, 96, 0.14);
+  backdrop-filter: blur(18px);
 }
 
 .mobile-nav-link {
-  font-size: 0.72rem;
+  min-height: 46px;
+  padding: 8px 4px;
+  font-size: 0.7rem;
+  line-height: 1.15;
   text-align: center;
+}
+
+.mobile-nav-link span {
+  display: block;
 }
 
 .image-modal {
@@ -769,6 +796,71 @@ a {
 .accordion-summary:focus-visible {
   outline: 2px solid rgba(90, 118, 152, 0.56);
   outline-offset: 3px;
+}
+
+@media (max-width: 759px) {
+  .hero-shell,
+  .container {
+    width: min(100%, calc(100% - 20px));
+  }
+
+  .top-controls {
+    gap: 10px;
+  }
+
+  .hero-card {
+    box-shadow: 0 16px 36px rgba(58, 76, 98, 0.09);
+  }
+
+  .summary-card:first-child,
+  .summary-card:nth-child(2) {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(246, 249, 252, 0.9));
+  }
+
+  .section-head {
+    padding-left: 2px;
+  }
+
+  .simple-card,
+  .gallery-item,
+  .itinerary-card {
+    box-shadow: 0 12px 28px rgba(58, 76, 98, 0.06);
+  }
+
+  .featured-card {
+    padding: 18px 16px;
+  }
+
+  .featured-card .price-value {
+    font-size: 1.12rem;
+  }
+
+  .route-actions {
+    gap: 10px;
+  }
+
+  .route-actions .action-link,
+  .link-row .link-button {
+    width: 100%;
+  }
+
+  .link-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .info-line {
+    align-items: flex-start;
+  }
+
+  .info-value {
+    max-width: 58%;
+  }
+
+  .accordion-topline {
+    align-items: center;
+  }
 }
 
 @media (min-width: 760px) {
