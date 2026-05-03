@@ -41,6 +41,7 @@ const t = {
     overviewTitle: "先看這裡",
     overviewLead: "首頁只放真的會先看的，其他細節都分到各頁去找。",
     overviewSnapshotTitle: "旅行重點",
+    overviewRecommendTitle: "先看推薦",
     overviewAlertsTitle: "當天重點",
     overviewNotesTitle: "出發前確認",
     overviewFlightTitle: "航班與支援",
@@ -155,6 +156,7 @@ const t = {
     overviewTitle: "Start here",
     overviewLead: "Keep the home page light. Use it as the front door, not the full data page.",
     overviewSnapshotTitle: "Trip snapshot",
+    overviewRecommendTitle: "Recommended first",
     overviewAlertsTitle: "Today matters",
     overviewNotesTitle: "Before you go",
     overviewFlightTitle: "Flights and support",
@@ -269,6 +271,7 @@ const t = {
     overviewTitle: "먼저 여기",
     overviewLead: "홈에는 바로 봐야 할 것만 두고, 자세한 내용은 각 페이지로 나눴습니다.",
     overviewSnapshotTitle: "여행 핵심 정보",
+    overviewRecommendTitle: "먼저 볼 추천",
     overviewAlertsTitle: "당일 핵심",
     overviewNotesTitle: "출발 전 확인",
     overviewFlightTitle: "항공편 및 지원",
@@ -394,6 +397,23 @@ const data = {
     { label: { "zh-Hant": "住宿區域", en: "Stay area", ko: "숙소 지역" }, value: { "zh-Hant": "弘大 / Seogyo", en: "Hongdae / Seogyo", ko: "홍대 / 서교" } },
     { label: { "zh-Hant": "重點日期", en: "Key date", ko: "핵심 날짜" }, value: { "zh-Hant": "5/19 韓服拍攝", en: "May 19 hanbok", ko: "5/19 한복 촬영" } },
     { label: { "zh-Hant": "建議出門", en: "Leave by", ko: "출발 권장" }, value: { "zh-Hant": "12:45 - 13:00", en: "12:45 - 13:00", ko: "12:45 - 13:00" } },
+  ],
+  overviewRecommendations: [
+    {
+      title: { "zh-Hant": "聖水洞", en: "Seongsu", ko: "성수" },
+      desc: { "zh-Hant": "很適合你們這趟的地方，逛選物、咖啡、街景都舒服。", en: "A very good fit for this trip: concept stores, cafes, and easy city walking.", ko: "이번 여행 분위기와 잘 맞는 곳으로, 편집숍과 카페, 거리 산책이 모두 좋습니다." },
+      tag: { "zh-Hant": "先收進口袋", en: "Good first pick", ko: "우선 저장" },
+    },
+    {
+      title: { "zh-Hant": "益善洞", en: "Ikseondong", ko: "익선동" },
+      desc: { "zh-Hant": "韓屋街區加上餐廳和小店，適合排半天慢慢走。", en: "Hanok lanes with small shops and restaurants, good for a slow half day.", ko: "한옥 골목과 작은 가게, 식당이 모여 있어서 반나절 천천히 걷기 좋습니다." },
+      tag: { "zh-Hant": "吃飯散步", en: "Food + walk", ko: "식사 + 산책" },
+    },
+    {
+      title: { "zh-Hant": "首爾林", en: "Seoul Forest", ko: "서울숲" },
+      desc: { "zh-Hant": "如果想排一個輕鬆一點的白天，這裡很剛好。", en: "A nice easy daytime stop if you want one relaxed block in the trip.", ko: "조금 여유 있는 낮 일정을 넣고 싶을 때 잘 맞는 곳입니다." },
+      tag: { "zh-Hant": "輕鬆版行程", en: "Easy stop", ko: "가벼운 코스" },
+    },
   ],
   importantAlerts: [
     { title: { "zh-Hant": "韓服這天不要壓線", en: "Do not cut the hanbok day too close", ko: "한복 날은 시간 촉박 금지" }, desc: { "zh-Hant": "遲到 20 分鐘會罰款，而且北村容易迷路。", en: "A 20-minute delay triggers a penalty, and Bukchon is easy to get lost in.", ko: "20분 지각 벌금이 있고 북촌은 길 찾기가 어렵습니다." } },
@@ -601,7 +621,13 @@ function renderOverview() {
   const overviewStats = document.getElementById("overviewStats");
   const importantAlerts = document.getElementById("importantAlerts");
   const overviewNotes = document.getElementById("overviewNotes");
-  if (!overviewStats || !importantAlerts || !overviewNotes) return;
+  const overviewRecommendations = document.getElementById("overviewRecommendations");
+  if (!overviewStats || !importantAlerts || !overviewNotes || !overviewRecommendations) return;
+  overviewRecommendations.innerHTML = data.overviewRecommendations
+    .map(
+      (item) => `<article class="mini-stat-card"><div class="mini-stat-label">${getText(item.tag)}</div><div class="mini-stat-value">${getText(item.title)}</div><div class="budget-original">${getText(item.desc)}</div></article>`
+    )
+    .join("");
   overviewStats.innerHTML = data.overviewStats
     .map((item) => `<article class="mini-stat-card"><div class="mini-stat-label">${getText(item.label)}</div><div class="mini-stat-value">${getText(item.value)}</div></article>`)
     .join("");
