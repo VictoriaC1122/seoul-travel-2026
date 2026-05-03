@@ -22,6 +22,7 @@ const text = {
     navFlights: "航班",
     navHanbok: "韓服",
     navItinerary: "行程",
+    navRecommend: "推薦",
     navMap: "地圖",
     navBudget: "預算",
     overviewLabel: "Journey Overview",
@@ -50,6 +51,13 @@ const text = {
     itineraryLabel: "Day by Day",
     itineraryTitle: "每日行程",
     itineraryLead: "先把一定會去的排進去，剩下的留白，當天想去哪再補。",
+    recommendLabel: "Recommendations",
+    recommendTitle: "如果還想加一點行程",
+    recommendLead: "挑幾個和這趟氣質比較合的點先放著，不一定全去，但臨時想加行程時很好用。",
+    recommendPlacesLabel: "Seoul Picks",
+    recommendPlacesTitle: "首爾推薦",
+    recommendSpaLabel: "Jjimjilbang",
+    recommendSpaTitle: "汗蒸幕推薦",
     mapLabel: "Route & Metro",
     mapTitle: "韓服拍攝路線與首爾地鐵圖",
     mapLead: "韓服拍攝當天怎麼從飯店到安國，這裡直接看。怕迷路就叫車。",
@@ -75,6 +83,7 @@ const text = {
     navFlights: "Flights",
     navHanbok: "Hanbok",
     navItinerary: "Itinerary",
+    navRecommend: "Picks",
     navMap: "Map",
     navBudget: "Budget",
     overviewLabel: "Journey Overview",
@@ -103,6 +112,13 @@ const text = {
     itineraryLabel: "Day by Day",
     itineraryTitle: "Daily itinerary",
     itineraryLead: "The confirmed places are placed first, while the remaining space stays intentionally open.",
+    recommendLabel: "Recommendations",
+    recommendTitle: "If you want a few extra ideas",
+    recommendLead: "These are the places that match the mood of this trip best. You do not need to fit them all in.",
+    recommendPlacesLabel: "Seoul Picks",
+    recommendPlacesTitle: "Where to go",
+    recommendSpaLabel: "Jjimjilbang",
+    recommendSpaTitle: "Spa picks",
     mapLabel: "Route & Metro",
     mapTitle: "Shoot route and Seoul subway map",
     mapLead: "The route from Local Stitch to the Bukchon / Anguk area is organized here, with Uber as a clean fallback.",
@@ -128,6 +144,7 @@ const text = {
     navFlights: "항공",
     navHanbok: "한복",
     navItinerary: "일정",
+    navRecommend: "추천",
     navMap: "지도",
     navBudget: "예산",
     overviewLabel: "Journey Overview",
@@ -156,6 +173,13 @@ const text = {
     itineraryLabel: "Day by Day",
     itineraryTitle: "일정표",
     itineraryLead: "확정된 장소를 먼저 넣고, 나머지는 여유 있게 비워 두었습니다.",
+    recommendLabel: "Recommendations",
+    recommendTitle: "조금 더 넣고 싶다면",
+    recommendLead: "이번 여행 분위기와 잘 맞는 곳들만 골라 두었습니다. 전부 넣지 않아도 됩니다.",
+    recommendPlacesLabel: "Seoul Picks",
+    recommendPlacesTitle: "서울 추천",
+    recommendSpaLabel: "Jjimjilbang",
+    recommendSpaTitle: "찜질방 추천",
     mapLabel: "Route & Metro",
     mapTitle: "촬영 이동 경로와 서울 지하철 지도",
     mapLead: "Local Stitch에서 북촌 / 안국역 근처까지 가는 방법과 Uber 대안을 함께 정리했습니다.",
@@ -563,6 +587,55 @@ const content = {
       href: "https://english.visitseoul.net/subway",
     },
   ],
+  recommendPlaces: [
+    {
+      title: { "zh-Hant": "聖水＋首爾林", en: "Seongsu + Seoul Forest", ko: "성수 + 서울숲" },
+      desc: {
+        "zh-Hant": "如果想保留一點現在首爾最有設計感的區域，聖水還是很適合。最近首爾林到聖水一帶也正好有 2026 首爾國際庭園展。",
+        en: "Seongsu is still a strong pick for design stores, cafes, and a current Seoul mood. The Seoul International Garden Show is also running around Seoul Forest and Seongsu in 2026.",
+        ko: "성수는 여전히 디자인 숍과 카페, 요즘 서울 분위기를 보기 좋은 곳입니다. 2026 서울국제정원박람회도 서울숲-성수 일대에서 진행 중입니다.",
+      },
+      link: "https://visit.seoul.kr/en/neighborhoods/seongsu",
+    },
+    {
+      title: { "zh-Hant": "益善洞", en: "Ikseon-dong", ko: "익선동" },
+      desc: {
+        "zh-Hant": "如果你們喜歡韓屋巷子但又想加一點咖啡店和約會感，益善洞很順，而且從安國 / 鐘路一帶接過去也方便。",
+        en: "Ikseon-dong works well if you want hanok alleys with more cafes and date-night energy. It connects naturally with the Anguk / Jongno area.",
+        ko: "한옥 골목에 카페와 데이트 무드를 조금 더하고 싶다면 익선동이 잘 맞습니다. 안국·종로 동선과도 자연스럽게 이어집니다.",
+      },
+      link: "https://english.visitseoul.net/attractions/IkseongdongHanokVillage/ENP037008",
+    },
+    {
+      title: { "zh-Hant": "望遠市場", en: "Mangwon Market", ko: "망원시장" },
+      desc: {
+        "zh-Hant": "住弘大的話很適合挑一個早上或下午去望遠市場，吃小吃、逛一下附近咖啡店，節奏比較生活感。",
+        en: "Since you are staying in Hongdae, Mangwon Market is an easy low-pressure add-on for snacks and a slower neighborhood afternoon.",
+        ko: "홍대에 머문다면 망원시장은 가볍게 다녀오기 좋습니다. 간식 먹고 근처 카페까지 이어가기 편합니다.",
+      },
+      link: "https://visit.seoul.kr/en/places/mangwon-market",
+    },
+  ],
+  recommendSpa: [
+    {
+      title: { "zh-Hant": "숲속한방랜드", en: "Supsok Hanbang Land", ko: "숲속한방랜드" },
+      desc: {
+        "zh-Hant": "如果你想要比較像韓國在地感的汗蒸幕，這個很適合。它主打傳統炭窯型汗蒸幕，而且離新村不算遠，從弘大過去也順。",
+        en: "A good pick if you want a more traditional local-style jjimjilbang. It is known for charcoal kiln saunas and is reasonably convenient from Hongdae.",
+        ko: "조금 더 전통적인 찜질방 분위기를 원하면 여기 추천입니다. 숯가마 스타일이 강점이고 홍대에서도 크게 멀지 않습니다.",
+      },
+      link: "https://visit.seoul.kr/en/places/supsok-hanbang-land",
+    },
+    {
+      title: { "zh-Hant": "Spa Lei", en: "Spa Lei", ko: "스파레이" },
+      desc: {
+        "zh-Hant": "如果想去比較乾淨、安靜一點的路線，Spa Lei 會更舒服。女生去通常接受度很高，整體也比較精緻。",
+        en: "If you want something cleaner, quieter, and more polished, Spa Lei is the softer choice. It is often recommended for women visitors.",
+        ko: "조금 더 깔끔하고 조용한 쪽을 원하면 Spa Lei가 편합니다. 여성 방문객에게 특히 선호도가 높은 편입니다.",
+      },
+      link: "https://visit.seoul.kr/en/articles/seoul-jjimjilbang-spa-guide-2025",
+    },
+  ],
   budgetSummary: [
     { label: { "zh-Hant": "兩人總計", en: "Total for two", ko: "2인 총액" }, amountTwd: 54453 },
     { label: { "zh-Hant": "每人約", en: "Per person", ko: "1인 약" }, amountTwd: 27227 },
@@ -847,6 +920,36 @@ function renderItinerary() {
     .join("");
 }
 
+function renderRecommendations() {
+  document.getElementById("recommendPlaces").innerHTML = content.recommendPlaces
+    .map(
+      (item) => `
+        <article class="bullet-item">
+          <div class="bullet-title">${getText(item.title)}</div>
+          <div class="bullet-desc">${getText(item.desc)}</div>
+          <div class="resource-actions">
+            <a class="resource-link" href="${item.link}" target="_blank" rel="noreferrer">Link</a>
+          </div>
+        </article>
+      `
+    )
+    .join("");
+
+  document.getElementById("recommendSpa").innerHTML = content.recommendSpa
+    .map(
+      (item) => `
+        <article class="bullet-item">
+          <div class="bullet-title">${getText(item.title)}</div>
+          <div class="bullet-desc">${getText(item.desc)}</div>
+          <div class="resource-actions">
+            <a class="resource-link" href="${item.link}" target="_blank" rel="noreferrer">Link</a>
+          </div>
+        </article>
+      `
+    )
+    .join("");
+}
+
 function renderMap() {
   document.getElementById("routeSteps").innerHTML = content.routeSteps
     .map(
@@ -942,6 +1045,7 @@ function renderAll() {
   renderFlights();
   renderHanbok();
   renderItinerary();
+  renderRecommendations();
   renderMap();
   renderBudget();
 }
