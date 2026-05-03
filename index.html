@@ -6,14 +6,14 @@
     <title>Seoul Travel Handbook 2026 | Victoria Cheng</title>
     <meta
       name="description"
-      content="Seoul Travel Handbook 2026 for Victoria Cheng: a premium mobile-first Seoul travel dashboard with hotel, hanbok shooting, routes, budget, itinerary, checklist, and useful links."
+      content="Seoul Travel 2026 for Victoria Cheng: a clean mobile-first travel dashboard with hotel, hanbok booking, route, budget, checklist, and key trip details."
     />
     <meta name="theme-color" content="#9aaec8" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Seoul Travel Handbook 2026 | Victoria Cheng" />
     <meta
       property="og:description"
-      content="A polished, glassmorphism-style Seoul travel dashboard with hotel, hanbok booking, transportation, budget, itinerary, and checklist."
+      content="A clean, premium, mobile-first Seoul travel dashboard with hotel, hanbok, route, budget, images, and checklist."
     />
     <meta property="og:image" content="https://victoriac1122.github.io/seoul-travel-2026/assets/images/S__180125890_0.jpg" />
     <link rel="icon" type="image/jpeg" href="./assets/images/S__180125889_0.jpg" />
@@ -29,119 +29,71 @@
     <div class="page-progress" id="pageProgress" aria-hidden="true"></div>
 
     <header class="hero" id="top">
-      <div class="hero-backdrop" aria-hidden="true"></div>
       <div class="hero-shell">
-        <div class="utility-bar">
-          <div class="utility-card">
-            <div class="utility-label" data-i18n="languageSwitcher">Language</div>
-            <div class="segmented-control" role="tablist" aria-label="Language switcher">
-              <button class="segment-btn active" type="button" data-lang="zh-Hant" aria-label="Switch language to Traditional Chinese">中文</button>
-              <button class="segment-btn" type="button" data-lang="en" aria-label="Switch language to English">EN</button>
-              <button class="segment-btn" type="button" data-lang="ko" aria-label="Switch language to Korean">KO</button>
+        <div class="top-controls">
+          <div class="switcher-card">
+            <div class="switcher-label" data-i18n="languageSwitcher">Language</div>
+            <div class="pill-group" role="tablist" aria-label="Language switcher">
+              <button class="pill-btn active" type="button" data-lang="zh-Hant" aria-label="Switch language to Traditional Chinese">中文</button>
+              <button class="pill-btn" type="button" data-lang="en" aria-label="Switch language to English">EN</button>
+              <button class="pill-btn" type="button" data-lang="ko" aria-label="Switch language to Korean">KO</button>
             </div>
           </div>
-          <div class="utility-card">
-            <div class="utility-label" data-i18n="currencySwitcher">Currency</div>
-            <div class="segmented-control" role="tablist" aria-label="Currency switcher">
-              <button class="segment-btn active" type="button" data-currency="TWD" aria-label="Switch currency to Taiwan Dollar">TWD</button>
-              <button class="segment-btn" type="button" data-currency="KRW" aria-label="Switch currency to Korean Won">KRW</button>
-              <button class="segment-btn" type="button" data-currency="CNY" aria-label="Switch currency to Chinese Yuan">CNY</button>
+          <div class="switcher-card">
+            <div class="switcher-label" data-i18n="currencySwitcher">Currency</div>
+            <div class="pill-group" role="tablist" aria-label="Currency switcher">
+              <button class="pill-btn active" type="button" data-currency="TWD" aria-label="Switch currency to Taiwan Dollar">TWD</button>
+              <button class="pill-btn" type="button" data-currency="KRW" aria-label="Switch currency to Korean Won">KRW</button>
+              <button class="pill-btn" type="button" data-currency="CNY" aria-label="Switch currency to Chinese Yuan">CNY</button>
             </div>
           </div>
         </div>
 
-        <div class="hero-panel">
+        <div class="hero-card">
           <div class="hero-copy">
-            <p class="hero-kicker" data-i18n="heroKicker">Victoria Cheng · Aiden</p>
-            <h1 data-i18n="heroTitle">Seoul Travel Handbook 2026</h1>
+            <h1 data-i18n="heroTitle">Seoul Travel 2026</h1>
             <p class="hero-subtitle" data-i18n="heroSubtitle">May 2026 · Seoul · Hanbok Shooting · Hotel · Budget</p>
-            <div class="hero-tags" id="heroTags"></div>
           </div>
-          <div class="hero-dashboard" id="heroSummary" aria-label="Travel summary"></div>
+          <div class="hero-summary-grid" id="heroSummary" aria-label="Key trip cards"></div>
         </div>
       </div>
     </header>
 
     <nav class="desktop-nav" aria-label="Primary navigation">
       <a class="desktop-nav-link active" href="#overview" data-nav="overview" data-i18n="navOverview">Overview</a>
-      <a class="desktop-nav-link" href="#trip-overview" data-nav="trip-overview" data-i18n="navTripOverview">Trip Overview</a>
       <a class="desktop-nav-link" href="#hotel" data-nav="hotel" data-i18n="navHotel">Hotel</a>
       <a class="desktop-nav-link" href="#hanbok" data-nav="hanbok" data-i18n="navHanbok">Hanbok</a>
       <a class="desktop-nav-link" href="#route" data-nav="route" data-i18n="navRoute">Route</a>
       <a class="desktop-nav-link" href="#budget" data-nav="budget" data-i18n="navBudget">Budget</a>
-      <a class="desktop-nav-link" href="#itinerary" data-nav="itinerary" data-i18n="navItinerary">Itinerary</a>
       <a class="desktop-nav-link" href="#checklist" data-nav="checklist" data-i18n="navChecklist">Checklist</a>
-      <a class="desktop-nav-link" href="#links" data-nav="links" data-i18n="navLinks">Useful Links</a>
     </nav>
 
     <main class="container">
       <section class="section-block" id="overview">
         <div class="section-head">
-          <p class="section-kicker" data-i18n="overviewKicker">Hero Dashboard</p>
-          <h2 data-i18n="overviewTitle">Hero dashboard</h2>
-          <p class="section-lead" data-i18n="overviewLead">
-            The most important trip details are surfaced first, so hotel, shoot timing, payment status, and member benefits can be scanned within seconds.
-          </p>
+          <p class="section-kicker" data-i18n="overviewKicker">Overview</p>
+          <h2 data-i18n="overviewTitle">Overview</h2>
         </div>
 
-        <div class="layout-grid layout-grid-2">
-          <article class="glass-card">
-            <div class="card-header">
-              <h3 data-i18n="overviewSnapshotTitle">Trip snapshot</h3>
-            </div>
+        <div class="stack-grid">
+          <article class="simple-card">
+            <h3 data-i18n="overviewSnapshotTitle">Trip snapshot</h3>
             <div class="mini-stat-grid" id="overviewStats"></div>
           </article>
 
-          <article class="glass-card">
-            <div class="card-header">
-              <h3 data-i18n="overviewTodayTitle">Today focus</h3>
-            </div>
-            <div class="today-focus-card" id="todayFocus"></div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section-block" id="trip-overview">
-        <div class="section-head">
-          <p class="section-kicker" data-i18n="tripOverviewKicker">Trip Overview</p>
-          <h2 data-i18n="tripOverviewTitle">Trip overview</h2>
-          <p class="section-lead" data-i18n="tripOverviewLead">
-            Use this section like a personal assistant dashboard: what is locked in, what to prepare, and what deserves attention before departure.
-          </p>
-        </div>
-
-        <div class="layout-grid layout-grid-2">
-          <article class="glass-card">
-            <div class="card-header">
-              <h3 data-i18n="tripOverviewLockedTitle">Locked plans</h3>
-            </div>
-            <div class="bullet-stack" id="lockedPlans"></div>
-          </article>
-
-          <article class="glass-card">
-            <div class="card-header">
-              <h3 data-i18n="tripOverviewAlertsTitle">Important alerts</h3>
-            </div>
+          <article class="simple-card">
+            <h3 data-i18n="overviewAlertsTitle">Important alerts</h3>
             <div class="bullet-stack" id="importantAlerts"></div>
           </article>
-        </div>
 
-        <div class="layout-grid layout-grid-2 secondary-grid">
-          <article class="glass-card">
-            <div class="card-header">
-              <h3 data-i18n="flightSnapshotTitle">Flight snapshot</h3>
-            </div>
+          <article class="simple-card">
+            <h3 data-i18n="overviewFlightTitle">Flights and support</h3>
             <div class="flight-grid" id="flightCards"></div>
           </article>
 
-          <article class="glass-card">
-            <div class="card-header">
-              <h3 data-i18n="memberBenefitsTitle">China Airlines Paragon</h3>
-            </div>
-            <p class="card-intro" data-i18n="memberBenefitsLead">
-              Only the benefits that matter to this trip are shown here, so it feels practical rather than overloaded.
-            </p>
-            <div class="bullet-stack" id="memberBenefits"></div>
+          <article class="simple-card">
+            <h3 data-i18n="overviewItineraryTitle">Daily itinerary</h3>
+            <div class="accordion-list" id="itineraryList"></div>
           </article>
         </div>
       </section>
@@ -150,18 +102,13 @@
         <div class="section-head">
           <p class="section-kicker" data-i18n="hotelKicker">Hotel</p>
           <h2 data-i18n="hotelTitle">Hotel</h2>
-          <p class="section-lead" data-i18n="hotelLead">
-            Hongdae keeps the trip easy: better food access, easy return at night, and a cleaner route to the hanbok appointment day.
-          </p>
         </div>
 
-        <div class="layout-grid layout-grid-2">
-          <article class="glass-card" id="hotelCard"></article>
-          <article class="glass-card">
-            <div class="card-header">
-              <h3 data-i18n="hotelGalleryTitle">Hotel photos</h3>
-            </div>
-            <div class="gallery-grid" id="hotelGallery">
+        <div class="stack-grid">
+          <article class="simple-card" id="hotelCard"></article>
+          <article class="simple-card">
+            <h3 data-i18n="hotelGalleryTitle">Hotel photos</h3>
+            <div class="gallery-grid">
               <figure class="gallery-item">
                 <button class="gallery-trigger" type="button" data-image="./assets/images/local-stitch-exterior.jpeg" data-caption-key="hotelExteriorCaption">
                   <img src="./assets/images/local-stitch-exterior.jpeg" alt="Exterior view of Local Stitch Creator Town Seogyo in the Hongdae area" loading="lazy" />
@@ -181,29 +128,19 @@
 
       <section class="section-block" id="hanbok">
         <div class="section-head">
-          <p class="section-kicker" data-i18n="hanbokKicker">Hanbok Shooting</p>
-          <h2 data-i18n="hanbokTitle">Hanbok shooting</h2>
-          <p class="section-lead" data-i18n="hanbokLead">
-            This is the key booking of the trip, so the reserved plan, what is included, payment warnings, and reference photos stay together here.
-          </p>
+          <p class="section-kicker" data-i18n="hanbokKicker">Hanbok</p>
+          <h2 data-i18n="hanbokTitle">Hanbok</h2>
         </div>
 
-        <div class="layout-grid layout-grid-2">
-          <article class="glass-card hero-highlight-card" id="hanbokPlanCard"></article>
-          <article class="glass-card">
-            <div class="card-header">
-              <h3 data-i18n="hanbokRulesTitle">Shooting notes</h3>
-            </div>
+        <div class="stack-grid">
+          <article class="simple-card featured-card" id="hanbokPlanCard"></article>
+          <article class="simple-card">
+            <h3 data-i18n="hanbokRulesTitle">Shooting notes</h3>
             <div class="bullet-stack" id="hanbokRules"></div>
           </article>
-        </div>
-
-        <div class="layout-grid layout-grid-2 secondary-grid">
-          <article class="glass-card">
-            <div class="card-header">
-              <h3 data-i18n="hanbokReferenceTitle">Hanbok reference photos</h3>
-            </div>
-            <div class="gallery-grid" id="hanbokGallery">
+          <article class="simple-card">
+            <h3 data-i18n="hanbokReferenceTitle">Reference photos</h3>
+            <div class="gallery-grid">
               <figure class="gallery-item">
                 <button class="gallery-trigger" type="button" data-image="./assets/images/S__180125889_0.jpg" data-caption-key="hanbokCaptionOne">
                   <img src="./assets/images/S__180125889_0.jpg" alt="Blue hanbok reference photo under a traditional Korean gate" loading="lazy" />
@@ -228,14 +165,6 @@
                 </button>
                 <figcaption data-i18n="hanbokCaptionFour">Corridor portrait reference</figcaption>
               </figure>
-            </div>
-          </article>
-
-          <article class="glass-card">
-            <div class="card-header">
-              <h3 data-i18n="instructionsTitle">Shooting instructions</h3>
-            </div>
-            <div class="gallery-grid single-column-grid">
               <figure class="gallery-item">
                 <button class="gallery-trigger" type="button" data-image="./assets/images/S__180125900.jpg" data-caption-key="instructionsCaption">
                   <img src="./assets/images/S__180125900.jpg" alt="Store instructions for the hanbok shooting package" loading="lazy" />
@@ -249,35 +178,29 @@
 
       <section class="section-block" id="route">
         <div class="section-head">
-          <p class="section-kicker" data-i18n="routeKicker">Transportation</p>
-          <h2 data-i18n="routeTitle">Transportation</h2>
-          <p class="section-lead" data-i18n="routeLead">
-            Transportation is organized like route cards, so start point, destination, duration, cost, and best-use case all stay easy to scan on mobile.
-          </p>
+          <p class="section-kicker" data-i18n="routeKicker">Route</p>
+          <h2 data-i18n="routeTitle">Route</h2>
         </div>
 
-        <article class="glass-card">
-          <div class="card-header">
-            <h3 data-i18n="routeTimelineTitle">Hanbok day timeline</h3>
-          </div>
-          <div class="timeline-list" id="routeTimeline"></div>
-        </article>
-
-        <div class="layout-grid layout-grid-3 secondary-grid" id="routeCards"></div>
-
-        <div class="layout-grid layout-grid-2 secondary-grid">
-          <article class="glass-card">
-            <div class="card-header">
-              <h3 data-i18n="airportRouteTitle">Airport and arrival</h3>
-            </div>
-            <div class="bullet-stack" id="airportNotes"></div>
+        <div class="stack-grid">
+          <article class="simple-card">
+            <h3 data-i18n="routeStepsTitle">Route steps</h3>
+            <div class="step-list" id="routeSteps"></div>
           </article>
 
-          <article class="glass-card">
-            <div class="card-header">
-              <h3 data-i18n="subwayMapTitle">Subway map</h3>
-            </div>
-            <div class="gallery-grid single-column-grid">
+          <article class="simple-card">
+            <h3 data-i18n="routeTimelineTitle">Suggested timing</h3>
+            <div class="timeline-list" id="routeTimeline"></div>
+          </article>
+
+          <article class="simple-card">
+            <h3 data-i18n="routeOptionsTitle">Route cards</h3>
+            <div class="route-card-list" id="routeCards"></div>
+          </article>
+
+          <article class="simple-card">
+            <h3 data-i18n="subwayMapTitle">Subway map</h3>
+            <div class="gallery-grid">
               <figure class="gallery-item">
                 <button class="gallery-trigger" type="button" data-image="./assets/images/seoul-metro-route-map-official.jpg" data-caption-key="subwayCaption">
                   <img src="./assets/images/seoul-metro-route-map-official.jpg" alt="Official Seoul Metro route map in English" loading="lazy" />
@@ -293,118 +216,48 @@
         <div class="section-head">
           <p class="section-kicker" data-i18n="budgetKicker">Budget</p>
           <h2 data-i18n="budgetTitle">Budget</h2>
-          <p class="section-lead" data-i18n="budgetLead">
-            The selected currency becomes the main display, while the original payment currency stays visible underneath for travel reality.
-          </p>
         </div>
 
-        <div class="layout-grid layout-grid-2">
-          <article class="glass-card">
-            <div class="card-header">
-              <h3 data-i18n="budgetSummaryTitle">Budget summary</h3>
-            </div>
+        <div class="stack-grid">
+          <article class="simple-card">
+            <h3 data-i18n="budgetSummaryTitle">Budget summary</h3>
             <div class="budget-summary-grid" id="budgetSummary"></div>
           </article>
 
-          <article class="glass-card">
-            <div class="card-header">
-              <h3 data-i18n="budgetTotalTitle">Total estimated trip cost</h3>
-            </div>
-            <div class="total-cost-card" id="budgetTotal"></div>
+          <article class="simple-card">
+            <h3 data-i18n="budgetBreakdownTitle">Simple breakdown</h3>
+            <div class="budget-card-list" id="budgetCards"></div>
           </article>
         </div>
-
-        <article class="glass-card secondary-grid">
-          <div class="card-header">
-            <h3 data-i18n="budgetTableTitle">Interactive budget</h3>
-            <p class="card-intro" data-i18n="budgetTableLead">
-              On desktop this stays as a clean table. On mobile it collapses into stacked budget cards with the selected currency shown first.
-            </p>
-          </div>
-          <div class="budget-table-wrap">
-            <table class="budget-table">
-              <thead>
-                <tr>
-                  <th data-i18n="budgetTableItem">Item</th>
-                  <th data-i18n="budgetTableMain">Selected</th>
-                  <th>KRW</th>
-                  <th>TWD</th>
-                  <th>CNY</th>
-                  <th data-i18n="budgetTableNote">Note</th>
-                </tr>
-              </thead>
-              <tbody id="budgetRows"></tbody>
-            </table>
-          </div>
-        </article>
-      </section>
-
-      <section class="section-block" id="itinerary">
-        <div class="section-head">
-          <p class="section-kicker" data-i18n="itineraryKicker">Daily Itinerary</p>
-          <h2 data-i18n="itineraryTitle">Daily itinerary</h2>
-          <p class="section-lead" data-i18n="itineraryLead">
-            Daily plans are built as collapsible cards so iPhone reading stays compact, while desktop keeps the information visible and well grouped.
-          </p>
-        </div>
-
-        <div class="accordion-list" id="itineraryList"></div>
       </section>
 
       <section class="section-block" id="checklist">
         <div class="section-head">
           <p class="section-kicker" data-i18n="checklistKicker">Checklist</p>
           <h2 data-i18n="checklistTitle">Checklist</h2>
-          <p class="section-lead" data-i18n="checklistLead">
-            The checklist is grouped by situation, with progress saved locally so the page behaves more like a personal travel assistant.
-          </p>
         </div>
 
-        <div class="layout-grid layout-grid-2" id="checklistGroups"></div>
-      </section>
+        <div class="stack-grid">
+          <article class="simple-card">
+            <h3 data-i18n="checklistTitle">Checklist</h3>
+            <div class="checklist-groups" id="checklistGroups"></div>
+          </article>
 
-      <section class="section-block" id="links">
-        <div class="section-head">
-          <p class="section-kicker" data-i18n="linksKicker">Useful Links</p>
-          <h2 data-i18n="linksTitle">Useful links</h2>
-          <p class="section-lead" data-i18n="linksLead">
-            Booking pages, maps, studio links, live exchange references, and membership pages are kept together for fast reopening on the go.
-          </p>
+          <article class="simple-card">
+            <h3 data-i18n="linksTitle">Useful links</h3>
+            <div class="link-card-list" id="linksGrid"></div>
+          </article>
         </div>
-
-        <div class="layout-grid layout-grid-3" id="linksGrid"></div>
       </section>
     </main>
 
-    <button class="today-fab" id="todayFab" type="button" aria-label="Jump to today's priority section">
-      <span>Today</span>
-    </button>
-
     <nav class="mobile-nav" aria-label="Mobile navigation">
-      <a class="mobile-nav-link active" href="#overview" data-mobile-nav="overview">
-        <span class="mobile-nav-icon">OV</span>
-        <span data-i18n="navOverview">Overview</span>
-      </a>
-      <a class="mobile-nav-link" href="#hotel" data-mobile-nav="hotel">
-        <span class="mobile-nav-icon">HT</span>
-        <span data-i18n="navHotel">Hotel</span>
-      </a>
-      <a class="mobile-nav-link" href="#hanbok" data-mobile-nav="hanbok">
-        <span class="mobile-nav-icon">HB</span>
-        <span data-i18n="navHanbok">Hanbok</span>
-      </a>
-      <a class="mobile-nav-link" href="#route" data-mobile-nav="route">
-        <span class="mobile-nav-icon">RT</span>
-        <span data-i18n="navRoute">Route</span>
-      </a>
-      <a class="mobile-nav-link" href="#budget" data-mobile-nav="budget">
-        <span class="mobile-nav-icon">BD</span>
-        <span data-i18n="navBudget">Budget</span>
-      </a>
-      <a class="mobile-nav-link" href="#checklist" data-mobile-nav="checklist">
-        <span class="mobile-nav-icon">CK</span>
-        <span data-i18n="navChecklist">Checklist</span>
-      </a>
+      <a class="mobile-nav-link active" href="#overview" data-mobile-nav="overview"><span data-i18n="navOverview">Overview</span></a>
+      <a class="mobile-nav-link" href="#hotel" data-mobile-nav="hotel"><span data-i18n="navHotel">Hotel</span></a>
+      <a class="mobile-nav-link" href="#hanbok" data-mobile-nav="hanbok"><span data-i18n="navHanbok">Hanbok</span></a>
+      <a class="mobile-nav-link" href="#route" data-mobile-nav="route"><span data-i18n="navRoute">Route</span></a>
+      <a class="mobile-nav-link" href="#budget" data-mobile-nav="budget"><span data-i18n="navBudget">Budget</span></a>
+      <a class="mobile-nav-link" href="#checklist" data-mobile-nav="checklist"><span data-i18n="navChecklist">Checklist</span></a>
     </nav>
 
     <dialog class="image-modal" id="imageModal" aria-label="Expanded gallery image">
