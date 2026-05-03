@@ -373,15 +373,35 @@ a {
   gap: 12px;
 }
 
+.cover-points,
+.bullet-list,
+.timeline {
+  gap: 0;
+}
+
 .cover-point,
 .bullet-item,
 .timeline-card,
 .route-step,
 .doc-card {
-  padding: 16px 18px;
-  border-radius: 18px;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.75);
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(133, 151, 170, 0.16);
+  background: transparent;
+}
+
+.cover-point:first-child,
+.bullet-item:first-child,
+.timeline-card:first-child,
+.route-step:first-child {
+  padding-top: 0;
+}
+
+.cover-point:last-child,
+.bullet-item:last-child,
+.timeline-card:last-child,
+.route-step:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .feature-photo {
@@ -452,6 +472,12 @@ a {
   grid-template-columns: 0.92fr 1.08fr;
   align-items: start;
   margin-top: 22px;
+}
+
+.content-panel {
+  padding: 4px 0 0;
+  border: none;
+  background: transparent;
 }
 
 .stay-visual-stack {
@@ -605,7 +631,7 @@ a {
 
 .rules-copy {
   display: grid;
-  gap: 12px;
+  gap: 0;
 }
 
 .timeline {
