@@ -41,8 +41,10 @@ const t = {
     navLinks: "實用連結",
     overviewKicker: "總覽",
     overviewTitle: "總覽",
+    overviewLead: "把住宿、韓服、路線和預算整理成一個真正旅行時會打開的手冊。",
     overviewSnapshotTitle: "旅行重點",
     overviewAlertsTitle: "重要提醒",
+    overviewNotesTitle: "這趟怎麼看",
     overviewFlightTitle: "航班與支援",
     overviewItineraryTitle: "每日行程",
     flightsKicker: "航班",
@@ -139,8 +141,10 @@ const t = {
     navLinks: "Useful Links",
     overviewKicker: "Overview",
     overviewTitle: "Overview",
+    overviewLead: "A practical Seoul handbook that keeps hotel, hanbok, route, and budget in one clean place.",
     overviewSnapshotTitle: "Trip snapshot",
     overviewAlertsTitle: "Important alerts",
+    overviewNotesTitle: "How to read this trip",
     overviewFlightTitle: "Flights and support",
     overviewItineraryTitle: "Daily itinerary",
     flightsKicker: "Flights",
@@ -237,8 +241,10 @@ const t = {
     navLinks: "유용한 링크",
     overviewKicker: "개요",
     overviewTitle: "개요",
+    overviewLead: "숙소, 한복, 이동, 예산을 여행 중 바로 꺼내 보기 좋게 정리한 서울 핸드북입니다.",
     overviewSnapshotTitle: "여행 핵심 정보",
     overviewAlertsTitle: "중요 안내",
+    overviewNotesTitle: "이번 여행의 흐름",
     overviewFlightTitle: "항공편 및 지원",
     overviewItineraryTitle: "일별 일정",
     flightsKicker: "항공편",
@@ -351,6 +357,11 @@ const data = {
     { title: { "zh-Hant": "韓服這天不要壓線", en: "Do not cut the hanbok day too close", ko: "한복 날은 시간 촉박 금지" }, desc: { "zh-Hant": "遲到 20 分鐘會罰款，而且北村容易迷路。", en: "A 20-minute delay triggers a penalty, and Bukchon is easy to get lost in.", ko: "20분 지각 벌금이 있고 북촌은 길 찾기가 어렵습니다." } },
     { title: { "zh-Hant": "原片與精修數量要再確認", en: "Reconfirm original and retouched counts", ko: "원본 / 보정 수량 재확인" }, desc: { "zh-Hant": "200 張原片與 12 張精修值得再口頭確認一次。", en: "The 200 originals and 12 retouched images are worth confirming again.", ko: "원본 200장과 보정 12장은 다시 확인할 가치가 있습니다." } },
     { title: { "zh-Hant": "卡片可能加收 10%", en: "Card may add 10%", ko: "카드 결제 10% 추가 가능" }, desc: { "zh-Hant": "刷卡前先問清楚，能帶韓元現金更穩。", en: "Ask before paying by card; KRW cash is the safer backup.", ko: "카드 결제 전 먼저 확인하고 KRW 현금을 준비하면 더 안전합니다." } },
+  ],
+  overviewNotes: [
+    { title: { "zh-Hant": "前段先住得舒服", en: "Start with an easy base", ko: "숙소 베이스를 편하게" }, desc: { "zh-Hant": "弘大住宿讓吃飯、回飯店和最後幾天採買都很順。", en: "Staying in Hongdae keeps food, returns, and the final shopping days easy.", ko: "홍대 숙소는 식사, 귀가, 마지막 쇼핑 동선이 모두 편합니다." } },
+    { title: { "zh-Hant": "5/19 是這趟核心", en: "May 19 is the key day", ko: "5월 19일이 핵심" }, desc: { "zh-Hant": "景福宮、北村和韓服拍攝都集中在這天，節奏不要壓太滿。", en: "Gyeongbokgung, Bukchon, and the hanbok shoot all sit on this day, so keep the pace clear.", ko: "경복궁, 북촌, 한복 촬영이 모두 이날에 몰려 있으니 동선을 단순하게 두는 편이 좋습니다." } },
+    { title: { "zh-Hant": "現場付款先想好", en: "Plan the on-site payment first", ko: "현장 결제 계획 먼저" }, desc: { "zh-Hant": "韓服尾款金額高，又可能遇到刷卡加價，現金與卡都要準備。", en: "The hanbok balance is large and card surcharge is possible, so prepare both card and cash.", ko: "한복 잔액이 크고 카드 추가 요금 가능성도 있어서 현금과 카드를 둘 다 준비하는 편이 안전합니다." } },
   ],
   flights: [
     { label: { "zh-Hant": "去程", en: "Outbound", ko: "출국" }, route: "TPE → ICN", date: "2026-05-15", time: "15:30 - 19:05", cabin: { "zh-Hant": "經濟艙基本", en: "Economy Basic", ko: "이코노미 베이직" } },
@@ -547,25 +558,16 @@ function renderKeyInfo() {
 function renderOverview() {
   const overviewStats = document.getElementById("overviewStats");
   const importantAlerts = document.getElementById("importantAlerts");
-  const flightCards = document.getElementById("flightCards");
-  if (!overviewStats || !importantAlerts || !flightCards) return;
+  const overviewNotes = document.getElementById("overviewNotes");
+  if (!overviewStats || !importantAlerts || !overviewNotes) return;
   overviewStats.innerHTML = data.overviewStats
     .map((item) => `<article class="mini-stat-card"><div class="mini-stat-label">${getText(item.label)}</div><div class="mini-stat-value">${getText(item.value)}</div></article>`)
     .join("");
   importantAlerts.innerHTML = data.importantAlerts
     .map((item) => `<article class="bullet-card"><div class="bullet-title">${getText(item.title)}</div><div class="bullet-desc">${getText(item.desc)}</div></article>`)
     .join("");
-  flightCards.innerHTML = data.flights
-    .map(
-      (flight) => `
-        <article class="flight-card">
-          <div class="bullet-title">${getText(flight.label)} · ${flight.route}</div>
-          <div class="info-line"><span class="info-label">${t[state.lang].dateText}</span><span class="info-value">${flight.date}</span></div>
-          <div class="info-line"><span class="info-label">${t[state.lang].timeText}</span><span class="info-value">${flight.time}</span></div>
-          <div class="info-line"><span class="info-label">${t[state.lang].classText}</span><span class="info-value">${getText(flight.cabin)}</span></div>
-        </article>
-      `
-    )
+  overviewNotes.innerHTML = data.overviewNotes
+    .map((item) => `<article class="bullet-card"><div class="bullet-title">${getText(item.title)}</div><div class="bullet-desc">${getText(item.desc)}</div></article>`)
     .join("");
 }
 
