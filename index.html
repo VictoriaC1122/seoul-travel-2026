@@ -66,31 +66,47 @@
       <button class="nav-item" type="button" data-page-link="hanbok" data-i18n="navHanbok">韓服</button>
       <button class="nav-item" type="button" data-page-link="route" data-i18n="navRoute">交通</button>
       <button class="nav-item" type="button" data-page-link="budget" data-i18n="navBudget">預算</button>
-      <button class="nav-item" type="button" data-page-link="itinerary" data-i18n="navItinerary">行程</button>
-      <button class="nav-item" type="button" data-page-link="checklist" data-i18n="navChecklist">清單</button>
-      <button class="nav-item" type="button" data-page-link="links" data-i18n="navLinks">實用連結</button>
+      <button class="nav-item" type="button" data-page-link="notes" data-i18n="navNotes">備註</button>
     </nav>
 
     <main class="container">
       <section class="page-section active" id="page-overview" data-page-panel="overview">
         <section class="section-card intro-card">
           <div class="section-label" data-i18n="overviewKicker">總覽</div>
-          <h2 data-i18n="overviewTitle">總覽</h2>
-          <p class="lead" data-i18n="overviewLead">把住宿、韓服、路線和預算整理成一個真正旅行時會打開的手冊。</p>
+          <h2 data-i18n="overviewTitle">先看這裡</h2>
+          <p class="lead" data-i18n="overviewLead">首頁只放真的會先看的，其他細節都分到各頁去找。</p>
           <div class="key-info-grid" id="keyInfoBar"></div>
+          <div class="home-shortcuts">
+            <button class="home-shortcut" type="button" data-page-link="hanbok">
+              <span class="home-shortcut-label" data-i18n="homeShortcutHanbok">韓服</span>
+              <span class="home-shortcut-note" data-i18n="homeShortcutHanbokNote">拍攝當天直接開這頁</span>
+            </button>
+            <button class="home-shortcut" type="button" data-page-link="route">
+              <span class="home-shortcut-label" data-i18n="homeShortcutMap">交通</span>
+              <span class="home-shortcut-note" data-i18n="homeShortcutMapNote">看幾點出門</span>
+            </button>
+            <button class="home-shortcut" type="button" data-page-link="budget">
+              <span class="home-shortcut-label" data-i18n="homeShortcutBudget">預算</span>
+              <span class="home-shortcut-note" data-i18n="homeShortcutBudgetNote">快速看總額和每人</span>
+            </button>
+            <button class="home-shortcut" type="button" data-page-link="hotel">
+              <span class="home-shortcut-label" data-i18n="homeShortcutHotel">飯店</span>
+              <span class="home-shortcut-note" data-i18n="homeShortcutHotelNote">地址和住宿資訊</span>
+            </button>
+          </div>
         </section>
 
         <section class="section-card">
-          <div class="section-label" data-i18n="overviewSnapshotTitle">旅行重點</div>
-          <h3 data-i18n="overviewSnapshotTitle">旅行重點</h3>
+          <div class="section-label" data-i18n="overviewSnapshotTitle">行程總覽</div>
+          <h3 data-i18n="overviewSnapshotTitle">行程總覽</h3>
           <div class="overview-grid" id="overviewStats"></div>
           <div class="content-grid two-col">
             <article class="content-panel">
-              <h4 data-i18n="overviewAlertsTitle">重要提醒</h4>
+              <h4 data-i18n="overviewAlertsTitle">當天重點</h4>
               <div class="bullet-stack" id="importantAlerts"></div>
             </article>
             <article class="content-panel">
-              <h4 data-i18n="overviewNotesTitle">這趟怎麼看</h4>
+              <h4 data-i18n="overviewNotesTitle">出發前確認</h4>
               <div class="bullet-stack" id="overviewNotes"></div>
             </article>
           </div>
@@ -129,7 +145,7 @@
         <section class="section-card">
           <div class="section-label" data-i18n="hotelKicker">住宿</div>
           <h2 data-i18n="hotelTitle">住宿</h2>
-          <p class="lead" data-i18n="hotelGalleryTitle">住宿照片</p>
+          <p class="lead" data-i18n="hotelLead">地址、房型、價格先放一起，找住宿資訊不用翻。</p>
           <div class="content-grid two-col">
             <article class="content-panel" id="hotelCard"></article>
             <article class="content-panel">
@@ -156,7 +172,7 @@
         <section class="section-card">
           <div class="section-label" data-i18n="hanbokKicker">韓服</div>
           <h2 data-i18n="hanbokTitle">韓服</h2>
-          <p class="lead" data-i18n="reservedPlanTitle">已預約韓服方案</p>
+          <p class="lead" data-i18n="hanbokLead">這頁最重要，拍攝當天直接開這裡就好。</p>
           <div class="content-grid hanbok-layout">
             <article class="content-panel featured-panel" id="hanbokPlanCard"></article>
             <article class="content-panel">
@@ -208,7 +224,7 @@
         <section class="section-card">
           <div class="section-label" data-i18n="routeKicker">交通</div>
           <h2 data-i18n="routeTitle">交通</h2>
-          <p class="lead" data-i18n="routeTimelineTitle">建議時間</p>
+          <p class="lead" data-i18n="routeLead">怎麼去、搭什麼、幾點出門，照這頁走就好。</p>
           <div class="content-grid three-col">
             <article class="content-panel">
               <h4 data-i18n="routeStepsTitle">路線步驟</h4>
@@ -243,7 +259,7 @@
         <section class="section-card">
           <div class="section-label" data-i18n="budgetKicker">預算</div>
           <h2 data-i18n="budgetTitle">預算</h2>
-          <p class="lead" data-i18n="budgetSummaryTitle">預算摘要</p>
+          <p class="lead" data-i18n="budgetLead">預算大概抓這樣，主幣別可切，韓元會一起留著看。</p>
           <div class="budget-summary-strip" id="budgetHighlights"></div>
           <div class="budget-summary-grid" id="budgetSummary"></div>
           <div class="budget-table-wrap">
@@ -263,33 +279,46 @@
         </section>
       </section>
 
-      <section class="page-section" id="page-itinerary" data-page-panel="itinerary">
+      <section class="page-section" id="page-notes" data-page-panel="notes">
         <section class="section-card">
-          <div class="section-label" data-i18n="itineraryKicker">行程</div>
-          <h2 data-i18n="itineraryTitle">行程</h2>
-          <p class="lead" data-i18n="overviewItineraryTitle">每日行程</p>
-          <div class="accordion-list" id="itineraryList"></div>
-        </section>
-      </section>
-
-      <section class="page-section" id="page-checklist" data-page-panel="checklist">
-        <section class="section-card">
-          <div class="section-label" data-i18n="checklistKicker">清單</div>
-          <h2 data-i18n="checklistTitle">清單</h2>
-          <p class="lead" data-i18n="checklistTitle">清單</p>
-          <div class="checklist-groups" id="checklistGroups"></div>
-        </section>
-      </section>
-
-      <section class="page-section" id="page-links" data-page-panel="links">
-        <section class="section-card">
-          <div class="section-label" data-i18n="linksKicker">實用連結</div>
-          <h2 data-i18n="linksTitle">實用連結</h2>
-          <p class="lead" data-i18n="linksTitle">實用連結</p>
-          <div class="link-card-list" id="linksGrid"></div>
+          <div class="section-label" data-i18n="notesKicker">備註</div>
+          <h2 data-i18n="notesTitle">備註</h2>
+          <p class="lead" data-i18n="notesLead">剩下零碎但有用的，都放在這一頁。</p>
+          <div class="content-grid note-stack">
+            <article class="content-panel">
+              <h4 data-i18n="overviewItineraryTitle">每日行程</h4>
+              <div class="accordion-list" id="itineraryList"></div>
+            </article>
+            <article class="content-panel">
+              <h4 data-i18n="checklistTitle">清單</h4>
+              <div class="checklist-groups" id="checklistGroups"></div>
+            </article>
+            <article class="content-panel">
+              <h4 data-i18n="linksTitle">實用連結</h4>
+              <div class="link-card-list" id="linksGrid"></div>
+            </article>
+          </div>
         </section>
       </section>
     </main>
+
+    <nav class="bottom-nav" aria-label="Primary mobile navigation">
+      <button class="bottom-nav-item active" type="button" data-page-link="overview">
+        <span data-i18n="bottomHome">Home</span>
+      </button>
+      <button class="bottom-nav-item" type="button" data-page-link="notes">
+        <span data-i18n="bottomSchedule">Schedule</span>
+      </button>
+      <button class="bottom-nav-item" type="button" data-page-link="hanbok">
+        <span data-i18n="bottomHanbok">Hanbok</span>
+      </button>
+      <button class="bottom-nav-item" type="button" data-page-link="route">
+        <span data-i18n="bottomMap">Map</span>
+      </button>
+      <button class="bottom-nav-item" type="button" data-page-link="budget">
+        <span data-i18n="bottomBudget">Budget</span>
+      </button>
+    </nav>
 
     <dialog class="image-modal" id="imageModal" aria-label="Expanded gallery image">
       <button class="modal-close" id="modalClose" type="button" aria-label="Close expanded image">Close</button>
