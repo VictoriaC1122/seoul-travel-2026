@@ -74,7 +74,7 @@ a {
 }
 
 .hero-shell {
-  width: min(1120px, 100%);
+  width: min(1240px, 100%);
   margin: 0 auto;
 }
 
@@ -244,7 +244,7 @@ a {
 }
 
 .container {
-  width: min(1120px, calc(100% - 20px));
+  width: min(1240px, calc(100% - 20px));
   margin: 0 auto calc(118px + env(safe-area-inset-bottom));
 }
 
@@ -944,8 +944,19 @@ a {
     --section-offset: 110px;
   }
 
+  body {
+    font-size: 17px;
+  }
+
   .hero-copy {
     text-align: center;
+  }
+
+  .top-controls {
+    grid-template-columns: repeat(2, minmax(0, 280px));
+    justify-content: end;
+    align-items: start;
+    margin-bottom: 14px;
   }
 
   .desktop-nav {
@@ -957,16 +968,17 @@ a {
   }
 
   .container {
-    width: min(1120px, calc(100% - 32px));
+    width: min(1240px, calc(100% - 48px));
     margin-bottom: 72px;
   }
 
   .hero-card {
-    padding: 26px 24px;
+    padding: 30px 32px;
   }
 
   .hero-summary-grid {
     grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 14px;
   }
 
   .gallery-grid,
@@ -977,6 +989,112 @@ a {
   }
 
   .desktop-nav {
-    max-width: calc(100% - 48px);
+    max-width: calc(100% - 64px);
+    margin-bottom: 28px;
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .desktop-nav-link {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+  }
+
+  .section-block {
+    margin-bottom: 30px;
+  }
+
+  .section-head {
+    max-width: 760px;
+    margin-bottom: 16px;
+  }
+
+  .section-head h2 {
+    font-size: clamp(2.1rem, 4vw, 2.8rem);
+  }
+
+  .simple-card {
+    padding: 22px 22px 24px;
+  }
+
+  .simple-card h3 {
+    font-size: 1.45rem;
+  }
+
+  .summary-card {
+    padding: 16px 18px;
+  }
+
+  .summary-value {
+    font-size: 1.08rem;
+  }
+
+  .stack-grid {
+    align-items: start;
+  }
+
+  body[data-page="overview"] .stack-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  body[data-page="hotel"] .stack-grid,
+  body[data-page="budget"] .stack-grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  }
+
+  body[data-page="hanbok"] .stack-grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  }
+
+  body[data-page="hanbok"] .stack-grid > :last-child,
+  body[data-page="route"] .stack-grid > :last-child {
+    grid-column: 1 / -1;
+  }
+
+  body[data-page="route"] .stack-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  body[data-page="route"] .route-card-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body[data-page="itinerary"] .stack-grid,
+  body[data-page="checklist"] .stack-grid,
+  body[data-page="links"] .stack-grid {
+    grid-template-columns: minmax(0, 960px);
+    justify-content: center;
+  }
+
+  body[data-page="itinerary"] .simple-card,
+  body[data-page="checklist"] .simple-card,
+  body[data-page="links"] .simple-card {
+    width: 100%;
+  }
+
+  .accordion-summary {
+    padding: 18px 20px;
+  }
+
+  .accordion-body {
+    padding: 0 20px 20px;
+  }
+
+  .itinerary-meta-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .budget-table th,
+  .budget-table td {
+    padding: 16px 18px;
+  }
+
+  .link-row {
+    gap: 20px;
+  }
+
+  .checklist-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
