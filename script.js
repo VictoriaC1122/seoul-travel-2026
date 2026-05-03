@@ -830,10 +830,11 @@ function renderItinerary() {
 
   document.getElementById("timeline").innerHTML = content.itinerary
     .map(
-      (day) => `
+      (day, index) => `
         <article class="timeline-card">
           <div class="timeline-card-header">
             <div>
+              <div class="timeline-day-label">Day ${index + 1}</div>
               <div class="timeline-date">${day.date}</div>
               <h3>${getText(day.title)}</h3>
             </div>

@@ -618,6 +618,20 @@ a {
   align-items: start;
 }
 
+.timeline-day-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(144, 171, 208, 0.16);
+  color: var(--ink-deep);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
 .timeline-card h3 {
   margin-bottom: 0;
 }
@@ -920,6 +934,12 @@ a {
   .bullet-title,
   .route-step-title {
     font-size: 0.96rem;
+  }
+
+  .timeline-day-label {
+    font-size: 0.7rem;
+    padding: 5px 9px;
+    margin-bottom: 8px;
   }
 
   .bullet-desc,
