@@ -426,7 +426,6 @@ const content = {
     links: [
       { label: { "zh-Hant": "小紅書 MV 範例", en: "MV sample", ko: "MV 샘플" }, href: "http://xhslink.com/o/15TW7yFNm7q" },
       { label: { "zh-Hant": "工作室頁面", en: "Studio profile", ko: "스튜디오 페이지" }, href: "http://xhslink.com/o/1yRuTcW00pc" },
-      { label: { "zh-Hant": "店家 App", en: "App link", ko: "앱 링크" }, href: "https://itunes.apple.com/cn/app/id741292507?l=en&mt=8" },
     ],
   },
   itineraryHighlights: [
