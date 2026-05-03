@@ -6,7 +6,7 @@
     <title>Seoul Travel Handbook 2026 | Victoria Cheng</title>
     <meta
       name="description"
-      content="Seoul Travel 2026 for Victoria Cheng: a clean mobile-first travel dashboard with hotel, hanbok booking, route, budget, checklist, and key trip details."
+      content="Seoul Travel 2026 for Victoria Cheng: a premium mobile-first travel dashboard with hotel, hanbok booking, itinerary, route, budget, checklist, and key trip details."
     />
     <meta name="theme-color" content="#9aaec8" />
     <meta property="og:type" content="website" />
@@ -17,12 +17,6 @@
     />
     <meta property="og:image" content="https://victoriac1122.github.io/seoul-travel-2026/assets/images/S__180125890_0.jpg" />
     <link rel="icon" type="image/jpeg" href="./assets/images/S__180125889_0.jpg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+TC:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -52,7 +46,7 @@
         <div class="hero-card">
           <div class="hero-copy">
             <h1 data-i18n="heroTitle">Seoul Travel 2026</h1>
-            <p class="hero-subtitle" data-i18n="heroSubtitle">May 2026 · Seoul · Hanbok Shooting · Hotel · Budget</p>
+            <p class="hero-subtitle" data-i18n="heroSubtitle">May 2026 · Seoul</p>
           </div>
           <div class="hero-summary-grid" id="heroSummary" aria-label="Key trip cards"></div>
         </div>
@@ -65,7 +59,9 @@
       <a class="desktop-nav-link" href="#hanbok" data-nav="hanbok" data-i18n="navHanbok">Hanbok</a>
       <a class="desktop-nav-link" href="#route" data-nav="route" data-i18n="navRoute">Route</a>
       <a class="desktop-nav-link" href="#budget" data-nav="budget" data-i18n="navBudget">Budget</a>
+      <a class="desktop-nav-link" href="#itinerary" data-nav="itinerary" data-i18n="navItinerary">Itinerary</a>
       <a class="desktop-nav-link" href="#checklist" data-nav="checklist" data-i18n="navChecklist">Checklist</a>
+      <a class="desktop-nav-link" href="#links" data-nav="links" data-i18n="navLinks">Links</a>
     </nav>
 
     <main class="container">
@@ -89,11 +85,6 @@
           <article class="simple-card">
             <h3 data-i18n="overviewFlightTitle">Flights and support</h3>
             <div class="flight-grid" id="flightCards"></div>
-          </article>
-
-          <article class="simple-card">
-            <h3 data-i18n="overviewItineraryTitle">Daily itinerary</h3>
-            <div class="accordion-list" id="itineraryList"></div>
           </article>
         </div>
       </section>
@@ -223,11 +214,38 @@
             <h3 data-i18n="budgetSummaryTitle">Budget summary</h3>
             <div class="bullet-stack compact-stack" id="budgetHighlights"></div>
             <div class="budget-summary-grid" id="budgetSummary"></div>
+            <div class="budget-table-wrap">
+              <table class="budget-table" aria-label="Budget breakdown table">
+                <thead>
+                  <tr>
+                    <th data-i18n="budgetItemHeading">Item</th>
+                    <th data-i18n="budgetSelectedHeading">Selected</th>
+                    <th data-i18n="budgetKrwHeading">KRW</th>
+                    <th data-i18n="budgetNoteHeading">Note</th>
+                  </tr>
+                </thead>
+                <tbody id="budgetTableBody"></tbody>
+              </table>
+            </div>
           </article>
 
           <article class="simple-card">
             <h3 data-i18n="budgetBreakdownTitle">Simple breakdown</h3>
             <div class="budget-card-list" id="budgetCards"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block" id="itinerary">
+        <div class="section-head">
+          <p class="section-kicker" data-i18n="itineraryKicker">Itinerary</p>
+          <h2 data-i18n="itineraryTitle">Itinerary</h2>
+        </div>
+
+        <div class="stack-grid">
+          <article class="simple-card">
+            <h3 data-i18n="overviewItineraryTitle">Daily itinerary</h3>
+            <div class="accordion-list" id="itineraryList"></div>
           </article>
         </div>
       </section>
@@ -243,7 +261,16 @@
             <h3 data-i18n="checklistTitle">Checklist</h3>
             <div class="checklist-groups" id="checklistGroups"></div>
           </article>
+        </div>
+      </section>
 
+      <section class="section-block" id="links">
+        <div class="section-head">
+          <p class="section-kicker" data-i18n="linksKicker">Links</p>
+          <h2 data-i18n="linksTitle">Useful links</h2>
+        </div>
+
+        <div class="stack-grid">
           <article class="simple-card">
             <h3 data-i18n="linksTitle">Useful links</h3>
             <div class="link-card-list" id="linksGrid"></div>

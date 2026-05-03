@@ -20,13 +20,15 @@ const t = {
     languageSwitcher: "語言",
     currencySwitcher: "幣別",
     heroTitle: "Seoul Travel 2026",
-    heroSubtitle: "May 2026 · Seoul · Hanbok Shooting · Hotel · Budget",
+    heroSubtitle: "May 2026 · Seoul",
     navOverview: "總覽",
     navHotel: "住宿",
     navHanbok: "韓服",
     navRoute: "路線",
     navBudget: "預算",
+    navItinerary: "行程",
     navChecklist: "清單",
+    navLinks: "連結",
     overviewKicker: "Overview",
     overviewTitle: "Overview",
     overviewSnapshotTitle: "Trip snapshot",
@@ -58,6 +60,10 @@ const t = {
     budgetTitle: "Budget",
     budgetSummaryTitle: "Budget summary",
     budgetBreakdownTitle: "Simple breakdown",
+    budgetItemHeading: "項目",
+    budgetSelectedHeading: "目前幣別",
+    budgetKrwHeading: "韓元",
+    budgetNoteHeading: "備註",
     totalTripCostLabel: "總花費預估",
     perPersonCostLabel: "每人預估",
     paidSoFarLabel: "目前已付",
@@ -66,8 +72,11 @@ const t = {
     perPersonCostNote: "以兩人平均分攤估算",
     paidSoFarNote: "目前已知訂金",
     remainingTripBudgetNote: "扣除訂金後的其餘預算",
+    itineraryKicker: "Itinerary",
+    itineraryTitle: "Itinerary",
     checklistKicker: "Checklist",
     checklistTitle: "Checklist",
+    linksKicker: "Links",
     linksTitle: "Useful links",
     dateText: "日期",
     timeText: "時間",
@@ -96,13 +105,15 @@ const t = {
     languageSwitcher: "Language",
     currencySwitcher: "Currency",
     heroTitle: "Seoul Travel 2026",
-    heroSubtitle: "May 2026 · Seoul · Hanbok Shooting · Hotel · Budget",
+    heroSubtitle: "May 2026 · Seoul",
     navOverview: "Overview",
     navHotel: "Hotel",
     navHanbok: "Hanbok",
     navRoute: "Route",
     navBudget: "Budget",
+    navItinerary: "Itinerary",
     navChecklist: "Checklist",
+    navLinks: "Links",
     overviewKicker: "Overview",
     overviewTitle: "Overview",
     overviewSnapshotTitle: "Trip snapshot",
@@ -134,6 +145,10 @@ const t = {
     budgetTitle: "Budget",
     budgetSummaryTitle: "Budget summary",
     budgetBreakdownTitle: "Simple breakdown",
+    budgetItemHeading: "Item",
+    budgetSelectedHeading: "Selected",
+    budgetKrwHeading: "KRW",
+    budgetNoteHeading: "Note",
     totalTripCostLabel: "Estimated total",
     perPersonCostLabel: "Estimated per person",
     paidSoFarLabel: "Paid so far",
@@ -142,8 +157,11 @@ const t = {
     perPersonCostNote: "Split evenly for two people",
     paidSoFarNote: "Known deposit already paid",
     remainingTripBudgetNote: "Remaining trip budget after deposit",
+    itineraryKicker: "Itinerary",
+    itineraryTitle: "Itinerary",
     checklistKicker: "Checklist",
     checklistTitle: "Checklist",
+    linksKicker: "Links",
     linksTitle: "Useful links",
     dateText: "Date",
     timeText: "Time",
@@ -172,13 +190,15 @@ const t = {
     languageSwitcher: "언어",
     currencySwitcher: "통화",
     heroTitle: "Seoul Travel 2026",
-    heroSubtitle: "May 2026 · Seoul · Hanbok Shooting · Hotel · Budget",
+    heroSubtitle: "May 2026 · Seoul",
     navOverview: "개요",
     navHotel: "호텔",
     navHanbok: "한복",
     navRoute: "루트",
     navBudget: "예산",
+    navItinerary: "일정",
     navChecklist: "체크",
+    navLinks: "링크",
     overviewKicker: "Overview",
     overviewTitle: "Overview",
     overviewSnapshotTitle: "Trip snapshot",
@@ -210,6 +230,10 @@ const t = {
     budgetTitle: "Budget",
     budgetSummaryTitle: "Budget summary",
     budgetBreakdownTitle: "Simple breakdown",
+    budgetItemHeading: "항목",
+    budgetSelectedHeading: "선택 통화",
+    budgetKrwHeading: "KRW",
+    budgetNoteHeading: "메모",
     totalTripCostLabel: "총 예상 비용",
     perPersonCostLabel: "1인 예상 비용",
     paidSoFarLabel: "현재까지 결제",
@@ -218,8 +242,11 @@ const t = {
     perPersonCostNote: "2인 균등 분담 기준",
     paidSoFarNote: "현재 확인된 예약금",
     remainingTripBudgetNote: "예약금을 제외한 나머지 예산",
+    itineraryKicker: "Itinerary",
+    itineraryTitle: "Itinerary",
     checklistKicker: "Checklist",
     checklistTitle: "Checklist",
+    linksKicker: "Links",
     linksTitle: "Useful links",
     dateText: "날짜",
     timeText: "시간",
@@ -359,6 +386,10 @@ const data = {
     { id: "after", title: { "zh-Hant": "After shooting", en: "After shooting", ko: "After shooting" }, items: [
       { id: "backup-photos", title: { "zh-Hant": "先備份照片", en: "Back up photos", ko: "사진 백업" }, desc: { "zh-Hant": "手機拍攝素材先備份。", en: "Back up phone photos early.", ko: "휴대폰 사진 먼저 백업." } },
     ]},
+    { id: "emergency", title: { "zh-Hant": "Emergency", en: "Emergency", ko: "Emergency" }, items: [
+      { id: "insurance", title: { "zh-Hant": "旅遊保險資料", en: "Travel insurance record", ko: "여행 보험 정보" }, desc: { "zh-Hant": "把投保確認信和保單號碼留在手機裡。", en: "Keep the confirmation email and policy number on your phone.", ko: "확인 메일과 보험 번호를 휴대폰에 저장해 두기." } },
+      { id: "hotel-address", title: { "zh-Hant": "飯店地址截圖", en: "Hotel address screenshot", ko: "호텔 주소 캡처" }, desc: { "zh-Hant": "臨時搭車時比較不會慌。", en: "Useful when you need a quick taxi or directions.", ko: "급하게 택시를 탈 때 도움이 됩니다." } },
+    ]},
   ],
   usefulLinks: [
     { title: { "zh-Hant": "Stay & Route", en: "Stay & Route", ko: "Stay & Route" }, links: [
@@ -427,6 +458,9 @@ function renderOverview() {
       `
     )
     .join("");
+}
+
+function renderItinerary() {
   document.getElementById("itineraryList").innerHTML = data.itinerary
     .map(
       (item) => `
@@ -540,6 +574,18 @@ function renderBudget() {
       `
     )
     .join("");
+  document.getElementById("budgetTableBody").innerHTML = data.budgetRows
+    .map(
+      (item) => `
+        <tr>
+          <td>${getText(item.item)}</td>
+          <td>${formatCurrency(item.krw)}</td>
+          <td>${formatCurrency(item.krw, "KRW")}</td>
+          <td>${getText(item.note)}</td>
+        </tr>
+      `
+    )
+    .join("");
 }
 
 function renderChecklist() {
@@ -605,6 +651,7 @@ function renderAll() {
   renderHanbok();
   renderRoute();
   renderBudget();
+  renderItinerary();
   renderChecklist();
   renderLinks();
 }
@@ -642,6 +689,7 @@ function bindControls() {
       renderHotel();
       renderBudget();
       renderOverview();
+      renderItinerary();
     });
   });
 }

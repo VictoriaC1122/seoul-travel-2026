@@ -30,10 +30,10 @@ body {
   margin: 0;
   min-height: 100vh;
   color: var(--ink-deep);
-  font-family: "Instrument Sans", "Noto Sans KR", "Noto Serif TC", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
   font-size: 16px;
   line-height: 1.65;
-  background: linear-gradient(180deg, #f7fafc 0%, #f5f7fa 100%);
+  background: #f7f8fa;
   overflow-x: hidden;
 }
 
@@ -164,13 +164,13 @@ a {
 .hero-card {
   padding: 18px 16px;
   border-radius: var(--radius-xl);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 250, 252, 0.9));
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .hero-copy h1 {
   margin: 0;
   color: var(--ink-strong);
-  font-family: "Cormorant Garamond", "Noto Serif TC", serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
   font-size: clamp(2.1rem, 8vw, 3rem);
   line-height: 0.96;
   letter-spacing: -0.02em;
@@ -264,7 +264,7 @@ a {
 .section-head h2 {
   margin: 0;
   color: var(--ink-strong);
-  font-family: "Cormorant Garamond", "Noto Serif TC", serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
   font-size: clamp(1.8rem, 5vw, 2.5rem);
   line-height: 0.98;
   letter-spacing: -0.015em;
@@ -277,7 +277,7 @@ a {
 .simple-card h3 {
   margin: 0;
   color: var(--ink-strong);
-  font-family: "Cormorant Garamond", "Noto Serif TC", serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
   font-size: clamp(1.32rem, 4vw, 1.8rem);
   line-height: 1.08;
   letter-spacing: -0.01em;
@@ -286,7 +286,7 @@ a {
 .featured-card {
   border: 1px solid rgba(147, 172, 203, 0.28);
   box-shadow: var(--shadow-strong);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(242, 247, 252, 0.92));
+  background: rgba(255, 255, 255, 0.96);
 }
 
 .mini-stat-grid,
@@ -532,6 +532,45 @@ a {
   align-items: start;
 }
 
+.budget-table-wrap {
+  display: none;
+  margin-top: 18px;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.budget-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.budget-table th,
+.budget-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(118, 136, 158, 0.14);
+}
+
+.budget-table th {
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.budget-table td {
+  color: var(--ink-strong);
+  font-size: 0.95rem;
+  vertical-align: top;
+}
+
+.budget-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
 .itinerary-card {
   border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.72);
@@ -577,7 +616,7 @@ a {
 .accordion-summary h3 {
   margin: 0;
   color: var(--ink-strong);
-  font-family: "Cormorant Garamond", "Noto Serif TC", serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
   font-size: 1.36rem;
   line-height: 1.08;
 }
@@ -814,7 +853,7 @@ a {
 
   .summary-card:first-child,
   .summary-card:nth-child(2) {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(246, 249, 252, 0.9));
+    background: rgba(255, 255, 255, 0.92);
   }
 
   .section-head {
@@ -883,6 +922,14 @@ a {
   .hero-summary-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .budget-table-wrap {
+    display: block;
+  }
+
+  .budget-card-list {
+    display: none;
+  }
 }
 
 @media (min-width: 980px) {
@@ -920,5 +967,9 @@ a {
   .link-card-list,
   .route-card-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .desktop-nav {
+    max-width: calc(100% - 48px);
   }
 }
