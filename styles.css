@@ -468,6 +468,14 @@ img {
   margin-top: 18px;
 }
 
+.overview-feature-panel {
+  margin-top: 22px;
+}
+
+.overview-detail-grid {
+  margin-top: 0;
+}
+
 .home-shortcut {
   display: grid;
   gap: 4px;
@@ -909,13 +917,17 @@ img {
 
   .control-dock {
     top: 12px;
+    left: 12px;
     right: 12px;
     gap: 8px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: stretch;
   }
 
   .control-group {
-    padding: 6px;
-    border-radius: 999px;
+    min-width: 0;
+    padding: 8px;
+    border-radius: 18px;
   }
 
   .control-label {
@@ -923,19 +935,21 @@ img {
   }
 
   .control-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 4px;
   }
 
   .pill-btn {
-    min-height: 36px;
-    min-width: 48px;
-    padding: 8px 10px;
+    min-height: 44px;
+    min-width: 0;
+    padding: 10px 6px;
     font-size: 12px;
   }
 
   .hero {
-    min-height: 430px;
-    padding: 86px 16px 54px;
+    min-height: 400px;
+    padding: 118px 16px 38px;
     align-items: flex-end;
   }
 
@@ -983,7 +997,7 @@ img {
     overflow-x: auto;
     width: 100%;
     max-width: 100%;
-    margin: -20px auto 14px;
+    margin: -10px auto 14px;
     padding: 0 2px 4px;
     border-radius: 0;
     background: transparent;
@@ -1020,6 +1034,10 @@ img {
     margin-bottom: 16px;
   }
 
+  .section-card .section-label {
+    margin-bottom: 10px;
+  }
+
   .section-card h2 {
     font-size: 28px;
   }
@@ -1051,6 +1069,14 @@ img {
   .itinerary-meta-grid,
   .flight-grid {
     grid-template-columns: 1fr;
+  }
+
+  .page-section:not(.active) {
+    display: none;
+  }
+
+  .page-section.active .overview-detail-grid article:last-child {
+    margin-bottom: 0;
   }
 
   .home-shortcuts {
@@ -1087,54 +1113,7 @@ img {
   }
 
   .budget-table-wrap {
-    overflow: visible;
-    border: none;
-    background: transparent;
-  }
-
-  .budget-table thead {
     display: none;
-  }
-
-  .budget-table,
-  .budget-table tbody,
-  .budget-table tr,
-  .budget-table td {
-    display: block;
-    width: 100%;
-  }
-
-  .budget-table tbody {
-    display: grid;
-    gap: 12px;
-  }
-
-  .budget-table tr {
-    padding: 16px;
-    border-radius: 18px;
-    border: 1px solid var(--border-light);
-    background: linear-gradient(135deg, rgba(255, 251, 247, 0.98), rgba(243, 245, 248, 0.92));
-    box-shadow: var(--shadow-soft);
-  }
-
-  .budget-table td {
-    padding: 0;
-    border-bottom: none;
-  }
-
-  .budget-table td + td {
-    margin-top: 10px;
-  }
-
-  .budget-table td::before {
-    content: attr(data-label);
-    display: block;
-    margin-bottom: 4px;
-    color: var(--text-light);
-    font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-weight: 700;
   }
 
   .budget-card-list {
@@ -1183,8 +1162,8 @@ img {
   }
 
   .hero {
-    min-height: 390px;
-    padding: 82px 12px 46px;
+    min-height: 370px;
+    padding: 114px 12px 34px;
   }
 
   .hero-content {
@@ -1211,6 +1190,12 @@ img {
   .nav-item {
     min-width: 72px;
     font-size: 11px;
+  }
+
+  .control-dock {
+    left: 10px;
+    right: 10px;
+    grid-template-columns: 1fr;
   }
 
   .bottom-nav {

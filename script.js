@@ -40,7 +40,7 @@ const t = {
     overviewKicker: "總覽",
     overviewTitle: "先看這裡",
     overviewLead: "首頁只放真的會先看的，其他細節都分到各頁去找。",
-    overviewSnapshotTitle: "旅行重點",
+    overviewSnapshotTitle: "先看推薦與提醒",
     overviewRecommendTitle: "先看推薦",
     overviewAlertsTitle: "當天重點",
     overviewNotesTitle: "出發前確認",
@@ -107,11 +107,11 @@ const t = {
     notesLead: "剩下零碎但有用的，都放在這一頁。",
     checklistTitle: "清單",
     linksTitle: "實用連結",
-    bottomHome: "Home",
-    bottomSchedule: "Schedule",
-    bottomHanbok: "Hanbok",
-    bottomMap: "Map",
-    bottomBudget: "Budget",
+    bottomHome: "首頁",
+    bottomSchedule: "備註",
+    bottomHanbok: "韓服",
+    bottomMap: "交通",
+    bottomBudget: "預算",
     dateText: "日期",
     timeText: "時間",
     classText: "艙等",
@@ -154,8 +154,8 @@ const t = {
     navNotes: "Notes",
     overviewKicker: "Overview",
     overviewTitle: "Start here",
-    overviewLead: "Keep the home page light. Use it as the front door, not the full data page.",
-    overviewSnapshotTitle: "Trip snapshot",
+    overviewLead: "Keep this page light. Open the section you need instead of stacking everything here.",
+    overviewSnapshotTitle: "Recommendations and reminders",
     overviewRecommendTitle: "Recommended first",
     overviewAlertsTitle: "Today matters",
     overviewNotesTitle: "Before you go",
@@ -270,7 +270,7 @@ const t = {
     overviewKicker: "개요",
     overviewTitle: "먼저 여기",
     overviewLead: "홈에는 바로 봐야 할 것만 두고, 자세한 내용은 각 페이지로 나눴습니다.",
-    overviewSnapshotTitle: "여행 핵심 정보",
+    overviewSnapshotTitle: "추천과 리마인더",
     overviewRecommendTitle: "먼저 볼 추천",
     overviewAlertsTitle: "당일 핵심",
     overviewNotesTitle: "출발 전 확인",
@@ -337,10 +337,10 @@ const t = {
     notesLead: "자잘하지만 필요한 것들은 이 페이지에 모아두었습니다.",
     checklistTitle: "체크리스트",
     linksTitle: "유용한 링크",
-    bottomHome: "Home",
+    bottomHome: "홈",
     bottomSchedule: "일정",
     bottomHanbok: "한복",
-    bottomMap: "지도",
+    bottomMap: "교통",
     bottomBudget: "예산",
     dateText: "날짜",
     timeText: "시간",
@@ -391,12 +391,6 @@ const data = {
       value: { "zh-Hant": "遲到 20 分鐘會罰款", en: "20-minute delay triggers a penalty", ko: "20분 지각 시 벌금" },
       note: { "zh-Hant": "北村容易迷路", en: "Bukchon is easy to get lost in", ko: "북촌은 길 찾기 어려움" },
     },
-  ],
-  overviewStats: [
-    { label: { "zh-Hant": "旅行長度", en: "Trip length", ko: "여행 기간" }, value: { "zh-Hant": "6 天 5 夜", en: "6 days / 5 nights", ko: "6일 5박" } },
-    { label: { "zh-Hant": "住宿區域", en: "Stay area", ko: "숙소 지역" }, value: { "zh-Hant": "弘大 / Seogyo", en: "Hongdae / Seogyo", ko: "홍대 / 서교" } },
-    { label: { "zh-Hant": "重點日期", en: "Key date", ko: "핵심 날짜" }, value: { "zh-Hant": "5/19 韓服拍攝", en: "May 19 hanbok", ko: "5/19 한복 촬영" } },
-    { label: { "zh-Hant": "建議出門", en: "Leave by", ko: "출발 권장" }, value: { "zh-Hant": "12:45 - 13:00", en: "12:45 - 13:00", ko: "12:45 - 13:00" } },
   ],
   overviewRecommendations: [
     {
@@ -495,9 +489,9 @@ const data = {
     { title: { "zh-Hant": "計程車", en: "Taxi", ko: "택시" }, start: { "zh-Hant": "飯店", en: "Hotel", ko: "호텔" }, destination: { "zh-Hant": "韓服店", en: "Hanbok shop", ko: "한복 매장" }, duration: { "zh-Hant": "20-25 分鐘", en: "20-25 min", ko: "20-25분" }, cost: { "zh-Hant": "₩8,000-12,000", en: "₩8,000-12,000", ko: "₩8,000-12,000" }, useCase: { "zh-Hant": "怕迷路時", en: "Best if you want less stress", ko: "길 찾기 스트레스 줄일 때" }, desc: { "zh-Hant": "最直接，最省腦。", en: "The easiest option with the least thinking.", ko: "가장 직접적이고 편한 선택." }, href: "https://www.google.com/maps/search/%EC%98%A5%ED%95%9C%EB%B3%B5/" },
   ],
   budgetSummary: [
-    { label: { "zh-Hant": "韓服總價", en: "Hanbok total", ko: "Hanbok total" }, krw: 940000 },
-    { label: { "zh-Hant": "現場補款", en: "Remaining balance", ko: "Remaining balance" }, krw: 880000 },
-    { label: { "zh-Hant": "飯店", en: "Hotel", ko: "Hotel" }, krw: 19247 * rates.TWD.krwPerUnit },
+    { label: { "zh-Hant": "韓服總價", en: "Hanbok total", ko: "한복 총액" }, krw: 940000 },
+    { label: { "zh-Hant": "現場補款", en: "Remaining balance", ko: "현장 결제 잔액" }, krw: 880000 },
+    { label: { "zh-Hant": "飯店", en: "Hotel", ko: "호텔" }, krw: 19247 * rates.TWD.krwPerUnit },
     { label: { "zh-Hant": "交通 + 餐食 + 購物", en: "Transport + food + shopping", ko: "교통 + 식비 + 쇼핑" }, krw: 730000 },
   ],
   budgetRows: [
@@ -520,21 +514,21 @@ const data = {
   ],
   checklistGroups: [
     { id: "before", title: { "zh-Hant": "出發前", en: "Before departure", ko: "출발 전" }, items: [
-      { id: "passport", title: { "zh-Hant": "護照", en: "Passport", ko: "Passport" }, desc: { "zh-Hant": "確認效期與放置位置。", en: "Check validity and where it is packed.", ko: "유효기간과 보관 위치 확인." } },
+      { id: "passport", title: { "zh-Hant": "護照", en: "Passport", ko: "여권" }, desc: { "zh-Hant": "確認效期與放置位置。", en: "Check validity and where it is packed.", ko: "유효기간과 보관 위치 확인." } },
       { id: "esim", title: { "zh-Hant": "eSIM / 漫遊", en: "eSIM / roaming", ko: "eSIM / roaming" }, desc: { "zh-Hant": "抵達後能立刻上網。", en: "Make sure data works on arrival.", ko: "도착 직후 데이터 사용 가능." } },
-      { id: "powerbank", title: { "zh-Hant": "行動電源", en: "Power bank", ko: "Power bank" }, desc: { "zh-Hant": "導航和拍照很耗電。", en: "Navigation and photos drain battery.", ko: "지도와 사진으로 배터리 소모 큼." } },
+      { id: "powerbank", title: { "zh-Hant": "行動電源", en: "Power bank", ko: "보조배터리" }, desc: { "zh-Hant": "導航和拍照很耗電。", en: "Navigation and photos drain battery.", ko: "지도와 사진으로 배터리 소모가 큽니다." } },
     ]},
     { id: "hanbok", title: { "zh-Hant": "韓服拍攝日", en: "Hanbok shooting day", ko: "한복 촬영일" }, items: [
-      { id: "makeup", title: { "zh-Hant": "補妝 / 整髮用品", en: "Makeup touch-up items", ko: "Makeup touch-up items" }, desc: { "zh-Hant": "不要臨時找東西。", en: "Keep them ready in advance.", ko: "미리 챙겨 두기." } },
-      { id: "original-count", title: { "zh-Hant": "確認 200 張原片", en: "Confirm 200 originals", ko: "Confirm 200 originals" }, desc: { "zh-Hant": "拍攝前後都再確認。", en: "Reconfirm before and after the shoot.", ko: "촬영 전후 모두 확인." } },
-      { id: "retouch-count", title: { "zh-Hant": "確認 12 張精修", en: "Confirm 12 retouched", ko: "Confirm 12 retouched" }, desc: { "zh-Hant": "口頭再確認一次。", en: "Verbal reconfirmation helps.", ko: "구두 재확인." } },
-      { id: "mv-addon", title: { "zh-Hant": "確認 MV 加購", en: "Confirm MV add-on", ko: "Confirm MV add-on" }, desc: { "zh-Hant": "確認列入最終方案。", en: "Make sure it is in the final plan.", ko: "최종 플랜 포함 여부 확인." } },
+      { id: "makeup", title: { "zh-Hant": "補妝 / 整髮用品", en: "Makeup touch-up items", ko: "수정 화장 / 헤어 용품" }, desc: { "zh-Hant": "不要臨時找東西。", en: "Keep them ready in advance.", ko: "당일 허둥대지 않게 미리 챙기기." } },
+      { id: "original-count", title: { "zh-Hant": "確認 200 張原片", en: "Confirm 200 originals", ko: "원본 200장 확인" }, desc: { "zh-Hant": "拍攝前後都再確認。", en: "Reconfirm before and after the shoot.", ko: "촬영 전후 모두 다시 확인." } },
+      { id: "retouch-count", title: { "zh-Hant": "確認 12 張精修", en: "Confirm 12 retouched", ko: "보정 12장 확인" }, desc: { "zh-Hant": "口頭再確認一次。", en: "Verbal reconfirmation helps.", ko: "구두로 한 번 더 확인." } },
+      { id: "mv-addon", title: { "zh-Hant": "確認 MV 加購", en: "Confirm MV add-on", ko: "MV 추가 확인" }, desc: { "zh-Hant": "確認列入最終方案。", en: "Make sure it is in the final plan.", ko: "최종 플랜에 포함됐는지 확인." } },
     ]},
     { id: "payment", title: { "zh-Hant": "付款", en: "Payment", ko: "결제" }, items: [
-      { id: "credit-card", title: { "zh-Hant": "信用卡", en: "Credit card", ko: "Credit card" }, desc: { "zh-Hant": "確認海外刷卡。", en: "Confirm overseas use.", ko: "해외 결제 확인." } },
-      { id: "krw-cash", title: { "zh-Hant": "韓元現金", en: "KRW cash", ko: "KRW cash" }, desc: { "zh-Hant": "刷卡加價時更穩。", en: "Safer if card surcharge happens.", ko: "카드 추가요금 대비." } },
-      { id: "deposit-record", title: { "zh-Hant": "300 CNY 訂金紀錄", en: "300 CNY deposit record", ko: "300 CNY deposit record" }, desc: { "zh-Hant": "現場對帳用。", en: "Helpful for reconciling on site.", ko: "현장 대조용." } },
-      { id: "surcharge", title: { "zh-Hant": "確認刷卡 10%", en: "Confirm 10% card surcharge", ko: "Confirm 10% card surcharge" }, desc: { "zh-Hant": "付款前先問清楚。", en: "Ask before the final payment.", ko: "최종 결제 전 확인." } },
+      { id: "credit-card", title: { "zh-Hant": "信用卡", en: "Credit card", ko: "신용카드" }, desc: { "zh-Hant": "確認海外刷卡。", en: "Confirm overseas use.", ko: "해외 결제 가능 여부 확인." } },
+      { id: "krw-cash", title: { "zh-Hant": "韓元現金", en: "KRW cash", ko: "KRW 현금" }, desc: { "zh-Hant": "刷卡加價時更穩。", en: "Safer if card surcharge happens.", ko: "카드 추가요금이 있을 때 더 안전합니다." } },
+      { id: "deposit-record", title: { "zh-Hant": "300 CNY 訂金紀錄", en: "300 CNY deposit record", ko: "300 CNY 예약금 기록" }, desc: { "zh-Hant": "現場對帳用。", en: "Helpful for reconciling on site.", ko: "현장 확인용." } },
+      { id: "surcharge", title: { "zh-Hant": "確認刷卡 10%", en: "Confirm 10% card surcharge", ko: "카드 10% 추가 확인" }, desc: { "zh-Hant": "付款前先問清楚。", en: "Ask before the final payment.", ko: "최종 결제 전에 먼저 확인." } },
     ]},
     { id: "after", title: { "zh-Hant": "拍攝後", en: "After shooting", ko: "촬영 후" }, items: [
       { id: "backup-photos", title: { "zh-Hant": "先備份照片", en: "Back up photos", ko: "사진 백업" }, desc: { "zh-Hant": "手機拍攝素材先備份。", en: "Back up phone photos early.", ko: "휴대폰 사진 먼저 백업." } },
@@ -618,18 +612,14 @@ function renderKeyInfo() {
 }
 
 function renderOverview() {
-  const overviewStats = document.getElementById("overviewStats");
   const importantAlerts = document.getElementById("importantAlerts");
   const overviewNotes = document.getElementById("overviewNotes");
   const overviewRecommendations = document.getElementById("overviewRecommendations");
-  if (!overviewStats || !importantAlerts || !overviewNotes || !overviewRecommendations) return;
+  if (!importantAlerts || !overviewNotes || !overviewRecommendations) return;
   overviewRecommendations.innerHTML = data.overviewRecommendations
     .map(
       (item) => `<article class="mini-stat-card"><div class="mini-stat-label">${getText(item.tag)}</div><div class="mini-stat-value">${getText(item.title)}</div><div class="budget-original">${getText(item.desc)}</div></article>`
     )
-    .join("");
-  overviewStats.innerHTML = data.overviewStats
-    .map((item) => `<article class="mini-stat-card"><div class="mini-stat-label">${getText(item.label)}</div><div class="mini-stat-value">${getText(item.value)}</div></article>`)
     .join("");
   importantAlerts.innerHTML = data.importantAlerts
     .map((item) => `<article class="bullet-card"><div class="bullet-title">${getText(item.title)}</div><div class="bullet-desc">${getText(item.desc)}</div></article>`)
