@@ -990,37 +990,7 @@ img {
   }
 
   .main-nav {
-    position: static;
-    display: flex;
-    gap: 6px;
-    justify-content: flex-start;
-    overflow-x: auto;
-    width: 100%;
-    max-width: 100%;
-    margin: -10px auto 14px;
-    padding: 0 2px 4px;
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none;
-    backdrop-filter: none;
-    border: 0;
-  }
-
-  .main-nav::-webkit-scrollbar {
     display: none;
-  }
-
-  .nav-item {
-    flex: 0 0 auto;
-    min-width: 78px;
-    min-height: 44px;
-    padding: 9px 10px;
-    font-size: 12px;
-    line-height: 1.18;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.86);
-    border: 1px solid rgba(181, 193, 212, 0.28);
-    box-shadow: 0 8px 20px rgba(83, 95, 116, 0.08);
   }
 
   .container {
@@ -1127,9 +1097,12 @@ img {
     right: 10px;
     bottom: calc(10px + env(safe-area-inset-bottom));
     z-index: 210;
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    display: flex;
     gap: 6px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
     padding: 8px;
     border-radius: 22px;
     background: rgba(255, 251, 247, 0.96);
@@ -1138,7 +1111,13 @@ img {
     backdrop-filter: blur(14px);
   }
 
+  .bottom-nav::-webkit-scrollbar {
+    display: none;
+  }
+
   .bottom-nav-item {
+    flex: 0 0 auto;
+    min-width: 72px;
     min-height: 44px;
     padding: 9px 6px;
     border-radius: 14px;
