@@ -648,10 +648,16 @@ function renderFlights() {
     .map(
       (flight) => `
         <article class="flight-card">
-          <div class="bullet-title">${getText(flight.label)} · ${flight.route}</div>
-          <div class="info-line"><span class="info-label">${t[state.lang].dateText}</span><span class="info-value">${flight.date}</span></div>
-          <div class="info-line"><span class="info-label">${t[state.lang].timeText}</span><span class="info-value">${flight.time}</span></div>
-          <div class="info-line"><span class="info-label">${t[state.lang].classText}</span><span class="info-value">${getText(flight.cabin)}</span></div>
+          <div class="flight-topline">
+            <span class="day-chip">${getText(flight.label)}</span>
+            <span class="date-label">${flight.date}</span>
+          </div>
+          <div class="flight-route">${flight.route}</div>
+          <div class="flight-time">${flight.time}</div>
+          <div class="flight-meta">
+            <div class="info-line"><span class="info-label">${t[state.lang].dateText}</span><span class="info-value">${flight.date}</span></div>
+            <div class="info-line"><span class="info-label">${t[state.lang].classText}</span><span class="info-value">${getText(flight.cabin)}</span></div>
+          </div>
         </article>
       `
     )
