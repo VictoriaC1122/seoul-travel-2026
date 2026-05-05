@@ -1169,7 +1169,7 @@ img {
 
   .bottom-nav-item {
     flex: 0 0 auto;
-    min-width: 72px;
+    min-width: 76px;
     min-height: 44px;
     padding: 9px 6px;
     border-radius: 14px;

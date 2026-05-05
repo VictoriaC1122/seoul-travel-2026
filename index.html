@@ -66,6 +66,7 @@
       <button class="nav-item" type="button" data-page-link="hanbok" data-i18n="navHanbok">韓服</button>
       <button class="nav-item" type="button" data-page-link="route" data-i18n="navRoute">交通</button>
       <button class="nav-item" type="button" data-page-link="budget" data-i18n="navBudget">預算</button>
+      <button class="nav-item" type="button" data-page-link="itinerary" data-i18n="navItinerary">行程</button>
       <button class="nav-item" type="button" data-page-link="notes" data-i18n="navNotes">備註</button>
     </nav>
 
@@ -282,16 +283,21 @@
         </section>
       </section>
 
+      <section class="page-section" id="page-itinerary" data-page-panel="itinerary">
+        <section class="section-card">
+          <div class="section-label" data-i18n="itineraryKicker">行程</div>
+          <h2 data-i18n="overviewItineraryTitle">每日行程</h2>
+          <p class="lead" data-i18n="itineraryLead">每天先看主要安排、區域、交通和提醒。</p>
+          <div class="accordion-list" id="itineraryList"></div>
+        </section>
+      </section>
+
       <section class="page-section" id="page-notes" data-page-panel="notes">
         <section class="section-card">
           <div class="section-label" data-i18n="notesKicker">備註</div>
           <h2 data-i18n="notesTitle">備註</h2>
           <p class="lead" data-i18n="notesLead">剩下零碎但有用的，都放在這一頁。</p>
           <div class="content-grid note-stack">
-            <article class="content-panel">
-              <h4 data-i18n="overviewItineraryTitle">每日行程</h4>
-              <div class="accordion-list" id="itineraryList"></div>
-            </article>
             <article class="content-panel">
               <h4 data-i18n="checklistTitle">清單</h4>
               <div class="checklist-groups" id="checklistGroups"></div>
@@ -323,6 +329,9 @@
       </button>
       <button class="bottom-nav-item" type="button" data-page-link="budget">
         <span data-i18n="bottomBudget">Budget</span>
+      </button>
+      <button class="bottom-nav-item" type="button" data-page-link="itinerary">
+        <span data-i18n="bottomItinerary">Itinerary</span>
       </button>
       <button class="bottom-nav-item" type="button" data-page-link="notes">
         <span data-i18n="bottomSchedule">Schedule</span>

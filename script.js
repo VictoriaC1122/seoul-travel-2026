@@ -5,7 +5,7 @@ const STORAGE_KEYS = {
   page: "seoul-handbook-page",
 };
 
-const PAGE_IDS = ["overview", "flights", "hotel", "hanbok", "route", "budget", "notes"];
+const PAGE_IDS = ["overview", "flights", "hotel", "hanbok", "route", "budget", "itinerary", "notes"];
 
 const state = {
   lang: localStorage.getItem(STORAGE_KEYS.lang) || "zh-Hant",
@@ -36,6 +36,7 @@ const t = {
     navHanbok: "韓服",
     navRoute: "交通",
     navBudget: "預算",
+    navItinerary: "行程",
     navNotes: "備註",
     overviewKicker: "總覽",
     overviewTitle: "這趟安排",
@@ -46,6 +47,8 @@ const t = {
     overviewNotesTitle: "出發前確認",
     overviewFlightTitle: "航班與支援",
     overviewItineraryTitle: "每日行程",
+    itineraryKicker: "行程",
+    itineraryLead: "每天先看主要安排、區域、交通和提醒。",
     homeShortcutHanbok: "韓服",
     homeShortcutHanbokNote: "拍攝那天直接看這頁",
     homeShortcutMap: "交通",
@@ -112,6 +115,7 @@ const t = {
     bottomHanbok: "韓服",
     bottomMap: "交通",
     bottomBudget: "預算",
+    bottomItinerary: "行程",
     dateText: "日期",
     timeText: "時間",
     classText: "艙等",
@@ -151,6 +155,7 @@ const t = {
     navHanbok: "Hanbok",
     navRoute: "Transportation",
     navBudget: "Budget",
+    navItinerary: "Itinerary",
     navNotes: "Notes",
     overviewKicker: "Overview",
     overviewTitle: "Trip setup",
@@ -161,6 +166,8 @@ const t = {
     overviewNotesTitle: "Before you go",
     overviewFlightTitle: "Flights and support",
     overviewItineraryTitle: "Daily itinerary",
+    itineraryKicker: "Itinerary",
+    itineraryLead: "Each day shows the plan, area, transport, cost, and reminder.",
     homeShortcutHanbok: "Hanbok",
     homeShortcutHanbokNote: "Open this on the shoot day",
     homeShortcutMap: "Transport",
@@ -227,6 +234,7 @@ const t = {
     bottomHanbok: "Hanbok",
     bottomMap: "Map",
     bottomBudget: "Budget",
+    bottomItinerary: "Itinerary",
     dateText: "Date",
     timeText: "Time",
     classText: "Class",
@@ -266,6 +274,7 @@ const t = {
     navHanbok: "한복",
     navRoute: "교통",
     navBudget: "예산",
+    navItinerary: "일정",
     navNotes: "메모",
     overviewKicker: "개요",
     overviewTitle: "이번 일정",
@@ -276,6 +285,8 @@ const t = {
     overviewNotesTitle: "출발 전 확인",
     overviewFlightTitle: "항공편 및 지원",
     overviewItineraryTitle: "일별 일정",
+    itineraryKicker: "일정",
+    itineraryLead: "하루별로 주요 일정, 구역, 이동, 비용, 메모를 같이 봅니다.",
     homeShortcutHanbok: "한복",
     homeShortcutHanbokNote: "촬영 당일 이 페이지",
     homeShortcutMap: "교통",
@@ -342,6 +353,7 @@ const t = {
     bottomHanbok: "한복",
     bottomMap: "교통",
     bottomBudget: "예산",
+    bottomItinerary: "일정",
     dateText: "날짜",
     timeText: "시간",
     classText: "좌석 등급",
