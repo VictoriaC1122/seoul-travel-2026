@@ -53,7 +53,13 @@
         <p class="hero-kicker" data-i18n="heroKicker">Seoul travel handbook</p>
         <h1 data-i18n="heroTitle">首爾旅行 2026</h1>
         <div class="hero-subtitle" data-i18n="heroSubtitle">2026 年 5 月 · 首爾旅行手冊</div>
-        <div class="hero-dates" data-i18n="heroDates">2026 / 05 / 15 - 2026 / 05 / 20</div>
+        <div class="hero-meta-chips" aria-label="Trip overview chips">
+          <span class="hero-chip" data-i18n="heroDates">2026 / 05 / 15 - 2026 / 05 / 20</span>
+          <span class="hero-chip" data-i18n="heroCity">首爾</span>
+          <span class="hero-chip" data-i18n="heroAreaStay">弘大</span>
+          <span class="hero-chip" data-i18n="heroAreaShoot">北村 / 安國</span>
+          <span class="hero-chip" data-i18n="heroAreaPalace">景福宮</span>
+        </div>
         <div class="destinations" data-i18n="heroDestinations">弘大 · 北村韓屋村 · 景福宮 · 安國 · 首爾</div>
         <div class="hero-summary-grid" id="heroSummary" aria-label="Key trip cards"></div>
       </div>
@@ -78,19 +84,19 @@
           <p class="lead" data-i18n="overviewLead">首頁只放真的會先看的，其他細節都分到各頁去找。</p>
           <div class="key-info-grid" id="keyInfoBar"></div>
           <div class="home-shortcuts">
-            <button class="home-shortcut" type="button" data-page-link="hanbok">
+            <button class="home-shortcut" type="button" data-page-link="hanbok" aria-label="Open hanbok page">
               <span class="home-shortcut-label" data-i18n="homeShortcutHanbok">韓服</span>
               <span class="home-shortcut-note" data-i18n="homeShortcutHanbokNote">拍攝當天直接開這頁</span>
             </button>
-            <button class="home-shortcut" type="button" data-page-link="route">
+            <button class="home-shortcut" type="button" data-page-link="route" aria-label="Open transportation page">
               <span class="home-shortcut-label" data-i18n="homeShortcutMap">交通</span>
               <span class="home-shortcut-note" data-i18n="homeShortcutMapNote">看幾點出門</span>
             </button>
-            <button class="home-shortcut" type="button" data-page-link="budget">
+            <button class="home-shortcut" type="button" data-page-link="budget" aria-label="Open budget page">
               <span class="home-shortcut-label" data-i18n="homeShortcutBudget">預算</span>
               <span class="home-shortcut-note" data-i18n="homeShortcutBudgetNote">快速看總額和每人</span>
             </button>
-            <button class="home-shortcut" type="button" data-page-link="hotel">
+            <button class="home-shortcut" type="button" data-page-link="hotel" aria-label="Open hotel page">
               <span class="home-shortcut-label" data-i18n="homeShortcutHotel">飯店</span>
               <span class="home-shortcut-note" data-i18n="homeShortcutHotelNote">地址和住宿資訊</span>
             </button>
@@ -146,14 +152,14 @@
       </section>
 
       <section class="page-section" id="page-hotel" data-page-panel="hotel">
-        <section class="section-card">
+        <section class="section-card hotel-section">
           <div class="section-label" data-i18n="hotelKicker">住宿</div>
           <h2 data-i18n="hotelTitle">住宿</h2>
           <p class="lead" data-i18n="hotelLead">地址、房型、價格先放一起，找住宿資訊不用翻。</p>
           <div class="content-grid two-col">
             <article class="content-panel" id="hotelCard"></article>
             <article class="content-panel">
-              <div class="gallery-grid compact-gallery">
+              <div class="gallery-grid compact-gallery hotel-gallery">
                 <figure class="gallery-item">
                   <button class="gallery-trigger" type="button" data-image="./assets/images/local-stitch-exterior.jpeg" data-caption-key="hotelExteriorCaption">
                     <img src="./assets/images/local-stitch-exterior.jpeg" alt="Exterior view of Local Stitch Creator Town Seogyo in the Hongdae area" loading="lazy" />
@@ -186,10 +192,10 @@
           </div>
         </section>
 
-        <section class="section-card">
+        <section class="section-card hanbok-gallery-section">
           <div class="section-label" data-i18n="hanbokReferenceTitle">參考照片</div>
           <h3 data-i18n="hanbokReferenceTitle">參考照片</h3>
-          <div class="gallery-grid">
+          <div class="gallery-grid hanbok-gallery">
             <figure class="gallery-item">
               <button class="gallery-trigger" type="button" data-image="./assets/images/S__180125889_0.jpg" data-caption-key="hanbokCaptionOne">
                 <img src="./assets/images/S__180125889_0.jpg" alt="Blue hanbok reference photo under a traditional Korean gate" loading="lazy" />
@@ -312,29 +318,29 @@
     </main>
 
     <nav class="bottom-nav" aria-label="Primary mobile navigation">
-      <button class="bottom-nav-item active" type="button" data-page-link="overview">
+      <button class="bottom-nav-item active" type="button" data-page-link="overview" aria-label="Open overview page">
+        <span class="bottom-nav-icon" aria-hidden="true">⌂</span>
         <span data-i18n="bottomHome">Home</span>
       </button>
-      <button class="bottom-nav-item" type="button" data-page-link="flights">
+      <button class="bottom-nav-item" type="button" data-page-link="flights" aria-label="Open flights page">
+        <span class="bottom-nav-icon" aria-hidden="true">✈</span>
         <span data-i18n="navFlights">航班</span>
       </button>
-      <button class="bottom-nav-item" type="button" data-page-link="hotel">
+      <button class="bottom-nav-item" type="button" data-page-link="hotel" aria-label="Open hotel page">
+        <span class="bottom-nav-icon" aria-hidden="true">▣</span>
         <span data-i18n="navHotel">住宿</span>
       </button>
-      <button class="bottom-nav-item" type="button" data-page-link="hanbok">
+      <button class="bottom-nav-item" type="button" data-page-link="hanbok" aria-label="Open hanbok page">
+        <span class="bottom-nav-icon" aria-hidden="true">✿</span>
         <span data-i18n="bottomHanbok">Hanbok</span>
       </button>
-      <button class="bottom-nav-item" type="button" data-page-link="route">
-        <span data-i18n="bottomMap">Map</span>
-      </button>
-      <button class="bottom-nav-item" type="button" data-page-link="budget">
-        <span data-i18n="bottomBudget">Budget</span>
-      </button>
-      <button class="bottom-nav-item" type="button" data-page-link="itinerary">
+      <button class="bottom-nav-item" type="button" data-page-link="itinerary" aria-label="Open itinerary page">
+        <span class="bottom-nav-icon" aria-hidden="true">▤</span>
         <span data-i18n="bottomItinerary">Itinerary</span>
       </button>
-      <button class="bottom-nav-item" type="button" data-page-link="notes">
-        <span data-i18n="bottomSchedule">Schedule</span>
+      <button class="bottom-nav-item" type="button" data-page-link="notes" aria-label="Open checklist page">
+        <span class="bottom-nav-icon" aria-hidden="true">☑</span>
+        <span data-i18n="bottomChecklist">Checklist</span>
       </button>
     </nav>
 

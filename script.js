@@ -27,6 +27,10 @@ const t = {
     heroTitle: "首爾旅行 2026",
     heroSubtitle: "2026 年 5 月 · 首爾旅行手冊",
     heroDates: "2026 / 05 / 15 - 2026 / 05 / 20",
+    heroCity: "首爾",
+    heroAreaStay: "弘大",
+    heroAreaShoot: "北村 / 安國",
+    heroAreaPalace: "景福宮",
     heroDestinations: "弘大 · 北村韓屋村 · 景福宮 · 安國 · 首爾",
     keyInfoTitle: "今天重點",
     jumpLinksTitle: "分頁入口",
@@ -112,6 +116,7 @@ const t = {
     linksTitle: "實用連結",
     bottomHome: "首頁",
     bottomSchedule: "備註",
+    bottomChecklist: "清單",
     bottomHanbok: "韓服",
     bottomMap: "交通",
     bottomBudget: "預算",
@@ -146,6 +151,10 @@ const t = {
     heroTitle: "Seoul Travel 2026",
     heroSubtitle: "May 2026 · Seoul Travel Handbook",
     heroDates: "2026 / 05 / 15 - 2026 / 05 / 20",
+    heroCity: "Seoul",
+    heroAreaStay: "Hongdae",
+    heroAreaShoot: "Bukchon / Anguk",
+    heroAreaPalace: "Gyeongbokgung",
     heroDestinations: "Hongdae · Bukchon Hanok Village · Gyeongbokgung · Anguk · Seoul",
     keyInfoTitle: "Today",
     jumpLinksTitle: "Sections",
@@ -231,6 +240,7 @@ const t = {
     linksTitle: "Useful links",
     bottomHome: "Home",
     bottomSchedule: "Schedule",
+    bottomChecklist: "Checklist",
     bottomHanbok: "Hanbok",
     bottomMap: "Map",
     bottomBudget: "Budget",
@@ -265,6 +275,10 @@ const t = {
     heroTitle: "서울 여행 2026",
     heroSubtitle: "2026년 5월 · 서울 여행 핸드북",
     heroDates: "2026 / 05 / 15 - 2026 / 05 / 20",
+    heroCity: "서울",
+    heroAreaStay: "홍대",
+    heroAreaShoot: "북촌 / 안국",
+    heroAreaPalace: "경복궁",
     heroDestinations: "홍대 · 북촌한옥마을 · 경복궁 · 안국 · 서울",
     keyInfoTitle: "오늘 핵심",
     jumpLinksTitle: "페이지 이동",
@@ -350,6 +364,7 @@ const t = {
     linksTitle: "유용한 링크",
     bottomHome: "홈",
     bottomSchedule: "일정",
+    bottomChecklist: "체크",
     bottomHanbok: "한복",
     bottomMap: "교통",
     bottomBudget: "예산",
@@ -531,24 +546,24 @@ const data = {
       { id: "esim", title: { "zh-Hant": "eSIM / 漫遊", en: "eSIM / roaming", ko: "eSIM / roaming" }, desc: { "zh-Hant": "抵達後能立刻上網。", en: "Make sure data works on arrival.", ko: "도착 직후 데이터 사용 가능." } },
       { id: "powerbank", title: { "zh-Hant": "行動電源", en: "Power bank", ko: "보조배터리" }, desc: { "zh-Hant": "導航和拍照很耗電。", en: "Navigation and photos drain battery.", ko: "지도와 사진으로 배터리 소모가 큽니다." } },
     ]},
-    { id: "hanbok", title: { "zh-Hant": "韓服拍攝日", en: "Hanbok shooting day", ko: "한복 촬영일" }, items: [
+    { id: "airport", title: { "zh-Hant": "機場", en: "Airport", ko: "공항" }, items: [
+      { id: "credit-card", title: { "zh-Hant": "信用卡", en: "Credit card", ko: "신용카드" }, desc: { "zh-Hant": "確認海外刷卡。", en: "Confirm overseas use.", ko: "해외 결제 가능 여부 확인." } },
+      { id: "hotel-address", title: { "zh-Hant": "飯店地址截圖", en: "Hotel address screenshot", ko: "호텔 주소 캡처" }, desc: { "zh-Hant": "臨時搭車時比較不會慌。", en: "Useful when you need a quick taxi or directions.", ko: "급하게 택시를 탈 때 도움이 됩니다." } },
+    ]},
+    { id: "local", title: { "zh-Hant": "韓國當地", en: "In Korea", ko: "한국에서" }, items: [
+      { id: "krw-cash", title: { "zh-Hant": "韓元現金", en: "KRW cash", ko: "KRW 현금" }, desc: { "zh-Hant": "刷卡加價時更穩。", en: "Safer if card surcharge happens.", ko: "카드 추가요금이 있을 때 더 안전합니다." } },
+      { id: "deposit-record", title: { "zh-Hant": "300 CNY 訂金紀錄", en: "300 CNY deposit record", ko: "300 CNY 예약금 기록" }, desc: { "zh-Hant": "現場對帳用。", en: "Helpful for reconciling on site.", ko: "현장 확인용." } },
+      { id: "insurance", title: { "zh-Hant": "旅遊保險資料", en: "Travel insurance record", ko: "여행 보험 정보" }, desc: { "zh-Hant": "把投保確認信和保單號碼留在手機裡。", en: "Keep the confirmation email and policy number on your phone.", ko: "확인 메일과 보험 번호를 휴대폰에 저장해 두기." } },
+    ]},
+    { id: "hanbok", title: { "zh-Hant": "拍照 / 韓服", en: "Photo / Hanbok", ko: "촬영 / 한복" }, items: [
       { id: "makeup", title: { "zh-Hant": "補妝 / 整髮用品", en: "Makeup touch-up items", ko: "수정 화장 / 헤어 용품" }, desc: { "zh-Hant": "不要臨時找東西。", en: "Keep them ready in advance.", ko: "당일 허둥대지 않게 미리 챙기기." } },
       { id: "original-count", title: { "zh-Hant": "確認 200 張原片", en: "Confirm 200 originals", ko: "원본 200장 확인" }, desc: { "zh-Hant": "拍攝前後都再確認。", en: "Reconfirm before and after the shoot.", ko: "촬영 전후 모두 다시 확인." } },
       { id: "retouch-count", title: { "zh-Hant": "確認 12 張精修", en: "Confirm 12 retouched", ko: "보정 12장 확인" }, desc: { "zh-Hant": "口頭再確認一次。", en: "Verbal reconfirmation helps.", ko: "구두로 한 번 더 확인." } },
       { id: "mv-addon", title: { "zh-Hant": "確認 MV 加購", en: "Confirm MV add-on", ko: "MV 추가 확인" }, desc: { "zh-Hant": "確認列入最終方案。", en: "Make sure it is in the final plan.", ko: "최종 플랜에 포함됐는지 확인." } },
-    ]},
-    { id: "payment", title: { "zh-Hant": "付款", en: "Payment", ko: "결제" }, items: [
-      { id: "credit-card", title: { "zh-Hant": "信用卡", en: "Credit card", ko: "신용카드" }, desc: { "zh-Hant": "確認海外刷卡。", en: "Confirm overseas use.", ko: "해외 결제 가능 여부 확인." } },
-      { id: "krw-cash", title: { "zh-Hant": "韓元現金", en: "KRW cash", ko: "KRW 현금" }, desc: { "zh-Hant": "刷卡加價時更穩。", en: "Safer if card surcharge happens.", ko: "카드 추가요금이 있을 때 더 안전합니다." } },
-      { id: "deposit-record", title: { "zh-Hant": "300 CNY 訂金紀錄", en: "300 CNY deposit record", ko: "300 CNY 예약금 기록" }, desc: { "zh-Hant": "現場對帳用。", en: "Helpful for reconciling on site.", ko: "현장 확인용." } },
       { id: "surcharge", title: { "zh-Hant": "確認刷卡 10%", en: "Confirm 10% card surcharge", ko: "카드 10% 추가 확인" }, desc: { "zh-Hant": "付款前先問清楚。", en: "Ask before the final payment.", ko: "최종 결제 전에 먼저 확인." } },
     ]},
-    { id: "after", title: { "zh-Hant": "拍攝後", en: "After shooting", ko: "촬영 후" }, items: [
+    { id: "after", title: { "zh-Hant": "回程前", en: "Before return", ko: "귀국 전" }, items: [
       { id: "backup-photos", title: { "zh-Hant": "先備份照片", en: "Back up photos", ko: "사진 백업" }, desc: { "zh-Hant": "手機拍攝素材先備份。", en: "Back up phone photos early.", ko: "휴대폰 사진 먼저 백업." } },
-    ]},
-    { id: "emergency", title: { "zh-Hant": "緊急備用", en: "Emergency", ko: "비상 상황" }, items: [
-      { id: "insurance", title: { "zh-Hant": "旅遊保險資料", en: "Travel insurance record", ko: "여행 보험 정보" }, desc: { "zh-Hant": "把投保確認信和保單號碼留在手機裡。", en: "Keep the confirmation email and policy number on your phone.", ko: "확인 메일과 보험 번호를 휴대폰에 저장해 두기." } },
-      { id: "hotel-address", title: { "zh-Hant": "飯店地址截圖", en: "Hotel address screenshot", ko: "호텔 주소 캡처" }, desc: { "zh-Hant": "臨時搭車時比較不會慌。", en: "Useful when you need a quick taxi or directions.", ko: "급하게 택시를 탈 때 도움이 됩니다." } },
     ]},
   ],
   usefulLinks: [
@@ -684,7 +699,7 @@ function renderFlights() {
     .join("");
 
   flightLinks.innerHTML = data.flightLinks
-    .map((link) => `<div class="link-row"><span class="link-row-label">${getText(link.label)}</span><a class="link-button" href="${link.href}" target="_blank" rel="noreferrer">${t[state.lang].openLink}</a></div>`)
+    .map((link) => `<div class="link-row"><span class="link-row-label">${getText(link.label)}</span><a class="link-button" href="${link.href}" target="_blank" rel="noreferrer" aria-label="${getText(link.label)}">${t[state.lang].openLink}</a></div>`)
     .join("");
 }
 
@@ -693,8 +708,8 @@ function renderItinerary() {
   if (!itineraryList) return;
   itineraryList.innerHTML = data.itinerary
     .map(
-      (item) => `
-        <details class="itinerary-card" ${item.open ? "open" : ""}>
+      (item, index) => `
+        <details class="itinerary-card" ${index === 0 ? "open" : ""}>
           <summary class="accordion-summary">
             <div class="accordion-topline"><span class="day-chip">${getText(item.day)}</span><span class="date-label">${item.date}</span></div>
             <h3>${getText(item.plan)}</h3>
@@ -725,7 +740,7 @@ function renderHotel() {
       ${hotel.notes.map((item) => `<div class="price-row"><div class="price-label">${getText(item.title)}</div><div class="price-value">${formatCurrency(item.krw)}</div><div class="budget-original">${formatCurrency(item.krw, "KRW")}</div></div>`).join("")}
     </div>
     <div class="bullet-stack">${hotel.copy.map((item) => `<article class="bullet-card"><div class="bullet-title">${getText(item.title)}</div><div class="bullet-desc">${getText(item.desc)}</div></article>`).join("")}</div>
-    <div class="route-actions"><a class="action-link" href="${hotel.href}" target="_blank" rel="noreferrer">Agoda</a></div>
+    <div class="route-actions"><a class="action-link" href="${hotel.href}" target="_blank" rel="noreferrer" aria-label="Open hotel booking page on Agoda">Agoda</a></div>
   `;
 }
 
@@ -771,7 +786,7 @@ function renderRoute() {
           <div class="info-line"><span class="info-label">${t[state.lang].destinationLabel}</span><span class="info-value">${getText(item.destination)}</span></div>
           <div class="info-line"><span class="info-label">${t[state.lang].costLabel}</span><span class="info-value">${getText(item.cost)}</span></div>
           <div class="bullet-desc">${getText(item.desc)}</div>
-          <div class="route-actions"><a class="action-link" href="${item.href}" target="_blank" rel="noreferrer">${t[state.lang].mapsLabel}</a></div>
+          <div class="route-actions"><a class="action-link" href="${item.href}" target="_blank" rel="noreferrer" aria-label="${t[state.lang].mapsLabel}">${t[state.lang].mapsLabel}</a></div>
         </article>
       `
     )
@@ -896,7 +911,7 @@ function renderLinks() {
         <article class="link-block">
           <h3>${getText(group.title)}</h3>
           <div class="link-list">
-            ${group.links.map((link) => `<div class="link-row"><span class="link-row-label">${getText(link.label)}</span><a class="link-button" href="${link.href}" target="_blank" rel="noreferrer">${t[state.lang].openLink}</a></div>`).join("")}
+            ${group.links.map((link) => `<div class="link-row"><span class="link-row-label">${getText(link.label)}</span><a class="link-button" href="${link.href}" target="_blank" rel="noreferrer" aria-label="${getText(link.label)}">${t[state.lang].openLink}</a></div>`).join("")}
           </div>
         </article>
       `
