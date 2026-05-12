@@ -43,8 +43,8 @@ const t = {
     navItinerary: "行程",
     navNotes: "備註",
     overviewKicker: "總覽",
-    overviewTitle: "韓國旅拍行程總覽",
-    overviewLead: "整理這次旅程的日期、地點與每日主題，讓行程節奏一目了然。",
+    overviewTitle: "韓國旅行行程總覽",
+    overviewLead: "整理這次旅程的日期與地點，讓行程節奏一目了然。",
     overviewSnapshotTitle: "旅程亮點",
     overviewRecommendTitle: "順路可排",
     overviewAlertsTitle: "當日主題",
@@ -175,7 +175,7 @@ const t = {
     navNotes: "Notes",
     overviewKicker: "Overview",
     overviewTitle: "Seoul Travel Overview",
-    overviewLead: "A clear overview of the dates, places, and daily rhythm of this trip.",
+    overviewLead: "A clear overview of the travel dates and places for this trip.",
     overviewSnapshotTitle: "Trip highlights",
     overviewRecommendTitle: "Worth fitting in",
     overviewAlertsTitle: "Day themes",
@@ -305,8 +305,8 @@ const t = {
     navItinerary: "일정",
     navNotes: "메모",
     overviewKicker: "개요",
-    overviewTitle: "서울 여행 촬영 일정 개요",
-    overviewLead: "이번 여행의 날짜, 지역, 하루 흐름을 한눈에 볼 수 있도록 정리했습니다.",
+    overviewTitle: "서울 여행 일정 개요",
+    overviewLead: "이번 여행의 날짜와 지역을 한눈에 볼 수 있도록 정리했습니다.",
     overviewSnapshotTitle: "여행 하이라이트",
     overviewRecommendTitle: "같이 보기 좋은 곳",
     overviewAlertsTitle: "하루 테마",
@@ -418,10 +418,8 @@ const t = {
 const data = {
   heroSummary: [
     { label: { "zh-Hant": "住宿", en: "Hotel", ko: "호텔" }, value: { "zh-Hant": "洛卡斯提奇創作者小鎮西橋店", en: "Local Stitch Creator Town Seogyo", ko: "로컬스티치 크리에이터 타운 서교" } },
-    { label: { "zh-Hant": "旅拍日期", en: "Shoot date", ko: "촬영 날짜" }, value: { "zh-Hant": "5 月 19 日 14:00", en: "May 19, 14:00", ko: "5월 19일 14:00" } },
-    { label: { "zh-Hant": "住宿區域", en: "Stay area", ko: "숙소 지역" }, value: { "zh-Hant": "弘大", en: "Hongdae", ko: "홍대" } },
-    { label: { "zh-Hant": "拍攝區域", en: "Shoot area", ko: "촬영 지역" }, value: { "zh-Hant": "北村 · 安國", en: "Bukchon · Anguk", ko: "북촌 · 안국" } },
-    { label: { "zh-Hant": "旅程主題", en: "Trip mood", ko: "여행 무드" }, value: { "zh-Hant": "首爾旅拍與散步行程", en: "Seoul photo trip and neighborhood walks", ko: "서울 여행 촬영과 동네 산책" } },
+    { label: { "zh-Hant": "旅行日期", en: "Travel dates", ko: "여행 날짜" }, value: { "zh-Hant": "2026 / 05 / 15 - 2026 / 05 / 20", en: "2026 / 05 / 15 - 2026 / 05 / 20", ko: "2026 / 05 / 15 - 2026 / 05 / 20" } },
+    { label: { "zh-Hant": "旅行地點", en: "Travel areas", ko: "여행 지역" }, value: { "zh-Hant": "弘大 · 北村 · 景福宮 · 聖水", en: "Hongdae · Bukchon · Gyeongbokgung · Seongsu", ko: "홍대 · 북촌 · 경복궁 · 성수" } },
   ],
   keyInfo: [
     {
@@ -434,38 +432,6 @@ const data = {
       value: { "zh-Hant": "弘大 · 北村 · 景福宮 · 聖水", en: "Hongdae · Bukchon · Gyeongbokgung · Seongsu", ko: "홍대 · 북촌 · 경복궁 · 성수" },
       note: { "zh-Hant": "以西村與江南動線延伸", en: "Extended with west-side and Gangnam routes", ko: "서촌과 강남 동선으로 이어짐" },
     },
-    {
-      label: { "zh-Hant": "旅拍主題", en: "Trip theme", ko: "여행 테마" },
-      value: { "zh-Hant": "5/19 14:00 韓服拍攝", en: "May 19, 14:00 Hanbok shooting", ko: "5/19 14:00 한복 촬영" },
-      note: { "zh-Hant": "北村與景福宮周邊拍攝日", en: "Bukchon and Gyeongbokgung area shoot day", ko: "북촌과 경복궁 주변 촬영일" },
-    },
-  ],
-  overviewRecommendations: [
-    {
-      title: { "zh-Hant": "聖水洞", en: "Seongsu", ko: "성수" },
-      desc: { "zh-Hant": "這區很適合排半天，逛店、喝咖啡、走街景都順。", en: "This area works well for half a day of shops, cafes, and easy walking.", ko: "이 구역은 반나절 쓰기 좋고, 편집숍과 카페, 거리 구경이 자연스럽게 이어집니다." },
-      tag: { "zh-Hant": "先收進口袋", en: "Good first pick", ko: "우선 저장" },
-    },
-    {
-      title: { "zh-Hant": "益善洞", en: "Ikseondong", ko: "익선동" },
-      desc: { "zh-Hant": "韓屋街區加上餐廳和小店，適合排半天慢慢走。", en: "Hanok lanes with small shops and restaurants, good for a slow half day.", ko: "한옥 골목과 작은 가게, 식당이 모여 있어서 반나절 천천히 걷기 좋습니다." },
-      tag: { "zh-Hant": "吃飯散步", en: "Food + walk", ko: "식사 + 산책" },
-    },
-    {
-      title: { "zh-Hant": "首爾林", en: "Seoul Forest", ko: "서울숲" },
-      desc: { "zh-Hant": "如果想排得輕鬆一點，這裡很好放。", en: "This is an easy stop if you want a lighter daytime plan.", ko: "조금 가볍게 가고 싶은 날에 넣기 좋습니다." },
-      tag: { "zh-Hant": "輕鬆版行程", en: "Easy stop", ko: "가벼운 코스" },
-    },
-  ],
-  importantAlerts: [
-    { title: { "zh-Hant": "5/19 以北村與景福宮周邊為主", en: "May 19 centers on Bukchon and the palace area", ko: "5/19 은 북촌과 궁 주변을 중심으로" }, desc: { "zh-Hant": "這天的畫面主題會落在韓屋街區、宮殿外圍與安國一帶，很適合把節奏放慢。", en: "The visual focus that day is the hanok streets, the palace exterior, and the Anguk area, so it works best at an easy pace.", ko: "이날의 분위기는 한옥 거리, 궁 외부, 안국 일대로 이어져서 천천히 보는 흐름이 잘 어울립니다." } },
-    { title: { "zh-Hant": "弘大作為住宿基地很順", en: "Hongdae works well as the base", ko: "홍대는 숙소 베이스로 동선이 좋음" }, desc: { "zh-Hant": "從機場進出、回飯店休息，或最後幾天採買，都可以自然接回弘大。", en: "Airport transfers, returning to the hotel, and last-day shopping all connect back to Hongdae naturally.", ko: "공항 이동, 숙소 복귀, 마지막 쇼핑까지 모두 홍대로 자연스럽게 이어집니다." } },
-    { title: { "zh-Hant": "這趟行程是城市散步感", en: "This trip leans into city walks", ko: "이번 일정은 도시 산책의 결이 강함" }, desc: { "zh-Hant": "除了明確安排的旅拍日，其餘天數都可以依照展覽、咖啡店與街區節奏慢慢排。", en: "Outside the dedicated shoot day, the rest of the trip can move gently around exhibitions, cafes, and neighborhood walks.", ko: "촬영일을 제외한 나머지 날들은 전시, 카페, 동네 산책 흐름에 맞춰 여유 있게 이어가기 좋습니다." } },
-  ],
-  overviewNotes: [
-    { title: { "zh-Hant": "前半段以街區散步為主", en: "The first half is neighborhood-based", ko: "전반부는 동네 산책 중심" }, desc: { "zh-Hant": "漢南洞、狎鷗亭、江南與聖水各自成區，安排上比較像一區一日。", en: "Hannam, Apgujeong, Gangnam, and Seongsu each stand well on their own, so the trip flows naturally as one area per day.", ko: "한남, 압구정, 강남, 성수는 각자 하나의 구역으로 보기 좋아서 하루 한 지역 흐름이 잘 맞습니다." } },
-    { title: { "zh-Hant": "旅拍日放在後段更剛好", en: "The shoot day sits well in the later part", ko: "촬영일을 후반부에 둔 흐름이 좋음" }, desc: { "zh-Hant": "先用前幾天熟悉首爾節奏，拍攝日再把重點留給北村與景福宮周邊。", en: "Spending the first few days getting into Seoul’s rhythm makes it easier to give the shoot day fully to Bukchon and the palace area.", ko: "앞쪽 며칠로 서울의 흐름을 익히고, 촬영일은 북촌과 궁 주변에 집중하는 구성이 자연스럽습니다." } },
-    { title: { "zh-Hant": "首頁先看節奏，細節分頁再看", en: "Use the home page for rhythm, then open details", ko: "홈에서는 흐름을 보고, 세부는 각 페이지에서 확인" }, desc: { "zh-Hant": "韓服、預算、交通與每天行程都已分頁整理，出發前再逐頁核對就好。", en: "Hanbok, budget, transportation, and daily plans are already split into their own pages, so the detailed check can happen there.", ko: "한복, 예산, 교통, 일별 일정은 이미 각 페이지로 나뉘어 있어서 세부 확인은 그쪽에서 보면 됩니다." } },
   ],
   flights: [
     {
@@ -881,6 +847,12 @@ function renderI18n() {
 function renderHero() {
   const root = document.getElementById("heroSummary");
   if (!root) return;
+  if (!data.heroSummary.length) {
+    root.innerHTML = "";
+    root.style.display = "none";
+    return;
+  }
+  root.style.display = "";
   root.innerHTML = data.heroSummary
     .map((item) => `<article class="summary-card"><div class="summary-label">${getText(item.label)}</div><div class="summary-value">${getText(item.value)}</div></article>`)
     .join("");
