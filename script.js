@@ -124,6 +124,13 @@ const t = {
     dateText: "日期",
     timeText: "時間",
     classText: "艙等",
+    flightNumberText: "航班",
+    departureText: "出發",
+    arrivalText: "抵達",
+    countryText: "國家",
+    cityText: "城市",
+    airportText: "機場",
+    terminalText: "航廈",
     reservedPlanTitle: "已預約韓服方案",
     packageText: "套餐",
     addonText: "加購",
@@ -248,6 +255,13 @@ const t = {
     dateText: "Date",
     timeText: "Time",
     classText: "Class",
+    flightNumberText: "Flight",
+    departureText: "Departure",
+    arrivalText: "Arrival",
+    countryText: "Country",
+    cityText: "City",
+    airportText: "Airport",
+    terminalText: "Terminal",
     reservedPlanTitle: "Reserved Hanbok Plan",
     packageText: "Package",
     addonText: "Add-on",
@@ -372,6 +386,13 @@ const t = {
     dateText: "날짜",
     timeText: "시간",
     classText: "좌석 등급",
+    flightNumberText: "항공편",
+    departureText: "출발",
+    arrivalText: "도착",
+    countryText: "국가",
+    cityText: "도시",
+    airportText: "공항",
+    terminalText: "터미널",
     reservedPlanTitle: "예약된 한복 플랜",
     packageText: "패키지",
     addonText: "추가",
@@ -447,8 +468,50 @@ const data = {
     { title: { "zh-Hant": "首頁先看節奏，細節分頁再看", en: "Use the home page for rhythm, then open details", ko: "홈에서는 흐름을 보고, 세부는 각 페이지에서 확인" }, desc: { "zh-Hant": "韓服、預算、交通與每天行程都已分頁整理，出發前再逐頁核對就好。", en: "Hanbok, budget, transportation, and daily plans are already split into their own pages, so the detailed check can happen there.", ko: "한복, 예산, 교통, 일별 일정은 이미 각 페이지로 나뉘어 있어서 세부 확인은 그쪽에서 보면 됩니다." } },
   ],
   flights: [
-    { label: { "zh-Hant": "去程", en: "Outbound", ko: "출국" }, route: "TPE → ICN", date: "2026-05-15", time: "15:30 - 19:05", cabin: { "zh-Hant": "經濟艙基本", en: "Economy Basic", ko: "이코노미 베이직" } },
-    { label: { "zh-Hant": "回程", en: "Return", ko: "귀국" }, route: "ICN → TPE", date: "2026-05-20", time: "20:05 - 21:50", cabin: { "zh-Hant": "經濟艙基本", en: "Economy Basic", ko: "이코노미 베이직" } },
+    {
+      label: { "zh-Hant": "去程", en: "Outbound", ko: "출국" },
+      airline: "China Airlines",
+      airlineCode: "CI",
+      flightNo: "CI 0162",
+      route: "TPE → ICN",
+      date: "2026-05-15",
+      time: "15:30 → 19:05",
+      cabin: { "zh-Hant": "經濟艙基本", en: "Economy Basic", ko: "이코노미 베이직" },
+      departure: {
+        country: { "zh-Hant": "台灣", en: "Taiwan", ko: "대만" },
+        city: { "zh-Hant": "台北", en: "Taipei", ko: "타이베이" },
+        airport: { "zh-Hant": "桃園國際機場", en: "Taoyuan International Airport", ko: "타오위안 국제공항" },
+        terminal: { "zh-Hant": "第 1 航廈", en: "Terminal 1", ko: "제1터미널" },
+      },
+      arrival: {
+        country: { "zh-Hant": "韓國", en: "South Korea", ko: "대한민국" },
+        city: { "zh-Hant": "首爾", en: "Seoul", ko: "서울" },
+        airport: { "zh-Hant": "仁川國際機場", en: "Incheon International Airport", ko: "인천국제공항" },
+        terminal: { "zh-Hant": "第 2 航廈", en: "Terminal 2", ko: "제2터미널" },
+      },
+    },
+    {
+      label: { "zh-Hant": "回程", en: "Return", ko: "귀국" },
+      airline: "China Airlines",
+      airlineCode: "CI",
+      flightNo: "China Airlines",
+      route: "ICN → TPE",
+      date: "2026-05-20",
+      time: "20:05 → 21:50",
+      cabin: { "zh-Hant": "經濟艙基本", en: "Economy Basic", ko: "이코노미 베이직" },
+      departure: {
+        country: { "zh-Hant": "韓國", en: "South Korea", ko: "대한민국" },
+        city: { "zh-Hant": "首爾", en: "Seoul", ko: "서울" },
+        airport: { "zh-Hant": "仁川國際機場", en: "Incheon International Airport", ko: "인천국제공항" },
+        terminal: { "zh-Hant": "第 2 航廈", en: "Terminal 2", ko: "제2터미널" },
+      },
+      arrival: {
+        country: { "zh-Hant": "台灣", en: "Taiwan", ko: "대만" },
+        city: { "zh-Hant": "台北", en: "Taipei", ko: "타이베이" },
+        airport: { "zh-Hant": "桃園國際機場", en: "Taoyuan International Airport", ko: "타오위안 국제공항" },
+        terminal: { "zh-Hant": "第 1 航廈", en: "Terminal 1", ko: "제1터미널" },
+      },
+    },
   ],
   flightFareNotes: [
     { title: { "zh-Hant": "票價", en: "Fare", ko: "운임" }, desc: { "zh-Hant": "兩人機票總計已知為 NT$12,718。", en: "Known airfare total is NT$12,718 for this booking.", ko: "현재 확인된 항공권 금액은 NT$12,718입니다." } },
@@ -868,6 +931,13 @@ function renderFlights() {
     .map(
       (flight) => `
         <article class="flight-card">
+          <div class="flight-brand">
+            <div class="flight-brand-mark" aria-hidden="true">✈</div>
+            <div>
+              <div class="flight-brand-name">${flight.airline}</div>
+              <div class="flight-brand-code">${flight.airlineCode}</div>
+            </div>
+          </div>
           <div class="flight-topline">
             <span class="day-chip">${getText(flight.label)}</span>
             <span class="date-label">${flight.date}</span>
@@ -876,7 +946,28 @@ function renderFlights() {
           <div class="flight-time">${flight.time}</div>
           <div class="flight-meta">
             <div class="info-line"><span class="info-label">${t[state.lang].dateText}</span><span class="info-value">${flight.date}</span></div>
+            <div class="info-line"><span class="info-label">${t[state.lang].flightNumberText}</span><span class="info-value">${flight.flightNo}</span></div>
             <div class="info-line"><span class="info-label">${t[state.lang].classText}</span><span class="info-value">${getText(flight.cabin)}</span></div>
+          </div>
+          <div class="flight-stop-grid">
+            <article class="flight-stop-card">
+              <div class="info-label">${t[state.lang].departureText}</div>
+              <div class="flight-stop-list">
+                <div class="flight-stop-row"><span>${t[state.lang].countryText}</span><strong>${getText(flight.departure.country)}</strong></div>
+                <div class="flight-stop-row"><span>${t[state.lang].cityText}</span><strong>${getText(flight.departure.city)}</strong></div>
+                <div class="flight-stop-row"><span>${t[state.lang].airportText}</span><strong>${getText(flight.departure.airport)}</strong></div>
+                <div class="flight-stop-row"><span>${t[state.lang].terminalText}</span><strong>${getText(flight.departure.terminal)}</strong></div>
+              </div>
+            </article>
+            <article class="flight-stop-card">
+              <div class="info-label">${t[state.lang].arrivalText}</div>
+              <div class="flight-stop-list">
+                <div class="flight-stop-row"><span>${t[state.lang].countryText}</span><strong>${getText(flight.arrival.country)}</strong></div>
+                <div class="flight-stop-row"><span>${t[state.lang].cityText}</span><strong>${getText(flight.arrival.city)}</strong></div>
+                <div class="flight-stop-row"><span>${t[state.lang].airportText}</span><strong>${getText(flight.arrival.airport)}</strong></div>
+                <div class="flight-stop-row"><span>${t[state.lang].terminalText}</span><strong>${getText(flight.arrival.terminal)}</strong></div>
+              </div>
+            </article>
           </div>
         </article>
       `
