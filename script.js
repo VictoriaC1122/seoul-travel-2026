@@ -525,7 +525,7 @@ const data = {
     { item: { "zh-Hant": "韓服套餐", en: "Hanbok package", ko: "한복 패키지" }, krw: 640000, original: "640,000 KRW", note: { "zh-Hant": "高級方案", en: "Premium package", ko: "프리미엄 패키지" } },
     { item: { "zh-Hant": "MV 加購", en: "MV add-on", ko: "MV 추가" }, krw: 300000, original: "300,000 KRW", note: { "zh-Hant": "MV 影片", en: "MV video", ko: "MV 영상" } },
     { item: { "zh-Hant": "訂金", en: "Deposit", ko: "예약금" }, krw: 300 * rates.CNY.krwPerUnit, original: "300 CNY", note: { "zh-Hant": "已付", en: "Already paid", ko: "이미 결제" } },
-    { item: { "zh-Hant": "剩餘韓服款", en: "Remaining Hanbok balance", ko: "남은 한복 잔액" }, krw: 880000, original: "about 880,000 KRW", note: { "zh-Hant": "現場補款", en: "To pay on site", ko: "현장 결제" } },
+    { item: { "zh-Hant": "剩餘韓服款", en: "Remaining Hanbok balance", ko: "남은 한복 잔액" }, krw: 880000, original: "about 880,000 KRW", note: { "zh-Hant": "微信轉帳約 ¥4,720", en: "About ¥4,720 by WeChat transfer", ko: "위챗 송금 기준 약 ¥4,720" } },
     { item: { "zh-Hant": "飯店", en: "Hotel", ko: "호텔" }, krw: 19247 * rates.TWD.krwPerUnit, original: "NT$19,247", note: { "zh-Hant": "5 晚 2 人", en: "5 nights for 2", ko: "5박 2인" } },
     { item: { "zh-Hant": "交通", en: "Transportation", ko: "교통" }, krw: 120000, original: "120,000 KRW", note: { "zh-Hant": "地鐵 / 計程車抓法", en: "Subway / taxi planning", ko: "지하철 / 택시 예상" } },
     { item: { "zh-Hant": "餐食", en: "Food", ko: "식비" }, krw: 360000, original: "360,000 KRW", note: { "zh-Hant": "兩人粗估", en: "Planning estimate for two", ko: "2인 예상" } },
