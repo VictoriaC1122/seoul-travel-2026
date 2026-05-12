@@ -810,6 +810,27 @@ img {
   cursor: pointer;
 }
 
+.itinerary-cover {
+  overflow: hidden;
+  margin: 0 0 8px;
+  border-radius: 20px;
+  border: 1px solid rgba(181, 193, 212, 0.24);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.itinerary-cover img {
+  width: 100%;
+  aspect-ratio: 1.7 / 1;
+  object-fit: cover;
+}
+
+.itinerary-cover figcaption {
+  padding: 12px 14px;
+  color: var(--text-mid);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
 .accordion-summary::-webkit-details-marker {
   display: none;
 }
@@ -1561,6 +1582,20 @@ img {
   .accordion-summary h3 {
     font-size: 20px;
     line-height: 1.34;
+  }
+
+  .itinerary-cover {
+    margin-bottom: 6px;
+    border-radius: 18px;
+  }
+
+  .itinerary-cover img {
+    aspect-ratio: 1.38 / 1;
+  }
+
+  .itinerary-cover figcaption {
+    padding: 10px 12px;
+    font-size: 12px;
   }
 
   .itinerary-rhythm,
