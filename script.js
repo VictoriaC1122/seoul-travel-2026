@@ -19,6 +19,18 @@ const rates = {
   CNY: { symbol: "¥", krwPerUnit: 186.5 },
 };
 
+const COSTS = {
+  hotelTwdTotal: 19247,
+  flightTwdPerPerson: 12718,
+  travelers: 2,
+  transportKrw: 120000,
+  foodKrw: 360000,
+  shoppingKrw: 250000,
+  hanbokTotalKrw: 940000,
+  hanbokRemainingKrw: 880000,
+  hanbokDepositCny: 300,
+};
+
 const t = {
   "zh-Hant": {
     languageSwitcher: "語言",
@@ -480,7 +492,7 @@ const data = {
     },
   ],
   flightFareNotes: [
-    { title: { "zh-Hant": "票價", en: "Fare", ko: "운임" }, desc: { "zh-Hant": "兩人機票總計已知為 NT$12,718。", en: "Known airfare total is NT$12,718 for this booking.", ko: "현재 확인된 항공권 금액은 NT$12,718입니다." } },
+    { title: { "zh-Hant": "票價", en: "Fare", ko: "운임" }, desc: { "zh-Hant": "目前以每人機票 NT$12,718 估算，兩人合計約 NT$25,436。", en: "Current planning uses NT$12,718 per person, or about NT$25,436 for two travelers.", ko: "현재는 1인 항공권 NT$12,718 기준으로 보고 있으며, 2인 합계는 약 NT$25,436입니다." } },
     { title: { "zh-Hant": "出發航班", en: "Outbound flight", ko: "출국편" }, desc: { "zh-Hant": "2026/05/15 CI 0162，15:30 台北桃園出發，19:05 抵達首爾仁川。", en: "May 15, 2026 on CI 0162, departing Taipei Taoyuan at 15:30 and arriving Seoul Incheon at 19:05.", ko: "2026년 5월 15일 CI 0162편으로 15:30 타이베이 출발, 19:05 인천 도착입니다." } },
     { title: { "zh-Hant": "回程航班", en: "Return flight", ko: "귀국편" }, desc: { "zh-Hant": "2026/05/20 20:05 首爾仁川出發，21:50 抵達台北桃園。", en: "Return leaves Seoul Incheon at 20:05 on May 20, 2026 and lands in Taipei Taoyuan at 21:50.", ko: "귀국편은 2026년 5월 20일 20:05 인천 출발, 21:50 타이베이 도착입니다." } },
   ],
@@ -504,10 +516,10 @@ const data = {
       { "zh-Hant": "高級雙床房", en: "Deluxe Twin", ko: "디럭스 트윈" },
     ],
     notes: [
-      { title: { "zh-Hant": "飯店總價", en: "Hotel total", ko: "호텔 총액" }, krw: 19247 * rates.TWD.krwPerUnit },
-      { title: { "zh-Hant": "平均每晚", en: "Per night", ko: "1박 평균" }, krw: (19247 / 5) * rates.TWD.krwPerUnit },
-      { title: { "zh-Hant": "每人分攤", en: "Per person", ko: "1인 기준" }, krw: (19247 / 2) * rates.TWD.krwPerUnit },
-      { title: { "zh-Hant": "每人每晚", en: "Per person / night", ko: "1인 1박 기준" }, krw: (19247 / 10) * rates.TWD.krwPerUnit },
+      { title: { "zh-Hant": "飯店總價", en: "Hotel total", ko: "호텔 총액" }, krw: COSTS.hotelTwdTotal * rates.TWD.krwPerUnit },
+      { title: { "zh-Hant": "平均每晚", en: "Per night", ko: "1박 평균" }, krw: (COSTS.hotelTwdTotal / 5) * rates.TWD.krwPerUnit },
+      { title: { "zh-Hant": "每人分攤", en: "Per person", ko: "1인 기준" }, krw: (COSTS.hotelTwdTotal / COSTS.travelers) * rates.TWD.krwPerUnit },
+      { title: { "zh-Hant": "每人每晚", en: "Per person / night", ko: "1인 1박 기준" }, krw: (COSTS.hotelTwdTotal / (5 * COSTS.travelers)) * rates.TWD.krwPerUnit },
     ],
     copy: [
       { title: { "zh-Hant": "住弘大最省事", en: "Hongdae is the easiest base", ko: "홍대가 가장 편한 베이스" }, desc: { "zh-Hant": "吃飯、晚上回去和最後幾天購物都很順。", en: "Food, late returns, and shopping days all become easier from Hongdae.", ko: "식사, 늦은 귀가, 쇼핑 일정이 모두 더 편해집니다." } },
@@ -545,20 +557,23 @@ const data = {
     { title: { "zh-Hant": "計程車", en: "Taxi", ko: "택시" }, start: { "zh-Hant": "飯店", en: "Hotel", ko: "호텔" }, destination: { "zh-Hant": "韓服店", en: "Hanbok shop", ko: "한복 매장" }, duration: { "zh-Hant": "20-25 分鐘", en: "20-25 min", ko: "20-25분" }, cost: { "zh-Hant": "₩8,000-12,000", en: "₩8,000-12,000", ko: "₩8,000-12,000" }, useCase: { "zh-Hant": "懶得轉車時", en: "Good if you want the easy option", ko: "갈아타기 싫을 때" }, desc: { "zh-Hant": "路最直，也比較省心。", en: "This is the straightest and easiest option.", ko: "가장 단순하고 편한 선택입니다." }, href: "https://www.google.com/maps/search/%EC%98%A5%ED%95%9C%EB%B3%B5/" },
   ],
   budgetSummary: [
-    { label: { "zh-Hant": "韓服總價", en: "Hanbok total", ko: "한복 총액" }, krw: 940000 },
-    { label: { "zh-Hant": "現場補款", en: "Remaining balance", ko: "현장 결제 잔액" }, krw: 880000 },
-    { label: { "zh-Hant": "飯店", en: "Hotel", ko: "호텔" }, krw: 19247 * rates.TWD.krwPerUnit },
-    { label: { "zh-Hant": "交通 + 餐食 + 購物", en: "Transport + food + shopping", ko: "교통 + 식비 + 쇼핑" }, krw: 730000 },
+    { label: { "zh-Hant": "韓服總價", en: "Hanbok total", ko: "한복 총액" }, krw: COSTS.hanbokTotalKrw },
+    { label: { "zh-Hant": "現場補款", en: "Remaining balance", ko: "현장 결제 잔액" }, krw: COSTS.hanbokRemainingKrw },
+    { label: { "zh-Hant": "飯店", en: "Hotel", ko: "호텔" }, krw: COSTS.hotelTwdTotal * rates.TWD.krwPerUnit },
+    { label: { "zh-Hant": "機票（2 人）", en: "Flights (2 travelers)", ko: "항공권(2인)" }, krw: COSTS.flightTwdPerPerson * COSTS.travelers * rates.TWD.krwPerUnit },
+    { label: { "zh-Hant": "交通 + 餐食 + 購物", en: "Transport + food + shopping", ko: "교통 + 식비 + 쇼핑" }, krw: COSTS.transportKrw + COSTS.foodKrw + COSTS.shoppingKrw },
   ],
   budgetRows: [
     { item: { "zh-Hant": "韓服套餐", en: "Hanbok package", ko: "한복 패키지" }, krw: 640000, original: "640,000 KRW", note: { "zh-Hant": "高級方案", en: "Premium package", ko: "프리미엄 패키지" } },
     { item: { "zh-Hant": "MV 加購", en: "MV add-on", ko: "MV 추가" }, krw: 300000, original: "300,000 KRW", note: { "zh-Hant": "MV 影片", en: "MV video", ko: "MV 영상" } },
-    { item: { "zh-Hant": "訂金", en: "Deposit", ko: "예약금" }, krw: 300 * rates.CNY.krwPerUnit, original: "300 CNY", note: { "zh-Hant": "已付", en: "Already paid", ko: "이미 결제" } },
-    { item: { "zh-Hant": "剩餘韓服款", en: "Remaining Hanbok balance", ko: "남은 한복 잔액" }, krw: 880000, original: "about 880,000 KRW", note: { "zh-Hant": "微信轉帳約 ¥4,720", en: "About ¥4,720 by WeChat transfer", ko: "위챗 송금 기준 약 ¥4,720" } },
-    { item: { "zh-Hant": "飯店", en: "Hotel", ko: "호텔" }, krw: 19247 * rates.TWD.krwPerUnit, original: "NT$19,247", note: { "zh-Hant": "5 晚 2 人", en: "5 nights for 2", ko: "5박 2인" } },
-    { item: { "zh-Hant": "交通", en: "Transportation", ko: "교통" }, krw: 120000, original: "120,000 KRW", note: { "zh-Hant": "地鐵 / 計程車抓法", en: "Subway / taxi planning", ko: "지하철 / 택시 예상" } },
-    { item: { "zh-Hant": "餐食", en: "Food", ko: "식비" }, krw: 360000, original: "360,000 KRW", note: { "zh-Hant": "兩人粗估", en: "Planning estimate for two", ko: "2인 예상" } },
-    { item: { "zh-Hant": "購物", en: "Shopping", ko: "쇼핑" }, krw: 250000, original: "250,000 KRW", note: { "zh-Hant": "彈性抓法", en: "Flexible placeholder", ko: "유동적 가정" } },
+    { item: { "zh-Hant": "訂金", en: "Deposit", ko: "예약금" }, krw: COSTS.hanbokDepositCny * rates.CNY.krwPerUnit, original: "300 CNY", note: { "zh-Hant": "已付", en: "Already paid", ko: "이미 결제" } },
+    { item: { "zh-Hant": "剩餘韓服款", en: "Remaining Hanbok balance", ko: "남은 한복 잔액" }, krw: COSTS.hanbokRemainingKrw, original: "about 880,000 KRW", note: { "zh-Hant": "微信轉帳約 ¥4,720", en: "About ¥4,720 by WeChat transfer", ko: "위챗 송금 기준 약 ¥4,720" } },
+    { item: { "zh-Hant": "飯店", en: "Hotel", ko: "호텔" }, krw: COSTS.hotelTwdTotal * rates.TWD.krwPerUnit, original: "NT$19,247", note: { "zh-Hant": "5 晚 2 人", en: "5 nights for 2", ko: "5박 2인" } },
+    { item: { "zh-Hant": "機票（每人）", en: "Flight (per person)", ko: "항공권(1인)" }, krw: COSTS.flightTwdPerPerson * rates.TWD.krwPerUnit, original: "NT$12,718", note: { "zh-Hant": "每人票價", en: "Fare per traveler", ko: "1인 항공권" } },
+    { item: { "zh-Hant": "機票（兩人）", en: "Flights (2 travelers)", ko: "항공권(2인)" }, krw: COSTS.flightTwdPerPerson * COSTS.travelers * rates.TWD.krwPerUnit, original: "NT$25,436", note: { "zh-Hant": "兩人合計", en: "Total for two", ko: "2인 합계" } },
+    { item: { "zh-Hant": "交通", en: "Transportation", ko: "교통" }, krw: COSTS.transportKrw, original: "120,000 KRW", note: { "zh-Hant": "地鐵 / 計程車抓法", en: "Subway / taxi planning", ko: "지하철 / 택시 예상" } },
+    { item: { "zh-Hant": "餐食", en: "Food", ko: "식비" }, krw: COSTS.foodKrw, original: "360,000 KRW", note: { "zh-Hant": "兩人粗估", en: "Planning estimate for two", ko: "2인 예상" } },
+    { item: { "zh-Hant": "購物", en: "Shopping", ko: "쇼핑" }, krw: COSTS.shoppingKrw, original: "250,000 KRW", note: { "zh-Hant": "彈性抓法", en: "Flexible placeholder", ko: "유동적 가정" } },
   ],
   itinerary: [
     {
@@ -1117,9 +1132,11 @@ function renderBudget() {
   const budgetSelectedHeading = document.getElementById("budgetSelectedHeading");
   const budgetOriginalHeading = document.getElementById("budgetOriginalHeading");
   if (!budgetHighlights || !budgetSummary || !budgetCards || !budgetTableBody) return;
-  const totalTripKrw = 940000 + 19247 * rates.TWD.krwPerUnit + 120000 + 360000 + 250000;
-  const perPersonKrw = totalTripKrw / 2;
-  const paidSoFarKrw = 300 * rates.CNY.krwPerUnit;
+  const hotelKrwTotal = COSTS.hotelTwdTotal * rates.TWD.krwPerUnit;
+  const flightKrwTotal = COSTS.flightTwdPerPerson * COSTS.travelers * rates.TWD.krwPerUnit;
+  const totalTripKrw = COSTS.hanbokTotalKrw + hotelKrwTotal + flightKrwTotal + COSTS.transportKrw + COSTS.foodKrw + COSTS.shoppingKrw;
+  const perPersonKrw = totalTripKrw / COSTS.travelers;
+  const paidSoFarKrw = COSTS.hanbokDepositCny * rates.CNY.krwPerUnit;
   const remainingTripKrw = totalTripKrw - paidSoFarKrw;
   const selectedCurrency = state.currency;
   const selectedHeadingMap = {
