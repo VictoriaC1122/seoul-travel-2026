@@ -532,12 +532,118 @@ const data = {
     { item: { "zh-Hant": "購物", en: "Shopping", ko: "쇼핑" }, krw: 250000, original: "250,000 KRW", note: { "zh-Hant": "彈性抓法", en: "Flexible placeholder", ko: "유동적 가정" } },
   ],
   itinerary: [
-    { day: { "zh-Hant": "第 1 天", en: "Day 1", ko: "1일차" }, date: "2026-05-15", plan: { "zh-Hant": "抵達首爾、入住、弘大附近吃晚餐", en: "Arrive, check in, and have dinner around Hongdae", ko: "도착 후 체크인, 홍대 근처에서 저녁" }, location: { "zh-Hant": "仁川機場 → 弘大", en: "Incheon → Hongdae", ko: "인천공항 → 홍대" }, costKrw: 50000, transport: { "zh-Hant": "AREX / 機場巴士 / 計程車，先到飯店放行李", en: "AREX / airport bus / taxi, then drop bags at the hotel", ko: "AREX / 공항버스 / 택시로 이동 후 호텔 체크인" }, reminder: { "zh-Hant": "第一天先輕鬆一點，吃飯和補貨就好。", en: "Keep the first day light. Dinner and small essentials are enough.", ko: "첫날은 가볍게 두고 저녁과 간단한 장보기 정도만 하면 됩니다." }, open: true },
-    { day: { "zh-Hant": "第 2 天", en: "Day 2", ko: "2일차" }, date: "2026-05-16", plan: { "zh-Hant": "漢南洞 + Leeum + 咖啡散步", en: "Hannam-dong + Leeum + cafes", ko: "한남동 + 리움 + 카페" }, location: { "zh-Hant": "漢江鎮 / 漢南洞", en: "Hangangjin / Hannam-dong", ko: "한강진 / 한남동" }, costKrw: 120000, transport: { "zh-Hant": "地鐵到漢江鎮站，這區慢慢走最適合", en: "Take the subway to Hangangjin Station and walk the area slowly", ko: "한강진역으로 가서 천천히 걷는 일정이 잘 맞습니다." }, reminder: { "zh-Hant": "Leeum 週一休館，所以把這區放在週六。", en: "Leeum is closed on Mondays, so Saturday works better here.", ko: "리움이 월요일 휴관이라 이 구역은 토요일에 두는 쪽이 낫습니다." }, open: true },
-    { day: { "zh-Hant": "第 3 天", en: "Day 3", ko: "3일차" }, date: "2026-05-17", plan: { "zh-Hant": "狎鷗亭 + 江南 + COEX", en: "Apgujeong + Gangnam + COEX", ko: "압구정 + 강남 + 코엑스" }, location: { "zh-Hant": "狎鷗亭羅德奧 / 江南", en: "Apgujeong Rodeo / Gangnam", ko: "압구정로데오 / 강남" }, costKrw: 150000, transport: { "zh-Hant": "上午先逛狎鷗亭，下午再接 COEX", en: "Start with Apgujeong in the morning, then move to COEX", ko: "오전은 압구정, 오후는 코엑스로 이어가면 됩니다." }, reminder: { "zh-Hant": "這區週末下午人會變多，早一點開始比較舒服。", en: "This area gets busier later in the day on weekends, so earlier feels better.", ko: "주말 오후가 되면 사람이 많아져서 조금 일찍 시작하는 편이 낫습니다." } },
-    { day: { "zh-Hant": "第 4 天", en: "Day 4", ko: "4일차" }, date: "2026-05-18", plan: { "zh-Hant": "要看的展 + 聖水洞", en: "Your exhibition + Seongsu", ko: "보고 싶은 전시 + 성수" }, location: { "zh-Hant": "聖水洞 / 首爾林", en: "Seongsu / Seoul Forest", ko: "성수 / 서울숲" }, costKrw: 130000, transport: { "zh-Hant": "展覽排在中午前後，前後接聖水會比較順", en: "Put the exhibition around midday, then build Seongsu around it", ko: "전시는 점심 전후에 넣고 앞뒤로 성수를 붙이면 자연스럽습니다." }, reminder: { "zh-Hant": "把聖水放週一，人會少一點；如果展不在附近，再搭地鐵接回來。", en: "Seongsu is usually calmer on Monday. If the exhibition is elsewhere, come back by subway after it.", ko: "성수는 월요일이 조금 더 한산합니다. 전시가 다른 곳이면 보고 나서 다시 넘어오면 됩니다." } },
-    { day: { "zh-Hant": "第 5 天", en: "Day 5", ko: "5일차" }, date: "2026-05-19", plan: { "zh-Hant": "北村 + 韓服拍攝 + 景福宮外圍拍照", en: "Bukchon + hanbok shoot + palace exterior photos", ko: "북촌 + 한복 촬영 + 경복궁 외부 촬영" }, location: { "zh-Hant": "安國 / 北村 / 光化門", en: "Anguk / Bukchon / Gwanghwamun", ko: "안국 / 북촌 / 광화문" }, costKrw: 980000, transport: { "zh-Hant": "13:00 前從飯店出發，先到北村附近", en: "Leave before 13:00 and get into Bukchon first", ko: "13:00 전에 출발해서 먼저 북촌 쪽에 도착하면 됩니다." }, reminder: { "zh-Hant": "這天是星期二，景福宮裡面休館，所以先抓外圍和光化門一帶。", en: "This is a Tuesday, so Gyeongbokgung is closed inside. Plan around the exterior and Gwanghwamun area.", ko: "이날은 화요일이라 경복궁 내부는 휴궁입니다. 외부와 광화문 쪽으로 보면 됩니다." }, open: true },
-    { day: { "zh-Hant": "第 6 天", en: "Day 6", ko: "6일차" }, date: "2026-05-20", plan: { "zh-Hant": "退房、弘大最後採買、前往機場", en: "Check out, do last shopping in Hongdae, then head to the airport", ko: "체크아웃 후 홍대에서 마지막 쇼핑, 공항 이동" }, location: { "zh-Hant": "弘大 → 仁川機場", en: "Hongdae → Incheon", ko: "홍대 → 인천공항" }, costKrw: 70000, transport: { "zh-Hant": "退房後先待在弘大附近，傍晚再往機場去", en: "Stay around Hongdae after check-out, then head to the airport in the evening", ko: "체크아웃 후에는 홍대 근처에 있다가 저녁에 공항으로 가면 됩니다." }, reminder: { "zh-Hant": "回程 20:05 起飛，最後一天不要跑太遠。", en: "The flight leaves at 20:05, so keep the last day close.", ko: "귀국편이 20:05라 마지막 날은 너무 멀리 가지 않는 편이 좋습니다." } },
+    {
+      day: { "zh-Hant": "第 1 天", en: "Day 1", ko: "1일차" },
+      date: "2026-05-15",
+      plan: { "zh-Hant": "抵達首爾、入住、弘大附近吃晚餐", en: "Arrive, check in, and have dinner around Hongdae", ko: "도착 후 체크인, 홍대 근처에서 저녁" },
+      location: { "zh-Hant": "仁川機場 → 弘大", en: "Incheon → Hongdae", ko: "인천공항 → 홍대" },
+      area: { "zh-Hant": "弘大", en: "Hongdae", ko: "홍대" },
+      rhythm: { "zh-Hant": "長途移動日，重點放在順利入住與輕鬆進入首爾節奏。", en: "Arrival day is best kept easy, with check-in and a soft start to the trip.", ko: "이동이 많은 날이라 체크인과 가벼운 시작에 집중하는 흐름이 좋습니다." },
+      hotelFlow: { "zh-Hant": "Local Stitch Creator Town Seogyo 出發與入住，晚上回到弘大休息。", en: "Arrive at Local Stitch Creator Town Seogyo and keep the evening around Hongdae.", ko: "Local Stitch Creator Town Seogyo 체크인 후 저녁도 홍대에서 마무리하는 흐름입니다." },
+      costKrw: 50000,
+      transport: { "zh-Hant": "AREX / 機場巴士 / 計程車，先到飯店放行李", en: "AREX / airport bus / taxi, then drop bags at the hotel", ko: "AREX / 공항버스 / 택시로 이동 후 호텔 체크인" },
+      reminder: { "zh-Hant": "第一天不另外拉遠區域，直接把晚餐和便利店補貨留在弘大就好。", en: "Keep the first evening local and use Hongdae for dinner and quick essentials.", ko: "첫날은 멀리 이동하지 말고 홍대에서 저녁과 간단한 장보기를 해결하는 편이 좋습니다." },
+      timeline: [
+        { time: "19:05", title: { "zh-Hant": "抵達仁川機場", en: "Arrive at Incheon", ko: "인천 도착" }, desc: { "zh-Hant": "入境、提領行李，整理網路與交通卡。", en: "Clear immigration, collect luggage, and sort out data and transit.", ko: "입국과 수하물 수령 후 데이터와 교통카드를 정리합니다." } },
+        { time: "20:15", title: { "zh-Hant": "前往弘大飯店", en: "Transfer to Hongdae hotel", ko: "홍대 숙소로 이동" }, desc: { "zh-Hant": "以最順的方式直接到飯店，先完成入住。", en: "Head straight to the hotel by the easiest route and check in first.", ko: "가장 편한 동선으로 바로 호텔로 이동해 먼저 체크인합니다." } },
+        { time: "21:15", title: { "zh-Hant": "弘大晚餐散步", en: "Dinner and a short Hongdae walk", ko: "홍대 저녁과 가벼운 산책" }, desc: { "zh-Hant": "飯後在延南洞或弘大主街簡單走走，熟悉周邊。", en: "After dinner, take an easy walk around Yeonnam-dong or the main Hongdae streets.", ko: "식사 후 연남동이나 홍대 메인 거리 쪽을 가볍게 둘러봅니다." } },
+        { time: "22:30", title: { "zh-Hant": "回飯店休息", en: "Return to hotel", ko: "호텔 복귀" }, desc: { "zh-Hant": "早點回房休息，讓隔天可以完整開始行程。", en: "Turn in early so the next day starts cleanly.", ko: "다음 날 일정을 위해 일찍 숙소로 돌아옵니다." } },
+      ],
+    },
+    {
+      day: { "zh-Hant": "第 2 天", en: "Day 2", ko: "2일차" },
+      date: "2026-05-16",
+      plan: { "zh-Hant": "漢南洞 + Leeum + 咖啡散步", en: "Hannam-dong + Leeum + cafes", ko: "한남동 + 리움 + 카페" },
+      location: { "zh-Hant": "漢江鎮 / 漢南洞", en: "Hangangjin / Hannam-dong", ko: "한강진 / 한남동" },
+      area: { "zh-Hant": "漢南洞", en: "Hannam-dong", ko: "한남동" },
+      rhythm: { "zh-Hant": "這天適合排成一條線：博物館、街區散步、咖啡店，整體不用跨區。", en: "This day works best as one continuous line: museum, neighborhood walk, then cafes without hopping districts.", ko: "이날은 미술관, 거리 산책, 카페를 한 줄로 잇는 구성이 잘 맞고 굳이 다른 지역으로 넘어갈 필요가 없습니다." },
+      hotelFlow: { "zh-Hant": "早上從弘大出發到漢江鎮，晚上回弘大休息。", en: "Leave Hongdae in the morning for Hangangjin and return to Hongdae at night.", ko: "아침에 홍대에서 출발해 한강진으로 갔다가 저녁에는 다시 홍대로 돌아오는 흐름입니다." },
+      costKrw: 120000,
+      transport: { "zh-Hant": "地鐵到漢江鎮站，這區慢慢走最適合", en: "Take the subway to Hangangjin Station and walk the area slowly", ko: "한강진역으로 가서 천천히 걷는 일정이 잘 맞습니다." },
+      reminder: { "zh-Hant": "Leeum 放前段最順，後面就一路接漢南洞主街與咖啡店。", en: "Starting with Leeum makes the rest of Hannam flow naturally.", ko: "리움을 앞에 두면 이후 한남동 메인 거리와 카페 쪽으로 자연스럽게 이어집니다." },
+      timeline: [
+        { time: "09:30", title: { "zh-Hant": "從飯店出發", en: "Leave the hotel", ko: "호텔 출발" }, desc: { "zh-Hant": "弘大出發，往漢江鎮站移動。", en: "Leave Hongdae and head toward Hangangjin Station.", ko: "홍대에서 출발해 한강진역으로 이동합니다." } },
+        { time: "10:30", title: { "zh-Hant": "Leeum Museum", en: "Leeum Museum", ko: "리움미술관" }, desc: { "zh-Hant": "先看展覽空間，讓整天的節奏安靜開場。", en: "Start with the museum for a slower, more grounded opening to the day.", ko: "미술관부터 보고 하루의 리듬을 차분하게 시작합니다." } },
+        { time: "13:00", title: { "zh-Hant": "漢南洞午餐", en: "Lunch in Hannam-dong", ko: "한남동 점심" }, desc: { "zh-Hant": "午餐後直接接主街散步，不用再折返。", en: "Have lunch nearby and continue walking the neighborhood without backtracking.", ko: "근처에서 점심을 먹고 그대로 메인 거리 산책으로 이어가면 됩니다." } },
+        { time: "15:00", title: { "zh-Hant": "選物店與咖啡店", en: "Shops and cafes", ko: "편집숍과 카페" }, desc: { "zh-Hant": "下午留給漢南洞街景、選物店與一間好坐的咖啡店。", en: "Spend the afternoon on Hannam’s street atmosphere, shops, and one comfortable cafe.", ko: "오후는 한남동 거리 분위기와 편집숍, 카페 한 곳에 여유를 두는 구성이 좋습니다." } },
+        { time: "18:30", title: { "zh-Hant": "回弘大", en: "Return to Hongdae", ko: "홍대로 복귀" }, desc: { "zh-Hant": "傍晚回飯店附近吃晚餐，節奏比較輕鬆。", en: "Head back toward Hongdae for dinner and an easy evening.", ko: "저녁에는 홍대로 돌아와 편하게 마무리합니다." } },
+      ],
+    },
+    {
+      day: { "zh-Hant": "第 3 天", en: "Day 3", ko: "3일차" },
+      date: "2026-05-17",
+      plan: { "zh-Hant": "狎鷗亭 + 江南 + COEX", en: "Apgujeong + Gangnam + COEX", ko: "압구정 + 강남 + 코엑스" },
+      location: { "zh-Hant": "狎鷗亭羅德奧 / 江南", en: "Apgujeong Rodeo / Gangnam", ko: "압구정로데오 / 강남" },
+      area: { "zh-Hant": "狎鷗亭 · 江南", en: "Apgujeong · Gangnam", ko: "압구정 · 강남" },
+      rhythm: { "zh-Hant": "這天適合把狎鷗亭與江南排成同一條軸線，下午再收進 COEX。", en: "This day is strongest when Apgujeong and Gangnam are treated as one line, then closed out at COEX.", ko: "압구정과 강남을 한 축으로 묶고 마지막에 코엑스로 마무리하는 흐름이 가장 자연스럽습니다." },
+      hotelFlow: { "zh-Hant": "從弘大出發進江南區，晚上再回弘大。", en: "Start from Hongdae into southern Seoul, then return to Hongdae at night.", ko: "홍대에서 강남권으로 들어갔다가 저녁에는 다시 홍대로 돌아오는 구성입니다." },
+      costKrw: 150000,
+      transport: { "zh-Hant": "上午先逛狎鷗亭，下午再接 COEX", en: "Start with Apgujeong in the morning, then move to COEX", ko: "오전은 압구정, 오후는 코엑스로 이어가면 됩니다." },
+      reminder: { "zh-Hant": "狎鷗亭與 COEX 都在同一大方向，避免中間再插別的北邊區域。", en: "Apgujeong and COEX already share the same overall direction, so avoid detouring north in the middle.", ko: "압구정과 코엑스는 같은 방향축이라 중간에 북쪽 지역을 끼우지 않는 편이 좋습니다." },
+      timeline: [
+        { time: "10:00", title: { "zh-Hant": "從飯店出發", en: "Leave the hotel", ko: "호텔 출발" }, desc: { "zh-Hant": "弘大出發，直接進狎鷗亭羅德奧一帶。", en: "Leave Hongdae and go straight to the Apgujeong Rodeo area.", ko: "홍대에서 출발해 압구정로데오 일대로 바로 들어갑니다." } },
+        { time: "11:00", title: { "zh-Hant": "狎鷗亭主街散步", en: "Apgujeong street walk", ko: "압구정 메인 거리 산책" }, desc: { "zh-Hant": "先排逛街和街景，早一點開始整體比較舒服。", en: "Start with the main streets and shops while the area still feels easier.", ko: "이 구역은 조금 일찍 시작하면 훨씬 여유롭게 보기 좋습니다." } },
+        { time: "13:30", title: { "zh-Hant": "江南午餐", en: "Lunch in Gangnam", ko: "강남 점심" }, desc: { "zh-Hant": "午餐後直接往大路段與百貨 / 商場移動。", en: "After lunch, move further into the main Gangnam commercial area.", ko: "점심 후에는 강남 메인 상권 쪽으로 자연스럽게 넘어가면 됩니다." } },
+        { time: "16:00", title: { "zh-Hant": "COEX 收尾", en: "COEX wrap-up", ko: "코엑스 마무리" }, desc: { "zh-Hant": "下午尾段放在 COEX，逛商場或書店都方便。", en: "Use COEX as the later stop for shopping, bookstore time, or just an indoor finish.", ko: "오후 후반은 코엑스에서 마무리하면 쇼핑이나 서점 동선이 편합니다." } },
+        { time: "19:30", title: { "zh-Hant": "回弘大", en: "Return to Hongdae", ko: "홍대로 복귀" }, desc: { "zh-Hant": "晚上回到飯店附近，讓隔天不會太累。", en: "Head back to Hongdae for a softer finish to the day.", ko: "저녁에는 홍대로 돌아와 다음 날까지 무리 없게 마무리합니다." } },
+      ],
+    },
+    {
+      day: { "zh-Hant": "第 4 天", en: "Day 4", ko: "4일차" },
+      date: "2026-05-18",
+      plan: { "zh-Hant": "要看的展 + 聖水洞", en: "Your exhibition + Seongsu", ko: "보고 싶은 전시 + 성수" },
+      location: { "zh-Hant": "聖水洞 / 首爾林", en: "Seongsu / Seoul Forest", ko: "성수 / 서울숲" },
+      area: { "zh-Hant": "聖水洞", en: "Seongsu", ko: "성수" },
+      rhythm: { "zh-Hant": "這天以展覽和聖水為主，節奏最好維持在城東這一帶，不再拆成兩個遠區。", en: "Let this day stay centered on the exhibition and Seongsu, ideally without splitting it into two distant districts.", ko: "이날은 전시와 성수 중심으로 두고, 가능하면 멀리 떨어진 다른 지역은 섞지 않는 편이 좋습니다." },
+      hotelFlow: { "zh-Hant": "早上從弘大出發，如果展覽不在聖水，就把展覽排在前半段，下午回到聖水與首爾林。", en: "Leave Hongdae in the morning, place the exhibition first if it is elsewhere, and return to Seongsu / Seoul Forest for the afternoon.", ko: "아침에 홍대에서 출발하고, 전시가 다른 곳이면 먼저 보고 오후에는 성수와 서울숲으로 돌아오는 흐름이 좋습니다." },
+      costKrw: 130000,
+      transport: { "zh-Hant": "展覽排在中午前後，前後接聖水會比較順", en: "Put the exhibition around midday, then build Seongsu around it", ko: "전시는 점심 전후에 넣고 앞뒤로 성수를 붙이면 자연스럽습니다." },
+      reminder: { "zh-Hant": "如果展覽在江南，建議和前一天互換；如果在城東 / 鐘路，這天的安排就很順。", en: "If the exhibition is in Gangnam, consider swapping with the previous day; if it is east or central, this structure works well.", ko: "전시가 강남권이면 전날과 바꾸는 편이 낫고, 성동이나 종로권이면 지금 구조가 잘 맞습니다." },
+      timeline: [
+        { time: "10:00", title: { "zh-Hant": "從飯店出發", en: "Leave the hotel", ko: "호텔 출발" }, desc: { "zh-Hant": "先往展覽所在區域或直接往聖水移動。", en: "Head to the exhibition first, or go straight to Seongsu if it is nearby.", ko: "전시 장소로 먼저 가거나, 가까우면 바로 성수로 이동합니다." } },
+        { time: "11:30", title: { "zh-Hant": "看展", en: "Exhibition time", ko: "전시 관람" }, desc: { "zh-Hant": "把最想看的展排在前半天，避免晚上還要跨區。", en: "Place the exhibition in the first half of the day so the evening stays simple.", ko: "가장 보고 싶은 전시는 앞쪽에 두는 편이 저녁 동선을 단순하게 만듭니다." } },
+        { time: "14:00", title: { "zh-Hant": "聖水午餐與散步", en: "Lunch and walk in Seongsu", ko: "성수 점심과 산책" }, desc: { "zh-Hant": "午餐後開始走聖水主街、選物店與咖啡店。", en: "After lunch, move through Seongsu’s main streets, shops, and cafes.", ko: "점심 후에는 성수 메인 거리, 편집숍, 카페 쪽으로 이어가면 됩니다." } },
+        { time: "16:30", title: { "zh-Hant": "首爾林收尾", en: "Finish at Seoul Forest", ko: "서울숲 쪽으로 마무리" }, desc: { "zh-Hant": "如果想讓節奏更鬆一點，下午後段接首爾林最剛好。", en: "Seoul Forest is a good final stop if you want the day to soften toward evening.", ko: "오후 후반을 조금 느슨하게 마무리하고 싶다면 서울숲이 잘 맞습니다." } },
+        { time: "19:00", title: { "zh-Hant": "回弘大", en: "Return to Hongdae", ko: "홍대로 복귀" }, desc: { "zh-Hant": "晚餐可以回弘大吃，也可以在聖水吃完再回。", en: "Either have dinner in Seongsu first or head back to Hongdae for the evening.", ko: "저녁은 성수에서 먹고 돌아오거나, 홍대로 돌아와 마무리해도 괜찮습니다." } },
+      ],
+    },
+    {
+      day: { "zh-Hant": "第 5 天", en: "Day 5", ko: "5일차" },
+      date: "2026-05-19",
+      plan: { "zh-Hant": "北村 + 韓服拍攝 + 景福宮外圍拍照", en: "Bukchon + hanbok shoot + palace exterior photos", ko: "북촌 + 한복 촬영 + 경복궁 외부 촬영" },
+      location: { "zh-Hant": "安國 / 北村 / 光化門", en: "Anguk / Bukchon / Gwanghwamun", ko: "안국 / 북촌 / 광화문" },
+      area: { "zh-Hant": "北村 · 景福宮", en: "Bukchon · Gyeongbokgung", ko: "북촌 · 경복궁" },
+      rhythm: { "zh-Hant": "這天已經有明確主題，整天都留給韓服拍攝、韓屋街景與宮殿外圍。", en: "This day already has a clear center, so keep it fully dedicated to the hanbok shoot, the hanok streets, and the palace exterior.", ko: "이날은 한복 촬영이라는 확실한 중심이 있어서 하루 전체를 북촌, 한옥 거리, 궁 외부에 집중하는 편이 좋습니다." },
+      hotelFlow: { "zh-Hant": "中午前後從弘大出發，拍攝結束後可在安國 / 光化門附近吃晚餐，再回弘大。", en: "Leave Hongdae around midday, then after the shoot either dine near Anguk / Gwanghwamun or return to Hongdae.", ko: "점심 무렵 홍대에서 출발하고, 촬영 후에는 안국이나 광화문 근처에서 저녁을 먹고 홍대로 돌아오는 흐름이 좋습니다." },
+      costKrw: 980000,
+      transport: { "zh-Hant": "13:00 前從飯店出發，先到北村附近", en: "Leave before 13:00 and get into Bukchon first", ko: "13:00 전에 출발해서 먼저 북촌 쪽에 도착하면 됩니다." },
+      reminder: { "zh-Hant": "景福宮週二不進宮內部，外圍拍照和光化門周邊已經很夠拍。", en: "Since the palace interior is closed on Tuesday, the exterior and Gwanghwamun side are enough for this day.", ko: "화요일이라 궁 내부는 들어가지 않고, 외부와 광화문 주변만으로도 충분히 좋은 화면이 나옵니다." },
+      timeline: [
+        { time: "12:45", title: { "zh-Hant": "從飯店出發", en: "Leave the hotel", ko: "호텔 출발" }, desc: { "zh-Hant": "弘大出發，先進安國與北村一帶。", en: "Leave Hongdae and head into Anguk and Bukchon first.", ko: "홍대에서 출발해 안국과 북촌 쪽으로 먼저 이동합니다." } },
+        { time: "13:40", title: { "zh-Hant": "抵達安國 / 北村", en: "Arrive in Anguk / Bukchon", ko: "안국 / 북촌 도착" }, desc: { "zh-Hant": "先熟悉街區位置，再往韓服店移動。", en: "Use the buffer to settle into the area before moving toward the shop.", ko: "구역 감을 먼저 잡고 한복 매장으로 이동합니다." } },
+        { time: "14:00", title: { "zh-Hant": "韓服拍攝", en: "Hanbok appointment", ko: "한복 촬영" }, desc: { "zh-Hant": "拍攝主體集中在北村、韓屋巷弄與景福宮外圍。", en: "The main visual route stays around Bukchon, the hanok alleys, and the palace exterior.", ko: "촬영 동선은 북촌, 한옥 골목, 경복궁 외부에 집중합니다." } },
+        { time: "17:30", title: { "zh-Hant": "光化門 / 安國晚餐", en: "Dinner near Gwanghwamun or Anguk", ko: "광화문 / 안국 저녁" }, desc: { "zh-Hant": "拍完後可以就近吃飯，再回飯店整理照片。", en: "Have dinner nearby after the shoot, then head back and sort photos later.", ko: "촬영 후에는 근처에서 저녁을 먹고 돌아와 사진을 정리하면 됩니다." } },
+        { time: "20:00", title: { "zh-Hant": "回弘大", en: "Return to Hongdae", ko: "홍대로 복귀" }, desc: { "zh-Hant": "晚上回到飯店，整理手機照片與隔天節奏。", en: "Return to the hotel and use the night to back up photos and reset for the next day.", ko: "숙소로 돌아와 사진을 백업하고 다음 날 흐름을 정리합니다." } },
+      ],
+    },
+    {
+      day: { "zh-Hant": "第 6 天", en: "Day 6", ko: "6일차" },
+      date: "2026-05-20",
+      plan: { "zh-Hant": "退房、弘大最後採買、前往機場", en: "Check out, do last shopping in Hongdae, then head to the airport", ko: "체크아웃 후 홍대에서 마지막 쇼핑, 공항 이동" },
+      location: { "zh-Hant": "弘大 → 仁川機場", en: "Hongdae → Incheon", ko: "홍대 → 인천공항" },
+      area: { "zh-Hant": "弘大", en: "Hongdae", ko: "홍대" },
+      rhythm: { "zh-Hant": "最後一天不要再開新區域，把時間留給弘大與機場移動最穩。", en: "The last day is best kept local to Hongdae and the airport transfer rather than opening a new area.", ko: "마지막 날은 새로운 지역을 넣지 말고 홍대와 공항 이동에 집중하는 편이 가장 안정적입니다." },
+      hotelFlow: { "zh-Hant": "從飯店退房後，行李可先寄放或直接整理好，傍晚再前往機場。", en: "After checking out, keep your luggage sorted and use the remaining hours around Hongdae before leaving for the airport.", ko: "체크아웃 후에는 짐을 정리해두고 남은 시간은 홍대 근처에서 보내다가 저녁에 공항으로 이동합니다." },
+      costKrw: 70000,
+      transport: { "zh-Hant": "退房後先待在弘大附近，傍晚再往機場去", en: "Stay around Hongdae after check-out, then head to the airport in the evening", ko: "체크아웃 후에는 홍대 근처에 있다가 저녁에 공항으로 가면 됩니다." },
+      reminder: { "zh-Hant": "回程 20:05 起飛，最後半天以舒服收尾為主，不建議再跨區。", en: "With a 20:05 departure, the final half day is better as a soft finish without crossing the city again.", ko: "20:05 비행편이라 마지막 반나절은 무리하지 않고 편하게 마무리하는 편이 좋습니다." },
+      timeline: [
+        { time: "09:30", title: { "zh-Hant": "飯店退房", en: "Check out of the hotel", ko: "호텔 체크아웃" }, desc: { "zh-Hant": "先整理好行李，把行程留在弘大附近。", en: "Get luggage sorted first and keep the rest of the day close to the hotel area.", ko: "짐을 먼저 정리하고 남은 일정은 홍대 근처로 두는 편이 좋습니다." } },
+        { time: "11:00", title: { "zh-Hant": "弘大最後散步", en: "Last walk around Hongdae", ko: "홍대 마지막 산책" }, desc: { "zh-Hant": "把想補買的東西和最後一頓早午餐留在這裡。", en: "Use this time for final shopping and one last brunch or cafe stop.", ko: "마지막 쇼핑과 브런치, 카페 한 곳 정도를 여기서 마무리하면 됩니다." } },
+        { time: "16:30", title: { "zh-Hant": "回飯店附近取行李", en: "Pick up luggage", ko: "짐 찾기" }, desc: { "zh-Hant": "回到飯店附近整理出發節奏，再前往機場。", en: "Return near the hotel, collect luggage, and set up the airport transfer.", ko: "숙소 쪽으로 돌아와 짐을 찾고 공항 이동을 준비합니다." } },
+        { time: "17:30", title: { "zh-Hant": "前往仁川機場", en: "Head to Incheon Airport", ko: "인천공항으로 이동" }, desc: { "zh-Hant": "傍晚出發最穩，留足機場辦理與晚間交通時間。", en: "Leaving in the early evening gives enough room for airport procedures and evening traffic.", ko: "초저녁에 출발하면 공항 수속과 저녁 이동 시간을 여유 있게 확보할 수 있습니다." } },
+      ],
+    },
   ],
   checklistGroups: [
     { id: "before", title: { "zh-Hant": "出發前", en: "Before departure", ko: "출발 전" }, items: [
@@ -711,9 +817,33 @@ function renderItinerary() {
         <details class="itinerary-card" ${index === 0 ? "open" : ""}>
           <summary class="accordion-summary">
             <div class="accordion-topline"><span class="day-chip">${getText(item.day)}</span><span class="date-label">${item.date}</span></div>
+            <div class="itinerary-overline">
+              <span class="itinerary-area-chip">${getText(item.area)}</span>
+              <span class="itinerary-hotel-line">${getText({ "zh-Hant": "弘大飯店出發", en: "Start from Hongdae hotel", ko: "홍대 호텔 출발" })}</span>
+            </div>
             <h3>${getText(item.plan)}</h3>
+            <p class="itinerary-rhythm">${getText(item.rhythm)}</p>
           </summary>
           <div class="accordion-body">
+            <div class="itinerary-story-card">
+              <div class="itinerary-meta-label">${getText({ "zh-Hant": "動線整理", en: "Flow", ko: "동선 정리" })}</div>
+              <div class="itinerary-story-text">${getText(item.hotelFlow)}</div>
+            </div>
+            <div class="itinerary-timeline">
+              ${item.timeline
+                .map(
+                  (stop) => `
+                    <article class="itinerary-stop">
+                      <div class="itinerary-stop-time">${stop.time}</div>
+                      <div class="itinerary-stop-body">
+                        <div class="itinerary-stop-title">${getText(stop.title)}</div>
+                        <div class="itinerary-stop-note">${getText(stop.desc)}</div>
+                      </div>
+                    </article>
+                  `
+                )
+                .join("")}
+            </div>
             <div class="itinerary-meta-grid">
               <div class="itinerary-meta-card"><div class="itinerary-meta-label">${t[state.lang].locationLabel}</div><div class="itinerary-meta-value">${getText(item.location)}</div></div>
               <div class="itinerary-meta-card"><div class="itinerary-meta-label">${t[state.lang].estimatedCostLabel}</div><div class="itinerary-meta-value">${formatCurrency(item.costKrw)}</div><div class="budget-original">${formatCurrency(item.costKrw, "KRW")}</div></div>
