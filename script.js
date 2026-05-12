@@ -67,7 +67,7 @@ const t = {
     flightsSummaryTitle: "航班資訊",
     flightsFareTitle: "票價與艙等",
     flightsLinkTitle: "官方連結",
-    airlineBenefitsTitle: "華航黑卡重點",
+    airlineBenefitsTitle: "中信華航黑卡重點",
     hotelKicker: "住宿",
     hotelTitle: "住宿",
     hotelLead: "住宿資料都放一起，要找地址或價格比較快。",
@@ -191,7 +191,7 @@ const t = {
     flightsSummaryTitle: "Flight details",
     flightsFareTitle: "Fare and cabin notes",
     flightsLinkTitle: "Official links",
-    airlineBenefitsTitle: "China Airlines Paragon highlights",
+    airlineBenefitsTitle: "CTBC China Airlines black card highlights",
     hotelKicker: "Hotel",
     hotelTitle: "Hotel",
     hotelLead: "The address, room type, and price are all here on one page.",
@@ -315,7 +315,7 @@ const t = {
     flightsSummaryTitle: "항공편 정보",
     flightsFareTitle: "운임 및 좌석 메모",
     flightsLinkTitle: "공식 링크",
-    airlineBenefitsTitle: "중화항공 블랙카드 핵심",
+    airlineBenefitsTitle: "중신 화항 블랙카드 핵심",
     hotelKicker: "호텔",
     hotelTitle: "호텔",
     hotelLead: "주소, 객실, 가격을 한 페이지에 모아뒀습니다.",
@@ -456,14 +456,14 @@ const data = {
     { title: { "zh-Hant": "回程航班", en: "Return flight", ko: "귀국편" }, desc: { "zh-Hant": "2026/05/20 20:05 首爾仁川出發，21:50 抵達台北桃園。", en: "Return leaves Seoul Incheon at 20:05 on May 20, 2026 and lands in Taipei Taoyuan at 21:50.", ko: "귀국편은 2026년 5월 20일 20:05 인천 출발, 21:50 타이베이 도착입니다." } },
   ],
   airlineBenefits: [
-    { title: { "zh-Hant": "額外托運", en: "Extra baggage", ko: "추가 수하물" }, desc: { "zh-Hant": "華航黑卡常見可再加 20kg 托運額度，實際仍以票規與現場為準。", en: "Paragon members commonly get an extra 20kg baggage allowance, subject to fare rules and airport handling.", ko: "블랙카드 회원은 일반적으로 추가 20kg 위탁수하물 혜택이 있으나 실제 적용은 운임 규정과 현장 기준을 따릅니다." } },
-    { title: { "zh-Hant": "優先服務", en: "Priority services", ko: "우선 서비스" }, desc: { "zh-Hant": "可留意優先報到、優先登機、優先行李與貴賓室等權益。", en: "Look for priority check-in, boarding, baggage, and lounge access benefits.", ko: "우선 체크인, 우선 탑승, 우선 수하물, 라운지 이용 혜택을 확인하세요." } },
-    { title: { "zh-Hant": "選位與哩程", en: "Seat selection and miles", ko: "좌석 선택 및 마일리지" }, desc: { "zh-Hant": "免費選位與額外哩程累積通常是這趟最實用的黑卡價值。", en: "Free seat selection and bonus mileage are usually the most practical perks for this trip.", ko: "무료 좌석 선택과 추가 마일 적립이 이번 여행에서 가장 실용적인 혜택입니다." } },
-      { title: { "zh-Hant": "出發前再看一次", en: "Check once more before departure", ko: "출발 전에 한 번 더 확인" }, desc: { "zh-Hant": "出發前再去華航會員頁或訂位紀錄看一下，會比較安心。", en: "Check your China Airlines account or booking record once more before departure.", ko: "출발 전에 중화항공 회원 페이지나 예약 기록을 한 번 더 보면 편합니다." } },
+    { title: { "zh-Hant": "優先報到與登機", en: "Priority check-in and boarding", ko: "우선 체크인과 탑승" }, desc: { "zh-Hant": "中信華航聯名卡鼎尊無限卡頁面可查到優先報到櫃檯與尊榮優先登機禮遇，這趟最實用。", en: "The CTBC China Airlines Infinite card page highlights priority check-in and priority boarding, which are especially useful on this trip.", ko: "중신 화항 제휴카드 최고급 카드 페이지에는 우선 체크인과 우선 탑승 혜택이 정리되어 있어 이번 여행에 가장 실용적입니다." } },
+    { title: { "zh-Hant": "貴賓室與機場服務", en: "Lounge and airport services", ko: "라운지와 공항 서비스" }, desc: { "zh-Hant": "卡面也有全球貴賓室禮遇與國際機場接送等服務，出發前可以再看一次當期規則。", en: "The card page also lists lounge access and airport transfer-related services; it is worth checking the latest terms before departure.", ko: "카드 페이지에는 라운지 이용과 공항 이동 관련 서비스도 정리되어 있으니 출발 전에 최신 조건을 한 번 더 보는 편이 좋습니다." } },
+    { title: { "zh-Hant": "華夏會員與哩程", en: "Dynasty membership and miles", ko: "화하회원 및 마일리지" }, desc: { "zh-Hant": "官方頁面有提到最優享華夏會員金卡會籍與較高哩程回饋，若要累積哩程這張卡比較有感。", en: "The official page mentions premium Dynasty membership treatment and stronger mileage earning, so it is a good card if mileage matters to you.", ko: "공식 페이지에는 화하회원 관련 우대와 높은 마일 적립 내용이 있어 마일리지 중심이면 가치가 큽니다." } },
+    { title: { "zh-Hant": "出發前再核對一次", en: "Check the live terms once more", ko: "출발 전에 한 번 더 확인" }, desc: { "zh-Hant": "以中信官網目前公告為準，像接送次數、使用門檻與登錄方式都建議出發前再看一遍。", en: "Use the current CTBC page as the final source of truth, especially for transfer quotas, thresholds, and registration details.", ko: "공항 이동 서비스 횟수, 사용 기준, 사전 등록 조건 등은 중신 공식 페이지 기준으로 다시 확인하는 편이 안전합니다." } },
   ],
   flightLinks: [
-    { label: { "zh-Hant": "華航會員權益", en: "China Airlines membership benefits", ko: "중화항공 회원 혜택" }, href: "https://www.china-airlines.com/us/en/member/planning/introduction/membership-benefits" },
-    { label: { "zh-Hant": "華航 Paragon 黑卡權益", en: "China Airlines Paragon benefits", ko: "중화항공 Paragon 혜택" }, href: "https://www.china-airlines.com/us/en/member/planning/introduction/membership-benefits/paragon.html" },
+    { label: { "zh-Hant": "中信華航聯名卡官方頁", en: "CTBC China Airlines co-branded card", ko: "중신 화항 제휴카드 공식 페이지" }, href: "https://www.ctbcbank.com/twrbo/zh_tw/cc_index/cc_product/cc_introduction/cc_travel/cc_travel_CI.html" },
+    { label: { "zh-Hant": "中信信用卡機場接送 / 旅遊權益", en: "CTBC airport transfer and travel benefits", ko: "중신 공항 이동 / 여행 혜택" }, href: "https://www.ctbcbank.com/twrbo/zh_tw/cc_index/cc_service/airport.html" },
   ],
   hotel: {
     title: { "zh-Hant": "Local Stitch Creator Town Seogyo（洛卡斯提奇創作者小鎮西橋店）", en: "Local Stitch Creator Town Seogyo", ko: "Local Stitch Creator Town Seogyo" },
@@ -543,6 +543,15 @@ const data = {
       costKrw: 50000,
       transport: { "zh-Hant": "AREX / 機場巴士 / 計程車，先到飯店放行李", en: "AREX / airport bus / taxi, then drop bags at the hotel", ko: "AREX / 공항버스 / 택시로 이동 후 호텔 체크인" },
       reminder: { "zh-Hant": "第一天不另外拉遠區域，直接把晚餐和便利店補貨留在弘大就好。", en: "Keep the first evening local and use Hongdae for dinner and quick essentials.", ko: "첫날은 멀리 이동하지 말고 홍대에서 저녁과 간단한 장보기를 해결하는 편이 좋습니다." },
+      foodPlan: [
+        { label: { "zh-Hant": "晚餐", en: "Dinner", ko: "저녁" }, title: { "zh-Hant": "弘大 / 延南洞一帶", en: "Hongdae / Yeonnam-dong", ko: "홍대 / 연남동" }, note: { "zh-Hant": "第一晚以飯店附近好找、好進的餐廳為主。", en: "Keep the first dinner close to the hotel and easy to access.", ko: "첫날 저녁은 숙소 근처에서 편하게 들어갈 수 있는 곳 위주가 좋습니다." } },
+        { label: { "zh-Hant": "咖啡", en: "Coffee", ko: "카페" }, title: { "zh-Hant": "延南洞巷內咖啡店", en: "Yeonnam-dong cafe lane", ko: "연남동 골목 카페" }, note: { "zh-Hant": "如果還有精神，可以挑一間坐一下就回飯店。", en: "If you still have energy, stop by one cafe before heading back.", ko: "여유가 있으면 카페 한 곳 정도 들렀다가 돌아오면 됩니다." } },
+      ],
+      areaPicks: [
+        { type: { "zh-Hant": "好拍照", en: "Photo", ko: "포토" }, title: { "zh-Hant": "京義線林道公園", en: "Gyeongui Line Forest Park", ko: "경의선숲길" }, note: { "zh-Hant": "傍晚散步很順，第一天拍街景也不費力。", en: "Easy for an evening walk and light first-day street shots.", ko: "저녁 산책과 첫날 가벼운 거리 사진에 잘 맞습니다." } },
+        { type: { "zh-Hant": "逛街", en: "Shopping", ko: "쇼핑" }, title: { "zh-Hant": "AK& 弘大", en: "AK& Hongdae", ko: "AK& 홍대" }, note: { "zh-Hant": "最後補貨或簡單逛街都方便。", en: "Good for quick browsing and picking up anything you still need.", ko: "가볍게 둘러보거나 필요한 것을 보충하기 좋습니다." } },
+        { type: { "zh-Hant": "散步", en: "Walk", ko: "산책" }, title: { "zh-Hant": "延南洞主街", en: "Yeonnam-dong main lanes", ko: "연남동 메인 골목" }, note: { "zh-Hant": "第一晚最適合用來熟悉住宿周邊。", en: "A comfortable way to get familiar with the neighborhood on night one.", ko: "첫날 숙소 주변 감을 잡기에 가장 무난한 구역입니다." } },
+      ],
       timeline: [
         { time: "19:05", title: { "zh-Hant": "抵達仁川機場", en: "Arrive at Incheon", ko: "인천 도착" }, desc: { "zh-Hant": "入境、提領行李，整理網路與交通卡。", en: "Clear immigration, collect luggage, and sort out data and transit.", ko: "입국과 수하물 수령 후 데이터와 교통카드를 정리합니다." } },
         { time: "20:15", title: { "zh-Hant": "前往弘大飯店", en: "Transfer to Hongdae hotel", ko: "홍대 숙소로 이동" }, desc: { "zh-Hant": "以最順的方式直接到飯店，先完成入住。", en: "Head straight to the hotel by the easiest route and check in first.", ko: "가장 편한 동선으로 바로 호텔로 이동해 먼저 체크인합니다." } },
@@ -561,6 +570,16 @@ const data = {
       costKrw: 120000,
       transport: { "zh-Hant": "地鐵到漢江鎮站，這區慢慢走最適合", en: "Take the subway to Hangangjin Station and walk the area slowly", ko: "한강진역으로 가서 천천히 걷는 일정이 잘 맞습니다." },
       reminder: { "zh-Hant": "Leeum 放前段最順，後面就一路接漢南洞主街與咖啡店。", en: "Starting with Leeum makes the rest of Hannam flow naturally.", ko: "리움을 앞에 두면 이후 한남동 메인 거리와 카페 쪽으로 자연스럽게 이어집니다." },
+      foodPlan: [
+        { label: { "zh-Hant": "早午餐", en: "Brunch", ko: "브런치" }, title: { "zh-Hant": "漢江鎮站周邊", en: "Around Hangangjin Station", ko: "한강진역 근처" }, note: { "zh-Hant": "先吃完再進 Leeum，節奏最順。", en: "Have brunch before Leeum for the cleanest start.", ko: "브런치를 먼저 먹고 리움으로 들어가는 흐름이 가장 편합니다." } },
+        { label: { "zh-Hant": "咖啡", en: "Coffee", ko: "카페" }, title: { "zh-Hant": "Blue Square Book Park 一帶", en: "Blue Square / Book Park area", ko: "블루스퀘어 / 북파크" }, note: { "zh-Hant": "看展後接書店或咖啡，氣氛很適合這一天。", en: "A bookstore or coffee stop after the museum fits the mood of this day well.", ko: "미술관 이후 서점이나 카페를 붙이면 하루 분위기가 자연스럽습니다." } },
+        { label: { "zh-Hant": "晚餐", en: "Dinner", ko: "저녁" }, title: { "zh-Hant": "弘大回程晚餐", en: "Dinner back in Hongdae", ko: "홍대 복귀 저녁" }, note: { "zh-Hant": "晚上回弘大吃飯，比留在漢南洞更輕鬆。", en: "Dinner back in Hongdae keeps the evening easier than staying out in Hannam.", ko: "저녁은 한남동보다 홍대로 돌아와 먹는 편이 더 편합니다." } },
+      ],
+      areaPicks: [
+        { type: { "zh-Hant": "好拍照", en: "Photo", ko: "포토" }, title: { "zh-Hant": "Leeum Museum 外觀與入口", en: "Leeum Museum exterior", ko: "리움미술관 외관" }, note: { "zh-Hant": "建築線條很乾淨，拍照也比較有質感。", en: "The architecture gives you a refined photo backdrop.", ko: "건축선이 깔끔해서 사진 톤도 좋게 나옵니다." } },
+        { type: { "zh-Hant": "咖啡 / 書店", en: "Coffee / books", ko: "카페 / 서점" }, title: { "zh-Hant": "Blue Square Book Park", en: "Blue Square Book Park", ko: "블루스퀘어 북파크" }, note: { "zh-Hant": "如果想要安靜一點的停留點，這裡很適合。", en: "A good stop if you want something slower and quieter.", ko: "조금 더 조용한 머무름이 필요하면 이쪽이 잘 맞습니다." } },
+        { type: { "zh-Hant": "逛街", en: "Shopping", ko: "쇼핑" }, title: { "zh-Hant": "漢南洞主街", en: "Hannam-dong main street", ko: "한남동 메인 거리" }, note: { "zh-Hant": "選物店與街景集中，整體散步感很好。", en: "The boutiques and street atmosphere hold together nicely here.", ko: "편집숍과 거리 분위기가 한데 모여 있어 걷기 좋습니다." } },
+      ],
       timeline: [
         { time: "09:30", title: { "zh-Hant": "從飯店出發", en: "Leave the hotel", ko: "호텔 출발" }, desc: { "zh-Hant": "弘大出發，往漢江鎮站移動。", en: "Leave Hongdae and head toward Hangangjin Station.", ko: "홍대에서 출발해 한강진역으로 이동합니다." } },
         { time: "10:30", title: { "zh-Hant": "Leeum Museum", en: "Leeum Museum", ko: "리움미술관" }, desc: { "zh-Hant": "先看展覽空間，讓整天的節奏安靜開場。", en: "Start with the museum for a slower, more grounded opening to the day.", ko: "미술관부터 보고 하루의 리듬을 차분하게 시작합니다." } },
@@ -580,6 +599,16 @@ const data = {
       costKrw: 150000,
       transport: { "zh-Hant": "上午先逛狎鷗亭，下午再接 COEX", en: "Start with Apgujeong in the morning, then move to COEX", ko: "오전은 압구정, 오후는 코엑스로 이어가면 됩니다." },
       reminder: { "zh-Hant": "狎鷗亭與 COEX 都在同一大方向，避免中間再插別的北邊區域。", en: "Apgujeong and COEX already share the same overall direction, so avoid detouring north in the middle.", ko: "압구정과 코엑스는 같은 방향축이라 중간에 북쪽 지역을 끼우지 않는 편이 좋습니다." },
+      foodPlan: [
+        { label: { "zh-Hant": "早午餐", en: "Brunch", ko: "브런치" }, title: { "zh-Hant": "狎鷗亭羅德奧站周邊", en: "Around Apgujeong Rodeo Station", ko: "압구정로데오역 주변" }, note: { "zh-Hant": "早午餐放這區很自然，之後直接接逛街。", en: "Brunch works naturally here before moving straight into shopping.", ko: "브런치를 이 구역에 두면 이후 쇼핑 동선으로 바로 이어가기 좋습니다." } },
+        { label: { "zh-Hant": "咖啡", en: "Coffee", ko: "카페" }, title: { "zh-Hant": "VIEW376", en: "VIEW376", ko: "VIEW376" }, note: { "zh-Hant": "適合下午找一個有景的停留點。", en: "A good afternoon stop if you want a cafe with a more open view.", ko: "오후에 전망이 있는 카페 한 곳을 넣고 싶을 때 잘 맞습니다." } },
+        { label: { "zh-Hant": "晚餐", en: "Dinner", ko: "저녁" }, title: { "zh-Hant": "COEX / 三成洞一帶", en: "COEX / Samseong-dong", ko: "코엑스 / 삼성동" }, note: { "zh-Hant": "收在 COEX 一帶吃晚餐，之後直接回弘大。", en: "Dinner near COEX makes for a clean finish before heading back.", ko: "코엑스 근처에서 저녁을 먹고 바로 홍대로 돌아오면 됩니다." } },
+      ],
+      areaPicks: [
+        { type: { "zh-Hant": "逛街", en: "Shopping", ko: "쇼핑" }, title: { "zh-Hant": "狎鷗亭羅德奧街", en: "Apgujeong Rodeo Street", ko: "압구정로데오 거리" }, note: { "zh-Hant": "這區最適合做今天的前半段主軸。", en: "This is the strongest first-half anchor for the day.", ko: "오늘 전반부의 중심축으로 가장 잘 맞는 구역입니다." } },
+        { type: { "zh-Hant": "好拍照", en: "Photo", ko: "포토" }, title: { "zh-Hant": "Starfield Library", en: "Starfield Library", ko: "별마당도서관" }, note: { "zh-Hant": "進 COEX 後最有代表性的畫面點。", en: "One of the most iconic visual stops once you reach COEX.", ko: "코엑스 안에서 가장 상징적인 화면 포인트입니다." } },
+        { type: { "zh-Hant": "咖啡", en: "Coffee", ko: "카페" }, title: { "zh-Hant": "VIEW376", en: "VIEW376", ko: "VIEW376" }, note: { "zh-Hant": "如果下午想坐一下，這裡比商場裡更有切換感。", en: "If you want a break in the afternoon, this feels more distinct than staying inside the mall.", ko: "오후에 잠깐 쉬고 싶다면 몰 안보다 분위기 전환이 잘 됩니다." } },
+      ],
       timeline: [
         { time: "10:00", title: { "zh-Hant": "從飯店出發", en: "Leave the hotel", ko: "호텔 출발" }, desc: { "zh-Hant": "弘大出發，直接進狎鷗亭羅德奧一帶。", en: "Leave Hongdae and go straight to the Apgujeong Rodeo area.", ko: "홍대에서 출발해 압구정로데오 일대로 바로 들어갑니다." } },
         { time: "11:00", title: { "zh-Hant": "狎鷗亭主街散步", en: "Apgujeong street walk", ko: "압구정 메인 거리 산책" }, desc: { "zh-Hant": "先排逛街和街景，早一點開始整體比較舒服。", en: "Start with the main streets and shops while the area still feels easier.", ko: "이 구역은 조금 일찍 시작하면 훨씬 여유롭게 보기 좋습니다." } },
@@ -599,6 +628,16 @@ const data = {
       costKrw: 130000,
       transport: { "zh-Hant": "展覽排在中午前後，前後接聖水會比較順", en: "Put the exhibition around midday, then build Seongsu around it", ko: "전시는 점심 전후에 넣고 앞뒤로 성수를 붙이면 자연스럽습니다." },
       reminder: { "zh-Hant": "如果展覽在江南，建議和前一天互換；如果在城東 / 鐘路，這天的安排就很順。", en: "If the exhibition is in Gangnam, consider swapping with the previous day; if it is east or central, this structure works well.", ko: "전시가 강남권이면 전날과 바꾸는 편이 낫고, 성동이나 종로권이면 지금 구조가 잘 맞습니다." },
+      foodPlan: [
+        { label: { "zh-Hant": "早午餐", en: "Brunch", ko: "브런치" }, title: { "zh-Hant": "展覽附近先吃", en: "Eat near the exhibition first", ko: "전시 근처에서 먼저 식사" }, note: { "zh-Hant": "先把展覽看完，下午再把時間交給聖水。", en: "Finish the exhibition first, then give the afternoon fully to Seongsu.", ko: "전시를 먼저 끝내고 오후는 성수에 집중하는 편이 좋습니다." } },
+        { label: { "zh-Hant": "咖啡", en: "Coffee", ko: "카페" }, title: { "zh-Hant": "聖水咖啡街", en: "Seongsu cafe streets", ko: "성수 카페거리" }, note: { "zh-Hant": "這區最適合下午慢慢坐一間。", en: "This area is best for a slower cafe break in the afternoon.", ko: "오후에 천천히 카페 한 곳에 머물기 좋은 구역입니다." } },
+        { label: { "zh-Hant": "晚餐", en: "Dinner", ko: "저녁" }, title: { "zh-Hant": "聖水 / 首爾林周邊", en: "Seongsu / Seoul Forest", ko: "성수 / 서울숲" }, note: { "zh-Hant": "晚上留在這區吃完再回弘大，節奏比較完整。", en: "Staying in the district for dinner gives the day a cleaner finish.", ko: "저녁도 이 구역에서 먹고 돌아오면 하루 흐름이 훨씬 자연스럽습니다." } },
+      ],
+      areaPicks: [
+        { type: { "zh-Hant": "好拍照", en: "Photo", ko: "포토" }, title: { "zh-Hant": "首爾林", en: "Seoul Forest", ko: "서울숲" }, note: { "zh-Hant": "如果想讓聖水這天有一點留白，這裡最適合收尾。", en: "If you want a little breathing room in the day, this is the best soft finish.", ko: "성수 일정에 여백을 주고 싶다면 여기서 마무리하는 구성이 가장 좋습니다." } },
+        { type: { "zh-Hant": "逛街", en: "Shopping", ko: "쇼핑" }, title: { "zh-Hant": "聖水主街 / 演武場街", en: "Seongsu main streets / Yeonmujang-gil", ko: "성수 메인 거리 / 연무장길" }, note: { "zh-Hant": "逛街、看快閃和街景都集中在這裡。", en: "Shops, pop-ups, and the main street mood are all concentrated here.", ko: "편집숍, 팝업, 거리 분위기가 이 축에 모여 있습니다." } },
+        { type: { "zh-Hant": "咖啡", en: "Coffee", ko: "카페" }, title: { "zh-Hant": "聖水咖啡街", en: "Seongsu cafe streets", ko: "성수 카페거리" }, note: { "zh-Hant": "拍照感和停留感都很強，適合慢慢挑。", en: "A good area for both visuals and relaxed cafe time.", ko: "사진 느낌도 좋고 카페에 오래 머물기에도 잘 맞는 구역입니다." } },
+      ],
       timeline: [
         { time: "10:00", title: { "zh-Hant": "從飯店出發", en: "Leave the hotel", ko: "호텔 출발" }, desc: { "zh-Hant": "先往展覽所在區域或直接往聖水移動。", en: "Head to the exhibition first, or go straight to Seongsu if it is nearby.", ko: "전시 장소로 먼저 가거나, 가까우면 바로 성수로 이동합니다." } },
         { time: "11:30", title: { "zh-Hant": "看展", en: "Exhibition time", ko: "전시 관람" }, desc: { "zh-Hant": "把最想看的展排在前半天，避免晚上還要跨區。", en: "Place the exhibition in the first half of the day so the evening stays simple.", ko: "가장 보고 싶은 전시는 앞쪽에 두는 편이 저녁 동선을 단순하게 만듭니다." } },
@@ -618,6 +657,16 @@ const data = {
       costKrw: 980000,
       transport: { "zh-Hant": "13:00 前從飯店出發，先到北村附近", en: "Leave before 13:00 and get into Bukchon first", ko: "13:00 전에 출발해서 먼저 북촌 쪽에 도착하면 됩니다." },
       reminder: { "zh-Hant": "景福宮週二不進宮內部，外圍拍照和光化門周邊已經很夠拍。", en: "Since the palace interior is closed on Tuesday, the exterior and Gwanghwamun side are enough for this day.", ko: "화요일이라 궁 내부는 들어가지 않고, 외부와 광화문 주변만으로도 충분히 좋은 화면이 나옵니다." },
+      foodPlan: [
+        { label: { "zh-Hant": "出發前", en: "Before heading out", ko: "출발 전" }, title: { "zh-Hant": "弘大簡單吃 / 喝咖啡", en: "A light coffee or bite in Hongdae", ko: "홍대에서 가볍게 커피 / 식사" }, note: { "zh-Hant": "這天中午才出發，先在飯店附近整理好狀態再出門。", en: "Since you head out around midday, start with something light near the hotel.", ko: "정오 무렵 출발이라 숙소 근처에서 가볍게 정리하고 나가는 편이 좋습니다." } },
+        { label: { "zh-Hant": "下午", en: "Afternoon", ko: "오후" }, title: { "zh-Hant": "安國 / 北村附近咖啡", en: "Coffee around Anguk / Bukchon", ko: "안국 / 북촌 카페" }, note: { "zh-Hant": "如果拍攝中段有空檔，可以在這區短暫停留。", en: "If there is a gap in the shoot, this is the best place for a short cafe stop.", ko: "촬영 중간에 여유가 생기면 이 근처에서 잠깐 쉬기 좋습니다." } },
+        { label: { "zh-Hant": "晚餐", en: "Dinner", ko: "저녁" }, title: { "zh-Hant": "光化門 / 安國一帶", en: "Gwanghwamun / Anguk", ko: "광화문 / 안국" }, note: { "zh-Hant": "拍完後直接在附近吃飯，比再回弘大找餐廳更順。", en: "Dinner nearby after the shoot is smoother than rushing back first.", ko: "촬영 후 바로 근처에서 저녁을 먹는 편이 훨씬 자연스럽습니다." } },
+      ],
+      areaPicks: [
+        { type: { "zh-Hant": "好拍照", en: "Photo", ko: "포토" }, title: { "zh-Hant": "北村韓屋村", en: "Bukchon Hanok Village", ko: "북촌한옥마을" }, note: { "zh-Hant": "韓服拍攝最核心的街景會在這裡。", en: "This is the visual heart of the hanbok shoot day.", ko: "한복 촬영일의 가장 핵심적인 거리 풍경은 이쪽에 있습니다." } },
+        { type: { "zh-Hant": "好拍照", en: "Photo", ko: "포토" }, title: { "zh-Hant": "光化門廣場", en: "Gwanghwamun Square", ko: "광화문광장" }, note: { "zh-Hant": "如果想接比較開闊的畫面，這裡最好用。", en: "If you want a wider, more open visual finish, this is the place.", ko: "조금 더 넓고 열린 장면을 원하면 이쪽이 가장 좋습니다." } },
+        { type: { "zh-Hant": "散步", en: "Walk", ko: "산책" }, title: { "zh-Hant": "安國 / 三清洞周邊", en: "Anguk / Samcheong-dong", ko: "안국 / 삼청동 주변" }, note: { "zh-Hant": "拍攝前後都適合慢慢走，和北村動線也接得上。", en: "This works well before or after the shoot and flows naturally with Bukchon.", ko: "촬영 전후로 천천히 걷기 좋고 북촌과도 자연스럽게 이어집니다." } },
+      ],
       timeline: [
         { time: "12:45", title: { "zh-Hant": "從飯店出發", en: "Leave the hotel", ko: "호텔 출발" }, desc: { "zh-Hant": "弘大出發，先進安國與北村一帶。", en: "Leave Hongdae and head into Anguk and Bukchon first.", ko: "홍대에서 출발해 안국과 북촌 쪽으로 먼저 이동합니다." } },
         { time: "13:40", title: { "zh-Hant": "抵達安國 / 北村", en: "Arrive in Anguk / Bukchon", ko: "안국 / 북촌 도착" }, desc: { "zh-Hant": "先熟悉街區位置，再往韓服店移動。", en: "Use the buffer to settle into the area before moving toward the shop.", ko: "구역 감을 먼저 잡고 한복 매장으로 이동합니다." } },
@@ -637,6 +686,15 @@ const data = {
       costKrw: 70000,
       transport: { "zh-Hant": "退房後先待在弘大附近，傍晚再往機場去", en: "Stay around Hongdae after check-out, then head to the airport in the evening", ko: "체크아웃 후에는 홍대 근처에 있다가 저녁에 공항으로 가면 됩니다." },
       reminder: { "zh-Hant": "回程 20:05 起飛，最後半天以舒服收尾為主，不建議再跨區。", en: "With a 20:05 departure, the final half day is better as a soft finish without crossing the city again.", ko: "20:05 비행편이라 마지막 반나절은 무리하지 않고 편하게 마무리하는 편이 좋습니다." },
+      foodPlan: [
+        { label: { "zh-Hant": "早午餐", en: "Brunch", ko: "브런치" }, title: { "zh-Hant": "弘大 / 延南洞", en: "Hongdae / Yeonnam-dong", ko: "홍대 / 연남동" }, note: { "zh-Hant": "最後一餐留在熟悉的區域最舒服。", en: "A final meal in a familiar neighborhood makes the last day feel easier.", ko: "마지막 식사는 익숙한 구역에 두는 편이 훨씬 편합니다." } },
+        { label: { "zh-Hant": "下午咖啡", en: "Afternoon coffee", ko: "오후 카페" }, title: { "zh-Hant": "弘大主街或京義線林道", en: "Main Hongdae streets or Gyeongui Line park", ko: "홍대 메인 거리 / 경의선숲길" }, note: { "zh-Hant": "取行李前留一個舒服的停留點就好。", en: "One last easy cafe stop is enough before picking up luggage.", ko: "짐 찾기 전에 카페 한 곳 정도로 마무리하면 충분합니다." } },
+      ],
+      areaPicks: [
+        { type: { "zh-Hant": "逛街", en: "Shopping", ko: "쇼핑" }, title: { "zh-Hant": "AK& 弘大", en: "AK& Hongdae", ko: "AK& 홍대" }, note: { "zh-Hant": "最後採買很方便，也離飯店不遠。", en: "Convenient for last shopping and still close to the hotel.", ko: "마지막 쇼핑하기 좋고 숙소와도 가깝습니다." } },
+        { type: { "zh-Hant": "散步", en: "Walk", ko: "산책" }, title: { "zh-Hant": "京義線林道公園", en: "Gyeongui Line Forest Park", ko: "경의선숲길" }, note: { "zh-Hant": "如果不想再逛商場，這裡最適合最後半天。", en: "If you do not want more indoor shopping, this is the best light option.", ko: "쇼핑보다 가벼운 산책이 좋다면 마지막 반나절은 여기 쪽이 잘 맞습니다." } },
+        { type: { "zh-Hant": "咖啡", en: "Coffee", ko: "카페" }, title: { "zh-Hant": "延南洞咖啡街", en: "Yeonnam-dong cafe streets", ko: "연남동 카페거리" }, note: { "zh-Hant": "離飯店近，也適合在出發前留一點餘裕。", en: "Close to the hotel and easy to fit in before heading out.", ko: "숙소와 가깝고 출발 전 여유를 두기에도 좋습니다." } },
+      ],
       timeline: [
         { time: "09:30", title: { "zh-Hant": "飯店退房", en: "Check out of the hotel", ko: "호텔 체크아웃" }, desc: { "zh-Hant": "先整理好行李，把行程留在弘大附近。", en: "Get luggage sorted first and keep the rest of the day close to the hotel area.", ko: "짐을 먼저 정리하고 남은 일정은 홍대 근처로 두는 편이 좋습니다." } },
         { time: "11:00", title: { "zh-Hant": "弘大最後散步", en: "Last walk around Hongdae", ko: "홍대 마지막 산책" }, desc: { "zh-Hant": "把想補買的東西和最後一頓早午餐留在這裡。", en: "Use this time for final shopping and one last brunch or cafe stop.", ko: "마지막 쇼핑과 브런치, 카페 한 곳 정도를 여기서 마무리하면 됩니다." } },
@@ -843,6 +901,38 @@ function renderItinerary() {
                   `
                 )
                 .join("")}
+            </div>
+            <div class="itinerary-curation-grid">
+              <article class="itinerary-curation-card">
+                <div class="itinerary-meta-label">${getText({ "zh-Hant": "用餐建議", en: "Food suggestions", ko: "식사 제안" })}</div>
+                <div class="itinerary-curation-list">
+                  ${item.foodPlan
+                    .map(
+                      (entry) => `
+                        <div class="itinerary-curation-item">
+                          <div class="itinerary-curation-top"><span class="progress-pill">${getText(entry.label)}</span><span class="itinerary-curation-title">${getText(entry.title)}</span></div>
+                          <div class="itinerary-curation-note">${getText(entry.note)}</div>
+                        </div>
+                      `
+                    )
+                    .join("")}
+                </div>
+              </article>
+              <article class="itinerary-curation-card">
+                <div class="itinerary-meta-label">${getText({ "zh-Hant": "區域推薦", en: "Area picks", ko: "지역 추천" })}</div>
+                <div class="itinerary-curation-list">
+                  ${item.areaPicks
+                    .map(
+                      (entry) => `
+                        <div class="itinerary-curation-item">
+                          <div class="itinerary-curation-top"><span class="progress-pill">${getText(entry.type)}</span><span class="itinerary-curation-title">${getText(entry.title)}</span></div>
+                          <div class="itinerary-curation-note">${getText(entry.note)}</div>
+                        </div>
+                      `
+                    )
+                    .join("")}
+                </div>
+              </article>
             </div>
             <div class="itinerary-meta-grid">
               <div class="itinerary-meta-card"><div class="itinerary-meta-label">${t[state.lang].locationLabel}</div><div class="itinerary-meta-value">${getText(item.location)}</div></div>
