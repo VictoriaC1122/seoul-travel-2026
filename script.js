@@ -43,7 +43,8 @@ const t = {
     heroAreaStay: "弘大",
     heroAreaShoot: "北村 / 安國",
     heroAreaPalace: "景福宮",
-    heroDestinations: "弘大 · 北村韓屋村 · 景福宮 · 安國 · 首爾",
+    heroDestinations: "弘大 · 漢南洞 · 狎鷗亭 · 聖水 · 北村 · 安國",
+    heroNarrative: "從韓屋街巷與宮牆光影開始，沿著地鐵線穿過咖啡廳、選物店、夜晚餐桌與城市轉場，把首爾的日常節奏慢慢收進行李裡。",
     heroPrimaryAction: "查看行程",
     heroSecondaryAction: "韓服資訊",
     keyInfoTitle: "旅程摘要",
@@ -57,9 +58,11 @@ const t = {
     navItinerary: "行程",
     navNotes: "備註",
     overviewKicker: "總覽",
-    overviewTitle: "韓國旅行行程總覽",
-    overviewLead: "整理這次旅程的日期與地點，讓行程節奏一目了然。",
+    overviewTitle: "首爾旅程總覽",
+    overviewLead: "先把日期、街區和每天的旅行節奏收在同一頁，翻開就能知道這趟旅程會往哪裡走。",
     overviewSnapshotTitle: "旅程亮點",
+    overviewPreviewTitle: "每日預覽",
+    overviewPracticalTitle: "實用資訊",
     overviewRecommendTitle: "順路可排",
     overviewAlertsTitle: "當日主題",
     overviewNotesTitle: "行程節奏",
@@ -176,7 +179,8 @@ const t = {
     heroAreaStay: "Hongdae",
     heroAreaShoot: "Bukchon / Anguk",
     heroAreaPalace: "Gyeongbokgung",
-    heroDestinations: "Hongdae · Bukchon Hanok Village · Gyeongbokgung · Anguk · Seoul",
+    heroDestinations: "Hongdae · Hannam-dong · Apgujeong · Seongsu · Bukchon · Anguk",
+    heroNarrative: "Start with hanok lanes and palace walls, then move through subway lines, cafes, select shops, and warm evening tables until Seoul settles naturally into your luggage.",
     heroPrimaryAction: "View itinerary",
     heroSecondaryAction: "Hanbok details",
     keyInfoTitle: "Trip summary",
@@ -190,9 +194,11 @@ const t = {
     navItinerary: "Itinerary",
     navNotes: "Notes",
     overviewKicker: "Overview",
-    overviewTitle: "Seoul Travel Overview",
-    overviewLead: "A clear overview of the travel dates and places for this trip.",
+    overviewTitle: "Seoul Journey Overview",
+    overviewLead: "See the dates, districts, and rhythm of the trip in one place before diving into each day.",
     overviewSnapshotTitle: "Trip highlights",
+    overviewPreviewTitle: "Day-by-day preview",
+    overviewPracticalTitle: "Practical info",
     overviewRecommendTitle: "Worth fitting in",
     overviewAlertsTitle: "Day themes",
     overviewNotesTitle: "Travel rhythm",
@@ -309,7 +315,8 @@ const t = {
     heroAreaStay: "홍대",
     heroAreaShoot: "북촌 / 안국",
     heroAreaPalace: "경복궁",
-    heroDestinations: "홍대 · 북촌한옥마을 · 경복궁 · 안국 · 서울",
+    heroDestinations: "홍대 · 한남동 · 압구정 · 성수 · 북촌 · 안국",
+    heroNarrative: "한옥 골목과 궁궐 담장에서 시작해 지하철 노선을 따라 카페, 편집숍, 저녁 식탁과 도시의 리듬을 천천히 여행 가방에 담아가는 서울 일정입니다.",
     heroPrimaryAction: "일정 보기",
     heroSecondaryAction: "한복 정보",
     keyInfoTitle: "여행 요약",
@@ -323,9 +330,11 @@ const t = {
     navItinerary: "일정",
     navNotes: "메모",
     overviewKicker: "개요",
-    overviewTitle: "서울 여행 일정 개요",
-    overviewLead: "이번 여행의 날짜와 지역을 한눈에 볼 수 있도록 정리했습니다.",
+    overviewTitle: "서울 여행 개요",
+    overviewLead: "날짜, 동네, 하루 리듬을 한 페이지에 모아두어 전체 흐름을 먼저 잡을 수 있습니다.",
     overviewSnapshotTitle: "여행 하이라이트",
+    overviewPreviewTitle: "하루 미리보기",
+    overviewPracticalTitle: "실용 정보",
     overviewRecommendTitle: "같이 보기 좋은 곳",
     overviewAlertsTitle: "하루 테마",
     overviewNotesTitle: "일정 흐름",
@@ -435,9 +444,10 @@ const t = {
 
 const data = {
   heroSummary: [
-    { label: { "zh-Hant": "住宿", en: "Hotel", ko: "호텔" }, value: { "zh-Hant": "洛卡斯提奇創作者小鎮西橋店", en: "Local Stitch Creator Town Seogyo", ko: "로컬스티치 크리에이터 타운 서교" } },
-    { label: { "zh-Hant": "旅行日期", en: "Travel dates", ko: "여행 날짜" }, value: { "zh-Hant": "2026 / 05 / 15 - 2026 / 05 / 20", en: "2026 / 05 / 15 - 2026 / 05 / 20", ko: "2026 / 05 / 15 - 2026 / 05 / 20" } },
-    { label: { "zh-Hant": "旅行地點", en: "Travel areas", ko: "여행 지역" }, value: { "zh-Hant": "弘大 · 北村 · 景福宮 · 聖水", en: "Hongdae · Bukchon · Gyeongbokgung · Seongsu", ko: "홍대 · 북촌 · 경복궁 · 성수" } },
+    { label: { "zh-Hant": "今晚落腳", en: "Base", ko: "숙소 베이스" }, value: { "zh-Hant": "弘大西橋 · Local Stitch", en: "Seogyo, Hongdae · Local Stitch", ko: "서교 · 로컬스티치" } },
+    { label: { "zh-Hant": "旅程天數", en: "Length", ko: "여행 기간" }, value: { "zh-Hant": "6 天 5 夜", en: "6 days / 5 nights", ko: "6일 5박" } },
+    { label: { "zh-Hant": "主題日", en: "Anchor day", ko: "핵심 일정" }, value: { "zh-Hant": "5/19 北村韓服拍攝", en: "May 19 · Bukchon hanbok shoot", ko: "5/19 북촌 한복 촬영" } },
+    { label: { "zh-Hant": "城市節奏", en: "Travel rhythm", ko: "여행 리듬" }, value: { "zh-Hant": "街區散步、咖啡、購物與宮牆畫面", en: "Neighborhood walks, cafes, shopping, and palace walls", ko: "거리 산책, 카페, 쇼핑, 궁 담장" } },
   ],
   keyInfo: [
     {
@@ -447,8 +457,13 @@ const data = {
     },
     {
       label: { "zh-Hant": "旅行地點", en: "Travel areas", ko: "여행 지역" },
-      value: { "zh-Hant": "弘大 · 北村 · 景福宮 · 聖水", en: "Hongdae · Bukchon · Gyeongbokgung · Seongsu", ko: "홍대 · 북촌 · 경복궁 · 성수" },
-      note: { "zh-Hant": "以西村與江南動線延伸", en: "Extended with west-side and Gangnam routes", ko: "서촌과 강남 동선으로 이어짐" },
+      value: { "zh-Hant": "弘大 · 漢南洞 · 狎鷗亭 · 聖水 · 北村", en: "Hongdae · Hannam-dong · Apgujeong · Seongsu · Bukchon", ko: "홍대 · 한남동 · 압구정 · 성수 · 북촌" },
+      note: { "zh-Hant": "沿著不同街區一天一天展開", en: "One district rhythm per day", ko: "하루에 한 축씩 움직이는 구성" },
+    },
+    {
+      label: { "zh-Hant": "旅程主題", en: "Themes", ko: "여행 테마" },
+      value: { "zh-Hant": "韓食、咖啡、購物、韓屋與宮牆", en: "Food, cafes, shopping, hanok, palace walls", ko: "음식, 카페, 쇼핑, 한옥, 궁 담장" },
+      note: { "zh-Hant": "把首爾的日常、都會感與傳統畫面排進同一趟旅程裡", en: "A mix of everyday Seoul, polished city scenes, and traditional visuals", ko: "서울의 일상, 도시감, 전통적인 장면을 함께 담은 구성" },
     },
   ],
   flights: [
@@ -832,6 +847,298 @@ const data = {
   ],
 };
 
+const overviewContent = {
+  themes: [
+    { "zh-Hant": "韓食餐桌", en: "Korean dining", ko: "한식 식탁" },
+    { "zh-Hant": "咖啡廳散步", en: "Cafe walks", ko: "카페 산책" },
+    { "zh-Hant": "選物與購物", en: "Shopping", ko: "쇼핑" },
+    { "zh-Hant": "宮殿與韓屋", en: "Palaces & hanok", ko: "궁궐과 한옥" },
+    { "zh-Hant": "城市夜色", en: "Seoul at night", ko: "서울의 밤" },
+  ],
+  snapshot: [
+    {
+      label: { "zh-Hant": "旅程天數", en: "Length", ko: "여행 기간" },
+      value: { "zh-Hant": "6 天 5 夜", en: "6 days / 5 nights", ko: "6일 5박" },
+      note: { "zh-Hant": "以弘大為據點，沿著不同街區慢慢展開。", en: "Based in Hongdae, with each day branching into a different district.", ko: "홍대를 베이스로 두고 하루씩 다른 동네로 뻗어가는 일정입니다." },
+    },
+    {
+      label: { "zh-Hant": "主要街區", en: "Main districts", ko: "주요 동네" },
+      value: { "zh-Hant": "弘大・漢南洞・狎鷗亭・聖水・北村", en: "Hongdae · Hannam-dong · Apgujeong · Seongsu · Bukchon", ko: "홍대 · 한남동 · 압구정 · 성수 · 북촌" },
+      note: { "zh-Hant": "每天盡量留在同一條城市軸線，不把移動切得太碎。", en: "Each day stays on one clean city axis rather than hopping too much.", ko: "하루는 한 축 안에서 움직이도록 정리해 동선을 잘게 쪼개지 않았습니다." },
+    },
+    {
+      label: { "zh-Hant": "住宿區域", en: "Stay", ko: "숙소" },
+      value: { "zh-Hant": "弘大西橋", en: "Seogyo / Hongdae", ko: "서교 · 홍대" },
+      note: { "zh-Hant": "晚餐、回飯店與最後採買都很順，夜晚也有街區散步感。", en: "Easy for dinner, late returns, and last-day shopping with a lively night atmosphere.", ko: "저녁 식사, 늦은 귀가, 마지막 쇼핑이 모두 편하고 밤 산책도 좋습니다." },
+    },
+    {
+      label: { "zh-Hant": "移動方式", en: "Getting around", ko: "이동 방식" },
+      value: { "zh-Hant": "地鐵＋步行為主", en: "Subway + walking", ko: "지하철 + 도보" },
+      note: { "zh-Hant": "拍攝日與夜間回程再視體力補上計程車。", en: "Taxis are most useful on the hanbok day or for late-night returns.", ko: "한복 촬영일과 밤 귀가 구간만 택시를 보조로 생각하면 됩니다." },
+    },
+    {
+      label: { "zh-Hant": "體力節奏", en: "Energy", ko: "체력 리듬" },
+      value: { "zh-Hant": "街區散步日居多", en: "Mostly walking days", ko: "도시 산책 위주" },
+      note: { "zh-Hant": "狎鷗亭／江南與北村拍攝日步行量較高，其餘天數都留了緩衝。", en: "Apgujeong/Gangnam and the hanbok day are the heaviest; the other days stay lighter.", ko: "압구정·강남과 한복 촬영일은 걷는 양이 많고, 나머지는 여유를 남겨두었습니다." },
+    },
+    {
+      label: { "zh-Hant": "預約與排隊", en: "Booking notes", ko: "예약 메모" },
+      value: { "zh-Hant": "韓服日最需要準時", en: "Hanbok day matters most", ko: "한복 촬영일 우선" },
+      note: { "zh-Hant": "咖啡廳與熱門餐廳先留彈性，真正需要守時的是 5/19 的韓服拍攝。", en: "Cafes and restaurants can stay flexible; the only fixed timing day is the hanbok appointment on 5/19.", ko: "카페와 식당은 유연하게 보고, 정말 시간을 지켜야 하는 건 5/19 한복 촬영입니다." },
+    },
+  ],
+  highlights: [
+    {
+      tag: { "zh-Hant": "韓屋與宮牆", en: "Hanok & palace", ko: "한옥과 궁궐" },
+      date: { "zh-Hant": "5/19 北村・安國", en: "May 19 · Bukchon / Anguk", ko: "5/19 · 북촌 / 안국" },
+      title: { "zh-Hant": "把鏡頭留給北村巷弄與景福宮外圍", en: "A day framed by Bukchon alleys and the palace walls", ko: "북촌 골목과 궁궐 담장을 담는 하루" },
+      desc: { "zh-Hant": "這天不趕景點，讓韓服、韓屋與宮牆光影成為整趟旅程最有畫面的段落。", en: "This day slows down on purpose so the hanbok, hanok lanes, and palace walls can carry the strongest visuals of the trip.", ko: "이날은 명소를 많이 넣지 않고 한복과 한옥, 궁 담장의 분위기를 온전히 남기는 데 집중합니다." },
+    },
+    {
+      tag: { "zh-Hant": "城市散步", en: "City walks", ko: "도시 산책" },
+      date: { "zh-Hant": "弘大・延南洞", en: "Hongdae / Yeonnam-dong", ko: "홍대 / 연남동" },
+      title: { "zh-Hant": "把夜晚與最後半天都留給弘大", en: "Hongdae carries both the first night and the final half day", ko: "첫날 밤과 마지막 반나절을 홍대에 남겨둔 일정" },
+      desc: { "zh-Hant": "從抵達首爾的第一頓晚餐，到回程前最後一杯咖啡，弘大會是最穩也最有生活感的背景。", en: "From the first dinner after landing to the last coffee before the airport, Hongdae holds the trip together.", ko: "도착 첫 저녁부터 귀국 전 마지막 커피까지, 홍대가 이번 여행의 생활감 있는 배경이 됩니다." },
+    },
+    {
+      tag: { "zh-Hant": "展覽與咖啡", en: "Art & cafes", ko: "전시와 카페" },
+      date: { "zh-Hant": "5/16 漢南洞", en: "May 16 · Hannam-dong", ko: "5/16 · 한남동" },
+      title: { "zh-Hant": "先看展，再把午後留給漢南洞街景", en: "Begin with Leeum, then drift into Hannam’s streets", ko: "리움에서 시작해 한남동 오후로 이어지는 흐름" },
+      desc: { "zh-Hant": "這一天從博物館與建築開始，後面自然接上選物店、書店與咖啡，節奏安靜但不無聊。", en: "The day opens with architecture and exhibitions, then naturally moves into boutiques, books, and coffee.", ko: "전시와 건축으로 문을 열고 편집숍, 서점, 카페로 이어지는 차분한 하루입니다." },
+    },
+    {
+      tag: { "zh-Hant": "購物與都會感", en: "Shopping & city polish", ko: "쇼핑과 도회적 분위기" },
+      date: { "zh-Hant": "5/17 狎鷗亭・江南", en: "May 17 · Apgujeong / Gangnam", ko: "5/17 · 압구정 / 강남" },
+      title: { "zh-Hant": "把狎鷗亭、江南與 COEX 排成一條漂亮的城市軸線", en: "A polished city line from Apgujeong to Gangnam and COEX", ko: "압구정에서 강남, 코엑스로 이어지는 매끈한 도시 축" },
+      desc: { "zh-Hant": "這天適合穿好走的鞋，沿著都會感最強的街區移動，購物、美妝與咖啡都能一次收進來。", en: "Wear good walking shoes and let one polished urban route hold your shopping, beauty stops, and cafe breaks.", ko: "편한 신발을 신고 이동하면 쇼핑, 뷰티, 카페를 한 줄로 담기 좋은 날입니다." },
+    },
+    {
+      tag: { "zh-Hant": "聖水午後", en: "Seongsu afternoon", ko: "성수 오후" },
+      date: { "zh-Hant": "5/18 展覽・聖水", en: "May 18 · Exhibition / Seongsu", ko: "5/18 · 전시 / 성수" },
+      title: { "zh-Hant": "展覽看完，把最鬆弛的街區散步留給聖水", en: "After the exhibition, let Seongsu carry the softer half of the day", ko: "전시 뒤에는 성수의 느슨한 거리 리듬으로 마무리" },
+      desc: { "zh-Hant": "選物店、咖啡香與首爾林的綠意會把整天收得很舒服，也很適合安排拍照與小採買。", en: "Shops, cafes, and Seoul Forest soften the day and make room for photos and easy shopping.", ko: "편집숍, 카페, 서울숲이 하루를 부드럽게 정리해 주고 사진과 가벼운 쇼핑에도 잘 맞습니다." },
+    },
+  ],
+  practical: [
+    {
+      title: { "zh-Hant": "航班與機場交通", en: "Flights & airport transfer", ko: "항공편과 공항 이동" },
+      items: [
+        { "zh-Hant": "去程 5/15 15:30 台北出發，抵達後直接往弘大，第一晚只留在住宿周邊。", en: "Arrive on 5/15 and head straight to Hongdae; keep the first night local.", ko: "5/15 도착 후 바로 홍대로 이동하고 첫날 밤은 숙소 주변만 두는 구성이 좋습니다." },
+        { "zh-Hant": "回程 5/20 20:05 起飛，最後半天不再跨區，讓機場移動保持從容。", en: "With a 20:05 return flight, keep the final half day local and calm.", ko: "귀국편이 20:05라 마지막 반나절은 멀리 가지 않는 편이 안정적입니다." },
+      ],
+    },
+    {
+      title: { "zh-Hant": "住宿與晚間節奏", en: "Stay & evenings", ko: "숙소와 밤 시간" },
+      items: [
+        { "zh-Hant": "住在弘大最大的好處，是晚餐、回飯店和最後採買都不用重新規劃。", en: "Staying in Hongdae makes dinners, returns, and last-day shopping easy.", ko: "홍대 숙소는 저녁, 귀가, 마지막 쇼핑까지 모두 간단하게 이어집니다." },
+        { "zh-Hant": "如果某天走得比較累，晚餐直接收在弘大通常會比留在外區更舒服。", en: "If a day feels tiring, letting dinner land back in Hongdae is usually the easiest choice.", ko: "하루가 길어졌다면 저녁을 홍대에서 마무리하는 편이 가장 편합니다." },
+      ],
+    },
+    {
+      title: { "zh-Hant": "地鐵與轉場", en: "Subway rhythm", ko: "지하철과 이동 리듬" },
+      items: [
+        { "zh-Hant": "這趟以地鐵加步行為主，真正需要計程車的通常只有拍攝日或太晚回飯店的時候。", en: "Most of the trip works by subway and walking; taxis are most useful on the hanbok day or late at night.", ko: "대부분은 지하철과 도보로 충분하고, 택시는 한복 촬영일이나 늦은 귀가 때가 가장 유용합니다." },
+        { "zh-Hant": "像安國、弘大、江南這種大站轉乘時，時間不要抓太緊，留一點城市轉場的緩衝。", en: "For bigger stations like Anguk, Hongdae, or Gangnam, leave transfer buffer instead of scheduling too tightly.", ko: "안국, 홍대, 강남처럼 큰 역은 환승 여유를 조금 남겨두는 편이 좋습니다." },
+      ],
+    },
+    {
+      title: { "zh-Hant": "餐廳與預約", en: "Restaurants & reservations", ko: "식당과 예약" },
+      items: [
+        { "zh-Hant": "午餐留給街區核心，晚上再視體力決定要不要回弘大收尾，整體最順。", en: "Lunch works best in the core district; decide dinner by energy and whether you want to return to Hongdae.", ko: "점심은 메인 구역에서, 저녁은 체력에 따라 현지에서 먹거나 홍대로 돌아오는 식이 가장 자연스럽습니다." },
+        { "zh-Hant": "熱門餐廳如果現場候位太長，不用硬等，首爾街區裡通常很快就能找到下一間順眼的選擇。", en: "If a popular restaurant wait feels too long, Seoul usually gives you another good option a few steps away.", ko: "인기 식당 대기가 너무 길다면 굳이 기다리지 않아도 근처에 괜찮은 대안이 많은 편입니다." },
+      ],
+    },
+    {
+      title: { "zh-Hant": "咖啡廳與甜點", en: "Cafes & dessert", ko: "카페와 디저트" },
+      items: [
+        { "zh-Hant": "漢南洞、聖水、延南洞都適合安排一間真正想坐下來的咖啡廳，不用刻意塞滿兩三間。", en: "Hannam, Seongsu, and Yeonnam each deserve one cafe you truly want to sit in, not three rushed stops.", ko: "한남동, 성수, 연남동은 카페를 여러 곳보다 한 곳을 오래 머무는 방식이 더 잘 어울립니다." },
+        { "zh-Hant": "甜點和咖啡最適合放在下午轉場，讓走路與購物之間有一段可以慢下來的空檔。", en: "Dessert and coffee work best as an afternoon pause between walking and shopping.", ko: "디저트와 커피는 걷기와 쇼핑 사이의 속도를 낮춰 주는 오후 휴식으로 두는 편이 좋습니다." },
+      ],
+    },
+    {
+      title: { "zh-Hant": "購物與退稅", en: "Shopping & tax refund", ko: "쇼핑과 환급" },
+      items: [
+        { "zh-Hant": "狎鷗亭／江南適合排服飾與城市型購物，聖水比較適合選物與街區小店。", en: "Apgujeong/Gangnam are better for fashion and polished city shopping; Seongsu suits select shops and smaller finds.", ko: "압구정·강남은 패션과 도회적 쇼핑, 성수는 편집숍과 작은 상점들에 더 잘 맞습니다." },
+        { "zh-Hant": "如果當天有大量採買，先把退稅單和戰利品整理好，回飯店時比較不會手忙腳亂。", en: "On bigger shopping days, organize tax slips and purchases early so the return to the hotel stays easy.", ko: "쇼핑이 많았던 날은 환급 영수증과 짐을 먼저 정리해 두는 편이 편합니다." },
+      ],
+    },
+    {
+      title: { "zh-Hant": "美妝採買", en: "Beauty restock", ko: "뷰티 쇼핑" },
+      items: [
+        { "zh-Hant": "美妝補貨建議集中在同一天處理，手上才不會天天提著購物袋。", en: "Beauty restocking is easier if you batch it into one day rather than carrying bags every day.", ko: "뷰티 제품은 하루에 몰아서 사는 편이 손에 짐이 덜하고 일정도 편합니다." },
+        { "zh-Hant": "如果最後一天還有 Olive Young 或藥妝要補，盡量留在弘大附近一次解決。", en: "If you still need Olive Young or pharmacy shopping on the final day, keep it near Hongdae and do it in one stop.", ko: "마지막 날 올리브영이나 드럭스토어 보충이 남았다면 홍대 근처에서 한 번에 해결하는 편이 좋습니다." },
+      ],
+    },
+    {
+      title: { "zh-Hant": "網路、付款與翻譯 App", en: "Data, payment, translation apps", ko: "데이터, 결제, 번역 앱" },
+      items: [
+        { "zh-Hant": "手機網路、地圖、翻譯和飯店地址截圖先準備好，臨時叫車或找店時都會比較快。", en: "Prepare mobile data, maps, translation, and a hotel-address screenshot in advance for easier navigation and taxis.", ko: "모바일 데이터, 지도, 번역, 숙소 주소 캡처를 미리 준비해 두면 갑작스러운 이동이 훨씬 편합니다." },
+        { "zh-Hant": "付款以刷卡搭配少量韓元現金最穩；需要現場補款的頁面，再回韓服或預算頁查看即可。", en: "Cards plus a small amount of KRW cash are the easiest mix; use the hanbok or budget page for exact payment details.", ko: "결제는 카드와 소량의 현금 조합이 가장 편하고, 정확한 금액은 한복/예산 페이지에서 다시 확인하면 됩니다." },
+      ],
+    },
+    {
+      title: { "zh-Hant": "天氣、穿搭與小提醒", en: "Weather, outfit, reminders", ko: "날씨와 옷차림" },
+      items: [
+        { "zh-Hant": "這趟幾乎每天都會走路，鞋子舒服比什麼都重要；拍照日再把穿搭重點放在層次與顏色。", en: "Comfortable shoes matter most on this trip; save styling energy for layers and color on the photo day.", ko: "이번 여행은 거의 매일 걷기 때문에 신발이 가장 중요하고, 촬영일에만 색감과 레이어를 더 신경 쓰면 됩니다." },
+        { "zh-Hant": "購物日不要背太重的包，宮殿與韓屋日則記得防曬、頭髮整理與手機電量。", en: "Keep your bag light on shopping days; on palace and hanok days, remember sun protection, hair touch-ups, and battery life.", ko: "쇼핑하는 날은 가방을 가볍게, 궁궐과 한옥 일정에는 자외선과 헤어, 배터리를 챙기는 편이 좋습니다." },
+      ],
+    },
+  ],
+};
+
+const itineraryGuide = {
+  "2026-05-15": {
+    theme: { "zh-Hant": "抵達首爾與弘大夜色", en: "Arrival and Hongdae at night", ko: "도착과 홍대의 밤" },
+    energy: { "zh-Hant": "輕鬆", en: "Light", ko: "가벼움" },
+    shoes: { "zh-Hant": "舒服好走的鞋", en: "Easy walking shoes", ko: "편한 신발" },
+    booking: { "zh-Hant": "無需預約", en: "No bookings needed", ko: "예약 없음" },
+    dining: { "zh-Hant": "弘大或延南洞晚餐＋一間安靜咖啡店", en: "Dinner in Hongdae or Yeonnam plus one easy cafe", ko: "홍대·연남동 저녁과 카페 한 곳" },
+    shopping: { "zh-Hant": "便利店補貨、簡單逛弘大", en: "Convenience-store restock and light browsing", ko: "편의점 보충과 가벼운 홍대 둘러보기" },
+    photo: { "zh-Hant": "弘大夜景與街口燈光", en: "Hongdae night streets", ko: "홍대 밤거리" },
+    preview: { "zh-Hant": "長途移動後，把第一晚留給弘大的街景和晚餐，讓旅程從一個不趕時間的夜晚開始。", en: "After the long transfer, let Hongdae carry the first dinner and first walk.", ko: "긴 이동 뒤에는 홍대의 저녁과 밤거리로 천천히 여행을 시작합니다." },
+    quickHighlights: [
+      { "zh-Hant": "弘大夜晚散步", en: "Hongdae night walk", ko: "홍대 밤 산책" },
+      { "zh-Hant": "延南洞咖啡店", en: "Yeonnam cafe stop", ko: "연남동 카페" },
+      { "zh-Hant": "先熟悉飯店周邊", en: "Get familiar with the hotel area", ko: "숙소 주변 익히기" },
+    ],
+    flow: [
+      { label: { "zh-Hant": "傍晚｜落地首爾", en: "Evening", ko: "저녁 전" }, title: { "zh-Hant": "先把機場移動收乾淨", en: "Move smoothly out of the airport", ko: "공항 이동 정리" }, desc: { "zh-Hant": "這天的重點不是塞景點，而是讓入境、交通卡和到飯店的節奏都穩穩落地。", en: "The point is not to chase sights, but to make arrival feel smooth.", ko: "이날은 명소보다 입국과 숙소 이동을 부드럽게 마무리하는 데 집중합니다." } },
+      { label: { "zh-Hant": "夜晚｜今晚落腳", en: "Night", ko: "밤" }, title: { "zh-Hant": "先把行李放進弘大的日常裡", en: "Settle into Hongdae first", ko: "홍대에 먼저 안착" }, desc: { "zh-Hant": "把第一晚留給熟悉住宿周邊，後面幾天的移動會更安心。", en: "Staying close tonight makes the rest of the trip feel easier.", ko: "첫날 밤을 숙소 주변에 두면 이후 일정이 훨씬 편해집니다." } },
+      { label: { "zh-Hant": "夜晚｜今日餐桌", en: "Dinner", ko: "저녁 식탁" }, title: { "zh-Hant": "弘大晚餐與延南洞街口", en: "Dinner in Hongdae", ko: "홍대 저녁" }, desc: { "zh-Hant": "就近找一間順眼的餐廳，不特別追名店，讓首爾第一餐吃得輕鬆一點。", en: "Keep the first meal easy and close to the hotel.", ko: "첫 식사는 가까운 곳에서 편하게 먹는 편이 좋습니다." } },
+      { label: { "zh-Hant": "收尾｜慢慢進入首爾", en: "Wrap-up", ko: "마무리" }, title: { "zh-Hant": "留一小段街景給第一晚", en: "Leave room for one short walk", ko: "짧은 밤 산책" }, desc: { "zh-Hant": "晚餐後沿著弘大或延南洞走一小段，旅程就會自然地開始。", en: "One short post-dinner walk is enough to open the trip.", ko: "식사 후 짧게 걷는 것만으로도 여행이 자연스럽게 시작됩니다." } },
+    ],
+    reminders: [
+      { "zh-Hant": "第一晚不要再跨區，把力氣留給後面幾天。", en: "Do not cross the city again on the first night.", ko: "첫날 밤에는 다른 구역까지 가지 않는 편이 좋습니다." },
+      { "zh-Hant": "手機網路、T-money、飯店地址截圖先整理好，晚上會更省心。", en: "Sort out data, T-money, and the hotel address screenshot early.", ko: "데이터, 교통카드, 숙소 주소 캡처를 먼저 정리해 두세요." },
+    ],
+  },
+  "2026-05-16": {
+    theme: { "zh-Hant": "展覽、選物與漢南洞街景", en: "Art and Hannam streets", ko: "전시와 한남동 거리" },
+    energy: { "zh-Hant": "普通", en: "Moderate", ko: "보통" },
+    shoes: { "zh-Hant": "適合久走的平底鞋", en: "Comfortable all-day shoes", ko: "오래 걷기 좋은 신발" },
+    booking: { "zh-Hant": "Leeum 若看特展可先查票", en: "Check Leeum exhibition tickets if needed", ko: "리움 특별전은 예매 확인" },
+    dining: { "zh-Hant": "漢江鎮早午餐＋弘大晚餐", en: "Brunch near Hangangjin and dinner back in Hongdae", ko: "한강진 브런치와 홍대 저녁" },
+    shopping: { "zh-Hant": "漢南洞選物店、書店、小型品牌店", en: "Select shops, bookstores, and smaller labels", ko: "편집숍, 서점, 작은 브랜드" },
+    photo: { "zh-Hant": "Leeum 建築線條與漢南洞街景", en: "Leeum architecture and Hannam streets", ko: "리움 건축과 한남동 거리" },
+    preview: { "zh-Hant": "這天適合慢一點，先用 Leeum 和建築把情緒定下來，再把午後留給漢南洞街區與咖啡店。", en: "Start with Leeum, then let Hannam and cafes soften the rest of the day.", ko: "리움으로 시작해 한남동 거리와 카페로 이어지는 느긋한 흐름입니다." },
+    quickHighlights: [
+      { "zh-Hant": "Leeum Museum", en: "Leeum Museum", ko: "리움미술관" },
+      { "zh-Hant": "Blue Square Book Park", en: "Book Park", ko: "북파크" },
+      { "zh-Hant": "漢南洞主街散步", en: "Hannam main street walk", ko: "한남동 메인 거리 산책" },
+    ],
+    flow: [
+      { label: { "zh-Hant": "上午｜城市醒來", en: "Morning", ko: "오전" }, title: { "zh-Hant": "從展覽與建築打開這一天", en: "Open the day with art and architecture", ko: "전시와 건축으로 시작" }, desc: { "zh-Hant": "先進 Leeum，比直接開始逛街更能把整天的氣氛收穩。", en: "Starting at Leeum gives the whole day a calmer frame.", ko: "리움에서 시작하면 하루 분위기가 차분하게 잡힙니다." } },
+      { label: { "zh-Hant": "中午｜韓食餐桌", en: "Midday", ko: "점심" }, title: { "zh-Hant": "午餐後順著街區往前走", en: "Let lunch lead into the neighborhood", ko: "점심 뒤 거리로 연결" }, desc: { "zh-Hant": "漢南洞的好處是不用折返，吃完就能直接接進主街與小巷。", en: "Hannam works best as one continuous route without backtracking.", ko: "한남동은 한 방향으로 이어가기에 좋은 동네입니다." } },
+      { label: { "zh-Hant": "下午｜街區散步", en: "Afternoon", ko: "오후" }, title: { "zh-Hant": "選物、書店、咖啡慢慢排開", en: "Shops, books, and coffee at an easy pace", ko: "편집숍과 서점, 카페를 천천히" }, desc: { "zh-Hant": "這天不需要排太滿，漢南洞的重點本來就藏在慢慢走的節奏裡。", en: "Hannam feels best when you leave the afternoon loose.", ko: "한남동은 오후를 느슨하게 둘수록 더 잘 보입니다." } },
+      { label: { "zh-Hant": "夜晚｜回弘大收尾", en: "Night", ko: "밤" }, title: { "zh-Hant": "晚餐收在熟悉的街口", en: "Finish where the stay feels easy", ko: "익숙한 홍대로 마무리" }, desc: { "zh-Hant": "如果不想拖太晚，回弘大吃飯會比留在外區更舒服。", en: "Returning to Hongdae keeps the evening simple.", ko: "저녁은 홍대로 돌아와 마무리하는 편이 편합니다." } },
+    ],
+    reminders: [
+      { "zh-Hant": "這天會走不少路，但節奏偏鬆，適合穿舒服又稍微好看的鞋。", en: "You will walk quite a bit, but the pace stays gentle.", ko: "걷는 양은 있지만 전체적으로 여유 있는 날입니다." },
+      { "zh-Hant": "咖啡店不用排太多間，留一間真正想坐下來的就夠。", en: "One good cafe stop is better than rushing through several.", ko: "카페는 여러 곳보다 한 곳을 오래 머무는 편이 좋습니다." },
+    ],
+  },
+  "2026-05-17": {
+    theme: { "zh-Hant": "狎鷗亭、江南與都會購物節奏", en: "Apgujeong and Gangnam shopping rhythm", ko: "압구정과 강남의 쇼핑 리듬" },
+    energy: { "zh-Hant": "偏累", en: "High", ko: "조금 높은 편" },
+    shoes: { "zh-Hant": "一定要好走，包包越輕越好", en: "Very comfortable shoes, light bag", ko: "편한 신발과 가벼운 가방" },
+    booking: { "zh-Hant": "無硬性預約，但熱門店面保留排隊彈性", en: "No fixed booking, but allow for waiting time", ko: "예약보다는 대기 여유가 필요" },
+    dining: { "zh-Hant": "狎鷗亭早午餐＋COEX 周邊晚餐", en: "Brunch in Apgujeong and dinner around COEX", ko: "압구정 브런치와 코엑스 저녁" },
+    shopping: { "zh-Hant": "服飾、美妝、選物與百貨動線", en: "Fashion, beauty, select shops, and mall stops", ko: "패션, 뷰티, 편집숍, 백화점" },
+    photo: { "zh-Hant": "狎鷗亭街景與 Starfield Library", en: "Apgujeong streets and Starfield Library", ko: "압구정 거리와 별마당도서관" },
+    preview: { "zh-Hant": "這天偏都會感，把狎鷗亭與江南排成同一條路線，購物、美妝與咖啡都能收進來。", en: "This is the city-polish day: fashion, coffee, and malls in one line.", ko: "이번 일정에서 가장 도회적인 하루로, 쇼핑과 뷰티를 한 축으로 묶어둔 날입니다." },
+    quickHighlights: [
+      { "zh-Hant": "狎鷗亭羅德奧", en: "Apgujeong Rodeo", ko: "압구정로데오" },
+      { "zh-Hant": "江南主街", en: "Gangnam main streets", ko: "강남 메인 거리" },
+      { "zh-Hant": "COEX 星光圖書館", en: "Starfield Library", ko: "별마당도서관" },
+    ],
+    flow: [
+      { label: { "zh-Hant": "上午｜輕鬆出門", en: "Morning", ko: "오전" }, title: { "zh-Hant": "先從狎鷗亭的街區質感開始", en: "Start with Apgujeong’s polished street mood", ko: "압구정의 거리 감도에서 시작" }, desc: { "zh-Hant": "早午餐後直接走進狎鷗亭羅德奧，步調會比較漂亮。", en: "Brunch first, then let Apgujeong unfold naturally on foot.", ko: "브런치 뒤에 로데오 거리를 걷는 흐름이 가장 자연스럽습니다." } },
+      { label: { "zh-Hant": "中午｜都會餐桌", en: "Midday", ko: "점심" }, title: { "zh-Hant": "中段留給江南的熱鬧密度", en: "Let midday carry the denser Gangnam energy", ko: "강남의 밀도를 점심 이후로" }, desc: { "zh-Hant": "午餐後進江南主街，逛街與轉場都會更順。", en: "After lunch, move deeper into Gangnam’s busier shopping streets.", ko: "점심 뒤 강남 메인 상권으로 넘어가면 동선이 깔끔합니다." } },
+      { label: { "zh-Hant": "下午｜美妝與服飾採買", en: "Afternoon", ko: "오후" }, title: { "zh-Hant": "把購物集中在同一天", en: "Batch shopping into one day", ko: "쇼핑을 하루에 모으기" }, desc: { "zh-Hant": "這樣後面幾天就不用一直提著戰利品，也比較適合補貨。", en: "A concentrated shopping day keeps the rest of the trip lighter.", ko: "쇼핑을 하루에 모으면 이후 일정이 훨씬 가벼워집니다." } },
+      { label: { "zh-Hant": "夜晚｜城市夜色", en: "Night", ko: "밤" }, title: { "zh-Hant": "COEX 收尾，再回弘大", en: "Finish at COEX, then return to Hongdae", ko: "코엑스로 마무리 후 홍대 복귀" }, desc: { "zh-Hant": "晚餐與室內商場都可以留在 COEX 一帶，夜晚的節奏會很完整。", en: "COEX gives the day a clean indoor finish before heading back.", ko: "코엑스에서 저녁과 실내 이동을 정리하면 하루가 매끈하게 끝납니다." } },
+    ],
+    reminders: [
+      { "zh-Hant": "這天購物成分高，包包不要太重，也最好預留一點行李空間。", en: "This is a shopping-heavy day, so keep your bag light and leave luggage space.", ko: "쇼핑 비중이 높은 날이라 가방은 가볍게, 캐리어 공간은 조금 남겨두는 편이 좋습니다." },
+      { "zh-Hant": "熱門店面與咖啡廳可能要排隊，下午行程不要抓得太死。", en: "Popular shops and cafes may require waiting, so keep the afternoon flexible.", ko: "인기 매장과 카페 대기를 고려해 오후 일정을 너무 빽빽하게 잡지 마세요." },
+    ],
+  },
+  "2026-05-18": {
+    theme: { "zh-Hant": "展覽後接聖水與首爾林", en: "Exhibition and Seongsu", ko: "전시와 성수" },
+    energy: { "zh-Hant": "普通", en: "Moderate", ko: "보통" },
+    shoes: { "zh-Hant": "好走的鞋，適合慢慢逛", en: "Easy shoes for a slower walking day", ko: "천천히 걷기 좋은 신발" },
+    booking: { "zh-Hant": "展覽若需預約先確認", en: "Check exhibition booking if needed", ko: "전시 예약 여부 확인" },
+    dining: { "zh-Hant": "展覽周邊午餐＋聖水晚餐或回弘大", en: "Lunch near the exhibition and dinner in Seongsu or Hongdae", ko: "전시 주변 점심과 성수 또는 홍대 저녁" },
+    shopping: { "zh-Hant": "選物店、快閃店、小型品牌", en: "Select shops, pop-ups, smaller brands", ko: "편집숍, 팝업, 작은 브랜드" },
+    photo: { "zh-Hant": "聖水主街、首爾林、街角咖啡店", en: "Seongsu streets, Seoul Forest, and cafes", ko: "성수 거리, 서울숲, 카페" },
+    preview: { "zh-Hant": "把前半天留給最想看的展，下午再接聖水與首爾林，整天會有一種輕鬆但不空的城市感。", en: "Let the exhibition take the first half, then soften into Seongsu and Seoul Forest.", ko: "전시로 시작하고 성수와 서울숲으로 이어지는 느슨한 도시 산책의 날입니다." },
+    quickHighlights: [
+      { "zh-Hant": "看展", en: "Exhibition time", ko: "전시 관람" },
+      { "zh-Hant": "聖水主街", en: "Seongsu main streets", ko: "성수 메인 거리" },
+      { "zh-Hant": "首爾林", en: "Seoul Forest", ko: "서울숲" },
+    ],
+    flow: [
+      { label: { "zh-Hant": "上午｜文化開場", en: "Morning", ko: "오전" }, title: { "zh-Hant": "先把注意力留給展覽", en: "Give the first half to the exhibition", ko: "전시에 먼저 집중" }, desc: { "zh-Hant": "展覽放前半天最剛好，下午就能把心情慢慢切回街區散步。", en: "Seeing the exhibition earlier keeps the rest of the day easier.", ko: "전시는 앞쪽에 두는 편이 이후 동선을 더 편하게 만들어 줍니다." } },
+      { label: { "zh-Hant": "中午｜午間風味", en: "Midday", ko: "점심" }, title: { "zh-Hant": "順著聖水一路吃進街景裡", en: "Let lunch lead into Seongsu’s streets", ko: "성수 거리로 이어지는 점심" }, desc: { "zh-Hant": "午餐後接主街最自然，剛好進入選物店和街角小店的節奏。", en: "Lunch works best as the handoff into Seongsu’s shops and side streets.", ko: "점심 뒤에 메인 거리와 편집숍으로 이어가면 흐름이 자연스럽습니다." } },
+      { label: { "zh-Hant": "下午｜街區散步", en: "Afternoon", ko: "오후" }, title: { "zh-Hant": "把咖啡、拍照與小採買留給聖水", en: "Use Seongsu for coffee, photos, and easy shopping", ko: "카페, 사진, 가벼운 쇼핑을 성수에" }, desc: { "zh-Hant": "這區最適合慢慢挑店，不必急著多跑幾個點。", en: "Seongsu feels better when you browse slowly instead of rushing.", ko: "성수는 여러 곳을 급히 도는 것보다 천천히 고르는 방식이 더 잘 어울립니다." } },
+      { label: { "zh-Hant": "傍晚｜城市留白", en: "Evening", ko: "저녁 무렵" }, title: { "zh-Hant": "首爾林把這天收得很舒服", en: "Let Seoul Forest soften the ending", ko: "서울숲으로 부드럽게 마무리" }, desc: { "zh-Hant": "如果還有體力，留一段首爾林步道，整天會更完整。", en: "A walk through Seoul Forest gives the day a calm finish.", ko: "서울숲 산책을 덧붙이면 하루가 훨씬 부드럽게 끝납니다." } },
+    ],
+    reminders: [
+      { "zh-Hant": "如果展覽其實在江南一帶，這天可以和江南日對調，整體動線會更省。", en: "If the exhibition turns out to be in Gangnam, consider swapping this day with the Gangnam day.", ko: "전시 장소가 강남 쪽이라면 강남 일정과 날짜를 바꾸는 편이 더 효율적입니다." },
+      { "zh-Hant": "聖水很容易邊走邊買，記得把購物袋重量留一點餘裕。", en: "Seongsu makes it easy to shop as you walk, so leave room in your hands and bag.", ko: "성수는 걷다 보면 자연스럽게 쇼핑이 늘어나니 짐 여유를 남겨두세요." },
+    ],
+  },
+  "2026-05-19": {
+    theme: { "zh-Hant": "韓服、韓屋與宮牆畫面", en: "Hanbok, hanok, palace walls", ko: "한복, 한옥, 궁궐 담장" },
+    energy: { "zh-Hant": "拍照日", en: "Photo day", ko: "촬영일" },
+    shoes: { "zh-Hant": "好穿脫、走路穩的鞋", en: "Easy on-off shoes with stable footing", ko: "벗고 신기 편한 안정적인 신발" },
+    booking: { "zh-Hant": "14:00 韓服拍攝，務必提早抵達", en: "14:00 hanbok appointment, arrive early", ko: "14:00 한복 촬영, 여유 있게 도착" },
+    dining: { "zh-Hant": "出門前簡單吃，拍完在安國或光化門晚餐", en: "Light start, then dinner in Anguk or Gwanghwamun", ko: "가볍게 시작하고 안국·광화문 저녁" },
+    shopping: { "zh-Hant": "今天不安排重購物，讓手上保持輕鬆", en: "Keep shopping light today", ko: "오늘은 쇼핑을 가볍게" },
+    photo: { "zh-Hant": "北村巷弄、宮牆、光化門廣場", en: "Bukchon alleys, palace walls, Gwanghwamun", ko: "북촌 골목, 궁 담장, 광화문광장" },
+    preview: { "zh-Hant": "這天的主角不是景點數量，而是畫面。把時間留給北村、安國與景福宮外圍，整體會比硬塞更多地點好看很多。", en: "This day is about visuals, not how many places you can tick off.", ko: "이날은 장소 수보다 화면이 중요한 날입니다." },
+    quickHighlights: [
+      { "zh-Hant": "옥한복 14:00", en: "Ok Hanbok at 14:00", ko: "옥한복 14:00" },
+      { "zh-Hant": "北村韓屋巷弄", en: "Bukchon hanok lanes", ko: "북촌 한옥 골목" },
+      { "zh-Hant": "光化門與宮牆外景", en: "Gwanghwamun and palace exteriors", ko: "광화문과 궁 외경" },
+    ],
+    flow: [
+      { label: { "zh-Hant": "中午前後｜出門準備", en: "Before noon", ko: "정오 전후" }, title: { "zh-Hant": "先把狀態整理好再進北村", en: "Get ready before heading into Bukchon", ko: "북촌 들어가기 전 컨디션 정리" }, desc: { "zh-Hant": "這天比起多排店，更重要的是把妝髮、手機電量和心情都準備好。", en: "This day is more about readiness than adding more stops.", ko: "이날은 다른 곳을 더 넣기보다 상태를 잘 정리하고 들어가는 것이 중요합니다." } },
+      { label: { "zh-Hant": "下午｜宮殿與韓屋", en: "Afternoon", ko: "오후" }, title: { "zh-Hant": "把拍攝主軸留在同一區", en: "Keep the entire shoot in one visual district", ko: "같은 구역 안에서 촬영 축 유지" }, desc: { "zh-Hant": "北村、安國與景福宮外圍已經足夠，不需要再把路線拉得太遠。", en: "Bukchon, Anguk, and the palace exterior are already enough for a full visual day.", ko: "북촌, 안국, 궁 외곽만으로도 하루 화면이 충분합니다." } },
+      { label: { "zh-Hant": "傍晚｜拍完慢慢收尾", en: "Late afternoon", ko: "늦은 오후" }, title: { "zh-Hant": "把晚餐留在安國或光化門", en: "Leave dinner near Anguk or Gwanghwamun", ko: "안국·광화문에서 저녁" }, desc: { "zh-Hant": "拍攝結束後不用急著趕回弘大，就近吃飯會讓整天的情緒更完整。", en: "Staying nearby for dinner gives the day a softer ending.", ko: "촬영 후 근처에서 저녁을 먹으면 하루의 여운이 자연스럽게 이어집니다." } },
+      { label: { "zh-Hant": "夜晚｜安靜整理", en: "Night", ko: "밤" }, title: { "zh-Hant": "回飯店後先備份照片", en: "Back up photos after returning", ko: "숙소에서 사진 백업" }, desc: { "zh-Hant": "這天的手機相簿會很滿，回飯店先整理好，隔天會輕鬆很多。", en: "Your phone will be full today, so back up images once you return.", ko: "이날은 사진이 많으니 돌아와서 먼저 백업해 두는 편이 좋습니다." } },
+    ],
+    reminders: [
+      { "zh-Hant": "今天最需要提早出門，北村找路和換裝都不要抓太緊。", en: "This is the one day that truly needs extra buffer.", ko: "이날은 길 찾기와 준비 시간을 넉넉히 잡는 것이 가장 중요합니다." },
+      { "zh-Hant": "景福宮週二不開放宮內參觀，但外圍宮牆和廣場已經足夠有畫面。", en: "The palace interior is closed on Tuesday, but the exterior still gives plenty of strong visuals.", ko: "화요일이라 궁 내부는 닫혀 있지만 외곽만으로도 충분히 좋은 장면이 나옵니다." },
+    ],
+  },
+  "2026-05-20": {
+    theme: { "zh-Hant": "最後半天的弘大收尾", en: "A soft Hongdae finale", ko: "홍대로 마무리하는 마지막 반나절" },
+    energy: { "zh-Hant": "輕鬆", en: "Light", ko: "가벼움" },
+    shoes: { "zh-Hant": "輕便好走", en: "Light and easy shoes", ko: "가볍고 편한 신발" },
+    booking: { "zh-Hant": "注意回程班機時間", en: "Just keep the return flight timing in mind", ko: "귀국편 시간 확인" },
+    dining: { "zh-Hant": "最後一頓弘大早午餐＋咖啡", en: "One last Hongdae brunch and coffee", ko: "홍대 마지막 브런치와 커피" },
+    shopping: { "zh-Hant": "補齊最後採買，不再開新區域", en: "Final shopping without opening a new district", ko: "새 구역 없이 마지막 쇼핑" },
+    photo: { "zh-Hant": "弘大街口、延南洞與最後的城市小景", en: "Hongdae corners and the final street scenes", ko: "홍대와 연남동의 마지막 거리 장면" },
+    preview: { "zh-Hant": "最後半天適合留在熟悉的弘大，吃一頓舒服的早午餐、補齊最後採買，再慢慢往機場去。", en: "Stay with the familiar rhythm of Hongdae before heading to the airport.", ko: "익숙한 홍대의 리듬 속에서 천천히 마무리한 뒤 공항으로 향하는 날입니다." },
+    quickHighlights: [
+      { "zh-Hant": "弘大最後散步", en: "Final Hongdae walk", ko: "홍대 마지막 산책" },
+      { "zh-Hant": "延南洞咖啡", en: "Yeonnam coffee", ko: "연남동 카페" },
+      { "zh-Hant": "傍晚前往機場", en: "Airport transfer before evening", ko: "저녁 전 공항 이동" },
+    ],
+    flow: [
+      { label: { "zh-Hant": "上午｜輕鬆收拾", en: "Morning", ko: "오전" }, title: { "zh-Hant": "退房後把節奏留在飯店周邊", en: "Keep the day near the hotel after check-out", ko: "체크아웃 후 숙소 주변에 머물기" }, desc: { "zh-Hant": "最後一天不需要再開新區域，把時間留給熟悉的街角就好。", en: "No need to add a new district on the final day.", ko: "마지막 날은 새로운 지역을 더하지 않는 편이 좋습니다." } },
+      { label: { "zh-Hant": "中午｜午間補給", en: "Midday", ko: "점심" }, title: { "zh-Hant": "最後一頓留給喜歡的弘大餐桌", en: "Leave the last meal to a favorite Hongdae table", ko: "좋아하는 홍대 식탁에 마지막 식사" }, desc: { "zh-Hant": "最後一餐不用特別正式，只要是這趟旅程會想記住的味道就好。", en: "The final meal only needs to feel memorable, not fancy.", ko: "마지막 식사는 화려하기보다 기억에 남는 편이면 충분합니다." } },
+      { label: { "zh-Hant": "下午｜推薦採買", en: "Afternoon", ko: "오후" }, title: { "zh-Hant": "把最後補貨集中處理", en: "Wrap up the last shopping in one pass", ko: "마지막 쇼핑을 한 번에 정리" }, desc: { "zh-Hant": "Olive Young、零食或小禮物都在這半天解決，手上才不會一路提著。", en: "Use this half day for final beauty restocks, snacks, and gifts.", ko: "뷰티 보충, 간식, 선물은 이 반나절에 정리하는 편이 편합니다." } },
+      { label: { "zh-Hant": "傍晚｜前往機場", en: "Evening", ko: "저녁 무렵" }, title: { "zh-Hant": "把最後一段城市轉場留得從容", en: "Leave calmly for the airport", ko: "공항으로 여유 있게 이동" }, desc: { "zh-Hant": "傍晚出發最穩，也替這趟首爾留一個不慌不忙的句點。", en: "Heading out in the early evening leaves a calm final stretch.", ko: "초저녁 공항 이동이 가장 안정적이고 마무리도 차분합니다." } },
+    ],
+    reminders: [
+      { "zh-Hant": "今天不適合再衝遠區，提著行李與戰利品會很快累。", en: "Do not add a far district today; luggage and shopping will slow you down.", ko: "짐과 쇼핑백이 있기 때문에 먼 구역을 더하는 것은 비추천입니다." },
+      { "zh-Hant": "如果最後還要買美妝或零食，盡量集中在同一間店一次解決。", en: "If you still need beauty or snack shopping, batch it into one stop.", ko: "뷰티나 간식 쇼핑이 남았다면 한 곳에서 한 번에 정리하는 편이 좋습니다." },
+    ],
+  },
+};
+
 function getText(entry) {
   if (typeof entry === "string") return entry;
   return entry?.[state.lang] ?? "";
@@ -848,6 +1155,10 @@ function saveChecklist(stateValue) {
 function formatCurrency(krw, currency = state.currency) {
   const meta = rates[currency];
   return `${meta.symbol}${Math.round(krw / meta.krwPerUnit).toLocaleString()}`;
+}
+
+function getGuide(item) {
+  return itineraryGuide[item.date] || null;
 }
 
 function updateDocumentTitle() {
@@ -896,20 +1207,97 @@ function renderKeyInfo() {
 }
 
 function renderOverview() {
-  const importantAlerts = document.getElementById("importantAlerts");
-  const overviewNotes = document.getElementById("overviewNotes");
-  const overviewRecommendations = document.getElementById("overviewRecommendations");
-  if (!importantAlerts || !overviewNotes || !overviewRecommendations) return;
-  overviewRecommendations.innerHTML = data.overviewRecommendations
+  const overviewStory = document.getElementById("overviewStory");
+  const overviewThemeChips = document.getElementById("overviewThemeChips");
+  const overviewSnapshot = document.getElementById("overviewSnapshot");
+  const journeyHighlights = document.getElementById("journeyHighlights");
+  const dayPreviewList = document.getElementById("dayPreviewList");
+  const practicalInfo = document.getElementById("practicalInfo");
+  if (!overviewStory || !overviewThemeChips || !overviewSnapshot || !journeyHighlights || !dayPreviewList || !practicalInfo) return;
+
+  overviewStory.textContent = t[state.lang].heroNarrative;
+  overviewThemeChips.innerHTML = overviewContent.themes
+    .map((item) => `<span class="pill">${getText(item)}</span>`)
+    .join("");
+
+  overviewSnapshot.innerHTML = overviewContent.snapshot
     .map(
-      (item) => `<article class="mini-stat-card"><div class="mini-stat-label">${getText(item.tag)}</div><div class="mini-stat-value">${getText(item.title)}</div><div class="budget-original">${getText(item.desc)}</div></article>`
+      (item) => `
+        <article class="overview-snapshot-card">
+          <div class="mini-stat-label">${getText(item.label)}</div>
+          <div class="snapshot-value">${getText(item.value)}</div>
+          <div class="budget-original">${getText(item.note)}</div>
+        </article>
+      `
     )
     .join("");
-  importantAlerts.innerHTML = data.importantAlerts
-    .map((item) => `<article class="bullet-card"><div class="bullet-title">${getText(item.title)}</div><div class="bullet-desc">${getText(item.desc)}</div></article>`)
+
+  journeyHighlights.innerHTML = overviewContent.highlights
+    .map(
+      (item) => `
+        <article class="highlight-card">
+          <div class="highlight-top">
+            <span class="progress-pill">${getText(item.tag)}</span>
+            <span class="date-label">${getText(item.date)}</span>
+          </div>
+          <h4>${getText(item.title)}</h4>
+          <p class="card-intro">${getText(item.desc)}</p>
+        </article>
+      `
+    )
     .join("");
-  overviewNotes.innerHTML = data.overviewNotes
-    .map((item) => `<article class="bullet-card"><div class="bullet-title">${getText(item.title)}</div><div class="bullet-desc">${getText(item.desc)}</div></article>`)
+
+  dayPreviewList.innerHTML = data.itinerary
+    .map((item) => {
+      const guide = getGuide(item);
+      return `
+        <article class="day-preview-card">
+          <div class="day-preview-top">
+            <div>
+              <div class="accordion-topline">
+                <span class="day-chip">${getText(item.day)}</span>
+                <span class="date-label">${item.date}</span>
+              </div>
+              <h4>${getText(item.plan)}</h4>
+            </div>
+            <button class="action-link preview-link" type="button" data-page-link="itinerary" aria-label="Open itinerary page">${t[state.lang].openLink}</button>
+          </div>
+          <div class="preview-meta-row">
+            <span class="itinerary-area-chip">${getText(item.area)}</span>
+            <span class="progress-pill">${guide ? getText(guide.energy) : ""}</span>
+            <span class="progress-pill">${guide ? getText(guide.theme) : ""}</span>
+          </div>
+          <p class="card-intro">${guide ? getText(guide.preview) : getText(item.rhythm)}</p>
+          <div class="preview-points">
+            ${(guide?.quickHighlights || [])
+              .map((point) => `<span class="preview-point">${getText(point)}</span>`)
+              .join("")}
+          </div>
+          <div class="preview-meta-grid">
+            <div class="itinerary-meta-card"><div class="itinerary-meta-label">${getText({ "zh-Hant": "體力節奏", en: "Energy", ko: "체력 리듬" })}</div><div class="itinerary-meta-value">${guide ? getText(guide.energy) : ""}</div></div>
+            <div class="itinerary-meta-card"><div class="itinerary-meta-label">${getText({ "zh-Hant": "今日隨身小物", en: "Wear / carry", ko: "신발과 소지품" })}</div><div class="itinerary-meta-value">${guide ? getText(guide.shoes) : ""}</div></div>
+            <div class="itinerary-meta-card"><div class="itinerary-meta-label">${getText({ "zh-Hant": "今日最值得期待", en: "Most worth looking forward to", ko: "오늘 기대 포인트" })}</div><div class="itinerary-meta-value">${guide ? getText(guide.photo) : getText(item.location)}</div></div>
+            <div class="itinerary-meta-card"><div class="itinerary-meta-label">${getText({ "zh-Hant": "提早出門 / 預約", en: "Timing / booking", ko: "시간 / 예약" })}</div><div class="itinerary-meta-value">${guide ? getText(guide.booking) : ""}</div></div>
+          </div>
+        </article>
+      `;
+    })
+    .join("");
+
+  practicalInfo.innerHTML = overviewContent.practical
+    .map(
+      (group, index) => `
+        <details class="practical-card" ${index === 0 ? "open" : ""}>
+          <summary class="practical-summary">
+            <span class="bullet-title">${getText(group.title)}</span>
+            <span class="date-label">${getText({ "zh-Hant": "打開查看", en: "Open", ko: "열기" })}</span>
+          </summary>
+          <div class="practical-list">
+            ${group.items.map((item) => `<div class="practical-item">${getText(item)}</div>`).join("")}
+          </div>
+        </details>
+      `
+    )
     .join("");
 }
 
@@ -995,15 +1383,46 @@ function renderItinerary() {
             <div class="accordion-topline"><span class="day-chip">${getText(item.day)}</span><span class="date-label">${item.date}</span></div>
             <div class="itinerary-overline">
               <span class="itinerary-area-chip">${getText(item.area)}</span>
-              <span class="itinerary-hotel-line">${getText({ "zh-Hant": "弘大飯店出發", en: "Start from Hongdae hotel", ko: "홍대 호텔 출발" })}</span>
+              <span class="itinerary-hotel-line">${getText(getGuide(item)?.theme || { "zh-Hant": "弘大飯店出發", en: "Start from Hongdae hotel", ko: "홍대 호텔 출발" })}</span>
             </div>
             <h3>${getText(item.plan)}</h3>
-            <p class="itinerary-rhythm">${getText(item.rhythm)}</p>
+            <p class="itinerary-rhythm">${getText(getGuide(item)?.preview || item.rhythm)}</p>
           </summary>
           <div class="accordion-body">
+            <div class="itinerary-day-header">
+              <div class="itinerary-meta-card">
+                <div class="itinerary-meta-label">${getText({ "zh-Hant": "當日主題", en: "Day theme", ko: "오늘의 테마" })}</div>
+                <div class="itinerary-meta-value">${getText(getGuide(item)?.theme || item.area)}</div>
+              </div>
+              <div class="itinerary-meta-card">
+                <div class="itinerary-meta-label">${getText({ "zh-Hant": "體力節奏", en: "Energy", ko: "체력 리듬" })}</div>
+                <div class="itinerary-meta-value">${getText(getGuide(item)?.energy || { "zh-Hant": "普通", en: "Moderate", ko: "보통" })}</div>
+              </div>
+            </div>
+            <div class="itinerary-glance-grid">
+              <div class="itinerary-meta-card"><div class="itinerary-meta-label">${getText({ "zh-Hant": "出發時間", en: "Departure", ko: "출발 시간" })}</div><div class="itinerary-meta-value">${item.timeline[0]?.time || "-"}</div></div>
+              <div class="itinerary-meta-card"><div class="itinerary-meta-label">${getText({ "zh-Hant": "主要區域", en: "Main area", ko: "주요 구역" })}</div><div class="itinerary-meta-value">${getText(item.area)}</div></div>
+              <div class="itinerary-meta-card"><div class="itinerary-meta-label">${getText({ "zh-Hant": "今日餐桌", en: "Food focus", ko: "오늘의 식탁" })}</div><div class="itinerary-meta-value">${getText(getGuide(item)?.dining || { "zh-Hant": "", en: "", ko: "" })}</div></div>
+              <div class="itinerary-meta-card"><div class="itinerary-meta-label">${getText({ "zh-Hant": "推薦採買", en: "Shopping focus", ko: "추천 쇼핑" })}</div><div class="itinerary-meta-value">${getText(getGuide(item)?.shopping || { "zh-Hant": "", en: "", ko: "" })}</div></div>
+              <div class="itinerary-meta-card"><div class="itinerary-meta-label">${getText({ "zh-Hant": "穿搭提醒", en: "What to wear", ko: "옷차림" })}</div><div class="itinerary-meta-value">${getText(getGuide(item)?.shoes || { "zh-Hant": "", en: "", ko: "" })}</div></div>
+              <div class="itinerary-meta-card"><div class="itinerary-meta-label">${getText({ "zh-Hant": "預約 / 排隊", en: "Booking / queue", ko: "예약 / 대기" })}</div><div class="itinerary-meta-value">${getText(getGuide(item)?.booking || { "zh-Hant": "", en: "", ko: "" })}</div></div>
+            </div>
             <div class="itinerary-story-card">
-              <div class="itinerary-meta-label">${getText({ "zh-Hant": "動線整理", en: "Flow", ko: "동선 정리" })}</div>
+              <div class="itinerary-meta-label">${getText({ "zh-Hant": "今日導語", en: "Day note", ko: "오늘의 안내" })}</div>
               <div class="itinerary-story-text">${getText(item.hotelFlow)}</div>
+            </div>
+            <div class="itinerary-flow-grid">
+              ${(getGuide(item)?.flow || [])
+                .map(
+                  (block) => `
+                    <article class="itinerary-flow-card">
+                      <div class="itinerary-meta-label">${getText(block.label)}</div>
+                      <div class="itinerary-curation-title">${getText(block.title)}</div>
+                      <div class="itinerary-curation-note">${getText(block.desc)}</div>
+                    </article>
+                  `
+                )
+                .join("")}
             </div>
             <div class="itinerary-timeline">
               ${item.timeline
@@ -1022,7 +1441,7 @@ function renderItinerary() {
             </div>
             <div class="itinerary-curation-grid">
               <article class="itinerary-curation-card">
-                <div class="itinerary-meta-label">${getText({ "zh-Hant": "用餐建議", en: "Food suggestions", ko: "식사 제안" })}</div>
+                <div class="itinerary-meta-label">${getText({ "zh-Hant": "今日餐桌", en: "Today’s table", ko: "오늘의 식탁" })}</div>
                 <div class="itinerary-curation-list">
                   ${item.foodPlan
                     .map(
@@ -1037,7 +1456,7 @@ function renderItinerary() {
                 </div>
               </article>
               <article class="itinerary-curation-card">
-                <div class="itinerary-meta-label">${getText({ "zh-Hant": "區域推薦", en: "Area picks", ko: "지역 추천" })}</div>
+                <div class="itinerary-meta-label">${getText({ "zh-Hant": "沿途亮點", en: "Along the route", ko: "동선 포인트" })}</div>
                 <div class="itinerary-curation-list">
                   ${item.areaPicks
                     .map(
@@ -1051,12 +1470,26 @@ function renderItinerary() {
                     .join("")}
                 </div>
               </article>
+              <article class="itinerary-curation-card">
+                <div class="itinerary-meta-label">${getText({ "zh-Hant": "推薦採買", en: "Shopping notes", ko: "추천 쇼핑" })}</div>
+                <div class="itinerary-curation-list">
+                  <div class="itinerary-curation-item">
+                    <div class="itinerary-curation-top"><span class="progress-pill">${getText({ "zh-Hant": "購物節奏", en: "Shopping rhythm", ko: "쇼핑 리듬" })}</span><span class="itinerary-curation-title">${getText(getGuide(item)?.shopping || { "zh-Hant": "", en: "", ko: "" })}</span></div>
+                    <div class="itinerary-curation-note">${getText(getGuide(item)?.photo || { "zh-Hant": "", en: "", ko: "" })}</div>
+                  </div>
+                </div>
+              </article>
             </div>
             <div class="itinerary-meta-grid">
               <div class="itinerary-meta-card"><div class="itinerary-meta-label">${t[state.lang].locationLabel}</div><div class="itinerary-meta-value">${getText(item.location)}</div></div>
               <div class="itinerary-meta-card"><div class="itinerary-meta-label">${t[state.lang].estimatedCostLabel}</div><div class="itinerary-meta-value">${formatCurrency(item.costKrw)}</div><div class="budget-original">${formatCurrency(item.costKrw, "KRW")}</div></div>
               <div class="itinerary-meta-card"><div class="itinerary-meta-label">${t[state.lang].transportLabel}</div><div class="itinerary-meta-value">${getText(item.transport)}</div></div>
               <div class="itinerary-meta-card"><div class="itinerary-meta-label">${t[state.lang].reminderLabel}</div><div class="itinerary-meta-value">${getText(item.reminder)}</div></div>
+            </div>
+            <div class="itinerary-reminder-list">
+              ${(getGuide(item)?.reminders || [])
+                .map((note) => `<article class="bullet-card"><div class="bullet-title">${getText({ "zh-Hant": "貼心提醒", en: "Helpful note", ko: "작은 메모" })}</div><div class="bullet-desc">${getText(note)}</div></article>`)
+                .join("")}
             </div>
           </div>
         </details>
@@ -1294,6 +1727,8 @@ function bindControls() {
       localStorage.setItem(STORAGE_KEYS.lang, state.lang);
       syncControls();
       renderAll();
+      bindPageNavigation();
+      syncPageNavigation();
       bindChecklist();
       bindImageModal();
     });
@@ -1307,6 +1742,8 @@ function bindControls() {
       renderBudget();
       renderOverview();
       renderItinerary();
+      bindPageNavigation();
+      syncPageNavigation();
     });
   });
 }
@@ -1351,6 +1788,8 @@ function setPage(page, { scroll = true } = {}) {
 
 function bindPageNavigation() {
   document.querySelectorAll("[data-page-link]").forEach((link) => {
+    if (link.dataset.pageBound === "true") return;
+    link.dataset.pageBound = "true";
     link.addEventListener("click", (event) => {
       event.preventDefault();
       setPage(link.dataset.pageLink);

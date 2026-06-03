@@ -62,6 +62,7 @@
             <span class="hero-chip" data-i18n="heroAreaPalace">景福宮</span>
           </div>
           <div class="destinations" data-i18n="heroDestinations">弘大 · 北村韓屋村 · 景福宮 · 安國 · 首爾</div>
+          <p class="hero-narrative" data-i18n="heroNarrative">從韓屋街巷與宮牆光影開始，沿著地鐵線穿過咖啡廳、選物店、夜晚餐桌與城市轉場，把首爾的日常節奏慢慢收進行李裡。</p>
           <div class="hero-actions" aria-label="Quick actions">
             <button class="hero-action hero-action-primary" type="button" data-page-link="itinerary" data-i18n="heroPrimaryAction" aria-label="Open itinerary page">查看行程</button>
             <button class="hero-action hero-action-secondary" type="button" data-page-link="hanbok" data-i18n="heroSecondaryAction" aria-label="Open hanbok page">韓服資訊</button>
@@ -88,7 +89,33 @@
           <div class="section-label" data-i18n="overviewKicker">總覽</div>
           <h2 data-i18n="overviewTitle">這趟安排</h2>
           <p class="lead" data-i18n="overviewLead">首頁只放真的會先看的，其他細節都分到各頁去找。</p>
+          <p class="overview-story" id="overviewStory"></p>
+          <div class="theme-chip-row" id="overviewThemeChips"></div>
           <div class="key-info-grid" id="keyInfoBar"></div>
+        </section>
+
+        <section class="section-card">
+          <div class="section-label" data-i18n="keyInfoTitle">旅程摘要</div>
+          <h3 data-i18n="keyInfoTitle">旅程摘要</h3>
+          <div class="overview-snapshot-grid" id="overviewSnapshot"></div>
+        </section>
+
+        <section class="section-card">
+          <div class="section-label" data-i18n="overviewSnapshotTitle">旅程亮點</div>
+          <h3 data-i18n="overviewSnapshotTitle">旅程亮點</h3>
+          <div class="highlight-grid" id="journeyHighlights"></div>
+        </section>
+
+        <section class="section-card">
+          <div class="section-label" data-i18n="overviewItineraryTitle">每日行程</div>
+          <h3 data-i18n="overviewPreviewTitle">每日預覽</h3>
+          <div class="day-preview-list" id="dayPreviewList"></div>
+        </section>
+
+        <section class="section-card">
+          <div class="section-label" data-i18n="overviewPracticalTitle">實用資訊</div>
+          <h3 data-i18n="overviewPracticalTitle">實用資訊</h3>
+          <div class="practical-grid" id="practicalInfo"></div>
         </section>
       </section>
 
