@@ -7,10 +7,28 @@ const STORAGE_KEYS = {
 
 const PAGE_IDS = ["overview", "flights", "hotel", "hanbok", "route", "budget", "itinerary", "notes"];
 
+const PAGE_ALIASES = {
+  checklist: "notes",
+  links: "notes",
+};
+
+function normalizePage(page) {
+  if (!page) return null;
+  if (PAGE_IDS.includes(page)) return page;
+  return PAGE_ALIASES[page] || null;
+}
+
+function getRequestedPage() {
+  const params = new URLSearchParams(window.location.search);
+  const fromQuery = normalizePage(params.get("page"));
+  if (fromQuery) return fromQuery;
+  return normalizePage(localStorage.getItem(STORAGE_KEYS.page)) || "overview";
+}
+
 const state = {
   lang: localStorage.getItem(STORAGE_KEYS.lang) || "zh-Hant",
   currency: localStorage.getItem(STORAGE_KEYS.currency) || "TWD",
-  page: PAGE_IDS.includes(localStorage.getItem(STORAGE_KEYS.page)) ? localStorage.getItem(STORAGE_KEYS.page) : "overview",
+  page: getRequestedPage(),
 };
 
 const rates = {
@@ -1775,10 +1793,28 @@ function syncPageNavigation() {
   });
 }
 
-function setPage(page, { scroll = true } = {}) {
-  if (!PAGE_IDS.includes(page)) return;
-  state.page = page;
-  localStorage.setItem(STORAGE_KEYS.page, page);
+function updatePageUrl(page, { replace = false } = {}) {
+  const nextPage = normalizePage(page) || "overview";
+  const url = new URL(window.location.href);
+  if (nextPage === "overview") {
+    url.searchParams.delete("page");
+  } else {
+    url.searchParams.set("page", nextPage);
+  }
+  const method = replace ? "replaceState" : "pushState";
+  window.history[method]({}, "", url);
+}
+
+function setPage(page, { scroll = true, updateUrl = true, replaceUrl = false } = {}) {
+  const nextPage = normalizePage(page);
+  if (!nextPage) return;
+  if (state.page === nextPage) {
+    if (scroll) window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
+  state.page = nextPage;
+  localStorage.setItem(STORAGE_KEYS.page, nextPage);
+  if (updateUrl) updatePageUrl(nextPage, { replace: replaceUrl });
   updateDocumentTitle();
   syncPageNavigation();
   if (scroll) {
@@ -1838,3 +1874,11 @@ bindPageNavigation();
 syncPageNavigation();
 bindImageModal();
 bindProgress();
+updatePageUrl(state.page, { replace: true });
+
+window.addEventListener("popstate", () => {
+  state.page = getRequestedPage();
+  localStorage.setItem(STORAGE_KEYS.page, state.page);
+  updateDocumentTitle();
+  syncPageNavigation();
+});
