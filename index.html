@@ -9,13 +9,24 @@
       content="Seoul Travel Handbook 2026 for Victoria Cheng: hanbok booking, hotel, transportation, budget, itinerary, checklist, and useful links."
     />
     <meta name="theme-color" content="#8f9eb7" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Seoul Travel Handbook 2026 | Victoria Cheng" />
+    <meta
+      name="twitter:description"
+      content="A refined Seoul travel handbook with hanbok booking, hotel, transportation, budget, itinerary, checklist, and useful links."
+    />
+    <meta name="twitter:image" content="https://victoriac1122.github.io/seoul-travel-2026/assets/images/S__180125890_0.jpg" />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Seoul Travel Handbook 2026" />
+    <meta property="og:locale" content="zh_TW" />
+    <meta property="og:url" content="https://victoriac1122.github.io/seoul-travel-2026/" />
     <meta property="og:title" content="Seoul Travel Handbook 2026 | Victoria Cheng" />
     <meta
       property="og:description"
       content="A refined Seoul travel handbook with hanbok booking, hotel, transportation, budget, itinerary, checklist, and useful links."
     />
     <meta property="og:image" content="https://victoriac1122.github.io/seoul-travel-2026/assets/images/S__180125890_0.jpg" />
+    <link rel="canonical" href="https://victoriac1122.github.io/seoul-travel-2026/" />
     <link rel="icon" type="image/jpeg" href="./assets/images/S__180125889_0.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,9 +34,10 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Serif:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260603-3" />
+    <link rel="stylesheet" href="./styles.css?v=20260822-1" />
   </head>
   <body>
+    <a class="skip-link" href="#mainContent">Skip to content</a>
     <div class="page-progress" id="pageProgress" aria-hidden="true"></div>
 
     <div class="control-dock" aria-label="Language and currency controls">
@@ -52,6 +64,7 @@
       <div class="hero-content">
         <div class="hero-copy">
           <p class="hero-kicker" data-i18n="heroKicker">Seoul travel handbook</p>
+          <div class="hero-page-pill" id="heroPagePill" hidden></div>
           <h1 data-i18n="heroTitle">首爾旅行 2026</h1>
           <div class="hero-subtitle" data-i18n="heroSubtitle">2026 年 5 月 · 首爾旅行手冊</div>
           <div class="hero-meta-chips" aria-label="Trip overview chips">
@@ -72,6 +85,17 @@
       </div>
     </header>
 
+    <nav class="mobile-page-strip" id="mobilePageStrip" aria-label="Mobile section pages">
+      <button class="mobile-page-pill active" type="button" data-page-link="overview" data-i18n="navOverview">總覽</button>
+      <button class="mobile-page-pill" type="button" data-page-link="flights" data-i18n="navFlights">航班</button>
+      <button class="mobile-page-pill" type="button" data-page-link="hotel" data-i18n="navHotel">住宿</button>
+      <button class="mobile-page-pill" type="button" data-page-link="hanbok" data-i18n="navHanbok">韓服</button>
+      <button class="mobile-page-pill" type="button" data-page-link="route" data-i18n="navRoute">交通</button>
+      <button class="mobile-page-pill" type="button" data-page-link="budget" data-i18n="navBudget">預算</button>
+      <button class="mobile-page-pill" type="button" data-page-link="itinerary" data-i18n="navItinerary">行程</button>
+      <button class="mobile-page-pill" type="button" data-page-link="notes" data-i18n="navNotes">備註</button>
+    </nav>
+
     <nav class="main-nav" aria-label="Primary page tabs">
       <button class="nav-item active" type="button" data-page-link="overview" data-i18n="navOverview">總覽</button>
       <button class="nav-item" type="button" data-page-link="flights" data-i18n="navFlights">航班</button>
@@ -83,7 +107,7 @@
       <button class="nav-item" type="button" data-page-link="notes" data-i18n="navNotes">備註</button>
     </nav>
 
-    <main class="container">
+    <main class="container" id="mainContent">
       <section class="page-section active" id="page-overview" data-page-panel="overview">
         <section class="section-card intro-card">
           <div class="section-label" data-i18n="overviewKicker">總覽</div>
@@ -330,21 +354,13 @@
         <span class="bottom-nav-icon" aria-hidden="true">✿</span>
         <span data-i18n="bottomHanbok">Hanbok</span>
       </button>
-      <button class="bottom-nav-item" type="button" data-page-link="route" aria-label="Open transport page">
-        <span class="bottom-nav-icon" aria-hidden="true">⌖</span>
-        <span data-i18n="navRoute">交通</span>
-      </button>
-      <button class="bottom-nav-item" type="button" data-page-link="budget" aria-label="Open budget page">
-        <span class="bottom-nav-icon" aria-hidden="true">$</span>
-        <span data-i18n="navBudget">預算</span>
-      </button>
       <button class="bottom-nav-item" type="button" data-page-link="itinerary" aria-label="Open itinerary page">
         <span class="bottom-nav-icon" aria-hidden="true">▤</span>
         <span data-i18n="bottomItinerary">Itinerary</span>
       </button>
-      <button class="bottom-nav-item" type="button" data-page-link="notes" aria-label="Open checklist page">
-        <span class="bottom-nav-icon" aria-hidden="true">☑</span>
-        <span data-i18n="bottomChecklist">Checklist</span>
+      <button class="bottom-nav-item bottom-nav-item-secondary" type="button" data-page-group="secondary" aria-label="Open more sections">
+        <span class="bottom-nav-icon" aria-hidden="true">⋯</span>
+        <span data-i18n="bottomMore">更多</span>
       </button>
     </nav>
 
@@ -354,6 +370,6 @@
       <p id="modalCaption"></p>
     </dialog>
 
-    <script src="./script.js?v=20260603-3"></script>
+    <script src="./script.js?v=20260822-1"></script>
   </body>
 </html>

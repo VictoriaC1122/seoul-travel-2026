@@ -6,6 +6,7 @@ const STORAGE_KEYS = {
 };
 
 const PAGE_IDS = ["overview", "flights", "hotel", "hanbok", "route", "budget", "itinerary", "notes"];
+const PRIMARY_MOBILE_PAGES = new Set(["overview", "flights", "hotel", "hanbok", "itinerary"]);
 
 const PAGE_ALIASES = {
   checklist: "notes",
@@ -156,6 +157,7 @@ const t = {
     bottomMap: "交通",
     bottomBudget: "預算",
     bottomItinerary: "行程",
+    bottomMore: "更多",
     dateText: "日期",
     timeText: "時間",
     classText: "艙等",
@@ -292,6 +294,7 @@ const t = {
     bottomMap: "Map",
     bottomBudget: "Budget",
     bottomItinerary: "Itinerary",
+    bottomMore: "More",
     dateText: "Date",
     timeText: "Time",
     classText: "Class",
@@ -428,6 +431,7 @@ const t = {
     bottomMap: "교통",
     bottomBudget: "예산",
     bottomItinerary: "일정",
+    bottomMore: "더보기",
     dateText: "날짜",
     timeText: "시간",
     classText: "좌석 등급",
@@ -622,7 +626,7 @@ const data = {
       location: { "zh-Hant": "仁川機場 → 弘大", en: "Incheon → Hongdae", ko: "인천공항 → 홍대" },
       area: { "zh-Hant": "弘大", en: "Hongdae", ko: "홍대" },
       image: {
-        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Hongdae_Main_Road%2C_Seoul.jpg",
+        src: "./assets/images/itinerary-hongdae-arrival.jpg",
         alt: { "zh-Hant": "弘大主街街景", en: "Hongdae main road streetscape", ko: "홍대 메인 거리 풍경" },
         caption: { "zh-Hant": "弘大主街", en: "Hongdae Main Road", ko: "홍대 메인 거리" },
       },
@@ -654,7 +658,7 @@ const data = {
       location: { "zh-Hant": "漢江鎮 / 漢南洞", en: "Hangangjin / Hannam-dong", ko: "한강진 / 한남동" },
       area: { "zh-Hant": "漢南洞", en: "Hannam-dong", ko: "한남동" },
       image: {
-        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Hannam-dong%2C_where_art_and_culture_meet.jpg",
+        src: "./assets/images/itinerary-hannam.jpg",
         alt: { "zh-Hant": "漢南洞街景", en: "Hannam-dong streetscape", ko: "한남동 거리 풍경" },
         caption: { "zh-Hant": "漢南洞街區", en: "Hannam-dong", ko: "한남동 거리" },
       },
@@ -688,7 +692,7 @@ const data = {
       location: { "zh-Hant": "狎鷗亭羅德奧 / 江南", en: "Apgujeong Rodeo / Gangnam", ko: "압구정로데오 / 강남" },
       area: { "zh-Hant": "狎鷗亭 · 江南", en: "Apgujeong · Gangnam", ko: "압구정 · 강남" },
       image: {
-        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Starfield_Library_COEX_20240218.jpg",
+        src: "./assets/images/itinerary-gangnam-coex.jpg",
         alt: { "zh-Hant": "COEX 星光圖書館", en: "Starfield Library at COEX", ko: "코엑스 별마당도서관" },
         caption: { "zh-Hant": "COEX 星光圖書館", en: "Starfield Library", ko: "별마당도서관" },
       },
@@ -722,7 +726,7 @@ const data = {
       location: { "zh-Hant": "聖水洞 / 首爾林", en: "Seongsu / Seoul Forest", ko: "성수 / 서울숲" },
       area: { "zh-Hant": "聖水洞", en: "Seongsu", ko: "성수" },
       image: {
-        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Seoul_Forest_Park.jpg",
+        src: "./assets/images/itinerary-seongsu-seoul-forest.jpg",
         alt: { "zh-Hant": "首爾林景色", en: "Seoul Forest Park view", ko: "서울숲 풍경" },
         caption: { "zh-Hant": "首爾林", en: "Seoul Forest", ko: "서울숲" },
       },
@@ -790,7 +794,7 @@ const data = {
       location: { "zh-Hant": "弘大 → 仁川機場", en: "Hongdae → Incheon", ko: "홍대 → 인천공항" },
       area: { "zh-Hant": "弘大", en: "Hongdae", ko: "홍대" },
       image: {
-        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Street_hongdae_Seoul.jpg",
+        src: "./assets/images/itinerary-hongdae-lastday.jpg",
         alt: { "zh-Hant": "弘大街頭夜景", en: "Hongdae street scene", ko: "홍대 거리 풍경" },
         caption: { "zh-Hant": "弘大收尾日", en: "Last day in Hongdae", ko: "홍대 마무리 일정" },
       },
@@ -866,6 +870,11 @@ const data = {
 };
 
 const overviewContent = {
+  story: {
+    "zh-Hant": "這趟會從弘大的夜色進入首爾，接著沿著漢南洞、狎鷗亭、聖水與北村慢慢展開；白天把節奏留給街區、咖啡與宮牆，晚上再回到熟悉的住宿周邊收尾。",
+    en: "The trip opens in Hongdae, then moves through Hannam-dong, Apgujeong, Seongsu, and Bukchon in a cleaner rhythm that balances neighborhood walks, cafes, and palace streets before returning to the stay each evening.",
+    ko: "이번 일정은 홍대의 첫밤에서 시작해 한남동, 압구정, 성수, 북촌으로 천천히 이어집니다. 낮에는 동네와 카페, 궁 담장에 시간을 두고 저녁에는 다시 익숙한 숙소 주변으로 돌아오는 흐름입니다.",
+  },
   themes: [
     { "zh-Hant": "韓食餐桌", en: "Korean dining", ko: "한식 식탁" },
     { "zh-Hant": "咖啡廳散步", en: "Cafe walks", ko: "카페 산책" },
@@ -1185,6 +1194,29 @@ function updateDocumentTitle() {
   document.title = `Seoul Travel Handbook 2026 | ${pageTitle}`;
 }
 
+function getPageLabel(page = state.page) {
+  const key = `nav${page.charAt(0).toUpperCase()}${page.slice(1)}`;
+  return t[state.lang][key] || t[state.lang].navOverview;
+}
+
+function isSecondaryPage(page = state.page) {
+  return !PRIMARY_MOBILE_PAGES.has(page);
+}
+
+function updatePageChrome() {
+  document.body.dataset.page = state.page;
+  document.body.classList.toggle("show-secondary-strip", isSecondaryPage());
+  const heroPagePill = document.getElementById("heroPagePill");
+  if (!heroPagePill) return;
+  if (state.page === "overview") {
+    heroPagePill.hidden = true;
+    heroPagePill.textContent = "";
+    return;
+  }
+  heroPagePill.hidden = false;
+  heroPagePill.textContent = getPageLabel(state.page);
+}
+
 function renderI18n() {
   document.documentElement.lang = state.lang;
   document.querySelectorAll("[data-i18n]").forEach((node) => {
@@ -1195,9 +1227,10 @@ function renderI18n() {
 }
 
 function renderHero() {
+  updatePageChrome();
   const root = document.getElementById("heroSummary");
   if (!root) return;
-  if (!data.heroSummary.length) {
+  if (state.page !== "overview" || !data.heroSummary.length) {
     root.innerHTML = "";
     root.style.display = "none";
     return;
@@ -1233,7 +1266,7 @@ function renderOverview() {
   const practicalInfo = document.getElementById("practicalInfo");
   if (!overviewStory || !overviewThemeChips || !overviewSnapshot || !journeyHighlights || !dayPreviewList || !practicalInfo) return;
 
-  overviewStory.textContent = t[state.lang].heroNarrative;
+  overviewStory.textContent = getText(overviewContent.story);
   overviewThemeChips.innerHTML = overviewContent.themes
     .map((item) => `<span class="pill">${getText(item)}</span>`)
     .join("");
@@ -1779,18 +1812,34 @@ function bindChecklist() {
 }
 
 function syncPageNavigation() {
-  document.body.dataset.page = state.page;
+  updatePageChrome();
   document.querySelectorAll("[data-page-link]").forEach((link) => {
-    const active = link.dataset.pageLink === state.page;
+    const targetPage = normalizePage(link.dataset.pageLink);
+    const active = targetPage === state.page;
     link.classList.toggle("active", active);
-    link.setAttribute("aria-current", active ? "page" : "false");
+    if (active) {
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
+    }
     link.setAttribute("aria-selected", String(active));
+  });
+  document.querySelectorAll("[data-page-group='secondary']").forEach((button) => {
+    const active = isSecondaryPage();
+    button.classList.toggle("active", active);
+    if (active) {
+      button.setAttribute("aria-current", "page");
+    } else {
+      button.removeAttribute("aria-current");
+    }
   });
   document.querySelectorAll("[data-page-panel]").forEach((panel) => {
     const active = panel.dataset.pagePanel === state.page;
     panel.hidden = !active;
     panel.classList.toggle("active", active);
   });
+  const activeMobilePill = document.querySelector(`.mobile-page-strip [data-page-link="${state.page}"]`);
+  activeMobilePill?.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
 }
 
 function updatePageUrl(page, { replace = false } = {}) {
@@ -1816,6 +1865,7 @@ function setPage(page, { scroll = true, updateUrl = true, replaceUrl = false } =
   localStorage.setItem(STORAGE_KEYS.page, nextPage);
   if (updateUrl) updatePageUrl(nextPage, { replace: replaceUrl });
   updateDocumentTitle();
+  renderHero();
   syncPageNavigation();
   if (scroll) {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -1823,11 +1873,20 @@ function setPage(page, { scroll = true, updateUrl = true, replaceUrl = false } =
 }
 
 function bindPageNavigation() {
-  document.querySelectorAll("[data-page-link]").forEach((link) => {
+  document.querySelectorAll("[data-page-link], [data-page-group='secondary']").forEach((link) => {
     if (link.dataset.pageBound === "true") return;
     link.dataset.pageBound = "true";
     link.addEventListener("click", (event) => {
       event.preventDefault();
+      if (link.dataset.pageGroup === "secondary") {
+        if (!isSecondaryPage()) {
+          document.body.classList.toggle("show-secondary-strip");
+        }
+        if (document.body.classList.contains("show-secondary-strip")) {
+          document.getElementById("mobilePageStrip")?.scrollIntoView({ block: "start", behavior: "smooth" });
+        }
+        return;
+      }
       setPage(link.dataset.pageLink);
     });
   });
