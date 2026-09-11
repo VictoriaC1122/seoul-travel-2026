@@ -34,30 +34,43 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Serif:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260822-1" />
+    <link rel="stylesheet" href="./styles.css?v=20260912-1" />
   </head>
   <body>
-    <a class="skip-link" href="#mainContent">Skip to content</a>
+    <a class="skip-link" href="#mainContent" data-i18n="skipToContent">跳到主要內容</a>
     <div class="page-progress" id="pageProgress" aria-hidden="true"></div>
 
-    <div class="control-dock" aria-label="Language and currency controls">
-      <div class="control-group">
-        <div class="control-label" data-i18n="languageSwitcher">Language</div>
-        <div class="control-buttons" role="tablist" aria-label="Language switcher">
-          <button class="pill-btn active" type="button" data-lang="zh-Hant" aria-label="Switch language to Traditional Chinese">繁中</button>
-          <button class="pill-btn" type="button" data-lang="en" aria-label="Switch language to English">EN</button>
-          <button class="pill-btn" type="button" data-lang="ko" aria-label="Switch language to Korean">KO</button>
+    <header class="site-toolbar">
+      <nav class="main-nav" aria-label="Primary page tabs">
+        <button class="nav-item active" type="button" data-page-link="overview" data-i18n="navOverview">總覽</button>
+        <button class="nav-item" type="button" data-page-link="flights" data-i18n="navFlights">航班</button>
+        <button class="nav-item" type="button" data-page-link="hotel" data-i18n="navHotel">住宿</button>
+        <button class="nav-item" type="button" data-page-link="hanbok" data-i18n="navHanbok">韓服</button>
+        <button class="nav-item" type="button" data-page-link="route" data-i18n="navRoute">交通</button>
+        <button class="nav-item" type="button" data-page-link="budget" data-i18n="navBudget">預算</button>
+        <button class="nav-item" type="button" data-page-link="itinerary" data-i18n="navItinerary">行程</button>
+        <button class="nav-item" type="button" data-page-link="notes" data-i18n="navNotes">備註</button>
+      </nav>
+
+      <div class="control-dock" aria-label="Language and currency controls">
+        <div class="control-group">
+          <div class="control-label" data-i18n="languageSwitcher">Language</div>
+          <div class="control-buttons" role="tablist" aria-label="Language switcher">
+            <button class="pill-btn active" type="button" role="tab" data-lang="zh-Hant" aria-label="Switch language to Traditional Chinese">繁中</button>
+            <button class="pill-btn" type="button" role="tab" data-lang="en" aria-label="Switch language to English">EN</button>
+            <button class="pill-btn" type="button" role="tab" data-lang="ko" aria-label="Switch language to Korean">KO</button>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="control-label" data-i18n="currencySwitcher">Currency</div>
+          <div class="control-buttons" role="tablist" aria-label="Currency switcher">
+            <button class="pill-btn active" type="button" role="tab" data-currency="TWD" aria-label="Switch currency to Taiwan Dollar">TWD</button>
+            <button class="pill-btn" type="button" role="tab" data-currency="KRW" aria-label="Switch currency to Korean Won">KRW</button>
+            <button class="pill-btn" type="button" role="tab" data-currency="CNY" aria-label="Switch currency to Chinese Yuan">CNY</button>
+          </div>
         </div>
       </div>
-      <div class="control-group">
-        <div class="control-label" data-i18n="currencySwitcher">Currency</div>
-        <div class="control-buttons" role="tablist" aria-label="Currency switcher">
-          <button class="pill-btn active" type="button" data-currency="TWD" aria-label="Switch currency to Taiwan Dollar">TWD</button>
-          <button class="pill-btn" type="button" data-currency="KRW" aria-label="Switch currency to Korean Won">KRW</button>
-          <button class="pill-btn" type="button" data-currency="CNY" aria-label="Switch currency to Chinese Yuan">CNY</button>
-        </div>
-      </div>
-    </div>
+    </header>
 
     <header class="hero">
       <div class="hero-overlay"></div>
@@ -81,7 +94,6 @@
             <button class="hero-action hero-action-secondary" type="button" data-page-link="hanbok" data-i18n="heroSecondaryAction" aria-label="Open hanbok page">韓服資訊</button>
           </div>
         </div>
-        <div class="hero-summary-grid" id="heroSummary" aria-label="Key trip cards"></div>
       </div>
     </header>
 
@@ -96,17 +108,6 @@
       <button class="mobile-page-pill" type="button" data-page-link="notes" data-i18n="navNotes">備註</button>
     </nav>
 
-    <nav class="main-nav" aria-label="Primary page tabs">
-      <button class="nav-item active" type="button" data-page-link="overview" data-i18n="navOverview">總覽</button>
-      <button class="nav-item" type="button" data-page-link="flights" data-i18n="navFlights">航班</button>
-      <button class="nav-item" type="button" data-page-link="hotel" data-i18n="navHotel">住宿</button>
-      <button class="nav-item" type="button" data-page-link="hanbok" data-i18n="navHanbok">韓服</button>
-      <button class="nav-item" type="button" data-page-link="route" data-i18n="navRoute">交通</button>
-      <button class="nav-item" type="button" data-page-link="budget" data-i18n="navBudget">預算</button>
-      <button class="nav-item" type="button" data-page-link="itinerary" data-i18n="navItinerary">行程</button>
-      <button class="nav-item" type="button" data-page-link="notes" data-i18n="navNotes">備註</button>
-    </nav>
-
     <main class="container" id="mainContent">
       <section class="page-section active" id="page-overview" data-page-panel="overview">
         <section class="section-card intro-card">
@@ -116,12 +117,6 @@
           <p class="overview-story" id="overviewStory"></p>
           <div class="theme-chip-row" id="overviewThemeChips"></div>
           <div class="key-info-grid" id="keyInfoBar"></div>
-        </section>
-
-        <section class="section-card">
-          <div class="section-label" data-i18n="keyInfoTitle">旅程摘要</div>
-          <h3 data-i18n="keyInfoTitle">旅程摘要</h3>
-          <div class="overview-snapshot-grid" id="overviewSnapshot"></div>
         </section>
 
         <section class="section-card">
@@ -136,11 +131,6 @@
           <div class="day-preview-list" id="dayPreviewList"></div>
         </section>
 
-        <section class="section-card">
-          <div class="section-label" data-i18n="overviewPracticalTitle">實用資訊</div>
-          <h3 data-i18n="overviewPracticalTitle">實用資訊</h3>
-          <div class="practical-grid" id="practicalInfo"></div>
-        </section>
       </section>
 
       <section class="page-section" id="page-flights" data-page-panel="flights">
@@ -148,17 +138,17 @@
           <div class="section-label" data-i18n="flightsKicker">航班</div>
           <h2 data-i18n="flightsTitle">航班</h2>
           <p class="lead" data-i18n="flightsLead">把航班、票價與會員權益放在同一頁，出發前和回程前都好核對。</p>
-          <div class="content-grid two-col flights-grid">
-            <article class="content-panel">
+          <div class="content-grid flights-grid">
+            <article class="content-panel flight-primary-panel">
               <h4 data-i18n="flightsSummaryTitle">航班資訊</h4>
               <div class="flight-grid" id="flightPageCards"></div>
             </article>
+          </div>
+          <div class="content-grid three-col flight-support-grid">
             <article class="content-panel">
               <h4 data-i18n="airlineBenefitsTitle">華航黑卡重點</h4>
               <div class="bullet-stack" id="airlineBenefits"></div>
             </article>
-          </div>
-          <div class="content-grid two-col flights-grid">
             <article class="content-panel">
               <h4 data-i18n="flightsFareTitle">票價與艙等</h4>
               <div class="bullet-stack" id="flightFareNotes"></div>
@@ -181,14 +171,14 @@
             <article class="content-panel">
               <div class="gallery-grid compact-gallery hotel-gallery">
                 <figure class="gallery-item">
-                  <button class="gallery-trigger" type="button" data-image="./assets/images/local-stitch-exterior.jpeg" data-caption-key="hotelExteriorCaption">
-                    <img src="./assets/images/local-stitch-exterior.jpeg" alt="Exterior view of Local Stitch Creator Town Seogyo in the Hongdae area" loading="lazy" />
+                  <button class="gallery-trigger" type="button" data-image="./assets/images/local-stitch-exterior.jpeg" data-caption-key="hotelExteriorCaption" aria-label="Open hotel exterior photo">
+                    <img src="./assets/images/local-stitch-exterior.jpeg" data-alt-key="hotelExteriorCaption" alt="飯店外觀" width="800" height="534" loading="lazy" />
                   </button>
                   <figcaption data-i18n="hotelExteriorCaption">飯店外觀</figcaption>
                 </figure>
                 <figure class="gallery-item">
-                  <button class="gallery-trigger" type="button" data-image="./assets/images/local-stitch-room.jpeg" data-caption-key="hotelRoomCaption">
-                    <img src="./assets/images/local-stitch-room.jpeg" alt="Deluxe twin room interior at Local Stitch Creator Town Seogyo" loading="lazy" />
+                  <button class="gallery-trigger" type="button" data-image="./assets/images/local-stitch-room.jpeg" data-caption-key="hotelRoomCaption" aria-label="Open hotel room photo">
+                    <img src="./assets/images/local-stitch-room.jpeg" data-alt-key="hotelRoomCaption" alt="高級雙床房" width="800" height="534" loading="lazy" />
                   </button>
                   <figcaption data-i18n="hotelRoomCaption">高級雙床房</figcaption>
                 </figure>
@@ -217,32 +207,32 @@
           <h3 data-i18n="hanbokReferenceTitle">參考照片</h3>
           <div class="gallery-grid hanbok-gallery">
             <figure class="gallery-item">
-              <button class="gallery-trigger" type="button" data-image="./assets/images/S__180125889_0.jpg" data-caption-key="hanbokCaptionOne">
-                <img src="./assets/images/S__180125889_0.jpg" alt="Blue hanbok reference photo under a traditional Korean gate" loading="lazy" />
+              <button class="gallery-trigger" type="button" data-image="./assets/images/S__180125889_0.jpg" data-caption-key="hanbokCaptionOne" aria-label="Open blue hanbok reference photo">
+                <img src="./assets/images/S__180125889_0.jpg" data-alt-key="hanbokCaptionOne" alt="霧藍韓服參考" width="1280" height="1708" loading="lazy" />
               </button>
               <figcaption data-i18n="hanbokCaptionOne">霧藍韓服參考</figcaption>
             </figure>
             <figure class="gallery-item">
-              <button class="gallery-trigger" type="button" data-image="./assets/images/S__180125890_0.jpg" data-caption-key="hanbokCaptionTwo">
-                <img src="./assets/images/S__180125890_0.jpg" alt="White hanbok reference photo at Gyeongbokgung Palace" loading="lazy" />
+              <button class="gallery-trigger" type="button" data-image="./assets/images/S__180125890_0.jpg" data-caption-key="hanbokCaptionTwo" aria-label="Open Gyeongbokgung hanbok reference photo">
+                <img src="./assets/images/S__180125890_0.jpg" data-alt-key="hanbokCaptionTwo" alt="景福宮白色韓服參考" width="1280" height="1708" loading="lazy" />
               </button>
               <figcaption data-i18n="hanbokCaptionTwo">景福宮白色韓服參考</figcaption>
             </figure>
             <figure class="gallery-item">
-              <button class="gallery-trigger" type="button" data-image="./assets/images/S__180125891_0.jpg" data-caption-key="hanbokCaptionThree">
-                <img src="./assets/images/S__180125891_0.jpg" alt="White hanbok reference photo on palace stairs" loading="lazy" />
+              <button class="gallery-trigger" type="button" data-image="./assets/images/S__180125891_0.jpg" data-caption-key="hanbokCaptionThree" aria-label="Open palace stairs hanbok reference photo">
+                <img src="./assets/images/S__180125891_0.jpg" data-alt-key="hanbokCaptionThree" alt="宮殿石階參考" width="1280" height="1708" loading="lazy" />
               </button>
               <figcaption data-i18n="hanbokCaptionThree">宮殿石階參考</figcaption>
             </figure>
             <figure class="gallery-item">
-              <button class="gallery-trigger" type="button" data-image="./assets/images/S__180125892_0.jpg" data-caption-key="hanbokCaptionFour">
-                <img src="./assets/images/S__180125892_0.jpg" alt="White hanbok portrait reference inside a palace corridor" loading="lazy" />
+              <button class="gallery-trigger" type="button" data-image="./assets/images/S__180125892_0.jpg" data-caption-key="hanbokCaptionFour" aria-label="Open palace corridor hanbok reference photo">
+                <img src="./assets/images/S__180125892_0.jpg" data-alt-key="hanbokCaptionFour" alt="走廊肖像參考" width="1280" height="1708" loading="lazy" />
               </button>
               <figcaption data-i18n="hanbokCaptionFour">走廊肖像參考</figcaption>
             </figure>
             <figure class="gallery-item">
-              <button class="gallery-trigger" type="button" data-image="./assets/images/S__180125900.jpg" data-caption-key="instructionsCaption">
-                <img src="./assets/images/S__180125900.jpg" alt="Store instructions for the hanbok shooting package" loading="lazy" />
+              <button class="gallery-trigger" type="button" data-image="./assets/images/S__180125900.jpg" data-caption-key="instructionsCaption" aria-label="Open hanbok shooting instructions">
+                <img src="./assets/images/S__180125900.jpg" data-alt-key="instructionsCaption" alt="店家拍攝規則" width="591" height="1280" loading="lazy" />
               </button>
               <figcaption data-i18n="instructionsCaption">店家拍攝規則</figcaption>
             </figure>
@@ -276,8 +266,8 @@
           <h3 data-i18n="subwayMapTitle">地鐵圖</h3>
           <div class="gallery-grid compact-gallery">
             <figure class="gallery-item">
-              <button class="gallery-trigger" type="button" data-image="./assets/images/seoul-metro-route-map-official.jpg" data-caption-key="subwayCaption">
-                <img src="./assets/images/seoul-metro-route-map-official.jpg" alt="Official Seoul Metro route map in English" loading="lazy" />
+              <button class="gallery-trigger" type="button" data-image="./assets/images/seoul-metro-route-map-official.jpg" data-caption-key="subwayCaption" aria-label="Open Seoul Metro route map">
+                <img src="./assets/images/seoul-metro-route-map-thumb.jpg" data-alt-key="subwayCaption" alt="首爾地鐵官方路線圖" width="1600" height="1600" loading="lazy" />
               </button>
               <figcaption data-i18n="subwayCaption">首爾地鐵官方路線圖</figcaption>
             </figure>
@@ -290,6 +280,7 @@
           <div class="section-label" data-i18n="budgetKicker">預算</div>
           <h2 data-i18n="budgetTitle">預算</h2>
           <p class="lead" data-i18n="budgetLead">預算大概抓這樣，主幣別可切，韓元會一起留著看。</p>
+          <p class="budget-rate-note" data-i18n="budgetRateNote">換算基準會清楚標示，實際金額仍以付款當日匯率為準。</p>
           <div class="budget-summary-strip" id="budgetHighlights"></div>
           <div class="budget-summary-grid" id="budgetSummary"></div>
           <div class="budget-table-wrap">
@@ -314,6 +305,7 @@
           <div class="section-label" data-i18n="itineraryKicker">行程</div>
           <h2 data-i18n="overviewItineraryTitle">每日行程</h2>
           <p class="lead" data-i18n="itineraryLead">每天先看主要安排、區域、交通和提醒。</p>
+          <nav class="day-jump-nav" id="dayJumpNav" aria-label="Choose itinerary day"></nav>
           <div class="accordion-list" id="itineraryList"></div>
         </section>
       </section>
@@ -331,6 +323,10 @@
             <article class="content-panel">
               <h4 data-i18n="linksTitle">實用連結</h4>
               <div class="link-card-list" id="linksGrid"></div>
+            </article>
+            <article class="content-panel notes-practical-panel">
+              <h4 data-i18n="overviewPracticalTitle">實用資訊</h4>
+              <div class="practical-grid" id="practicalInfo"></div>
             </article>
           </div>
         </section>
@@ -365,11 +361,11 @@
     </nav>
 
     <dialog class="image-modal" id="imageModal" aria-label="Expanded gallery image">
-      <button class="modal-close" id="modalClose" type="button" aria-label="Close expanded image">Close</button>
+      <button class="modal-close" id="modalClose" type="button" data-i18n="closeImage" aria-label="Close expanded image">關閉</button>
       <img id="modalImage" src="" alt="" />
       <p id="modalCaption"></p>
     </dialog>
 
-    <script src="./script.js?v=20260822-1"></script>
+    <script src="./script.js?v=20260912-1"></script>
   </body>
 </html>

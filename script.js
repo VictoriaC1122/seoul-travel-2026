@@ -52,6 +52,7 @@ const COSTS = {
 
 const t = {
   "zh-Hant": {
+    skipToContent: "跳到主要內容",
     languageSwitcher: "語言",
     currencySwitcher: "幣別",
     heroKicker: "Seoul travel handbook",
@@ -131,6 +132,7 @@ const t = {
     budgetKicker: "預算",
     budgetTitle: "預算",
     budgetLead: "預算先這樣抓，切幣別時也會一起留韓元給你看。",
+    budgetRateNote: "換算基準：1 TWD 約 41.8 KRW、1 CNY 約 186.5 KRW；實際轉帳與刷卡金額以付款當日匯率為準。",
     budgetSummaryTitle: "預算摘要",
     budgetBreakdownTitle: "費用明細",
     budgetItemHeading: "項目",
@@ -145,6 +147,10 @@ const t = {
     perPersonCostNote: "以兩人平均分攤估算",
     paidSoFarNote: "目前已知訂金",
     remainingTripBudgetNote: "扣除訂金後的其餘預算",
+    confirmedCostLabel: "已確認費用",
+    confirmedCostNote: "韓服、飯店與兩人機票",
+    flexibleBudgetLabel: "彈性預算",
+    flexibleBudgetNote: "交通、餐食與購物估算",
     notesKicker: "備註",
     notesTitle: "備註",
     notesLead: "把旅途中會回頭確認的資料留在這裡，找起來比較安心。",
@@ -187,8 +193,10 @@ const t = {
     checklistProgress: "完成",
     mapsLabel: "Google 地圖",
     openLink: "開啟",
+    closeImage: "關閉",
   },
   en: {
+    skipToContent: "Skip to main content",
     languageSwitcher: "Language",
     currencySwitcher: "Currency",
     heroKicker: "Seoul travel handbook",
@@ -268,6 +276,7 @@ const t = {
     budgetKicker: "Budget",
     budgetTitle: "Budget",
     budgetLead: "Use this as the rough budget page. KRW stays visible for payment.",
+    budgetRateNote: "Conversion basis: 1 TWD is about 41.8 KRW and 1 CNY is about 186.5 KRW. Actual transfer and card amounts follow the payment-day rate.",
     budgetSummaryTitle: "Budget summary",
     budgetBreakdownTitle: "Simple breakdown",
     budgetItemHeading: "Item",
@@ -282,6 +291,10 @@ const t = {
     perPersonCostNote: "Split evenly for two people",
     paidSoFarNote: "Known deposit already paid",
     remainingTripBudgetNote: "Remaining trip budget after deposit",
+    confirmedCostLabel: "Confirmed costs",
+    confirmedCostNote: "Hanbok, hotel, and flights for two",
+    flexibleBudgetLabel: "Flexible budget",
+    flexibleBudgetNote: "Transport, food, and shopping estimates",
     notesKicker: "Notes",
     notesTitle: "Notes",
     notesLead: "Day plans, checklists, and links are all here.",
@@ -324,8 +337,10 @@ const t = {
     checklistProgress: "Done",
     mapsLabel: "Google Maps",
     openLink: "Open",
+    closeImage: "Close",
   },
   ko: {
+    skipToContent: "본문으로 바로가기",
     languageSwitcher: "언어",
     currencySwitcher: "통화",
     heroKicker: "Seoul travel handbook",
@@ -405,6 +420,7 @@ const t = {
     budgetKicker: "예산",
     budgetTitle: "예산",
     budgetLead: "예산은 일단 이 정도로 보면 됩니다. KRW도 같이 남겨둡니다.",
+    budgetRateNote: "환산 기준: 1 TWD는 약 41.8 KRW, 1 CNY는 약 186.5 KRW입니다. 실제 송금 및 카드 금액은 결제일 환율을 따릅니다.",
     budgetSummaryTitle: "예산 요약",
     budgetBreakdownTitle: "비용 상세",
     budgetItemHeading: "항목",
@@ -419,6 +435,10 @@ const t = {
     perPersonCostNote: "2인 균등 분담 기준",
     paidSoFarNote: "현재 확인된 예약금",
     remainingTripBudgetNote: "예약금을 제외한 나머지 예산",
+    confirmedCostLabel: "확정 비용",
+    confirmedCostNote: "한복, 호텔, 2인 항공권",
+    flexibleBudgetLabel: "유동 예산",
+    flexibleBudgetNote: "교통, 식비, 쇼핑 예상액",
     notesKicker: "메모",
     notesTitle: "메모",
     notesLead: "자잘하지만 필요한 것들은 여기에 모아뒀습니다.",
@@ -461,16 +481,11 @@ const t = {
     checklistProgress: "완료",
     mapsLabel: "구글 지도",
     openLink: "열기",
+    closeImage: "닫기",
   },
 };
 
 const data = {
-  heroSummary: [
-    { label: { "zh-Hant": "今晚落腳", en: "Base", ko: "숙소 베이스" }, value: { "zh-Hant": "弘大西橋 · Local Stitch", en: "Seogyo, Hongdae · Local Stitch", ko: "서교 · 로컬스티치" } },
-    { label: { "zh-Hant": "旅程天數", en: "Length", ko: "여행 기간" }, value: { "zh-Hant": "6 天 5 夜", en: "6 days / 5 nights", ko: "6일 5박" } },
-    { label: { "zh-Hant": "主題日", en: "Anchor day", ko: "핵심 일정" }, value: { "zh-Hant": "5/19 北村韓服拍攝", en: "May 19 · Bukchon hanbok shoot", ko: "5/19 북촌 한복 촬영" } },
-    { label: { "zh-Hant": "城市節奏", en: "Travel rhythm", ko: "여행 리듬" }, value: { "zh-Hant": "街區散步、咖啡、購物與宮牆畫面", en: "Neighborhood walks, cafes, shopping, and palace walls", ko: "거리 산책, 카페, 쇼핑, 궁 담장" } },
-  ],
   keyInfo: [
     {
       label: { "zh-Hant": "旅遊日期", en: "Travel dates", ko: "여행 날짜" },
@@ -515,7 +530,7 @@ const data = {
       label: { "zh-Hant": "回程", en: "Return", ko: "귀국" },
       airline: "China Airlines",
       airlineCode: "CI",
-      flightNo: "China Airlines",
+      flightNo: { "zh-Hant": "尚未提供", en: "Not provided", ko: "미제공" },
       route: "ICN → TPE",
       date: "2026-05-20",
       time: "20:05 → 21:50",
@@ -601,7 +616,7 @@ const data = {
   ],
   budgetSummary: [
     { label: { "zh-Hant": "韓服總價", en: "Hanbok total", ko: "한복 총액" }, krw: COSTS.hanbokTotalKrw },
-    { label: { "zh-Hant": "現場補款", en: "Remaining balance", ko: "현장 결제 잔액" }, krw: COSTS.hanbokRemainingKrw },
+    { label: { "zh-Hant": "韓服尾款（微信）", en: "Hanbok balance (WeChat)", ko: "한복 잔액(위챗)" }, krw: COSTS.hanbokRemainingKrw },
     { label: { "zh-Hant": "飯店", en: "Hotel", ko: "호텔" }, krw: COSTS.hotelTwdTotal * rates.TWD.krwPerUnit },
     { label: { "zh-Hant": "機票（2 人）", en: "Flights (2 travelers)", ko: "항공권(2인)" }, krw: COSTS.flightTwdPerPerson * COSTS.travelers * rates.TWD.krwPerUnit },
     { label: { "zh-Hant": "交通 + 餐食 + 購物", en: "Transport + food + shopping", ko: "교통 + 식비 + 쇼핑" }, krw: COSTS.transportKrw + COSTS.foodKrw + COSTS.shoppingKrw },
@@ -692,7 +707,7 @@ const data = {
       location: { "zh-Hant": "狎鷗亭羅德奧 / 江南", en: "Apgujeong Rodeo / Gangnam", ko: "압구정로데오 / 강남" },
       area: { "zh-Hant": "狎鷗亭 · 江南", en: "Apgujeong · Gangnam", ko: "압구정 · 강남" },
       image: {
-        src: "./assets/images/itinerary-gangnam-coex.jpg",
+        src: "./assets/images/itinerary-gangnam-coex-seoul.jpg",
         alt: { "zh-Hant": "COEX 星光圖書館", en: "Starfield Library at COEX", ko: "코엑스 별마당도서관" },
         caption: { "zh-Hant": "COEX 星光圖書館", en: "Starfield Library", ko: "별마당도서관" },
       },
@@ -1199,6 +1214,13 @@ function getPageLabel(page = state.page) {
   return t[state.lang][key] || t[state.lang].navOverview;
 }
 
+function getPageAriaLabel(page) {
+  const label = getPageLabel(page);
+  if (state.lang === "en") return `Open ${label} page`;
+  if (state.lang === "ko") return `${label} 페이지 열기`;
+  return `開啟${label}頁面`;
+}
+
 function isSecondaryPage(page = state.page) {
   return !PRIMARY_MOBILE_PAGES.has(page);
 }
@@ -1223,22 +1245,42 @@ function renderI18n() {
     const key = node.dataset.i18n;
     if (t[state.lang][key]) node.textContent = t[state.lang][key];
   });
+  document.querySelectorAll("[data-alt-key]").forEach((image) => {
+    const key = image.dataset.altKey;
+    if (t[state.lang][key]) image.alt = t[state.lang][key];
+  });
+  document.querySelectorAll(".gallery-trigger").forEach((button) => {
+    const caption = t[state.lang][button.dataset.captionKey] || "";
+    const prefix = state.lang === "en" ? "Open image" : state.lang === "ko" ? "이미지 열기" : "開啟圖片";
+    button.setAttribute("aria-label", `${prefix}：${caption}`);
+  });
+  document.querySelectorAll("[data-page-link]").forEach((button) => {
+    button.setAttribute("aria-label", getPageAriaLabel(normalizePage(button.dataset.pageLink)));
+  });
+  const moreButton = document.querySelector("[data-page-group='secondary']");
+  if (moreButton) {
+    moreButton.setAttribute("aria-label", state.lang === "en" ? "Open more pages" : state.lang === "ko" ? "더 많은 페이지 열기" : "開啟更多頁面");
+  }
+  const languageNames = {
+    "zh-Hant": { "zh-Hant": "繁體中文", en: "Traditional Chinese", ko: "번체 중국어" },
+    en: { "zh-Hant": "英文", en: "English", ko: "영어" },
+    ko: { "zh-Hant": "韓文", en: "Korean", ko: "한국어" },
+  };
+  document.querySelectorAll("[data-lang]").forEach((button) => {
+    const action = state.lang === "en" ? "Switch language to" : state.lang === "ko" ? "언어 전환" : "切換語言為";
+    button.setAttribute("aria-label", `${action} ${languageNames[button.dataset.lang][state.lang]}`);
+  });
+  document.querySelectorAll("[data-currency]").forEach((button) => {
+    const action = state.lang === "en" ? "Switch currency to" : state.lang === "ko" ? "통화 전환" : "切換幣別為";
+    button.setAttribute("aria-label", `${action} ${button.dataset.currency}`);
+  });
+  const modalClose = document.getElementById("modalClose");
+  if (modalClose) modalClose.setAttribute("aria-label", t[state.lang].closeImage);
   updateDocumentTitle();
 }
 
 function renderHero() {
   updatePageChrome();
-  const root = document.getElementById("heroSummary");
-  if (!root) return;
-  if (state.page !== "overview" || !data.heroSummary.length) {
-    root.innerHTML = "";
-    root.style.display = "none";
-    return;
-  }
-  root.style.display = "";
-  root.innerHTML = data.heroSummary
-    .map((item) => `<article class="summary-card"><div class="summary-label">${getText(item.label)}</div><div class="summary-value">${getText(item.value)}</div></article>`)
-    .join("");
 }
 
 function renderKeyInfo() {
@@ -1260,96 +1302,83 @@ function renderKeyInfo() {
 function renderOverview() {
   const overviewStory = document.getElementById("overviewStory");
   const overviewThemeChips = document.getElementById("overviewThemeChips");
-  const overviewSnapshot = document.getElementById("overviewSnapshot");
   const journeyHighlights = document.getElementById("journeyHighlights");
   const dayPreviewList = document.getElementById("dayPreviewList");
   const practicalInfo = document.getElementById("practicalInfo");
-  if (!overviewStory || !overviewThemeChips || !overviewSnapshot || !journeyHighlights || !dayPreviewList || !practicalInfo) return;
 
-  overviewStory.textContent = getText(overviewContent.story);
-  overviewThemeChips.innerHTML = overviewContent.themes
-    .map((item) => `<span class="pill">${getText(item)}</span>`)
-    .join("");
+  if (overviewStory) overviewStory.textContent = getText(overviewContent.story);
+  if (overviewThemeChips) {
+    overviewThemeChips.innerHTML = overviewContent.themes
+      .map((item) => `<span class="pill">${getText(item)}</span>`)
+      .join("");
+  }
 
-  overviewSnapshot.innerHTML = overviewContent.snapshot
-    .map(
-      (item) => `
-        <article class="overview-snapshot-card">
-          <div class="mini-stat-label">${getText(item.label)}</div>
-          <div class="snapshot-value">${getText(item.value)}</div>
-          <div class="budget-original">${getText(item.note)}</div>
-        </article>
-      `
-    )
-    .join("");
-
-  journeyHighlights.innerHTML = overviewContent.highlights
-    .map(
-      (item) => `
-        <article class="highlight-card">
-          <div class="highlight-top">
-            <span class="progress-pill">${getText(item.tag)}</span>
-            <span class="date-label">${getText(item.date)}</span>
-          </div>
-          <h4>${getText(item.title)}</h4>
-          <p class="card-intro">${getText(item.desc)}</p>
-        </article>
-      `
-    )
-    .join("");
-
-  dayPreviewList.innerHTML = data.itinerary
-    .map((item) => {
-      const guide = getGuide(item);
-      return `
-        <article class="day-preview-card">
-          <div class="day-preview-top">
-            <div>
-              <div class="accordion-topline">
-                <span class="day-chip">${getText(item.day)}</span>
-                <span class="date-label">${item.date}</span>
-              </div>
-              <h4>${getText(item.plan)}</h4>
+  if (journeyHighlights) {
+    journeyHighlights.innerHTML = overviewContent.highlights
+      .map(
+        (item) => `
+          <article class="highlight-card">
+            <div class="highlight-top">
+              <span class="progress-pill">${getText(item.tag)}</span>
+              <span class="date-label">${getText(item.date)}</span>
             </div>
-            <button class="action-link preview-link" type="button" data-page-link="itinerary" aria-label="Open itinerary page">${t[state.lang].openLink}</button>
-          </div>
-          <div class="preview-meta-row">
-            <span class="itinerary-area-chip">${getText(item.area)}</span>
-            <span class="progress-pill">${guide ? getText(guide.energy) : ""}</span>
-            <span class="progress-pill">${guide ? getText(guide.theme) : ""}</span>
-          </div>
-          <p class="card-intro">${guide ? getText(guide.preview) : getText(item.rhythm)}</p>
-          <div class="preview-points">
-            ${(guide?.quickHighlights || [])
-              .map((point) => `<span class="preview-point">${getText(point)}</span>`)
-              .join("")}
-          </div>
-          <div class="preview-meta-grid">
-            <div class="itinerary-meta-card"><div class="itinerary-meta-label">${getText({ "zh-Hant": "體力節奏", en: "Energy", ko: "체력 리듬" })}</div><div class="itinerary-meta-value">${guide ? getText(guide.energy) : ""}</div></div>
-            <div class="itinerary-meta-card"><div class="itinerary-meta-label">${getText({ "zh-Hant": "今日隨身小物", en: "Wear / carry", ko: "신발과 소지품" })}</div><div class="itinerary-meta-value">${guide ? getText(guide.shoes) : ""}</div></div>
-            <div class="itinerary-meta-card"><div class="itinerary-meta-label">${getText({ "zh-Hant": "今日最值得期待", en: "Most worth looking forward to", ko: "오늘 기대 포인트" })}</div><div class="itinerary-meta-value">${guide ? getText(guide.photo) : getText(item.location)}</div></div>
-            <div class="itinerary-meta-card"><div class="itinerary-meta-label">${getText({ "zh-Hant": "提早出門 / 預約", en: "Timing / booking", ko: "시간 / 예약" })}</div><div class="itinerary-meta-value">${guide ? getText(guide.booking) : ""}</div></div>
-          </div>
-        </article>
-      `;
-    })
-    .join("");
+            <h4>${getText(item.title)}</h4>
+            <p class="card-intro">${getText(item.desc)}</p>
+          </article>
+        `
+      )
+      .join("");
+  }
 
-  practicalInfo.innerHTML = overviewContent.practical
-    .map(
-      (group, index) => `
-        <details class="practical-card" ${index === 0 ? "open" : ""}>
-          <summary class="practical-summary">
-            <span class="bullet-title">${getText(group.title)}</span>
-            <span class="date-label">${getText({ "zh-Hant": "打開查看", en: "Open", ko: "열기" })}</span>
-          </summary>
-          <div class="practical-list">
-            ${group.items.map((item) => `<div class="practical-item">${getText(item)}</div>`).join("")}
-          </div>
-        </details>
-      `
-    )
-    .join("");
+  if (dayPreviewList) {
+    dayPreviewList.innerHTML = data.itinerary
+      .map((item, index) => {
+        const guide = getGuide(item);
+        return `
+          <article class="day-preview-card">
+            <div class="day-preview-top">
+              <div>
+                <div class="accordion-topline">
+                  <span class="day-chip">${getText(item.day)}</span>
+                  <span class="date-label">${item.date}</span>
+                </div>
+                <h4>${getText(item.plan)}</h4>
+              </div>
+              <button class="action-link preview-link" type="button" data-page-link="itinerary" data-itinerary-day="${index}" aria-label="${getPageAriaLabel("itinerary")}">${t[state.lang].openLink}</button>
+            </div>
+            <div class="preview-meta-row">
+              <span class="itinerary-area-chip">${getText(item.area)}</span>
+              <span class="progress-pill">${guide ? getText(guide.energy) : ""}</span>
+            </div>
+            <p class="card-intro">${guide ? getText(guide.preview) : getText(item.rhythm)}</p>
+            <div class="preview-points">
+              ${(guide?.quickHighlights || [])
+                .map((point) => `<span class="preview-point">${getText(point)}</span>`)
+                .join("")}
+            </div>
+          </article>
+        `;
+      })
+      .join("");
+  }
+
+  if (practicalInfo) {
+    practicalInfo.innerHTML = overviewContent.practical
+      .map(
+        (group, index) => `
+          <details class="practical-card" ${index === 0 ? "open" : ""}>
+            <summary class="practical-summary">
+              <span class="bullet-title">${getText(group.title)}</span>
+              <span class="date-label">${getText({ "zh-Hant": "打開查看", en: "Open", ko: "열기" })}</span>
+            </summary>
+            <div class="practical-list">
+              ${group.items.map((item) => `<div class="practical-item">${getText(item)}</div>`).join("")}
+            </div>
+          </details>
+        `
+      )
+      .join("");
+  }
 }
 
 function renderFlights() {
@@ -1378,27 +1407,21 @@ function renderFlights() {
           <div class="flight-time">${flight.time}</div>
           <div class="flight-meta">
             <div class="info-line"><span class="info-label">${t[state.lang].dateText}</span><span class="info-value">${flight.date}</span></div>
-            <div class="info-line"><span class="info-label">${t[state.lang].flightNumberText}</span><span class="info-value">${flight.flightNo}</span></div>
+            <div class="info-line"><span class="info-label">${t[state.lang].flightNumberText}</span><span class="info-value">${getText(flight.flightNo)}</span></div>
             <div class="info-line"><span class="info-label">${t[state.lang].classText}</span><span class="info-value">${getText(flight.cabin)}</span></div>
           </div>
           <div class="flight-stop-grid">
             <article class="flight-stop-card">
               <div class="info-label">${t[state.lang].departureText}</div>
-              <div class="flight-stop-list">
-                <div class="flight-stop-row"><span>${t[state.lang].countryText}</span><strong>${getText(flight.departure.country)}</strong></div>
-                <div class="flight-stop-row"><span>${t[state.lang].cityText}</span><strong>${getText(flight.departure.city)}</strong></div>
-                <div class="flight-stop-row"><span>${t[state.lang].airportText}</span><strong>${getText(flight.departure.airport)}</strong></div>
-                <div class="flight-stop-row"><span>${t[state.lang].terminalText}</span><strong>${getText(flight.departure.terminal)}</strong></div>
-              </div>
+              <div class="flight-stop-place">${getText(flight.departure.city)} · ${getText(flight.departure.country)}</div>
+              <div class="flight-stop-airport">${getText(flight.departure.airport)}</div>
+              <div class="flight-terminal">${getText(flight.departure.terminal)}</div>
             </article>
             <article class="flight-stop-card">
               <div class="info-label">${t[state.lang].arrivalText}</div>
-              <div class="flight-stop-list">
-                <div class="flight-stop-row"><span>${t[state.lang].countryText}</span><strong>${getText(flight.arrival.country)}</strong></div>
-                <div class="flight-stop-row"><span>${t[state.lang].cityText}</span><strong>${getText(flight.arrival.city)}</strong></div>
-                <div class="flight-stop-row"><span>${t[state.lang].airportText}</span><strong>${getText(flight.arrival.airport)}</strong></div>
-                <div class="flight-stop-row"><span>${t[state.lang].terminalText}</span><strong>${getText(flight.arrival.terminal)}</strong></div>
-              </div>
+              <div class="flight-stop-place">${getText(flight.arrival.city)} · ${getText(flight.arrival.country)}</div>
+              <div class="flight-stop-airport">${getText(flight.arrival.airport)}</div>
+              <div class="flight-terminal">${getText(flight.arrival.terminal)}</div>
             </article>
           </div>
         </article>
@@ -1415,29 +1438,44 @@ function renderFlights() {
     .join("");
 
   flightLinks.innerHTML = data.flightLinks
-    .map((link) => `<div class="link-row"><span class="link-row-label">${getText(link.label)}</span><a class="link-button" href="${link.href}" target="_blank" rel="noreferrer" aria-label="${getText(link.label)}">${t[state.lang].openLink}</a></div>`)
+    .map((link) => `<div class="link-row"><span class="link-row-label">${getText(link.label)}</span><a class="link-button" href="${link.href}" target="_blank" rel="noopener noreferrer" aria-label="${getText(link.label)}">${t[state.lang].openLink}</a></div>`)
     .join("");
 }
 
 function renderItinerary() {
   const itineraryList = document.getElementById("itineraryList");
+  const dayJumpNav = document.getElementById("dayJumpNav");
   if (!itineraryList) return;
+  if (dayJumpNav) {
+    dayJumpNav.innerHTML = data.itinerary
+      .map(
+        (item, index) => `
+          <button class="day-jump-button${index === 0 ? " active" : ""}" type="button" data-itinerary-day="${index}">
+            <span>${getText(item.day)}</span>
+            <small>${item.date.slice(5).replace("-", "/")}</small>
+          </button>
+        `
+      )
+      .join("");
+  }
   itineraryList.innerHTML = data.itinerary
     .map(
       (item, index) => `
-        <details class="itinerary-card" ${index === 0 ? "open" : ""}>
+        <details class="itinerary-card" id="itinerary-day-${index + 1}" data-itinerary-index="${index}" ${index === 0 ? "open" : ""}>
           <summary class="accordion-summary">
             <figure class="itinerary-cover">
               <img src="${item.image.src}" alt="${getText(item.image.alt)}" loading="lazy" />
               <figcaption>${getText(item.image.caption)}</figcaption>
             </figure>
-            <div class="accordion-topline"><span class="day-chip">${getText(item.day)}</span><span class="date-label">${item.date}</span></div>
-            <div class="itinerary-overline">
-              <span class="itinerary-area-chip">${getText(item.area)}</span>
-              <span class="itinerary-hotel-line">${getText(getGuide(item)?.theme || { "zh-Hant": "弘大飯店出發", en: "Start from Hongdae hotel", ko: "홍대 호텔 출발" })}</span>
+            <div class="itinerary-summary-copy">
+              <div class="accordion-topline"><span class="day-chip">${getText(item.day)}</span><span class="date-label">${item.date}</span></div>
+              <div class="itinerary-overline">
+                <span class="itinerary-area-chip">${getText(item.area)}</span>
+                <span class="itinerary-hotel-line">${getText(getGuide(item)?.theme || { "zh-Hant": "弘大飯店出發", en: "Start from Hongdae hotel", ko: "홍대 호텔 출발" })}</span>
+              </div>
+              <h3>${getText(item.plan)}</h3>
+              <p class="itinerary-rhythm">${getText(getGuide(item)?.preview || item.rhythm)}</p>
             </div>
-            <h3>${getText(item.plan)}</h3>
-            <p class="itinerary-rhythm">${getText(getGuide(item)?.preview || item.rhythm)}</p>
           </summary>
           <div class="accordion-body">
             <div class="itinerary-day-header">
@@ -1549,6 +1587,42 @@ function renderItinerary() {
     .join("");
 }
 
+function openItineraryDay(index, { scroll = true } = {}) {
+  const dayIndex = Math.max(0, Math.min(Number(index) || 0, data.itinerary.length - 1));
+  const cards = [...document.querySelectorAll("#itineraryList .itinerary-card")];
+  cards.forEach((card, cardIndex) => {
+    card.open = cardIndex === dayIndex;
+  });
+  document.querySelectorAll("[data-itinerary-day]").forEach((button) => {
+    button.classList.toggle("active", Number(button.dataset.itineraryDay) === dayIndex);
+  });
+  if (scroll) {
+    cards[dayIndex]?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+function bindItineraryDays() {
+  document.querySelectorAll("#dayJumpNav [data-itinerary-day]").forEach((button) => {
+    if (button.dataset.dayBound === "true") return;
+    button.dataset.dayBound = "true";
+    button.addEventListener("click", () => openItineraryDay(button.dataset.itineraryDay));
+  });
+  document.querySelectorAll("#itineraryList .itinerary-card").forEach((card) => {
+    if (card.dataset.dayBound === "true") return;
+    card.dataset.dayBound = "true";
+    card.addEventListener("toggle", () => {
+      if (!card.open) return;
+      const index = Number(card.dataset.itineraryIndex);
+      document.querySelectorAll("#itineraryList .itinerary-card").forEach((other) => {
+        if (other !== card) other.open = false;
+      });
+      document.querySelectorAll("#dayJumpNav [data-itinerary-day]").forEach((button) => {
+        button.classList.toggle("active", Number(button.dataset.itineraryDay) === index);
+      });
+    });
+  });
+}
+
 function renderHotel() {
   const hotel = data.hotel;
   const hotelCard = document.getElementById("hotelCard");
@@ -1561,7 +1635,7 @@ function renderHotel() {
       ${hotel.notes.map((item) => `<div class="price-row"><div class="price-label">${getText(item.title)}</div><div class="price-value">${formatCurrency(item.krw)}</div><div class="budget-original">${formatCurrency(item.krw, "KRW")}</div></div>`).join("")}
     </div>
     <div class="bullet-stack">${hotel.copy.map((item) => `<article class="bullet-card"><div class="bullet-title">${getText(item.title)}</div><div class="bullet-desc">${getText(item.desc)}</div></article>`).join("")}</div>
-    <div class="route-actions"><a class="action-link" href="${hotel.href}" target="_blank" rel="noreferrer" aria-label="Open hotel booking page on Agoda">Agoda</a></div>
+    <div class="route-actions"><a class="action-link" href="${hotel.href}" target="_blank" rel="noopener noreferrer" aria-label="Agoda">Agoda</a></div>
   `;
 }
 
@@ -1607,7 +1681,7 @@ function renderRoute() {
           <div class="info-line"><span class="info-label">${t[state.lang].destinationLabel}</span><span class="info-value">${getText(item.destination)}</span></div>
           <div class="info-line"><span class="info-label">${t[state.lang].costLabel}</span><span class="info-value">${getText(item.cost)}</span></div>
           <div class="bullet-desc">${getText(item.desc)}</div>
-          <div class="route-actions"><a class="action-link" href="${item.href}" target="_blank" rel="noreferrer" aria-label="${t[state.lang].mapsLabel}">${t[state.lang].mapsLabel}</a></div>
+          <div class="route-actions"><a class="action-link" href="${item.href}" target="_blank" rel="noopener noreferrer" aria-label="${t[state.lang].mapsLabel}">${t[state.lang].mapsLabel}</a></div>
         </article>
       `
     )
@@ -1624,10 +1698,10 @@ function renderBudget() {
   if (!budgetHighlights || !budgetSummary || !budgetCards || !budgetTableBody) return;
   const hotelKrwTotal = COSTS.hotelTwdTotal * rates.TWD.krwPerUnit;
   const flightKrwTotal = COSTS.flightTwdPerPerson * COSTS.travelers * rates.TWD.krwPerUnit;
-  const totalTripKrw = COSTS.hanbokTotalKrw + hotelKrwTotal + flightKrwTotal + COSTS.transportKrw + COSTS.foodKrw + COSTS.shoppingKrw;
+  const confirmedKrw = COSTS.hanbokTotalKrw + hotelKrwTotal + flightKrwTotal;
+  const flexibleKrw = COSTS.transportKrw + COSTS.foodKrw + COSTS.shoppingKrw;
+  const totalTripKrw = confirmedKrw + flexibleKrw;
   const perPersonKrw = totalTripKrw / COSTS.travelers;
-  const paidSoFarKrw = COSTS.hanbokDepositCny * rates.CNY.krwPerUnit;
-  const remainingTripKrw = totalTripKrw - paidSoFarKrw;
   const selectedCurrency = state.currency;
   const selectedHeadingMap = {
     TWD: "TWD",
@@ -1639,10 +1713,10 @@ function renderBudget() {
   if (budgetOriginalHeading) budgetOriginalHeading.textContent = "KRW";
 
   budgetHighlights.innerHTML = [
+    { label: t[state.lang].confirmedCostLabel, value: confirmedKrw, note: t[state.lang].confirmedCostNote },
+    { label: t[state.lang].flexibleBudgetLabel, value: flexibleKrw, note: t[state.lang].flexibleBudgetNote },
     { label: t[state.lang].totalTripCostLabel, value: totalTripKrw, note: t[state.lang].totalTripCostNote },
     { label: t[state.lang].perPersonCostLabel, value: perPersonKrw, note: t[state.lang].perPersonCostNote },
-    { label: t[state.lang].paidSoFarLabel, value: paidSoFarKrw, note: t[state.lang].paidSoFarNote },
-    { label: t[state.lang].remainingTripBudgetLabel, value: remainingTripKrw, note: t[state.lang].remainingTripBudgetNote },
   ]
     .map(
       (item) => `
@@ -1734,7 +1808,7 @@ function renderLinks() {
         <article class="link-block">
           <h3>${getText(group.title)}</h3>
           <div class="link-list">
-            ${group.links.map((link) => `<div class="link-row"><span class="link-row-label">${getText(link.label)}</span><a class="link-button" href="${link.href}" target="_blank" rel="noreferrer" aria-label="${getText(link.label)}">${t[state.lang].openLink}</a></div>`).join("")}
+            ${group.links.map((link) => `<div class="link-row"><span class="link-row-label">${getText(link.label)}</span><a class="link-button" href="${link.href}" target="_blank" rel="noopener noreferrer" aria-label="${getText(link.label)}">${t[state.lang].openLink}</a></div>`).join("")}
           </div>
         </article>
       `
@@ -1761,12 +1835,12 @@ function syncControls() {
   document.querySelectorAll("[data-lang]").forEach((button) => {
     const active = button.dataset.lang === state.lang;
     button.classList.toggle("active", active);
-    button.setAttribute("aria-pressed", String(active));
+    button.setAttribute("aria-selected", String(active));
   });
   document.querySelectorAll("[data-currency]").forEach((button) => {
     const active = button.dataset.currency === state.currency;
     button.classList.toggle("active", active);
-    button.setAttribute("aria-pressed", String(active));
+    button.setAttribute("aria-selected", String(active));
   });
 }
 
@@ -1782,6 +1856,7 @@ function bindControls() {
       syncPageNavigation();
       bindChecklist();
       bindImageModal();
+      bindItineraryDays();
     });
   });
   document.querySelectorAll("[data-currency]").forEach((button) => {
@@ -1795,6 +1870,7 @@ function bindControls() {
       renderItinerary();
       bindPageNavigation();
       syncPageNavigation();
+      bindItineraryDays();
     });
   });
 }
@@ -1822,7 +1898,6 @@ function syncPageNavigation() {
     } else {
       link.removeAttribute("aria-current");
     }
-    link.setAttribute("aria-selected", String(active));
   });
   document.querySelectorAll("[data-page-group='secondary']").forEach((button) => {
     const active = isSecondaryPage();
@@ -1851,7 +1926,7 @@ function updatePageUrl(page, { replace = false } = {}) {
     url.searchParams.set("page", nextPage);
   }
   const method = replace ? "replaceState" : "pushState";
-  window.history[method]({}, "", url);
+  window.history[method]({ page: nextPage }, "", url);
 }
 
 function setPage(page, { scroll = true, updateUrl = true, replaceUrl = false } = {}) {
@@ -1885,6 +1960,11 @@ function bindPageNavigation() {
         if (document.body.classList.contains("show-secondary-strip")) {
           document.getElementById("mobilePageStrip")?.scrollIntoView({ block: "start", behavior: "smooth" });
         }
+        return;
+      }
+      if (link.dataset.itineraryDay !== undefined) {
+        setPage("itinerary", { scroll: false });
+        window.requestAnimationFrame(() => openItineraryDay(link.dataset.itineraryDay));
         return;
       }
       setPage(link.dataset.pageLink);
@@ -1930,14 +2010,19 @@ renderAll();
 bindControls();
 bindChecklist();
 bindPageNavigation();
+bindItineraryDays();
 syncPageNavigation();
 bindImageModal();
 bindProgress();
 updatePageUrl(state.page, { replace: true });
 
-window.addEventListener("popstate", () => {
-  state.page = getRequestedPage();
+window.addEventListener("popstate", (event) => {
+  const fromHistory = normalizePage(event.state?.page);
+  const fromQuery = normalizePage(new URLSearchParams(window.location.search).get("page"));
+  state.page = fromHistory || fromQuery || "overview";
   localStorage.setItem(STORAGE_KEYS.page, state.page);
   updateDocumentTitle();
+  renderHero();
   syncPageNavigation();
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
