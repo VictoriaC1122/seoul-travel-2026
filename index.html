@@ -34,7 +34,7 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Serif:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260912-1" />
+    <link rel="stylesheet" href="./styles.css?v=20260912-2" />
   </head>
   <body>
     <a class="skip-link" href="#mainContent" data-i18n="skipToContent">跳到主要內容</a>
@@ -97,14 +97,9 @@
       </div>
     </header>
 
-    <nav class="mobile-page-strip" id="mobilePageStrip" aria-label="Mobile section pages">
-      <button class="mobile-page-pill active" type="button" data-page-link="overview" data-i18n="navOverview">總覽</button>
-      <button class="mobile-page-pill" type="button" data-page-link="flights" data-i18n="navFlights">航班</button>
-      <button class="mobile-page-pill" type="button" data-page-link="hotel" data-i18n="navHotel">住宿</button>
-      <button class="mobile-page-pill" type="button" data-page-link="hanbok" data-i18n="navHanbok">韓服</button>
+    <nav class="mobile-page-strip" id="mobilePageStrip" aria-label="More travel pages" aria-hidden="true">
       <button class="mobile-page-pill" type="button" data-page-link="route" data-i18n="navRoute">交通</button>
       <button class="mobile-page-pill" type="button" data-page-link="budget" data-i18n="navBudget">預算</button>
-      <button class="mobile-page-pill" type="button" data-page-link="itinerary" data-i18n="navItinerary">行程</button>
       <button class="mobile-page-pill" type="button" data-page-link="notes" data-i18n="navNotes">備註</button>
     </nav>
 
@@ -112,8 +107,8 @@
       <section class="page-section active" id="page-overview" data-page-panel="overview">
         <section class="section-card intro-card">
           <div class="section-label" data-i18n="overviewKicker">總覽</div>
-          <h2 data-i18n="overviewTitle">這趟安排</h2>
-          <p class="lead" data-i18n="overviewLead">首頁只放真的會先看的，其他細節都分到各頁去找。</p>
+          <h2 data-i18n="overviewTitle">首爾旅程總覽</h2>
+          <p class="lead" data-i18n="overviewLead">先把日期、街區和每天的旅行節奏收在同一頁，翻開就能知道這趟旅程會往哪裡走。</p>
           <p class="overview-story" id="overviewStory"></p>
           <div class="theme-chip-row" id="overviewThemeChips"></div>
           <div class="key-info-grid" id="keyInfoBar"></div>
@@ -335,27 +330,27 @@
 
     <nav class="bottom-nav" aria-label="Primary mobile navigation">
       <button class="bottom-nav-item active" type="button" data-page-link="overview" aria-label="Open overview page">
-        <span class="bottom-nav-icon" aria-hidden="true">⌂</span>
+        <span class="bottom-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5M5.5 10v10h13V10M9.5 20v-6h5v6" /></svg></span>
         <span data-i18n="bottomHome">Home</span>
       </button>
       <button class="bottom-nav-item" type="button" data-page-link="flights" aria-label="Open flights page">
-        <span class="bottom-nav-icon" aria-hidden="true">✈</span>
+        <span class="bottom-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 11 18-7-7 17-3-7-8-3Zm8 3 4-4" /></svg></span>
         <span data-i18n="navFlights">航班</span>
       </button>
       <button class="bottom-nav-item" type="button" data-page-link="hotel" aria-label="Open hotel page">
-        <span class="bottom-nav-icon" aria-hidden="true">▣</span>
+        <span class="bottom-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 21V4h11v17M16 9h3v12M3 21h18M8 8h1m3 0h1M8 12h1m3 0h1M8 16h1m3 0h1" /></svg></span>
         <span data-i18n="navHotel">住宿</span>
       </button>
       <button class="bottom-nav-item" type="button" data-page-link="hanbok" aria-label="Open hanbok page">
-        <span class="bottom-nav-icon" aria-hidden="true">✿</span>
+        <span class="bottom-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.5 5.5 12 8l3.5-2.5L20 9l-3 3 1.5 9h-13L7 12 4 9l4.5-3.5ZM9 5l3-2 3 2M9.5 12h5" /></svg></span>
         <span data-i18n="bottomHanbok">Hanbok</span>
       </button>
       <button class="bottom-nav-item" type="button" data-page-link="itinerary" aria-label="Open itinerary page">
-        <span class="bottom-nav-icon" aria-hidden="true">▤</span>
+        <span class="bottom-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3v3m12-3v3M4 8h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Zm3 7h3m2 0h3m-8 4h3m2 0h3" /></svg></span>
         <span data-i18n="bottomItinerary">Itinerary</span>
       </button>
-      <button class="bottom-nav-item bottom-nav-item-secondary" type="button" data-page-group="secondary" aria-label="Open more sections">
-        <span class="bottom-nav-icon" aria-hidden="true">⋯</span>
+      <button class="bottom-nav-item bottom-nav-item-secondary" type="button" data-page-group="secondary" aria-label="Open more sections" aria-controls="mobilePageStrip" aria-expanded="false">
+        <span class="bottom-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.25" /><circle cx="12" cy="12" r="1.25" /><circle cx="19" cy="12" r="1.25" /></svg></span>
         <span data-i18n="bottomMore">更多</span>
       </button>
     </nav>
@@ -366,6 +361,6 @@
       <p id="modalCaption"></p>
     </dialog>
 
-    <script src="./script.js?v=20260912-1"></script>
+    <script src="./script.js?v=20260912-2"></script>
   </body>
 </html>

@@ -164,6 +164,10 @@ const t = {
     bottomBudget: "預算",
     bottomItinerary: "行程",
     bottomMore: "更多",
+    todayRouteTitle: "今日路線",
+    itineraryMoreTitle: "餐食、採買與提醒",
+    itineraryMoreNote: "需要時再展開查看",
+    mobileMoreLabel: "其他實用分頁",
     dateText: "日期",
     timeText: "時間",
     classText: "艙等",
@@ -308,6 +312,10 @@ const t = {
     bottomBudget: "Budget",
     bottomItinerary: "Itinerary",
     bottomMore: "More",
+    todayRouteTitle: "Today’s route",
+    itineraryMoreTitle: "Food, shopping & notes",
+    itineraryMoreNote: "Open when you need the details",
+    mobileMoreLabel: "More useful pages",
     dateText: "Date",
     timeText: "Time",
     classText: "Class",
@@ -452,6 +460,10 @@ const t = {
     bottomBudget: "예산",
     bottomItinerary: "일정",
     bottomMore: "더보기",
+    todayRouteTitle: "오늘의 동선",
+    itineraryMoreTitle: "식사·쇼핑·메모",
+    itineraryMoreNote: "필요할 때 펼쳐보세요",
+    mobileMoreLabel: "기타 실용 페이지",
     dateText: "날짜",
     timeText: "시간",
     classText: "좌석 등급",
@@ -1227,7 +1239,6 @@ function isSecondaryPage(page = state.page) {
 
 function updatePageChrome() {
   document.body.dataset.page = state.page;
-  document.body.classList.toggle("show-secondary-strip", isSecondaryPage());
   const heroPagePill = document.getElementById("heroPagePill");
   if (!heroPagePill) return;
   if (state.page === "overview") {
@@ -1261,6 +1272,8 @@ function renderI18n() {
   if (moreButton) {
     moreButton.setAttribute("aria-label", state.lang === "en" ? "Open more pages" : state.lang === "ko" ? "더 많은 페이지 열기" : "開啟更多頁面");
   }
+  const mobilePageStrip = document.getElementById("mobilePageStrip");
+  if (mobilePageStrip) mobilePageStrip.setAttribute("aria-label", t[state.lang].mobileMoreLabel);
   const languageNames = {
     "zh-Hant": { "zh-Hant": "繁體中文", en: "Traditional Chinese", ko: "번체 중국어" },
     en: { "zh-Hant": "英文", en: "English", ko: "영어" },
@@ -1450,7 +1463,7 @@ function renderItinerary() {
     dayJumpNav.innerHTML = data.itinerary
       .map(
         (item, index) => `
-          <button class="day-jump-button${index === 0 ? " active" : ""}" type="button" data-itinerary-day="${index}">
+          <button class="day-jump-button${index === 0 ? " active" : ""}" type="button" data-itinerary-day="${index}" aria-label="${getText(item.day)}：${getText(item.plan)}" ${index === 0 ? 'aria-current="true"' : ""}>
             <span>${getText(item.day)}</span>
             <small>${item.date.slice(5).replace("-", "/")}</small>
           </button>
@@ -1478,40 +1491,19 @@ function renderItinerary() {
             </div>
           </summary>
           <div class="accordion-body">
-            <div class="itinerary-day-header">
-              <div class="itinerary-meta-card">
-                <div class="itinerary-meta-label">${getText({ "zh-Hant": "當日主題", en: "Day theme", ko: "오늘의 테마" })}</div>
-                <div class="itinerary-meta-value">${getText(getGuide(item)?.theme || item.area)}</div>
-              </div>
-              <div class="itinerary-meta-card">
-                <div class="itinerary-meta-label">${getText({ "zh-Hant": "體力節奏", en: "Energy", ko: "체력 리듬" })}</div>
-                <div class="itinerary-meta-value">${getText(getGuide(item)?.energy || { "zh-Hant": "普通", en: "Moderate", ko: "보통" })}</div>
-              </div>
-            </div>
-            <div class="itinerary-glance-grid">
-              <div class="itinerary-meta-card"><div class="itinerary-meta-label">${getText({ "zh-Hant": "出發時間", en: "Departure", ko: "출발 시간" })}</div><div class="itinerary-meta-value">${item.timeline[0]?.time || "-"}</div></div>
-              <div class="itinerary-meta-card"><div class="itinerary-meta-label">${getText({ "zh-Hant": "主要區域", en: "Main area", ko: "주요 구역" })}</div><div class="itinerary-meta-value">${getText(item.area)}</div></div>
-              <div class="itinerary-meta-card"><div class="itinerary-meta-label">${getText({ "zh-Hant": "今日餐桌", en: "Food focus", ko: "오늘의 식탁" })}</div><div class="itinerary-meta-value">${getText(getGuide(item)?.dining || { "zh-Hant": "", en: "", ko: "" })}</div></div>
-              <div class="itinerary-meta-card"><div class="itinerary-meta-label">${getText({ "zh-Hant": "推薦採買", en: "Shopping focus", ko: "추천 쇼핑" })}</div><div class="itinerary-meta-value">${getText(getGuide(item)?.shopping || { "zh-Hant": "", en: "", ko: "" })}</div></div>
-              <div class="itinerary-meta-card"><div class="itinerary-meta-label">${getText({ "zh-Hant": "穿搭提醒", en: "What to wear", ko: "옷차림" })}</div><div class="itinerary-meta-value">${getText(getGuide(item)?.shoes || { "zh-Hant": "", en: "", ko: "" })}</div></div>
-              <div class="itinerary-meta-card"><div class="itinerary-meta-label">${getText({ "zh-Hant": "預約 / 排隊", en: "Booking / queue", ko: "예약 / 대기" })}</div><div class="itinerary-meta-value">${getText(getGuide(item)?.booking || { "zh-Hant": "", en: "", ko: "" })}</div></div>
+            <div class="itinerary-quickline" aria-label="${getText({ "zh-Hant": "當日摘要", en: "Day summary", ko: "당일 요약" })}">
+              <div class="itinerary-quick-item"><div class="itinerary-meta-label">${getText({ "zh-Hant": "出發", en: "Leave", ko: "출발" })}</div><div class="itinerary-quick-value">${item.timeline[0]?.time || "-"}</div></div>
+              <div class="itinerary-quick-item"><div class="itinerary-meta-label">${getText({ "zh-Hant": "區域", en: "Area", ko: "구역" })}</div><div class="itinerary-quick-value">${getText(item.area)}</div></div>
+              <div class="itinerary-quick-item"><div class="itinerary-meta-label">${getText({ "zh-Hant": "節奏", en: "Pace", ko: "리듬" })}</div><div class="itinerary-quick-value">${getText(getGuide(item)?.energy || { "zh-Hant": "普通", en: "Moderate", ko: "보통" })}</div></div>
+              <div class="itinerary-quick-item"><div class="itinerary-meta-label">${t[state.lang].estimatedCostLabel}</div><div class="itinerary-quick-value">${formatCurrency(item.costKrw)}</div><div class="budget-original">${formatCurrency(item.costKrw, "KRW")}</div></div>
             </div>
             <div class="itinerary-story-card">
               <div class="itinerary-meta-label">${getText({ "zh-Hant": "今日導語", en: "Day note", ko: "오늘의 안내" })}</div>
               <div class="itinerary-story-text">${getText(item.hotelFlow)}</div>
             </div>
-            <div class="itinerary-flow-grid">
-              ${(getGuide(item)?.flow || [])
-                .map(
-                  (block) => `
-                    <article class="itinerary-flow-card">
-                      <div class="itinerary-meta-label">${getText(block.label)}</div>
-                      <div class="itinerary-curation-title">${getText(block.title)}</div>
-                      <div class="itinerary-curation-note">${getText(block.desc)}</div>
-                    </article>
-                  `
-                )
-                .join("")}
+            <div class="itinerary-section-heading">
+              <div class="itinerary-meta-label">${t[state.lang].todayRouteTitle}</div>
+              <div class="itinerary-route-caption">${getText(item.location)}</div>
             </div>
             <div class="itinerary-timeline">
               ${item.timeline
@@ -1528,58 +1520,78 @@ function renderItinerary() {
                 )
                 .join("")}
             </div>
-            <div class="itinerary-curation-grid">
-              <article class="itinerary-curation-card">
-                <div class="itinerary-meta-label">${getText({ "zh-Hant": "今日餐桌", en: "Today’s table", ko: "오늘의 식탁" })}</div>
-                <div class="itinerary-curation-list">
-                  ${item.foodPlan
+            <details class="itinerary-extra" ${window.matchMedia("(min-width: 768px)").matches ? "open" : ""}>
+              <summary class="itinerary-extra-summary">
+                <span><strong>${t[state.lang].itineraryMoreTitle}</strong><small>${t[state.lang].itineraryMoreNote}</small></span>
+                <span class="itinerary-extra-chevron" aria-hidden="true"></span>
+              </summary>
+              <div class="itinerary-extra-body">
+                <div class="itinerary-flow-grid">
+                  ${(getGuide(item)?.flow || [])
                     .map(
-                      (entry) => `
-                        <div class="itinerary-curation-item">
-                          <div class="itinerary-curation-top"><span class="progress-pill">${getText(entry.label)}</span><span class="itinerary-curation-title">${getText(entry.title)}</span></div>
-                          <div class="itinerary-curation-note">${getText(entry.note)}</div>
-                        </div>
+                      (block) => `
+                        <article class="itinerary-flow-card">
+                          <div class="itinerary-meta-label">${getText(block.label)}</div>
+                          <div class="itinerary-curation-title">${getText(block.title)}</div>
+                          <div class="itinerary-curation-note">${getText(block.desc)}</div>
+                        </article>
                       `
                     )
                     .join("")}
                 </div>
-              </article>
-              <article class="itinerary-curation-card">
-                <div class="itinerary-meta-label">${getText({ "zh-Hant": "沿途亮點", en: "Along the route", ko: "동선 포인트" })}</div>
-                <div class="itinerary-curation-list">
-                  ${item.areaPicks
-                    .map(
-                      (entry) => `
-                        <div class="itinerary-curation-item">
-                          <div class="itinerary-curation-top"><span class="progress-pill">${getText(entry.type)}</span><span class="itinerary-curation-title">${getText(entry.title)}</span></div>
-                          <div class="itinerary-curation-note">${getText(entry.note)}</div>
-                        </div>
-                      `
-                    )
+                <div class="itinerary-curation-grid">
+                  <article class="itinerary-curation-card">
+                    <div class="itinerary-meta-label">${getText({ "zh-Hant": "今日餐桌", en: "Today’s table", ko: "오늘의 식탁" })}</div>
+                    <div class="itinerary-curation-list">
+                      ${item.foodPlan
+                        .map(
+                          (entry) => `
+                            <div class="itinerary-curation-item">
+                              <div class="itinerary-curation-top"><span class="progress-pill">${getText(entry.label)}</span><span class="itinerary-curation-title">${getText(entry.title)}</span></div>
+                              <div class="itinerary-curation-note">${getText(entry.note)}</div>
+                            </div>
+                          `
+                        )
+                        .join("")}
+                    </div>
+                  </article>
+                  <article class="itinerary-curation-card">
+                    <div class="itinerary-meta-label">${getText({ "zh-Hant": "沿途亮點", en: "Along the route", ko: "동선 포인트" })}</div>
+                    <div class="itinerary-curation-list">
+                      ${item.areaPicks
+                        .map(
+                          (entry) => `
+                            <div class="itinerary-curation-item">
+                              <div class="itinerary-curation-top"><span class="progress-pill">${getText(entry.type)}</span><span class="itinerary-curation-title">${getText(entry.title)}</span></div>
+                              <div class="itinerary-curation-note">${getText(entry.note)}</div>
+                            </div>
+                          `
+                        )
+                        .join("")}
+                    </div>
+                  </article>
+                  <article class="itinerary-curation-card">
+                    <div class="itinerary-meta-label">${getText({ "zh-Hant": "推薦採買", en: "Shopping notes", ko: "추천 쇼핑" })}</div>
+                    <div class="itinerary-curation-list">
+                      <div class="itinerary-curation-item">
+                        <div class="itinerary-curation-top"><span class="progress-pill">${getText({ "zh-Hant": "購物節奏", en: "Shopping rhythm", ko: "쇼핑 리듬" })}</span><span class="itinerary-curation-title">${getText(getGuide(item)?.shopping || { "zh-Hant": "", en: "", ko: "" })}</span></div>
+                        <div class="itinerary-curation-note">${getText(getGuide(item)?.photo || { "zh-Hant": "", en: "", ko: "" })}</div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div class="itinerary-meta-grid itinerary-logistics-grid">
+                  <div class="itinerary-meta-card"><div class="itinerary-meta-label">${t[state.lang].locationLabel}</div><div class="itinerary-meta-value">${getText(item.location)}</div></div>
+                  <div class="itinerary-meta-card"><div class="itinerary-meta-label">${t[state.lang].transportLabel}</div><div class="itinerary-meta-value">${getText(item.transport)}</div></div>
+                  <div class="itinerary-meta-card"><div class="itinerary-meta-label">${t[state.lang].reminderLabel}</div><div class="itinerary-meta-value">${getText(item.reminder)}</div></div>
+                </div>
+                <div class="itinerary-reminder-list">
+                  ${(getGuide(item)?.reminders || [])
+                    .map((note) => `<article class="bullet-card"><div class="bullet-title">${getText({ "zh-Hant": "貼心提醒", en: "Helpful note", ko: "작은 메모" })}</div><div class="bullet-desc">${getText(note)}</div></article>`)
                     .join("")}
                 </div>
-              </article>
-              <article class="itinerary-curation-card">
-                <div class="itinerary-meta-label">${getText({ "zh-Hant": "推薦採買", en: "Shopping notes", ko: "추천 쇼핑" })}</div>
-                <div class="itinerary-curation-list">
-                  <div class="itinerary-curation-item">
-                    <div class="itinerary-curation-top"><span class="progress-pill">${getText({ "zh-Hant": "購物節奏", en: "Shopping rhythm", ko: "쇼핑 리듬" })}</span><span class="itinerary-curation-title">${getText(getGuide(item)?.shopping || { "zh-Hant": "", en: "", ko: "" })}</span></div>
-                    <div class="itinerary-curation-note">${getText(getGuide(item)?.photo || { "zh-Hant": "", en: "", ko: "" })}</div>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="itinerary-meta-grid">
-              <div class="itinerary-meta-card"><div class="itinerary-meta-label">${t[state.lang].locationLabel}</div><div class="itinerary-meta-value">${getText(item.location)}</div></div>
-              <div class="itinerary-meta-card"><div class="itinerary-meta-label">${t[state.lang].estimatedCostLabel}</div><div class="itinerary-meta-value">${formatCurrency(item.costKrw)}</div><div class="budget-original">${formatCurrency(item.costKrw, "KRW")}</div></div>
-              <div class="itinerary-meta-card"><div class="itinerary-meta-label">${t[state.lang].transportLabel}</div><div class="itinerary-meta-value">${getText(item.transport)}</div></div>
-              <div class="itinerary-meta-card"><div class="itinerary-meta-label">${t[state.lang].reminderLabel}</div><div class="itinerary-meta-value">${getText(item.reminder)}</div></div>
-            </div>
-            <div class="itinerary-reminder-list">
-              ${(getGuide(item)?.reminders || [])
-                .map((note) => `<article class="bullet-card"><div class="bullet-title">${getText({ "zh-Hant": "貼心提醒", en: "Helpful note", ko: "작은 메모" })}</div><div class="bullet-desc">${getText(note)}</div></article>`)
-                .join("")}
-            </div>
+              </div>
+            </details>
           </div>
         </details>
       `
@@ -1594,7 +1606,13 @@ function openItineraryDay(index, { scroll = true } = {}) {
     card.open = cardIndex === dayIndex;
   });
   document.querySelectorAll("[data-itinerary-day]").forEach((button) => {
-    button.classList.toggle("active", Number(button.dataset.itineraryDay) === dayIndex);
+    const active = Number(button.dataset.itineraryDay) === dayIndex;
+    button.classList.toggle("active", active);
+    if (active) {
+      button.setAttribute("aria-current", "true");
+    } else {
+      button.removeAttribute("aria-current");
+    }
   });
   if (scroll) {
     cards[dayIndex]?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -1617,7 +1635,13 @@ function bindItineraryDays() {
         if (other !== card) other.open = false;
       });
       document.querySelectorAll("#dayJumpNav [data-itinerary-day]").forEach((button) => {
-        button.classList.toggle("active", Number(button.dataset.itineraryDay) === index);
+        const active = Number(button.dataset.itineraryDay) === index;
+        button.classList.toggle("active", active);
+        if (active) {
+          button.setAttribute("aria-current", "true");
+        } else {
+          button.removeAttribute("aria-current");
+        }
       });
     });
   });
@@ -1902,6 +1926,7 @@ function syncPageNavigation() {
   document.querySelectorAll("[data-page-group='secondary']").forEach((button) => {
     const active = isSecondaryPage();
     button.classList.toggle("active", active);
+    button.setAttribute("aria-expanded", String(document.body.classList.contains("show-secondary-strip")));
     if (active) {
       button.setAttribute("aria-current", "page");
     } else {
@@ -1913,8 +1938,16 @@ function syncPageNavigation() {
     panel.hidden = !active;
     panel.classList.toggle("active", active);
   });
-  const activeMobilePill = document.querySelector(`.mobile-page-strip [data-page-link="${state.page}"]`);
-  activeMobilePill?.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
+  const mobilePageStrip = document.getElementById("mobilePageStrip");
+  mobilePageStrip?.setAttribute("aria-hidden", String(!document.body.classList.contains("show-secondary-strip")));
+}
+
+function setSecondaryMenu(open) {
+  document.body.classList.toggle("show-secondary-strip", Boolean(open));
+  const mobilePageStrip = document.getElementById("mobilePageStrip");
+  const moreButton = document.querySelector("[data-page-group='secondary']");
+  mobilePageStrip?.setAttribute("aria-hidden", String(!open));
+  moreButton?.setAttribute("aria-expanded", String(Boolean(open)));
 }
 
 function updatePageUrl(page, { replace = false } = {}) {
@@ -1932,6 +1965,7 @@ function updatePageUrl(page, { replace = false } = {}) {
 function setPage(page, { scroll = true, updateUrl = true, replaceUrl = false } = {}) {
   const nextPage = normalizePage(page);
   if (!nextPage) return;
+  setSecondaryMenu(false);
   if (state.page === nextPage) {
     if (scroll) window.scrollTo({ top: 0, behavior: "smooth" });
     return;
@@ -1954,12 +1988,7 @@ function bindPageNavigation() {
     link.addEventListener("click", (event) => {
       event.preventDefault();
       if (link.dataset.pageGroup === "secondary") {
-        if (!isSecondaryPage()) {
-          document.body.classList.toggle("show-secondary-strip");
-        }
-        if (document.body.classList.contains("show-secondary-strip")) {
-          document.getElementById("mobilePageStrip")?.scrollIntoView({ block: "start", behavior: "smooth" });
-        }
+        setSecondaryMenu(!document.body.classList.contains("show-secondary-strip"));
         return;
       }
       if (link.dataset.itineraryDay !== undefined) {
@@ -1969,6 +1998,19 @@ function bindPageNavigation() {
       }
       setPage(link.dataset.pageLink);
     });
+  });
+}
+
+function bindSecondaryMenu() {
+  if (document.body.dataset.secondaryMenuBound === "true") return;
+  document.body.dataset.secondaryMenuBound = "true";
+  document.addEventListener("click", (event) => {
+    if (!document.body.classList.contains("show-secondary-strip")) return;
+    if (event.target.closest?.("#mobilePageStrip, [data-page-group='secondary']")) return;
+    setSecondaryMenu(false);
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setSecondaryMenu(false);
   });
 }
 
@@ -2010,6 +2052,7 @@ renderAll();
 bindControls();
 bindChecklist();
 bindPageNavigation();
+bindSecondaryMenu();
 bindItineraryDays();
 syncPageNavigation();
 bindImageModal();
@@ -2021,6 +2064,7 @@ window.addEventListener("popstate", (event) => {
   const fromQuery = normalizePage(new URLSearchParams(window.location.search).get("page"));
   state.page = fromHistory || fromQuery || "overview";
   localStorage.setItem(STORAGE_KEYS.page, state.page);
+  setSecondaryMenu(false);
   updateDocumentTitle();
   renderHero();
   syncPageNavigation();
